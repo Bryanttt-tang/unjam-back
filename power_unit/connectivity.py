@@ -11,10 +11,10 @@ from functions import functions
 import networkx as nx
 if __name__ == "__main__":
     np.random.seed(123)
-    # A = np.array([[1, 0.05],
-    #                [-0.05,1]])
-    # B = np.array([[0],[0.1]])
-    # C = np.array([[0.1,0]])
+    # A = np.array([[1, 0.1],
+    #                [-0.7,0.6]])
+    # B = np.array([[0],[1]])
+    # C = np.array([[0.25,0]])
     # D = np.zeros(1)
     A = np.array([[0.5, 0.05],
                 [-0.05,0.5]])
@@ -94,6 +94,30 @@ if __name__ == "__main__":
             if not G.has_edge(u, v):  # Check if the edge does not already exist
                 G.add_edge(u, v)  # Add the new edge to the graph
                 break  # Exit the loop once a new edge is added
+
+    def add_random_edges2(G, num_edges=10):
+
+        nodes = list(G.nodes())
+        n = len(nodes)
+        max_edges = n * (n - 1) // 2  # Maximum number of edges in a complete graph
+
+        if G.number_of_edges() >= max_edges:
+            print("Already a complete graph or cannot add more edges.")
+            return
+
+        existing_edges = set(G.edges())
+        possible_edges = [(u, v) for u in nodes for v in nodes if u != v and (u, v) not in existing_edges and (v, u) not in existing_edges]
+
+        if len(possible_edges) < num_edges:
+            print("Not enough possible edges to add.")
+            return
+
+        edges_to_add = np.random.choice(len(possible_edges), num_edges, replace=False)
+        
+        for idx in edges_to_add:
+            u, v = possible_edges[idx]
+            G.add_edge(u, v)
+
     def increase_edge_connectivity(G, target_connectivity):
         """
         Increase the edge connectivity of the graph G to the target_connectivity.
@@ -151,7 +175,7 @@ if __name__ == "__main__":
 
     graph = create_connected_graph(v)   
     # Incrementally add edges until the graph becomes fully connected
-    while graph.number_of_edges() <= (v * (v - 1)) // 2:
+    while graph.number_of_edges() <= 400:
         e=2*len(graph.edges()) # directed graph  
         v_con=nx.node_connectivity(graph)
         e_con=nx.edge_connectivity(graph)
@@ -333,9 +357,10 @@ if __name__ == "__main__":
         print('Projection onto Cartisian of subspaces time: ',statistics.mean(F.time_proj2))
         if graph.number_of_edges() == v*(v-1)//2:
             break
-        increase_edge_connectivity(graph, e_con+1)
-        if nx.edge_connectivity(graph) >10:
-            break
+        add_random_edges2(graph,20)
+        # increase_edge_connectivity(graph, e_con+1)
+        # if nx.edge_connectivity(graph) >10:
+        #     break
         # add_random_edge(graph)
         assert nx.is_connected(graph), "The graph must remain connected"
         
@@ -344,7 +369,7 @@ if __name__ == "__main__":
         'average total proj':mean_total, 'mean thread':mean_thread,'average alternation proj':mean_alter, 'mean split':mean_split, 'mean split2':mean_split2, 
         'mean_inter': mean_inter, 'mean_proj2':mean_proj2,'mean_sub':mean_sub, 'var_sub':var_sub,'max_sub':max_sub}
     df = pd.DataFrame(data)
-    df.to_excel('results/connectivity-100units.xlsx', index=False)
+    df.to_excel('power_unit/results/edges-100units.xlsx', index=False)
         # start_alberto = time.time()
         # w_split = F.lqr(wini, wref, Phi, h_total)
         # end_alberto = time.time()

@@ -358,7 +358,7 @@ if __name__ == "__main__":
             
     
     Tsim=200  
-    solver='dis_lqr'
+    solver='CVXPY'
     params_D = {'H': H, # an object of Hankel
                 'H_dis':H_dis,
                 'h_dis':h,
@@ -394,7 +394,7 @@ if __name__ == "__main__":
 
     ''' Plot results '''
 
-    def plot_behavior(ax, title, xlabel, ylabel, data, label_prefix, ylim=None):
+    def plot_behavior(ax, title, xlabel, ylabel, data, label_prefix, ylim=None,log_scale=False):
         ax.set_title(title, fontsize=16, fontweight='bold')
         ax.set_xlabel(xlabel, fontsize=14)
         ax.set_ylabel(ylabel, fontsize=14)
@@ -404,6 +404,9 @@ if __name__ == "__main__":
 
         if ylim is not None:
             ax.set_ylim(ylim)
+
+        if log_scale:
+            ax.set_yscale('log')
 
         ax.legend(loc='best')
         ax.grid(True)
@@ -419,7 +422,7 @@ if __name__ == "__main__":
     error = np.abs(ysim - np.tile(wref[-p_central:], Tsim))
     print('error:\n',error[:,-1])
     # error=ysim-wref.reshape(size_w,-1,order='F')[-2:,:]
-    plot_behavior(ax[2], 'Output error', 'Time Steps', 'Output error y - y_ref', error, 'y', ylim=None)
+    plot_behavior(ax[2], 'Output error', 'Time Steps', 'Output error y - y_ref', error, 'y', ylim=None,log_scale=True)
 
     # Adjust the space between plots
     plt.subplots_adjust(hspace=0.4)
