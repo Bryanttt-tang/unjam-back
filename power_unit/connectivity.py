@@ -357,7 +357,7 @@ if __name__ == "__main__":
         print('Projection onto Cartisian of subspaces time: ',statistics.mean(F.time_proj2))
         if graph.number_of_edges() == v*(v-1)//2:
             break
-        add_random_edges2(graph,20)
+        add_random_edges2(graph,40)
         # increase_edge_connectivity(graph, e_con+1)
         # if nx.edge_connectivity(graph) >10:
         #     break
@@ -369,7 +369,7 @@ if __name__ == "__main__":
         'average total proj':mean_total, 'mean thread':mean_thread,'average alternation proj':mean_alter, 'mean split':mean_split, 'mean split2':mean_split2, 
         'mean_inter': mean_inter, 'mean_proj2':mean_proj2,'mean_sub':mean_sub, 'var_sub':var_sub,'max_sub':max_sub}
     df = pd.DataFrame(data)
-    df.to_excel('power_unit/results/edges-100units.xlsx', index=False)
+    df.to_excel('results/edges-100units.xlsx', index=False)
         # start_alberto = time.time()
         # w_split = F.lqr(wini, wref, Phi, h_total)
         # end_alberto = time.time()
