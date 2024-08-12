@@ -8,7 +8,6 @@ import statistics
 import cvxpy as cp
 from cvxpy.atoms.affine.wraps import psd_wrap
 from functions import functions
-from multiprocessing.pool import ThreadPool
 import networkx as nx
 if __name__ == "__main__":
     np.random.seed(123)
@@ -17,17 +16,11 @@ if __name__ == "__main__":
     B = np.array([[0],[1]])
     C = np.array([[0.25,0]])
     D = np.zeros(1)
-    
-    # A = np.array([[1, 0.05],
+    # A = np.array([[0.5, 0.05],
     #             [-0.05,0.5]])
-    # B = np.array([[0],[0.1]])
+    # B = np.array([[0],[1]])
     # C = np.array([[0.1,0]])
-    # A = np.array([[-1, 0, 2],
-    #             [-2, -3, -4],
-    #             [1,0,-1]])
-    # B = np.array([[1,1],[0,2],[-1,3]])
-    # C = np.array([[1,0,0],[0,1,0]])
-    D = np.zeros(1)
+    # D = np.zeros(1)
     eigenvalues, _ = np.linalg.eig(A)
     # Check for stability (all eigenvalues should have magnitudes less than 1 for discrete-time system)
     is_stable = np.all(np.abs(eigenvalues) < 1)
@@ -101,6 +94,30 @@ if __name__ == "__main__":
             if not G.has_edge(u, v):  # Check if the edge does not already exist
                 G.add_edge(u, v)  # Add the new edge to the graph
                 break  # Exit the loop once a new edge is added
+
+    def add_random_edges2(G, num_edges=10):
+
+        nodes = list(G.nodes())
+        n = len(nodes)
+        max_edges = n * (n - 1) // 2  # Maximum number of edges in a complete graph
+
+        if G.number_of_edges() >= max_edges:
+            print("Already a complete graph or cannot add more edges.")
+            return
+
+        existing_edges = set(G.edges())
+        possible_edges = [(u, v) for u in nodes for v in nodes if u != v and (u, v) not in existing_edges and (v, u) not in existing_edges]
+
+        if len(possible_edges) < num_edges:
+            print("Not enough possible edges to add.")
+            return
+
+        edges_to_add = np.random.choice(len(possible_edges), num_edges, replace=False)
+        
+        for idx in edges_to_add:
+            u, v = possible_edges[idx]
+            G.add_edge(u, v)
+
     def increase_edge_connectivity(G, target_connectivity):
         """
         Increase the edge connectivity of the graph G to the target_connectivity.
@@ -130,13 +147,94 @@ if __name__ == "__main__":
 
         return list(components.values())
     # create random graph
+    e_values = []
+    e_con_values=[]
+    v_con_values=[]
+    lqr_mean = []
+    lqr_var=[]
+    dis_lqr_mean=[]
+    dis_lqr_var=[]
+    mean_sub=[]
+    max_sub=[]
+    var_sub=[]
+    mean_alter=[]
+    mean_total=[]
+    mean_lqr=[]
+    mean_dis_lqr=[]
+    mean_split=[]
+    mean_split2=[]
+    mean_inter=[]
+    mean_proj2=[]
+    mean_thread=[]
+    means = []
+    maxs = []
+    vars=[]
+    cvx_time=[]
+    # v = 100
 
-    v = 5 # number of units in the interconnected graph
+    # graph = create_connected_graph(v) # create chain graph
 
-    graph = create_connected_graph(v)   
-    increase_edge_connectivity(graph, 2)
+    # Create a new graph
+    graph = nx.Graph()
 
-    # while graph.number_of_edges() <= (v * (v - 1)) // 2:
+    # Mapping from 1D index to 2D grid coordinates
+    index_to_coord = {}
+    coord_to_index = {}
+
+    # Create the first 3x3 grid network
+    node_index = 0
+    for i in range(3):
+        for j in range(3):
+            graph.add_node(node_index)
+            index_to_coord[node_index] = (i, j)
+            coord_to_index[(i, j)] = node_index
+            node_index += 1
+
+    # Connect nodes in the first grid
+    for i in range(3):
+        for j in range(3):
+            current_index = coord_to_index[(i, j)]
+            if i < 2:  # Vertical connections
+                neighbor_index = coord_to_index[(i+1, j)]
+                graph.add_edge(current_index, neighbor_index)
+            if j < 2:  # Horizontal connections
+                neighbor_index = coord_to_index[(i, j+1)]
+                graph.add_edge(current_index, neighbor_index)
+
+    # Offset for the second grid
+    offset = 4
+
+    # Create the second 3x3 grid network
+    for i in range(3):
+        for j in range(3):
+            graph.add_node(node_index)
+            index_to_coord[node_index] = (i+offset, j)
+            coord_to_index[(i+offset, j)] = node_index
+            node_index += 1
+
+    # Connect nodes in the second grid
+    for i in range(3):
+        for j in range(3):
+            current_index = coord_to_index[(i+offset, j)]
+            if i < 2:  # Vertical connections
+                neighbor_index = coord_to_index[(i+1+offset, j)]
+                graph.add_edge(current_index, neighbor_index)
+            if j < 2:  # Horizontal connections
+                neighbor_index = coord_to_index[(i+offset, j+1)]
+                graph.add_edge(current_index, neighbor_index)
+
+    # Connect the two grids with three edges
+    graph.add_edge(coord_to_index[(2, 2)], coord_to_index[(offset, 2)])
+    graph.add_edge(coord_to_index[(2, 1)], coord_to_index[(offset, 1)])
+    graph.add_edge(coord_to_index[(2, 0)], coord_to_index[(offset, 0)])
+
+    # Draw the graph
+    plt.figure(figsize=(8, 8))
+    nx.draw(graph, with_labels=True, node_color='skyblue', node_size=600, font_size=10, font_weight='bold', edge_color='gray')
+    plt.title("Two 3x3 Grid Networks Connected by Three Edges (1D Indexing)")
+    plt.show()
+    
+    v=len(graph.nodes())
     e=2*len(graph.edges()) # directed graph  
     v_con=nx.node_connectivity(graph)
     e_con=nx.edge_connectivity(graph)
@@ -178,11 +276,7 @@ if __name__ == "__main__":
     print('max X:',np.max(xData))
     wData=np.vstack((uData,yData))
     wData_dis=np.vstack((uData_dis,yData_dis))
-    # print('uData:',uData[:,2])
-    # print('yData:',yData[:,2])
-    # print('uData_dis:',uData_dis[:,2])
-    # print('wData:',wData[:,2])
-    # print('wData_dis:',wData_dis[:,2])
+
     wini = wData[:, -Tini:].reshape(-1, 1, order='F')
     wini_dis = wData_dis[:, -Tini:].reshape(-1, 1, order='F')
     print(wini.shape) # (Tini*q=3*(m+p))
@@ -225,7 +319,59 @@ if __name__ == "__main__":
     # print('Inter:\n',np.eye(M.shape[1])-M.T@M_inv@M)
     connected_components = find_connected_components(pairs)
     # print('connected_components',connected_components)
-    
+
+    # M-2
+    graph2 = nx.path_graph(2)
+    m_2=v*m+2*3
+    q_2=m_2+p_central
+    uData2=np.vstack((uData[:9,:],yData[9:12,:], uData[9:,:],yData[6:9,:]))
+    first_2=[9,10,11,21,22,23]
+    second_2=[33,34,35,30,31,32]
+    pairs_2 = np.transpose([first_2, second_2])
+    # print('pairs: \n',pairs)
+    # Initialize the kernel matrix M
+    M2 = np.zeros(( len(pairs_2), q_2))
+    # Assign -1 and 1 to the corresponding places in M
+    for i, (idx1, idx2) in enumerate(pairs_2):
+        M2[i, idx1] = -1
+        M2[i, idx2] = 1
+    M_inv_2=np.linalg.inv(M2@M2.T)  
+    print('Inter:\n',np.eye(M2.shape[1])-M2.T@M_inv_2@M2)
+    connected_components_2 = find_connected_components(pairs_2)
+    params_H_2_0 = {"uData": uData2[:12,:],
+                "yData": yData[:9,:],
+                "Tini": Tini,
+                "N": N,
+                "n":9*n,
+            }
+    params_H_2_1 = {"uData": uData2[12:,:],
+                "yData": yData[9:,:],
+                "Tini": Tini,
+                "N": N,
+                "n":9*n,
+            }
+    h2=[]
+    h2.append(Hankel(params_H_2_0).Hankel)
+    h2.append(Hankel(params_H_2_1).Hankel)
+    wData2=np.vstack((uData2,yData_dis))
+    wini_2 = wData2[:, -Tini:].reshape(-1, 1, order='F')
+    print(wini_2.shape) # (Tini*q_dis=3*(m^2+p))
+
+    random_vector_2=np.vstack((np.zeros((m_2,N)),10*np.ones((p_central, N)) ))
+    wref_2=random_vector_2.reshape(-1,1, order='F')
+    R_2=0.1*np.eye(m_2)
+    Phi_2=np.block([[R_2, np.zeros((R_2.shape[0],Q.shape[1]))], [np.zeros((Q.shape[0],R_2.shape[1])), Q]])
+    # # M-3
+    # m_3=v*m+2*9
+    # q_3=m_3+p_central
+    # uData3=np.vstack((uData[:9,:],  , uData[9:,:]))
+
+    # # M-4
+    # m_4=v*m+2*15
+    # q_4=m_4+p_central
+    # uData4=np.vstack((uData[:9,:],  , uData[9:,:]))
+
+
     ''' Hankel matrix '''
     
     params_H = {"uData": uData,
@@ -267,192 +413,36 @@ if __name__ == "__main__":
         h.append(H_j[i].Hankel)
             
     max_iter=100
-    dis_iter=10 
+    dis_iter=5 
     alpha=0.1
     Tsim=200    
-    F=functions(T,Tini, N, v, e, m, p, M, h_total, h, connected_components, graph, alpha, max_iter, dis_iter)
+    F=functions(T,Tini, N, v, e, m, 1, p, M, h_total, h, connected_components, graph, alpha, max_iter, dis_iter)
+    F2=functions(T,Tini, N, 2, 2, 9, 3, 9, M2, h_total, h2, connected_components_2, graph2, alpha, max_iter, dis_iter)
+    # F3=functions(T,Tini, N, v, e, m, p, M3, h_total, h3, connected_components, graph3, alpha, max_iter, dis_iter)
+    # F4=functions(T,Tini, N, v, e, m, p, M4, h_total, h4, connected_components, graph4, alpha, max_iter, dis_iter)
     # lqr_exp_time=[]
     # dis_lqr_exp_time=[]
     
-
+# case 1
     wini = wData[:, -Tini:].reshape(-1, 1, order='F')
     wini_dis = wData_dis[:, -Tini:].reshape(-1, 1, order='F')
     start_alberto = time.process_time()
-    w_split = F.lqr(wini, wref, Phi, h_total)
+    w_split = F.lqr(wini, wref, Phi)
     end_alberto = time.process_time()
     print(f"Running time of Alberto Algo with {max_iter} iterations: ",end_alberto-start_alberto)
-
+#case 2
+    # start_case2 = time.process_time()
+    # w_split_dis = F2.distributed_lqr(wini_2, wref_2, Phi_2)
+    # end_case2 = time.process_time()
+    # print(f"Running time of distributed Algo with {max_iter} outer iter and {dis_iter} alternating projection: ",end_case2-start_case2)
+    # print(f"Running time of Worst case distributed Algo with {max_iter} outer iter and {dis_iter} alternating projection: ",sum(F2.time_inter)+sum(F2.time_worst))
+# case 4
     start_dist = time.process_time()
-    w_split_dis = F.distributed_lqr(wini_dis, wref_dis,Phi_dis, h )
+    w_split_dis = F.distributed_lqr(wini_dis, wref_dis, Phi_dis)
     end_dist = time.process_time()
     print(f"Running time of distributed Algo with {max_iter} outer iter and {dis_iter} alternating projection: ",end_dist-start_dist)
-    # print(f"Running time of worst case distributed Algo with {max_iter} outer iter and {dis_iter} alternating projection: ",end_dist-start_dist)
-
-    # random_vector_dis=np.random.uniform(0, 10, size=(q_dis, L))
-    # w_ran_dis=random_vector_dis.reshape(-1,1, order='F')
-    # errors = []
-    # direct_projection=F.proj(h_total,w_ran_dis)
-    # # direct_projection=h_total@np.linalg.pinv(h_total)@w_ran
-    # with ThreadPool(processes=8) as pool:
-    #     for ite in tqdm(range(1,26)):
-    #         projected_point_alternating = F.alternating_projections(F.proj_h_sub, M,M_inv, w_ran_dis, pool, num_iterations=ite)
-    #         error = np.linalg.norm(direct_projection-projected_point_alternating)
-    #         errors.append(error)
-    # # plt.cla()
-    # plt.figure(figsize=(10, 6))
-    # plt.plot(range(1, 26), errors, marker='o')
-    # plt.xlabel('Iteration')
-    # plt.ylabel('Error')
-    # plt.title('Difference between direct Projection vs. Alternating Projection (System with 2 units)')
-    # plt.grid(True)
-    # plt.show()   
     
-    # print('mean projection time of each subspace: ', statistics.mean(F.time_sub))
-    # print('Max projection time of each subspace: ', max(F.time_sub))
-    # print('Minimum projection time of each subspace: ', min(F.time_sub))
-    # # min_sub.append(min(F.time_sub))
-    
-    # print(len(F.time_proj))
-    # print('Projection time of total space: ',max(F.time_proj))
-    # print('Projection time of alternating projection: ',statistics.mean(F.time_alter_proj))
-    # print('Projection time of inter projection: ',statistics.mean(F.time_inter))
-    # print('Projection onto Cartisian of subspaces time: ',statistics.mean(F.time_proj2))
-
-        
-    # CVXPY
-    start_cvx = time.time()
-    g = cp.Variable((T-Tini-N+1,1))
-    w_f = cp.Variable((N*q_central,1))
-    objective = cp.quad_form(w_f-wref, psd_wrap(np.kron(np.eye(N),Phi)))+ lambda_g*cp.norm(g, 1) 
-    #             + lambda_1*cp.quad_form((I-Pi)@g,psd_wrap(I))\
-                     
-    constraints = [ h_total[:Tini*q_central,:] @ g == wini,
-                    h_total[Tini*q_central:,:] @ g == w_f,
-                                ]
-    problem = cp.Problem(cp.Minimize(objective), constraints) 
-    solver_opts = {
-    'max_iter': 10000,
-    'verbose': True     # Enable verbose output to debug
-}
-    # problem.solve(solver = cp.OSQP,**solver_opts)
-    problem.solve(solver = cp.SCS,verbose=False)
-    end_cvx = time.time()
-    print('Running time of CVXPY for single LQR: ',end_cvx-start_cvx)
-    # diff=np.linalg.norm(w_split-np.vstack((wini,wref)) )
-    print(len(F.E))
-    plt.plot(range(0, max_iter+1), np.squeeze(F.E))
-    plt.plot(range(0, max_iter+1), np.squeeze(F.E_dis))
-    plt.ylabel('Error')
-    plt.legend(['Centralize', 'Distributed'])
-    plt.title('Convergence Error of LQR')
-    plt.grid(True)
-    plt.show()
-    # plt.show(block=False)
-    # plt.pause(0.001)
-
-    print('The final cost of CVX:',problem.value)
-#     # print('The output trajectory using CVXPY: \n',w_f.value)
-#     # print('The output trajectory using DS-splitting: \n',w_split[size_w*Tini:])
-#     # print('The output trajectory using Distributed LQR: \n',w_split_dis[size_w*Tini:])
-    print('The differnce between CVX and Alberto methods: ',np.linalg.norm(w_f.value - w_split[q_central*Tini:]) )
-    # print('The differnce between centralized and distributed methods: ',np.linalg.norm(w_split_dis[q_dis*Tini:] - w_split[q_dis*Tini:]) )
-            
-    
-    Tsim=200  
-    solver='CVXPY'
-    params_D = {'H': H, # an object of Hankel
-                'H_dis':H_dis,
-                'h_dis':h,
-                'Phi':Phi,
-                'Phi_dis':Phi_dis,
-                'T':T,
-                'Tini':Tini,
-                'N':N,
-                'n':n,
-                'v':v,
-                'e':e,
-                'm':m,
-                'p':p,
-                'M':M,
-                'connected_components':connected_components,
-                'graph':graph,
-                'alpha':alpha,
-                'max_iter':max_iter,
-                'dis_iter':dis_iter,
-                'wref_dis' : wref_dis,
-                'wref' : wref}
-
-    deepc = DeePC(params_D,solver)   
-    x0 =  xData[:, -1]
-    print('x0:',xData[:,-1])
-    # print(x0[:,9:10])
-    start_deepc=time.time()
-    usim, ysim = deepc.loop(Tsim,A,B,C,D,x0)
-    end_deepc=time.time()
-    print('Total DeepC running time: ', end_deepc-start_deepc)
-
-    #     print(usim)
-
-    ''' Plot results '''
-
-    def plot_behavior(ax, title, xlabel, ylabel, data, label_prefix, ylim=None,log_scale=False):
-        ax.set_title(title, fontsize=16, fontweight='bold')
-        ax.set_xlabel(xlabel, fontsize=14)
-        ax.set_ylabel(ylabel, fontsize=14)
-
-        for i in range(data.shape[0]):
-            ax.plot(data[i,:], label=f'{label_prefix}{i}')
-
-        if ylim is not None:
-            ax.set_ylim(ylim)
-
-        if log_scale:
-            ax.set_yscale('log')
-
-        ax.legend(loc='best')
-        ax.grid(True)
-
-    fig, ax = plt.subplots(3, figsize=(8, 10))
-
-    # Plot control input
-    plot_behavior(ax[0], 'Control input', 'Time Steps', 'Input', usim, 'u', ylim=None)
-    # Plot output
-    plot_behavior(ax[1], 'Output Y', 'Time Steps', 'Output', ysim, 'y', ylim=None)
-    # Plot output error
-    print('The reference:\n',wref[-p_central:])
-    error = np.abs(ysim - np.tile(wref[-p_central:], Tsim))
-    print('error:\n',error[:,-1])
-    # error=ysim-wref.reshape(size_w,-1,order='F')[-2:,:]
-    plot_behavior(ax[2], 'Output error', 'Time Steps', 'Output error y - y_ref', error, 'y', ylim=None,log_scale=True)
-
-    # Adjust the space between plots
-    plt.subplots_adjust(hspace=0.4)
-
-    # Show the plot
-    plt.show()
-        # plt.pause(0.001)
-
-    def compute_metrics(t, response, ref, threshold=0.02):
-        num_responses = response.shape[0]
-        settling_times = []
-        steady_state_values = response[:, -1]
-        
-        for i in range(num_responses):
-            steady_state_value = response[i, -1]
-            settling_threshold = np.abs(threshold * steady_state_value)
-            # print('thre:',settling_threshold)
-            settling_time_indices = np.where(np.abs(response[i, :] - steady_state_value) > settling_threshold)[0]
-            # print(settling_time_indices)
-            if settling_time_indices.size > 0:
-                settling_time = t[settling_time_indices[-1]]
-            else:
-                settling_time = t[-1]
-            settling_times.append(settling_time)
-        steady_state_errors = np.abs(steady_state_values-ref )
-        return np.max(settling_times), np.max(steady_state_errors)
-    settling_time, steady_state_error = compute_metrics(np.linspace(0, Tsim-1,Tsim), ysim, wref[-p_central:])
-
-    # print(f"Rise time: {rise_time:.2f} s")
-    print(f"Settling time: {settling_time:.2f} s")
-    # print(f"Overshoot: {overshoot:.2f} %")
-    print(f"Steady state error: {steady_state_error}")
+    print(f"Running time of Worst case distributed Algo with {max_iter} outer iter and {dis_iter} alternating projection: ",sum(F.time_inter)+sum(F.time_worst)+sum(F.time_dis_lqr)-sum(F.time_alter_proj) )
+    print(max(F.time_sub))
+    # print(sum(F.time_dis_lqr)-sum(F.time_alter_proj))
+    # print(F.k_lqr)

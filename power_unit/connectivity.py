@@ -150,10 +150,13 @@ if __name__ == "__main__":
     e_values = []
     e_con_values=[]
     v_con_values=[]
+    degree_values=[]
     lqr_mean = []
     lqr_var=[]
     dis_lqr_mean=[]
     dis_lqr_var=[]
+    dis_worst_mean=[]
+    dis_worst_var=[]
     mean_sub=[]
     max_sub=[]
     var_sub=[]
@@ -175,13 +178,15 @@ if __name__ == "__main__":
 
     graph = create_connected_graph(v)   
     # Incrementally add edges until the graph becomes fully connected
-    while graph.number_of_edges() <= 400:
+    while graph.number_of_edges() <= 800:
         e=2*len(graph.edges()) # directed graph  
         v_con=nx.node_connectivity(graph)
         e_con=nx.edge_connectivity(graph)
+        degree=max(dict(graph.degree()).values())
         e_values.append(e/2)
         e_con_values.append(e_con)
         v_con_values.append(v_con)
+        degree_values.append(degree)
         print('vertex connectivity:',v_con)
         print('edge connectivity:',e_con)
         # add_random_edge(graph)
@@ -305,32 +310,38 @@ if __name__ == "__main__":
         for i in range(len(H_j)):
             h.append(H_j[i].Hankel)
                 
-        max_iter=50
+        max_iter=100
         dis_iter=5 
         alpha=0.1
         Tsim=100    
-        F=functions(T,Tini, N, v, e, m, p, M, h_total, h, connected_components, graph, alpha, max_iter, dis_iter)
+        F=functions(T,Tini, N, v, e, m, 1, p, M, h_total, h, connected_components, graph, alpha, max_iter, dis_iter)
         lqr_exp_time=[]
         dis_lqr_exp_time=[]
+        dis_lqr_worst_time=[]
         
         for exp in range(1,4):
             wini = wData[:, -(Tini+exp):-exp].reshape(-1, 1, order='F')
             wini_dis = wData_dis[:, -(Tini+exp):-exp].reshape(-1, 1, order='F')
             start_alberto = time.process_time()
-            w_split = F.lqr(wini, wref,Phi,h_total)
+            w_split = F.lqr(wini, wref, Phi)
             end_alberto = time.process_time()
             print(f"Running time of Alberto Algo with {max_iter} iterations: ",end_alberto-start_alberto)
             lqr_exp_time.append(end_alberto-start_alberto)
 
             start_dist = time.process_time()
-            w_split_dis = F.distributed_lqr(wini_dis, wref_dis,Phi_dis, h )
+            w_split_dis = F.distributed_lqr(wini_dis, wref_dis, Phi_dis)
             end_dist = time.process_time()
             print(f"Running time of distributed Algo with {max_iter} outer iter and {dis_iter} alternating projection: ",end_dist-start_dist)
+            print(f"Running time of Worst case distributed Algo with {max_iter} outer iter and {dis_iter} alternating projection: ",sum(F.time_inter)+sum(F.time_worst)+sum(F.time_dis_lqr)-sum(F.time_alter_proj))
             dis_lqr_exp_time.append(end_dist-start_dist)
+            dis_lqr_worst_time.append(sum(F.time_inter)+sum(F.time_worst)+sum(F.time_dis_lqr-F.time_alter_proj))
+
         lqr_mean.append(statistics.mean(lqr_exp_time))
         lqr_var.append(statistics.variance(lqr_exp_time))
         dis_lqr_mean.append(statistics.mean(dis_lqr_exp_time))
         dis_lqr_var.append(statistics.variance(dis_lqr_exp_time))
+        dis_worst_mean.append(statistics.mean(dis_lqr_worst_time))
+        dis_worst_var.append(statistics.variance(dis_lqr_worst_time))
         print('mean projection time of each subspace: ', statistics.mean(F.time_sub))
         print('Max projection time of each subspace: ', max(F.time_sub))
         print('Minimum projection time of each subspace: ', min(F.time_sub))
@@ -347,29 +358,30 @@ if __name__ == "__main__":
         print('Projection time of alternating projection: ',statistics.mean(F.time_alter_proj))
         mean_lqr.append(statistics.mean(F.time_lqr))
         mean_dis_lqr.append(statistics.mean(F.time_dis_lqr))
-        mean_thread.append(statistics.mean(F.time_thread))
+        # mean_thread.append(statistics.mean(F.time_thread))
         print(len(F.time_thread))
         mean_split.append(statistics.mean(F.time_split))
         mean_split2.append(statistics.mean(F.time_split2))
         mean_inter.append(statistics.mean(F.time_inter))
         print('Projection time of inter projection: ',statistics.mean(F.time_inter))
-        mean_proj2.append(statistics.mean(F.time_proj2))
+        # mean_proj2.append(statistics.mean(F.time_proj2))
         print('Projection onto Cartisian of subspaces time: ',statistics.mean(F.time_proj2))
         if graph.number_of_edges() == v*(v-1)//2:
             break
-        add_random_edges2(graph,40)
+        add_random_edges2(graph,50)
         # increase_edge_connectivity(graph, e_con+1)
         # if nx.edge_connectivity(graph) >10:
         #     break
         # add_random_edge(graph)
         assert nx.is_connected(graph), "The graph must remain connected"
         
-    data = {'edges': e_values, 'node_connectivity': v_con_values, 'edge_connectivity':e_con_values,'centralized_lqr_mean': lqr_mean, 'centralized_lqr_var': lqr_var, 
-            'distributed_lqr_mean':dis_lqr_mean,'distributed_lqr_var':dis_lqr_var, 'lqr_iteration':mean_lqr, 'dis_lqr_iteration':mean_dis_lqr, 
-        'average total proj':mean_total, 'mean thread':mean_thread,'average alternation proj':mean_alter, 'mean split':mean_split, 'mean split2':mean_split2, 
+    data = {'max_deg':degree_values,'edges': e_values, 'node_connectivity': v_con_values, 'edge_connectivity':e_con_values,'centralized_lqr_mean': lqr_mean, 'centralized_lqr_var': lqr_var, 
+            'distributed_lqr_mean':dis_lqr_mean,'distributed_lqr_var':dis_lqr_var, 'distributed_worst_mean':dis_worst_mean,'distributed_worst_var':dis_worst_var, 
+        'average total proj':mean_total, 'average alternation proj':mean_alter, 'mean split':mean_split, 'mean split2':mean_split2, 
         'mean_inter': mean_inter, 'mean_proj2':mean_proj2,'mean_sub':mean_sub, 'var_sub':var_sub,'max_sub':max_sub}
     df = pd.DataFrame(data)
-    df.to_excel('results/edges-100units.xlsx', index=False)
+    df.to_excel('results/degree-100units.xlsx', index=False)
+
         # start_alberto = time.time()
         # w_split = F.lqr(wini, wref, Phi, h_total)
         # end_alberto = time.time()

@@ -78,8 +78,8 @@ class generate_data():
         x=x0 # X0 = np.random.rand(n,10)  
         y=C@x
         for t in tqdm(range(self.T)):
-            # u = np.array(np.random.rand(m, v))
-            u=np.random.uniform(-20, 20, (m, v))
+            u = np.array(np.random.randn(m, v))
+            # u=np.random.uniform(-20, 20, (m, v))
             all_u = []
             y=C@x
             # print(y)
@@ -94,16 +94,6 @@ class generate_data():
                     sum_term += B @ ( y[:, j:j+1])
                     all_u.append(y[:,j:j+1])
                 x[:,i:i+1]+= sum_term
-                
-                # elif 0<i<v-1:
-                #     x[:,i] = A@x[:,i]+B@(u[:,i])+np.ones((2,1))@(y[:,i-1]+y[:,i+1])
-                #     all_u.append(u[:, i].reshape(-1, 1))
-                #     all_u.append(y[:,i-1])
-                #     all_u.append(y[:,i+1])
-                # elif i==v-1:
-                #     x[:,i] = A@x[:,i]+B@(u[:,i])+np.ones((2,1))@y[:,i-1]
-                #     all_u.append(u[:, i].reshape(-1, 1))
-                #     all_u.append(y[:,i-1])
             
             # print(np.vstack(all_u).shape)
             uData_dis[:,[t]] = np.vstack(all_u)
@@ -111,7 +101,6 @@ class generate_data():
             uData[:,[t]] = u.reshape(-1, 1,order='F')
             yData[:,[t]] = y.reshape(-1, 1,order='F')
             xData[:,[t+1]] = x.reshape(-1, 1, order='F')
-
          
         # u_mean = uData.mean(axis=1, keepdims=True)
         # y_mean = yData.mean(axis=1, keepdims=True)

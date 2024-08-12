@@ -8,10 +8,11 @@ import matplotlib.pyplot as plt
 import multiprocessing
 from multiprocessing.pool import ThreadPool
 import concurrent.futures
+import statistics
 np.random.seed(123)
 class functions():
         
-    def __init__(self, T, Tini, N, v, e, m, p, M, h_total, h, connected_components, graph, alpha, max_iter, dis_iter):
+    def __init__(self, T, Tini, N, v, e, m, m_inter, p, M, h_total, h, connected_components, graph, alpha, max_iter, dis_iter):
         
         
         self.T = T
@@ -20,9 +21,10 @@ class functions():
         self.L=self.Tini+self.N
         self.v= v
         self.e= e
+        self.m_inter=m_inter # number of interconnected inputs of each unit
         self.m=m # num_input of each unit
         self.m_total= m*self.v # total manifest variable
-        self.m_dis = self.m_total+self.e
+        self.m_dis = self.m_total+self.e*self.m_inter
         self.p=p # num_output of each unit
         self.p_total=p*self.v
         self.q=self.m_total+self.p_total
@@ -39,9 +41,12 @@ class functions():
         self.alpha=alpha
         self.max_iter=max_iter
         self.dis_iter=dis_iter
+        self.k_lqr=[]
+        self.k_dis_lqr=[]
         self.E_dis=[]
         self.time_lqr=[]
         self.time_proj=[]
+        self.time_worst=[]
         self.time_alter_proj=[]
         self.time_dis_lqr=[]
         self.time_proj2=[]
@@ -95,92 +100,78 @@ class functions():
     
     def proj_two(self,h,w,pool): # Projection onto the Cartisian Product of ten subspace
 
-        # size_w1=self.m+1+1 # length of manifest viriable of the first behavoral space
-        # size_w2=self.m+2+1
-        # size_w10=self.m+1+1
         w_re=w.reshape(self.q_dis,-1,order='F')
         w_reorder=[]
         start_split = time.process_time()
         start_row=0
         for i in range(self.v):
-            # if i==0:
-            #     rows=np.r_[np.arange(0, self.m+1), self.q_dis - (self.p_total - i)]
-            #     # print(rows)
-            #     w_reorder.append(w_re[rows,:].reshape(-1,1,order='F'))
-            # elif 0<i< (self.v-1):
-            #     rows=np.r_[np.arange(self.m+1+(self.m+2)*(i-1), self.m+1+(self.m+2)*i), self.q_dis - (self.p_total - i)]
-            #     w_reorder.append(w_re[rows,:].reshape(-1,1,order='F'))
-            # elif i==(self.v-1):
-            num_rows = self.m + self.num_neighbor[i]
+        
+            num_rows = self.m + self.num_neighbor[i]*self.m_inter
             end_row = start_row + num_rows
-            rows=np.r_[start_row:end_row, self.q_dis - (self.p_total - i)]
+            rows=np.r_[start_row:end_row, (self.q_dis - (self.p_total - i)) : (self.q_dis - (self.p_total - i)+self.p)]
             w_reorder.append(w_re[rows,:].reshape(-1,1,order='F'))
             start_row = end_row
         end_split = time.process_time()
         self.time_split.append(end_split-start_split)
         
-        start_thread = time.process_time()
+        # start_thread = time.process_time()
         # with ThreadPool(processes=16) as pool:
             # results=pool.starmap(lambda x, y: x @ y, zip(h, w_reorder))
         results=pool.starmap(self.timed_matmul, zip(h, w_reorder))
             #  results = pool.starmap(self.proj, [(h[i], w_reorder[i]) for i in range(10)])
         w_proj=[result[0] for result in results]    
         self.time_sub=[result[1] for result in results]
-        # self.all_sub.append(self.time_sub)
-        end_thread = time.process_time()
-        self.time_thread.append(end_thread-start_thread)
+        worst_sub=np.max(self.time_sub)
+        mean_sub=statistics.mean(self.time_sub)
+        var_sub=statistics.variance(self.time_sub)
+        self.all_sub.append(self.time_sub)
+        # end_thread = time.process_time()
+        # self.time_thread.append(end_thread-start_thread)
         # w_proj = results
 
         result_vectors = np.zeros((self.q_dis, len(w)//self.q_dis))
         start_split2 = time.process_time()
         start_row2=0
         for i in range(self.v):
-            # if i==0:
-            #     rows=np.r_[np.arange(0, self.m+1), self.q_dis - (self.p_total - i)]
-            #     # print(rows)
-            #     result_vectors[rows,:]=w_proj[i].reshape(size_w1,-1,order='F')
-            # elif 0<i<self.v-1:
-            #     rows=np.r_[np.arange(self.m+1+(self.m+2)*(i-1), self.m+1+(self.m+2)*i), self.q_dis - (self.p_total - i)]
-            #     result_vectors[rows,:]=w_proj[i].reshape(size_w2,-1,order='F')
-            # elif i==self.v-1:
-            num_rows = self.m + self.num_neighbor[i]
+            num_rows = self.m + self.num_neighbor[i]*self.m_inter
             end_row2 = start_row2 + num_rows
-            rows=np.r_[start_row2:end_row2, self.q_dis - (self.p_total - i)]
+            rows=np.r_[start_row2:end_row2, (self.q_dis - (self.p_total - i)) : (self.q_dis - (self.p_total - i)+self.p)]
             # rows=np.r_[np.arange(self.m+1+(self.m+2)*(i-1), self.m_dis), self.q_dis - (self.p_total - i)]
-            result_vectors[rows,:]=w_proj[i].reshape( (self.m+self.num_neighbor[i]+self.p) ,-1,order='F')
+            result_vectors[rows,:]=w_proj[i].reshape( (self.m+self.num_neighbor[i]*self.m_inter+self.p) ,-1,order='F')
             start_row2 = end_row2
         end_split2 = time.process_time()
-        self.time_split2.append(end_split2-start_split2)       
+        self.time_split2.append(end_split2-start_split2)
+        self.time_worst.append(end_split2-start_split2 + end_split-start_split + worst_sub)       
         return result_vectors.reshape(-1,1,order='F')
     
-    def proj_full(self,h,w): # Projection onto the Cartisian Product of ten subspace
-        w_re=w.reshape(self.q_dis,-1,order='F')
-        w_reorder=[]
-        start_split = time.process_time()
-        for i in range(self.v):
-            rows=np.r_[np.arange((self.m+self.v-1)*i, (self.m+self.v-1)*(i+1)), self.q_dis - (self.p_total - i)]
-            w_reorder.append(w_re[rows,:].reshape(-1,1,order='F') )
-        end_split = time.process_time()
-        self.time_split.append(end_split-start_split)
-        start_thread = time.process_time()
-        with ThreadPool(processes=8) as pool:
-            # results=pool.starmap(lambda x, y: x @ y, zip(h, w_reorder))
-            results=pool.starmap(self.timed_matmul, zip(h, w_reorder))
-            #  results = pool.starmap(self.proj, [(h[i], w_reorder[i]) for i in range(10)])
-        w_proj=[result[0] for result in results]    
-        self.time_sub=[result[1] for result in results]
-        # w_proj = results
-        end_thread = time.process_time()
-        self.time_thread.append(end_thread-start_thread)
+    # def proj_full(self,h,w): # Projection onto the Cartisian Product of ten subspace
+    #     w_re=w.reshape(self.q_dis,-1,order='F')
+    #     w_reorder=[]
+    #     start_split = time.process_time()
+    #     for i in range(self.v):
+    #         rows=np.r_[np.arange((self.m+self.v-1)*i, (self.m+self.v-1)*(i+1)), self.q_dis - (self.p_total - i)]
+    #         w_reorder.append(w_re[rows,:].reshape(-1,1,order='F') )
+    #     end_split = time.process_time()
+    #     self.time_split.append(end_split-start_split)
+    #     start_thread = time.process_time()
+    #     with ThreadPool(processes=8) as pool:
+    #         # results=pool.starmap(lambda x, y: x @ y, zip(h, w_reorder))
+    #         results=pool.starmap(self.timed_matmul, zip(h, w_reorder))
+    #         #  results = pool.starmap(self.proj, [(h[i], w_reorder[i]) for i in range(10)])
+    #     w_proj=[result[0] for result in results]    
+    #     self.time_sub=[result[1] for result in results]
+    #     # w_proj = results
+    #     end_thread = time.process_time()
+    #     self.time_thread.append(end_thread-start_thread)
         
-        result_vectors = np.zeros((self.q_dis, len(w)//self.q_dis))
-        start_split2 = time.process_time()
-        for i in range(self.v):
-            rows=np.r_[np.arange((self.m+self.v-1)*i, (self.m+self.v-1)*(i+1)), self.q_dis - (self.p_total - i)]
-            result_vectors[rows,:]=w_proj[i].reshape((self.m+self.v-1+self.p),-1,order='F')
-        end_split2 = time.process_time()
-        self.time_split2.append(end_split2-start_split2)          
-        return result_vectors.reshape(-1,1,order='F')
+    #     result_vectors = np.zeros((self.q_dis, len(w)//self.q_dis))
+    #     start_split2 = time.process_time()
+    #     for i in range(self.v):
+    #         rows=np.r_[np.arange((self.m+self.v-1)*i, (self.m+self.v-1)*(i+1)), self.q_dis - (self.p_total - i)]
+    #         result_vectors[rows,:]=w_proj[i].reshape((self.m+self.v-1+self.p),-1,order='F')
+    #     end_split2 = time.process_time()
+    #     self.time_split2.append(end_split2-start_split2)          
+    #     return result_vectors.reshape(-1,1,order='F')
                 
 
     # def proj_inter(self,M,M_inv,w): # Projection onto interconnected  behavioral subspace
@@ -211,11 +202,11 @@ class functions():
     
     def alternating_projections(self,h,x, pool, num_iterations=15, tol=1e-10):
         for _ in range(num_iterations):
-            start_proj2=time.process_time()
+            # start_proj2=time.process_time()
             # x = self.proj_full(h,x) # 2*O(n)+ m*O(n_small^2)/8, where m is the number of units
             x = self.proj_two(h,x,pool) # 2*O(n)+ m*O(n_small^2)/8, where m is the number of units
-            end_proj2=time.process_time()
-            self.time_proj2.append(end_proj2-start_proj2)
+            # end_proj2=time.process_time()
+            # self.time_proj2.append(end_proj2-start_proj2)
             
             start_inter = time.process_time()
             x = self.proj_inter_2(x) # O(n)
@@ -260,16 +251,17 @@ class functions():
     #             break
         return x
     
-    def lqr(self,w_ini, w_ref, Phi, h, tol=1e-6): # Alberto's algorithm
+    def lqr(self,w_ini, w_ref, Phi, tol=1e-7): # Alberto's algorithm
         # Initialize w, z, v
         # w=np.vstack((w_ini, np.zeros((self.q*self.N,1)) ))
-        w = 2*np.ones((self.q*self.L,1))
+        w = np.ones((self.q*self.L,1))
         kron=np.diag( np.kron(np.eye(self.N),Phi) ).reshape(-1, 1) # a vector containing all diagonal elements
         # e=np.dot((w[self.q*self.Tini:]-w_ref).T, (kron * (w[self.q*self.Tini:]-w_ref)))[0,0]
         e=np.dot( (w-np.vstack((w_ini,w_ref))).T, (w-np.vstack((w_ini,w_ref))))[0,0]
         self.E.append(e)
+        k=0
         for ite in range(self.max_iter):
-    #         w_prev = w
+            w_prev = w
             # Compute zk+1
             start_lqr=time.process_time()
             z = np.vstack((w_ini,w[-self.q*self.N:] )) # O(n), n=q*(Tini+Tf)
@@ -293,25 +285,28 @@ class functions():
             end_lqr=time.process_time()
             self.time_lqr.append(end_lqr-start_lqr)
             # e=np.dot((w[self.q*self.Tini:]-w_ref).T, (kron * (w[self.q*self.Tini:]-w_ref)))[0,0]
-            e=np.dot( (w-np.vstack((w_ini,w_ref))).T, (w-np.vstack((w_ini,w_ref))))[0,0]
-            self.E.append(e)
+            # e=np.dot( (w-np.vstack((w_ini,w_ref))).T, (w-np.vstack((w_ini,w_ref))))[0,0]
+            # self.E.append(e)
             # Check for convergence
-    #         if np.linalg.norm(w - w_prev) < tol:
-    #             break
-
+            k+=1
+            print( 'norm',np.linalg.norm(w - w_prev))
+            if np.linalg.norm(w - w_prev) < tol:
+                break
+        self.k_lqr.append(k)
         return w
 
-    def distributed_lqr(self, w_ini, w_ref, Phi, h, tol=1e-6):
+    def distributed_lqr(self, w_ini, w_ref, Phi, tol=1e-7):
         # Initialize w, z, v
         with ThreadPool(processes=8) as pool:
             # w=np.vstack((w_ini, np.zeros((self.q_dis*self.N,1)) ))
-            w = 2*np.ones((self.q_dis*self.L,1))
+            w = np.ones((self.q_dis*self.L,1))
             kron=np.diag( np.kron(np.eye(self.N),Phi) ).reshape(-1, 1)
             # e=np.dot((w[self.q_dis*self.Tini:]-w_ref).T, (kron * (w[self.q_dis*self.Tini:]-w_ref)))[0,0]
             e=np.dot( (w-np.vstack((w_ini,w_ref))).T, (w-np.vstack((w_ini,w_ref))))[0,0]
             self.E_dis.append(e)
+            k=0
             for ite_dis in range(self.max_iter):
-                # w_prev = w
+                w_prev = w
                 # Compute zk+1
                 start_dislqr=time.process_time()
                 z = np.vstack((w_ini,w[-self.q_dis*self.N:] ))
@@ -332,10 +327,11 @@ class functions():
                 self.time_dis_lqr.append(end_dislqr-start_dislqr)
                 
                 # e=np.dot((w[self.q_dis*self.Tini:]-w_ref).T, (kron * (w[self.q_dis*self.Tini:]-w_ref)))[0,0]
-                e=np.dot( (w-np.vstack((w_ini,w_ref))).T, (w-np.vstack((w_ini,w_ref))))[0,0]
-                self.E_dis.append(e)
+                # e=np.dot( (w-np.vstack((w_ini,w_ref))).T, (w-np.vstack((w_ini,w_ref))))[0,0]
+                # self.E_dis.append(e)
                 # Check for convergence
-        #         if np.linalg.norm(w - w_prev) < tol:
-        #             break
-
+                k+=1
+                if np.linalg.norm(w - w_prev) < tol:
+                    break
+            self.k_dis_lqr.append(k)
         return w
