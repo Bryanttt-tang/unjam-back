@@ -293,9 +293,9 @@ norm 1.940170280085111e-07
 norm 1.5521362240678626e-07
 norm 1.24170897925454e-07
 norm 9.933671834034134e-08
-Running time of Alberto Algo with 100 iterations:  529.282342614
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  210.98429276700006
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  70.17968593300043
+Running time of Alberto Algo with 100 iterations:  533.465700531
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  237.57581566099998
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  74.37150547400074
 norm 35.57335081801699
 norm 9.77731137761105
 norm 5.796841426797367
@@ -376,9 +376,9 @@ norm 1.9401702800852515e-07
 norm 1.5521362240680982e-07
 norm 1.2417089792542082e-07
 norm 9.933671834033955e-08
-Running time of Alberto Algo with 100 iterations:  533.153971802
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  205.87280187200008
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  140.20054410400508
+Running time of Alberto Algo with 100 iterations:  533.1802033820001
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  233.02597828399985
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  150.25491062700303
 norm 35.785510088377926
 norm 9.77705742380593
 norm 5.796668487860719
@@ -459,16 +459,16 @@ norm 1.9401702800853574e-07
 norm 1.5521362240679245e-07
 norm 1.2417089792549213e-07
 norm 9.933671834037177e-08
-Running time of Alberto Algo with 100 iterations:  516.1995187779999
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  205.49627781400022
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  212.0824259239953
-mean projection time of each subspace:  0.025609100299989224
-Max projection time of each subspace:  0.17873679000012999
-Minimum projection time of each subspace:  0.0014887600000292878
+Running time of Alberto Algo with 100 iterations:  533.4003008509999
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  235.23671718100013
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  228.80369425199524
+mean projection time of each subspace:  0.03194724180000321
+Max projection time of each subspace:  0.18847185000004174
+Minimum projection time of each subspace:  0.002512119999664719
 240
-Projection time of total space:  6.723699346999865
-Projection time of alternating projection:  2.074341543276682
-Projection time of inter projection:  0.0013822057393335096
+Projection time of total space:  6.755469157000107
+Projection time of alternating projection:  2.352577624019999
+Projection time of inter projection:  0.0016493961520007664
 vertex connectivity: 2
 edge connectivity: 2
 degree: 6
@@ -759,9 +759,9 @@ norm 1.940179866215836e-07
 norm 1.552143892972671e-07
 norm 1.2417151143772557e-07
 norm 9.933720915028519e-08
-Running time of Alberto Algo with 100 iterations:  524.5256501540002
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  333.64702223500035
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  121.04509942200775
+Running time of Alberto Algo with 100 iterations:  535.8092417600001
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  390.4005662630002
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  122.47218543702047
 norm 35.60232564072064
 norm 9.879164936000135
 norm 5.879593439003594
@@ -842,9 +842,9 @@ norm 1.9401798662150004e-07
 norm 1.5521438929723242e-07
 norm 1.2417151143769346e-07
 norm 9.933720915025139e-08
-Running time of Alberto Algo with 100 iterations:  533.4758127519999
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  332.68764397799987
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  240.927764802997
+Running time of Alberto Algo with 100 iterations:  535.1901848510001
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  390.8173284839995
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  244.46558888304753
 norm 35.02269300952094
 norm 9.874703456345198
 norm 5.876938868199685
@@ -925,16 +925,16 @@ norm 1.940179866214934e-07
 norm 1.5521438929718126e-07
 norm 1.241715114376916e-07
 norm 9.933720915020929e-08
-Running time of Alberto Algo with 100 iterations:  531.5608596720003
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  330.8601317350003
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  359.1765378639925
-mean projection time of each subspace:  0.0460300799000106
-Max projection time of each subspace:  0.20625085000028776
-Minimum projection time of each subspace:  0.0024900799999159062
+Running time of Alberto Algo with 100 iterations:  534.0266302310001
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  389.7045433730009
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  367.85297825904854
+mean projection time of each subspace:  0.05405067909999161
+Max projection time of each subspace:  0.33180580000043847
+Minimum projection time of each subspace:  0.0025286900008723023
 240
-Projection time of total space:  6.733631356999922
-Projection time of alternating projection:  3.323783502926667
-Projection time of inter projection:  0.0014591236866766243
+Projection time of total space:  6.765994017000139
+Projection time of alternating projection:  3.902768093733348
+Projection time of inter projection:  0.001711157432010926
 vertex connectivity: 2
 edge connectivity: 2
 degree: 8
@@ -1225,9 +1225,9 @@ norm 1.9401894522844796e-07
 norm 1.5521515618287962e-07
 norm 1.24172124946062e-07
 norm 9.933769995699428e-08
-Running time of Alberto Algo with 100 iterations:  525.0788353940006
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  489.7730847769999
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  154.78045388998908
+Running time of Alberto Algo with 100 iterations:  538.6913920999996
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  571.5704971059995
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  161.60278583500985
 norm 36.0283642498322
 norm 10.010981664351082
 norm 5.980353712520032
@@ -1308,9 +1308,9 @@ norm 1.940189452283835e-07
 norm 1.5521515618273205e-07
 norm 1.241721249461308e-07
 norm 9.933769995682368e-08
-Running time of Alberto Algo with 100 iterations:  528.7491063930001
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  499.6749755339997
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  311.577439810967
+Running time of Alberto Algo with 100 iterations:  537.5465863890004
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  575.3783423479999
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  322.4822533840288
 norm 36.10464740539585
 norm 10.011032333518408
 norm 5.980458827948272
@@ -1391,16 +1391,16 @@ norm 1.9401894522849775e-07
 norm 1.5521515618276159e-07
 norm 1.2417212494631093e-07
 norm 9.933769995692469e-08
-Running time of Alberto Algo with 100 iterations:  522.072596905
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  497.41151019599965
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  465.9770576039555
-mean projection time of each subspace:  0.07049167957993632
-Max projection time of each subspace:  0.28068560999963665
-Minimum projection time of each subspace:  0.0024719399998502922
+Running time of Alberto Algo with 100 iterations:  538.3372822800002
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  574.7405061980007
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  482.11158991302636
+mean projection time of each subspace:  0.08350152669998351
+Max projection time of each subspace:  0.29147760000159906
+Minimum projection time of each subspace:  0.00254080999911821
 240
-Projection time of total space:  6.682880907999788
-Projection time of alternating projection:  4.9559681819566626
-Projection time of inter projection:  0.0014186573386377858
+Projection time of total space:  6.794027177999851
+Projection time of alternating projection:  5.738639030806662
+Projection time of inter projection:  0.001751680839983237
 vertex connectivity: 2
 edge connectivity: 2
 degree: 10
@@ -1691,9 +1691,9 @@ norm 1.9401990382906736e-07
 norm 1.5521592306326147e-07
 norm 1.2417273845054787e-07
 norm 9.933819076047931e-08
-Running time of Alberto Algo with 100 iterations:  530.8744491119996
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  681.4665834050011
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  194.24489754697606
+Running time of Alberto Algo with 100 iterations:  529.4798442440006
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  799.841889921001
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  206.14488341000833
 norm 36.13811491789974
 norm 10.134744222264901
 norm 6.077871536542363
@@ -1774,9 +1774,9 @@ norm 1.9401990382892437e-07
 norm 1.5521592306313317e-07
 norm 1.2417273845062673e-07
 norm 9.93381907605238e-08
-Running time of Alberto Algo with 100 iterations:  521.4485961259998
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  681.5541285930012
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  385.69469928897524
+Running time of Alberto Algo with 100 iterations:  535.2152897199994
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  795.3224066290004
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  411.83015144397905
 norm 35.590865503056655
 norm 10.132190276027412
 norm 6.076396862076386
@@ -1857,16 +1857,16 @@ norm 1.9401990382890039e-07
 norm 1.552159230631675e-07
 norm 1.2417273845057432e-07
 norm 9.933819076036476e-08
-Running time of Alberto Algo with 100 iterations:  525.0882706149987
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  683.5747471849991
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  580.2666050820189
-mean projection time of each subspace:  0.11091990789996999
-Max projection time of each subspace:  0.4108940700007224
-Minimum projection time of each subspace:  0.002512750001187669
+Running time of Alberto Algo with 100 iterations:  533.297689731
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  801.2404439779984
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  618.4904048609715
+mean projection time of each subspace:  0.11605237279998619
+Max projection time of each subspace:  0.40426155000022845
+Minimum projection time of each subspace:  0.0025638699989940505
 240
-Projection time of total space:  6.733640587000991
-Projection time of alternating projection:  6.821704563109888
-Projection time of inter projection:  0.0013998599393489713
+Projection time of total space:  6.760611128000164
+Projection time of alternating projection:  7.98768634439335
+Projection time of inter projection:  0.0018077622593421741
 vertex connectivity: 2
 edge connectivity: 2
 degree: 11
@@ -2157,9 +2157,9 @@ norm 1.940208624240049e-07
 norm 1.552166899390684e-07
 norm 1.2417335195115777e-07
 norm 9.933868156101864e-08
-Running time of Alberto Algo with 100 iterations:  511.776629729
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  819.4014757339992
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  209.26098166597512
+Running time of Alberto Algo with 100 iterations:  532.9220548310004
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1012.4038689549998
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  226.2432572880207
 norm 35.67980553165734
 norm 10.242140001375986
 norm 6.166498318839136
@@ -2240,9 +2240,9 @@ norm 1.9402086242391105e-07
 norm 1.5521668993902286e-07
 norm 1.2417335195119244e-07
 norm 9.933868156108625e-08
-Running time of Alberto Algo with 100 iterations:  531.009520222
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  815.7333650580003
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  414.79086707793977
+Running time of Alberto Algo with 100 iterations:  535.690084419999
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1010.7479598099999
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  455.88870585608856
 norm 35.02454742538965
 norm 10.23915590870978
 norm 6.164620231394936
@@ -2323,16 +2323,16 @@ norm 1.9402086242388288e-07
 norm 1.5521668993906315e-07
 norm 1.2417335195125875e-07
 norm 9.933868156101985e-08
-Running time of Alberto Algo with 100 iterations:  528.1872033229993
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  818.0217382560004
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  622.1582047899192
-mean projection time of each subspace:  0.12612546742009725
-Max projection time of each subspace:  0.5168918100007431
-Minimum projection time of each subspace:  0.002569270000094548
+Running time of Alberto Algo with 100 iterations:  537.4198781699997
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1006.1071492080009
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  685.5192410621548
+mean projection time of each subspace:  0.15582122111980426
+Max projection time of each subspace:  0.4929889790000743
+Minimum projection time of each subspace:  0.002559010001277784
 240
-Projection time of total space:  6.723915706999833
-Projection time of alternating projection:  8.429772266041262
-Projection time of inter projection:  0.001317080391055958
+Projection time of total space:  6.787605297000482
+Projection time of alternating projection:  10.409411327436334
+Projection time of inter projection:  0.001873049807541862
 vertex connectivity: 2
 edge connectivity: 2
 degree: 12
@@ -2623,9 +2623,9 @@ norm 1.9402182101219945e-07
 norm 1.552174568096942e-07
 norm 1.2417396544781988e-07
 norm 9.933917235830267e-08
-Running time of Alberto Algo with 100 iterations:  514.2853721779993
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1016.0316742449995
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  237.80114736496944
+Running time of Alberto Algo with 100 iterations:  529.2638348530018
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1260.0659132120018
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  260.34291157197003
 norm 35.012456459681765
 norm 10.354026525822032
 norm 6.258605369945489
@@ -2706,9 +2706,9 @@ norm 1.9402182101205304e-07
 norm 1.5521745680982408e-07
 norm 1.241739654479147e-07
 norm 9.933917235822399e-08
-Running time of Alberto Algo with 100 iterations:  533.5909884110006
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1016.8428130499997
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  476.08367761188674
+Running time of Alberto Algo with 100 iterations:  534.0702198809995
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1264.2411100440004
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  521.620309420985
 norm 35.31699191364372
 norm 10.35573990909485
 norm 6.259580529822632
@@ -2789,16 +2789,16 @@ norm 1.9402182101222629e-07
 norm 1.5521745680976743e-07
 norm 1.241739654478106e-07
 norm 9.933917235829254e-08
-Running time of Alberto Algo with 100 iterations:  528.7437314129966
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1021.4464239779991
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  715.9210402129229
-mean projection time of each subspace:  0.15848983192008745
-Max projection time of each subspace:  0.47345753999979934
-Minimum projection time of each subspace:  0.0025615400008973666
+Running time of Alberto Algo with 100 iterations:  535.1561164099985
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1257.5624204410014
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  782.5320063750369
+mean projection time of each subspace:  0.17685475051999675
+Max projection time of each subspace:  0.5388530800009903
+Minimum projection time of each subspace:  0.0025779099996725563
 240
-Projection time of total space:  6.7256872379985
-Projection time of alternating projection:  10.71654446885257
-Projection time of inter projection:  0.001319420378235998
+Projection time of total space:  6.781048318000103
+Projection time of alternating projection:  13.269081982375486
+Projection time of inter projection:  0.0018597196701816037
 vertex connectivity: 2
 edge connectivity: 2
 degree: 14
@@ -3089,9 +3089,9 @@ norm 1.9402277959397445e-07
 norm 1.5521822367521056e-07
 norm 1.2417457894016506e-07
 norm 9.933966315211593e-08
-Running time of Alberto Algo with 100 iterations:  522.6830658950021
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1255.640818951997
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  293.51094667206416
+Running time of Alberto Algo with 100 iterations:  530.6384060429991
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1559.2179266330022
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  332.46385754899165
 norm 36.03204110708346
 norm 10.476172137247852
 norm 6.358219919705585
@@ -3172,9 +3172,9 @@ norm 1.940227795940852e-07
 norm 1.5521822367521668e-07
 norm 1.2417457894012832e-07
 norm 9.933966315237068e-08
-Running time of Alberto Algo with 100 iterations:  526.744740623999
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1258.0549637100012
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  585.6957540180993
+Running time of Alberto Algo with 100 iterations:  537.8173176900018
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1561.609031349999
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  664.6774016259915
 norm 35.24871401330907
 norm 10.470455540124815
 norm 6.354863181480819
@@ -3255,16 +3255,16 @@ norm 1.9402277959407903e-07
 norm 1.5521822367522406e-07
 norm 1.2417457894027904e-07
 norm 9.933966315219897e-08
-Running time of Alberto Algo with 100 iterations:  529.4020432130019
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1259.9591682419996
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  878.2523746280858
-mean projection time of each subspace:  0.20458076511993567
-Max projection time of each subspace:  0.533834960002423
-Minimum projection time of each subspace:  0.007822030001989333
+Running time of Alberto Algo with 100 iterations:  534.813244429999
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1559.7701038480009
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  994.5911530349513
+mean projection time of each subspace:  0.2464006021201203
+Max projection time of each subspace:  0.7962696899994626
+Minimum projection time of each subspace:  0.016332470000634203
 240
-Projection time of total space:  6.738358618000348
-Projection time of alternating projection:  13.240461110929958
-Projection time of inter projection:  0.001323399115795486
+Projection time of total space:  6.806328987000597
+Projection time of alternating projection:  16.42259962038944
+Projection time of inter projection:  0.0019394392063233617
 vertex connectivity: 2
 edge connectivity: 2
 degree: 15
@@ -3555,9 +3555,9 @@ norm 1.940237381701685e-07
 norm 1.5521899053597389e-07
 norm 1.241751924288073e-07
 norm 9.934015394305115e-08
-Running time of Alberto Algo with 100 iterations:  513.224987859001
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1475.3817990610005
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  318.25763754088257
+Running time of Alberto Algo with 100 iterations:  531.7595301120018
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1839.9283089229975
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  366.4371596610072
 norm 35.55248211359117
 norm 10.573267928973882
 norm 6.443354609403543
@@ -3638,9 +3638,9 @@ norm 1.9402373817018567e-07
 norm 1.5521899053599366e-07
 norm 1.2417519242891744e-07
 norm 9.934015394308811e-08
-Running time of Alberto Algo with 100 iterations:  515.3209167780005
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1478.6446828599983
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  634.906858702816
+Running time of Alberto Algo with 100 iterations:  537.1434248600017
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1837.3220652700038
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  732.9057265540905
 norm 35.12766246037205
 norm 10.565110133439617
 norm 6.438514039814199
@@ -3721,16 +3721,16 @@ norm 1.9402373817011057e-07
 norm 1.5521899053614808e-07
 norm 1.2417519242886225e-07
 norm 9.93401539431066e-08
-Running time of Alberto Algo with 100 iterations:  513.0968697589997
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1468.4910240229983
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  952.7977887707239
-mean projection time of each subspace:  0.24282452331994137
-Max projection time of each subspace:  0.6169946299996809
-Minimum projection time of each subspace:  0.008139599998685298
+Running time of Alberto Algo with 100 iterations:  521.8701570549965
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1832.444017967995
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  1101.906499783021
+mean projection time of each subspace:  0.3143585112698202
+Max projection time of each subspace:  0.7839585999972769
+Minimum projection time of each subspace:  0.025283819995820522
 240
-Projection time of total space:  6.580988427002012
-Projection time of alternating projection:  16.023098628275505
-Projection time of inter projection:  0.001343742195675314
+Projection time of total space:  6.785740067000006
+Projection time of alternating projection:  19.96201021805061
+Projection time of inter projection:  0.0019765653905857977
 vertex connectivity: 3
 edge connectivity: 3
 degree: 16
@@ -4021,9 +4021,9 @@ norm 1.940246967394443e-07
 norm 1.5521975739162918e-07
 norm 1.2417580591323712e-07
 norm 9.934064473068444e-08
-Running time of Alberto Algo with 100 iterations:  513.5890453190004
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1539.256855249001
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  322.26629508297265
+Running time of Alberto Algo with 100 iterations:  521.4513991159984
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1925.5211560409953
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  377.65390733508684
 norm 34.52448125507261
 norm 10.667502486961459
 norm 6.5276523711710075
@@ -4104,9 +4104,9 @@ norm 1.940246967394653e-07
 norm 1.552197573915426e-07
 norm 1.241758059133615e-07
 norm 9.934064473084907e-08
-Running time of Alberto Algo with 100 iterations:  525.5629448449981
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1538.685749131997
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  642.9031576198577
+Running time of Alberto Algo with 100 iterations:  539.177005698999
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1923.6924249440053
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  752.5332287391138
 norm 34.622203983001796
 norm 10.66535587023564
 norm 6.526279716049094
@@ -4187,16 +4187,16 @@ norm 1.940246967395326e-07
 norm 1.5521975739167238e-07
 norm 1.241758059132107e-07
 norm 9.934064473080571e-08
-Running time of Alberto Algo with 100 iterations:  519.866893917002
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1534.115523417
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  964.923144315555
-mean projection time of each subspace:  0.2873099896200438
-Max projection time of each subspace:  0.9744162790011615
-Minimum projection time of each subspace:  0.05534359000012046
+Running time of Alberto Algo with 100 iterations:  536.8043911600034
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1928.5273002600006
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  1129.0058058081122
+mean projection time of each subspace:  0.3585815497400472
+Max projection time of each subspace:  0.7627270800003316
+Minimum projection time of each subspace:  0.02312697000161279
 240
-Projection time of total space:  6.623532547004288
-Projection time of alternating projection:  18.979025371925985
-Projection time of inter projection:  0.0013465338346502628
+Projection time of total space:  6.813334748003399
+Projection time of alternating projection:  23.775966770431854
+Projection time of inter projection:  0.0019976932428601877
 vertex connectivity: 3
 edge connectivity: 3
 degree: 18
@@ -4487,9 +4487,9 @@ norm 1.940256553024486e-07
 norm 1.5522052424196727e-07
 norm 1.241764193936957e-07
 norm 9.934113551476524e-08
-Running time of Alberto Algo with 100 iterations:  527.9170690739993
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1806.3634926599989
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  381.39710737574205
+Running time of Alberto Algo with 100 iterations:  522.3519552650032
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2274.1954707730038
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  455.018694706072
 norm 34.337755219211644
 norm 10.76651173027909
 norm 6.615876436123277
@@ -4570,9 +4570,9 @@ norm 1.940256553024095e-07
 norm 1.5522052424199226e-07
 norm 1.241764193936148e-07
 norm 9.934113551465948e-08
-Running time of Alberto Algo with 100 iterations:  514.0164807879992
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1819.4729107919993
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  760.969756349994
+Running time of Alberto Algo with 100 iterations:  522.8255101850009
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2266.077452598998
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  908.1957398980667
 norm 34.37229136766594
 norm 10.768690093471593
 norm 6.617271457129139
@@ -4653,16 +4653,16 @@ norm 1.9402565530251828e-07
 norm 1.5522052424195436e-07
 norm 1.241764193935606e-07
 norm 9.934113551484975e-08
-Running time of Alberto Algo with 100 iterations:  532.5701565420022
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1816.3809487510007
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  1142.5891125660783
-mean projection time of each subspace:  0.33563938585008146
-Max projection time of each subspace:  0.8164572399982717
-Minimum projection time of each subspace:  0.029759349999949336
+Running time of Alberto Algo with 100 iterations:  538.2992007699941
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2260.606721960001
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  1361.2763102887911
+mean projection time of each subspace:  0.4223353740397579
+Max projection time of each subspace:  1.1241248090009321
+Minimum projection time of each subspace:  0.03131852999649709
 240
-Projection time of total space:  6.765022277999378
-Projection time of alternating projection:  22.39522022256386
-Projection time of inter projection:  0.00137872395064699
+Projection time of total space:  6.82869265699992
+Projection time of alternating projection:  27.986172208691304
+Projection time of inter projection:  0.002058499678196874
 vertex connectivity: 3
 edge connectivity: 3
 degree: 20
@@ -4953,9 +4953,9 @@ norm 1.9402661385958152e-07
 norm 1.552212910874884e-07
 norm 1.2417703287000522e-07
 norm 9.934162629603253e-08
-Running time of Alberto Algo with 100 iterations:  515.2774500079977
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2106.816383985002
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  430.6794094601137
+Running time of Alberto Algo with 100 iterations:  522.0784751549945
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2630.0147593510046
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  525.5444915611733
 norm 34.43245224628358
 norm 10.858444343343391
 norm 6.699969044861945
@@ -5036,9 +5036,9 @@ norm 1.9402661385933398e-07
 norm 1.5522129108745312e-07
 norm 1.2417703287002227e-07
 norm 9.934162629608265e-08
-Running time of Alberto Algo with 100 iterations:  519.7170820659958
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2118.4675630380007
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  872.1403058459473
+Running time of Alberto Algo with 100 iterations:  522.0330454759969
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2627.9297593070005
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  1050.027426774017
 norm 35.03865293821172
 norm 10.86154005946307
 norm 6.70172668046758
@@ -5119,16 +5119,16 @@ norm 1.9402661385943178e-07
 norm 1.5522129108755677e-07
 norm 1.2417703286978986e-07
 norm 9.934162629602824e-08
-Running time of Alberto Algo with 100 iterations:  518.5841271870013
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2127.971607199004
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  1314.9859603868463
-mean projection time of each subspace:  0.3768288642502011
-Max projection time of each subspace:  1.0923937100014882
-Minimum projection time of each subspace:  0.06258475000504404
+Running time of Alberto Algo with 100 iterations:  519.4377578560016
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2626.5048499990007
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  1575.8488766411392
+mean projection time of each subspace:  0.4926603300901479
+Max projection time of each subspace:  1.2442647599964403
+Minimum projection time of each subspace:  0.023061520005285274
 240
-Projection time of total space:  6.570582018001005
-Projection time of alternating projection:  26.144260794411522
-Projection time of inter projection:  0.0014448627893029187
+Projection time of total space:  6.608939767000265
+Projection time of alternating projection:  32.445409849864475
+Projection time of inter projection:  0.002081421358095733
 vertex connectivity: 4
 edge connectivity: 4
 degree: 23
@@ -5419,9 +5419,9 @@ norm 1.940275532388052e-07
 norm 1.5522204259088384e-07
 norm 1.241776340727927e-07
 norm 9.934210725813149e-08
-Running time of Alberto Algo with 100 iterations:  519.7899976269982
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2409.107641663999
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  495.4267325267283
+Running time of Alberto Algo with 100 iterations:  518.6809512370019
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  3006.929240047997
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  604.6030873538839
 norm 34.60011515396578
 norm 10.95347755487746
 norm 6.785990261674492
@@ -5502,9 +5502,9 @@ norm 1.940275532388439e-07
 norm 1.5522204259108045e-07
 norm 1.241776340728503e-07
 norm 9.934210725805331e-08
-Running time of Alberto Algo with 100 iterations:  516.0748437080038
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2414.4993649389944
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  990.8238989669626
+Running time of Alberto Algo with 100 iterations:  524.8700127640041
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  3004.095184881
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  1210.1978794206516
 norm 33.908410242576146
 norm 10.953374164906226
 norm 6.786068364742488
@@ -5585,16 +5585,16 @@ norm 1.9402755323872945e-07
 norm 1.5522204259104946e-07
 norm 1.241776340727896e-07
 norm 9.934210725830161e-08
-Running time of Alberto Algo with 100 iterations:  517.8275140469996
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2399.158493172996
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  1485.3567451479103
-mean projection time of each subspace:  0.4351883585102769
-Max projection time of each subspace:  1.21276821000356
-Minimum projection time of each subspace:  0.04270695000013802
+Running time of Alberto Algo with 100 iterations:  521.9957644749957
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2996.524355939997
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  1816.0608774995053
+mean projection time of each subspace:  0.5653096134598309
+Max projection time of each subspace:  1.3646375789976446
+Minimum projection time of each subspace:  0.09435116000531707
 240
-Projection time of total space:  6.546207867999328
-Projection time of alternating projection:  29.722391372370613
-Projection time of inter projection:  0.0015085841069099064
+Projection time of total space:  6.611157806997653
+Projection time of alternating projection:  37.0669998511073
+Projection time of inter projection:  0.0021609619889459133
 vertex connectivity: 4
 edge connectivity: 4
 degree: 24
@@ -5885,9 +5885,9 @@ norm 1.940285117833611e-07
 norm 1.5522280942664344e-07
 norm 1.2417824754135685e-07
 norm 9.934259803315068e-08
-Running time of Alberto Algo with 100 iterations:  515.3873226279975
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2748.9642846749994
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  552.3026456099833
+Running time of Alberto Algo with 100 iterations:  520.7216235060041
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  3408.783051848004
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  656.3732053213898
 norm 34.90665781923814
 norm 11.040933340053646
 norm 6.868343348122283
@@ -5968,9 +5968,9 @@ norm 1.940285117832811e-07
 norm 1.5522280942671345e-07
 norm 1.241782475412513e-07
 norm 9.934259803319881e-08
-Running time of Alberto Algo with 100 iterations:  515.8552282370001
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2726.6745341500064
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  1091.4339087669432
+Running time of Alberto Algo with 100 iterations:  520.3887966659968
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2981.813027917
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  1236.621526910385
 norm 34.261682839319164
 norm 11.0340550893131
 norm 6.864210147771561
@@ -6051,16 +6051,16 @@ norm 1.940285117832696e-07
 norm 1.5522280942658367e-07
 norm 1.241782475414649e-07
 norm 9.934259803312963e-08
-Running time of Alberto Algo with 100 iterations:  514.215755778001
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2734.6651783330017
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  1630.1123057056466
-mean projection time of each subspace:  0.5132487347396091
-Max projection time of each subspace:  1.1989882789930562
-Minimum projection time of each subspace:  0.03993384000204969
+Running time of Alberto Algo with 100 iterations:  538.0521470700041
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  3384.838900791001
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  1891.6146221991949
+mean projection time of each subspace:  0.636885467080574
+Max projection time of each subspace:  1.6740458790009143
+Minimum projection time of each subspace:  0.050469809997593984
 240
-Projection time of total space:  6.528100307994464
-Projection time of alternating projection:  33.78607979682309
-Projection time of inter projection:  0.0015775416048476952
+Projection time of total space:  6.771883458000957
+Projection time of alternating projection:  40.226884506732226
+Projection time of inter projection:  0.0022189344195749634
 vertex connectivity: 6
 edge connectivity: 6
 degree: 25
@@ -6351,9 +6351,9 @@ norm 1.940294703218076e-07
 norm 1.5522357625739675e-07
 norm 1.2417886100584076e-07
 norm 9.934308880466484e-08
-Running time of Alberto Algo with 100 iterations:  513.1684305990057
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  3052.487788351995
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  585.917236318739
+Running time of Alberto Algo with 100 iterations:  519.916646136
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  3860.1147102940013
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  727.2817108438176
 norm 34.94868473958802
 norm 11.141189525747587
 norm 6.958890655102636
@@ -6434,9 +6434,9 @@ norm 1.940294703217189e-07
 norm 1.552235762572831e-07
 norm 1.2417886100594648e-07
 norm 9.934308880459536e-08
-Running time of Alberto Algo with 100 iterations:  513.3092799489968
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  3065.8779218069976
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  1175.2180972186616
+Running time of Alberto Algo with 100 iterations:  520.5446226960048
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  3851.2579006450105
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  1453.259907059386
 norm 34.91657278138684
 norm 11.14462379611019
 norm 6.960929566831706
@@ -6517,16 +6517,16 @@ norm 1.9402947032165436e-07
 norm 1.5522357625737134e-07
 norm 1.2417886100599492e-07
 norm 9.934308880480425e-08
-Running time of Alberto Algo with 100 iterations:  513.5699141489895
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  3065.2145591659937
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  1759.5125985359628
-mean projection time of each subspace:  0.5682847735084943
-Max projection time of each subspace:  1.6283476289972896
-Minimum projection time of each subspace:  0.04674325999803841
+Running time of Alberto Algo with 100 iterations:  517.9920129569946
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  3819.6234280880017
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  2175.0709695441183
+mean projection time of each subspace:  0.7349025869605248
+Max projection time of each subspace:  1.843641829007538
+Minimum projection time of each subspace:  0.08031576000212226
 240
-Projection time of total space:  6.5436169780005
-Projection time of alternating projection:  37.791051733316586
-Projection time of inter projection:  0.0015594436946121876
+Projection time of total space:  6.568060277000768
+Projection time of alternating projection:  47.45138025163326
+Projection time of inter projection:  0.0022938072343918385
 vertex connectivity: 7
 edge connectivity: 7
 degree: 26
@@ -6817,9 +6817,9 @@ norm 1.9403042885403589e-07
 norm 1.5522434308314268e-07
 norm 1.2417947446673068e-07
 norm 9.93435795732875e-08
-Running time of Alberto Algo with 100 iterations:  509.61080347999814
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  3403.889566927013
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  634.1353992459626
+Running time of Alberto Algo with 100 iterations:  521.5050432860007
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  4280.551469329002
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  776.9349321972986
 norm 34.65855659382893
 norm 11.211552993977783
 norm 7.030991825095742
@@ -6900,9 +6900,9 @@ norm 1.9403042885393459e-07
 norm 1.552243430831266e-07
 norm 1.2417947446661395e-07
 norm 9.934357957307311e-08
-Running time of Alberto Algo with 100 iterations:  518.130734706996
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  3364.393965021998
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  1257.419337610816
+Running time of Alberto Algo with 100 iterations:  521.7082295950095
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  4290.405827857001
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  1556.843035763275
 norm 34.53131454678238
 norm 11.210592456252582
 norm 7.030448165573368
@@ -6983,13 +6983,13 @@ norm 1.940304288540392e-07
 norm 1.5522434308339808e-07
 norm 1.2417947446662986e-07
 norm 9.93435795731657e-08
-Running time of Alberto Algo with 100 iterations:  523.240770474993
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  3368.981226628006
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  1883.8140850847558
-mean projection time of each subspace:  0.6270897850695474
-Max projection time of each subspace:  1.5846720390109112
-Minimum projection time of each subspace:  0.05441158999747131
+Running time of Alberto Algo with 100 iterations:  537.6064477600012
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  4271.824980913996
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  2332.095589433404
+mean projection time of each subspace:  0.8030446990797645
+Max projection time of each subspace:  1.8217432689998532
+Minimum projection time of each subspace:  0.01828208999359049
 240
-Projection time of total space:  6.644097986994893
-Projection time of alternating projection:  41.71578117529652
-Projection time of inter projection:  0.001874760524997365
+Projection time of total space:  6.783739356993465
+Projection time of alternating projection:  52.8494766075312
+Projection time of inter projection:  0.0022774673986019674

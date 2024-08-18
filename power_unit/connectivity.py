@@ -189,6 +189,7 @@ if __name__ == "__main__":
         degree_values.append(degree)
         print('vertex connectivity:',v_con)
         print('edge connectivity:',e_con)
+        print('degree:',degree)
         # add_random_edge(graph)
         # print("Initial number of edges:", graph.number_of_edges())
         # print("Is the graph connected?", nx.is_connected(graph))
@@ -334,7 +335,7 @@ if __name__ == "__main__":
             print(f"Running time of distributed Algo with {max_iter} outer iter and {dis_iter} alternating projection: ",end_dist-start_dist)
             print(f"Running time of Worst case distributed Algo with {max_iter} outer iter and {dis_iter} alternating projection: ",sum(F.time_inter)+sum(F.time_worst)+sum(F.time_dis_lqr)-sum(F.time_alter_proj))
             dis_lqr_exp_time.append(end_dist-start_dist)
-            dis_lqr_worst_time.append(sum(F.time_inter)+sum(F.time_worst)+sum(F.time_dis_lqr-F.time_alter_proj))
+            dis_lqr_worst_time.append(sum(F.time_inter)+sum(F.time_worst)+sum(F.time_dis_lqr)-sum(F.time_alter_proj))
 
         lqr_mean.append(statistics.mean(lqr_exp_time))
         lqr_var.append(statistics.variance(lqr_exp_time))
@@ -359,13 +360,13 @@ if __name__ == "__main__":
         mean_lqr.append(statistics.mean(F.time_lqr))
         mean_dis_lqr.append(statistics.mean(F.time_dis_lqr))
         # mean_thread.append(statistics.mean(F.time_thread))
-        print(len(F.time_thread))
+        # print(len(F.time_thread))
         mean_split.append(statistics.mean(F.time_split))
         mean_split2.append(statistics.mean(F.time_split2))
         mean_inter.append(statistics.mean(F.time_inter))
         print('Projection time of inter projection: ',statistics.mean(F.time_inter))
         # mean_proj2.append(statistics.mean(F.time_proj2))
-        print('Projection onto Cartisian of subspaces time: ',statistics.mean(F.time_proj2))
+        # print('Projection onto Cartisian of subspaces time: ',statistics.mean(F.time_proj2))
         if graph.number_of_edges() == v*(v-1)//2:
             break
         add_random_edges2(graph,50)
@@ -376,9 +377,7 @@ if __name__ == "__main__":
         assert nx.is_connected(graph), "The graph must remain connected"
         
     data = {'max_deg':degree_values,'edges': e_values, 'node_connectivity': v_con_values, 'edge_connectivity':e_con_values,'centralized_lqr_mean': lqr_mean, 'centralized_lqr_var': lqr_var, 
-            'distributed_lqr_mean':dis_lqr_mean,'distributed_lqr_var':dis_lqr_var, 'distributed_worst_mean':dis_worst_mean,'distributed_worst_var':dis_worst_var, 
-        'average total proj':mean_total, 'average alternation proj':mean_alter, 'mean split':mean_split, 'mean split2':mean_split2, 
-        'mean_inter': mean_inter, 'mean_proj2':mean_proj2,'mean_sub':mean_sub, 'var_sub':var_sub,'max_sub':max_sub}
+            'distributed_lqr_mean':dis_lqr_mean,'distributed_lqr_var':dis_lqr_var, 'distributed_worst_mean':dis_worst_mean,'distributed_worst_var':dis_worst_var}
     df = pd.DataFrame(data)
     df.to_excel('results/degree-100units.xlsx', index=False)
 
