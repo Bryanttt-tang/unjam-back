@@ -178,7 +178,7 @@ if __name__ == "__main__":
 
     graph = create_connected_graph(v)   
     # Incrementally add edges until the graph becomes fully connected
-    while graph.number_of_edges() <= 800:
+    while graph.number_of_edges() <= 700:
         e=2*len(graph.edges()) # directed graph  
         v_con=nx.node_connectivity(graph)
         e_con=nx.edge_connectivity(graph)
@@ -315,12 +315,13 @@ if __name__ == "__main__":
         dis_iter=5 
         alpha=0.1
         Tsim=100    
-        F=functions(T,Tini, N, v, e, m, 1, p, M, h_total, h, connected_components, graph, alpha, max_iter, dis_iter)
+
         lqr_exp_time=[]
         dis_lqr_exp_time=[]
         dis_lqr_worst_time=[]
         
         for exp in range(1,4):
+            F=functions(T,Tini, N, v, e, m, 1, p, M, h_total, h, connected_components, graph, alpha, max_iter, dis_iter)
             wini = wData[:, -(Tini+exp):-exp].reshape(-1, 1, order='F')
             wini_dis = wData_dis[:, -(Tini+exp):-exp].reshape(-1, 1, order='F')
             start_alberto = time.process_time()

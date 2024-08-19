@@ -293,9 +293,9 @@ norm 1.940170280085111e-07
 norm 1.5521362240678626e-07
 norm 1.24170897925454e-07
 norm 9.933671834034134e-08
-Running time of Alberto Algo with 100 iterations:  533.465700531
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  237.57581566099998
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  74.37150547400074
+Running time of Alberto Algo with 100 iterations:  529.955928752
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  199.94023818699998
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  68.60784500999694
 norm 35.57335081801699
 norm 9.77731137761105
 norm 5.796841426797367
@@ -376,9 +376,9 @@ norm 1.9401702800852515e-07
 norm 1.5521362240680982e-07
 norm 1.2417089792542082e-07
 norm 9.933671834033955e-08
-Running time of Alberto Algo with 100 iterations:  533.1802033820001
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  233.02597828399985
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  150.25491062700303
+Running time of Alberto Algo with 100 iterations:  532.596187734
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  199.27496403700002
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  69.57534862399939
 norm 35.785510088377926
 norm 9.77705742380593
 norm 5.796668487860719
@@ -459,16 +459,16 @@ norm 1.9401702800853574e-07
 norm 1.5521362240679245e-07
 norm 1.2417089792549213e-07
 norm 9.933671834037177e-08
-Running time of Alberto Algo with 100 iterations:  533.4003008509999
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  235.23671718100013
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  228.80369425199524
-mean projection time of each subspace:  0.03194724180000321
-Max projection time of each subspace:  0.18847185000004174
-Minimum projection time of each subspace:  0.002512119999664719
-240
-Projection time of total space:  6.755469157000107
-Projection time of alternating projection:  2.352577624019999
-Projection time of inter projection:  0.0016493961520007664
+Running time of Alberto Algo with 100 iterations:  530.702897483
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  198.9396126449999
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  68.77611051500844
+mean projection time of each subspace:  0.026765531600008215
+Max projection time of each subspace:  0.16065613000000667
+Minimum projection time of each subspace:  0.0014353100000334962
+80
+Projection time of total space:  6.665015777999997
+Projection time of alternating projection:  1.989218722649996
+Projection time of inter projection:  0.001377948018011466
 vertex connectivity: 2
 edge connectivity: 2
 degree: 6
@@ -759,9 +759,9 @@ norm 1.940179866215836e-07
 norm 1.552143892972671e-07
 norm 1.2417151143772557e-07
 norm 9.933720915028519e-08
-Running time of Alberto Algo with 100 iterations:  535.8092417600001
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  390.4005662630002
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  122.47218543702047
+Running time of Alberto Algo with 100 iterations:  514.7351243980002
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  329.01873735699974
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  111.47907364100729
 norm 35.60232564072064
 norm 9.879164936000135
 norm 5.879593439003594
@@ -842,9 +842,9 @@ norm 1.9401798662150004e-07
 norm 1.5521438929723242e-07
 norm 1.2417151143769346e-07
 norm 9.933720915025139e-08
-Running time of Alberto Algo with 100 iterations:  535.1901848510001
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  390.8173284839995
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  244.46558888304753
+Running time of Alberto Algo with 100 iterations:  524.3388802949999
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  321.9714170100001
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  108.18069842399564
 norm 35.02269300952094
 norm 9.874703456345198
 norm 5.876938868199685
@@ -925,16 +925,16 @@ norm 1.940179866214934e-07
 norm 1.5521438929718126e-07
 norm 1.241715114376916e-07
 norm 9.933720915020929e-08
-Running time of Alberto Algo with 100 iterations:  534.0266302310001
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  389.7045433730009
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  367.85297825904854
-mean projection time of each subspace:  0.05405067909999161
-Max projection time of each subspace:  0.33180580000043847
-Minimum projection time of each subspace:  0.0025286900008723023
-240
-Projection time of total space:  6.765994017000139
-Projection time of alternating projection:  3.902768093733348
-Projection time of inter projection:  0.001711157432010926
+Running time of Alberto Algo with 100 iterations:  526.2196228139996
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  321.9162667600003
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  108.08065069199438
+mean projection time of each subspace:  0.0434171182999944
+Max projection time of each subspace:  0.20136128000012832
+Minimum projection time of each subspace:  0.002487970000402129
+80
+Projection time of total space:  6.607400377999511
+Projection time of alternating projection:  3.2188835903000563
+Projection time of inter projection:  0.001443050680018132
 vertex connectivity: 2
 edge connectivity: 2
 degree: 8
@@ -1225,9 +1225,9 @@ norm 1.9401894522844796e-07
 norm 1.5521515618287962e-07
 norm 1.24172124946062e-07
 norm 9.933769995699428e-08
-Running time of Alberto Algo with 100 iterations:  538.6913920999996
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  571.5704971059995
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  161.60278583500985
+Running time of Alberto Algo with 100 iterations:  516.0042635270001
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  468.6281162160003
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  140.6705764289909
 norm 36.0283642498322
 norm 10.010981664351082
 norm 5.980353712520032
@@ -1308,9 +1308,9 @@ norm 1.940189452283835e-07
 norm 1.5521515618273205e-07
 norm 1.241721249461308e-07
 norm 9.933769995682368e-08
-Running time of Alberto Algo with 100 iterations:  537.5465863890004
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  575.3783423479999
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  322.4822533840288
+Running time of Alberto Algo with 100 iterations:  527.3687595840001
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  474.04908653500024
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  141.74370243400244
 norm 36.10464740539585
 norm 10.011032333518408
 norm 5.980458827948272
@@ -1391,16 +1391,16 @@ norm 1.9401894522849775e-07
 norm 1.5521515618276159e-07
 norm 1.2417212494631093e-07
 norm 9.933769995692469e-08
-Running time of Alberto Algo with 100 iterations:  538.3372822800002
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  574.7405061980007
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  482.11158991302636
-mean projection time of each subspace:  0.08350152669998351
-Max projection time of each subspace:  0.29147760000159906
-Minimum projection time of each subspace:  0.00254080999911821
-240
-Projection time of total space:  6.794027177999851
-Projection time of alternating projection:  5.738639030806662
-Projection time of inter projection:  0.001751680839983237
+Running time of Alberto Algo with 100 iterations:  525.021551324
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  470.4644075160004
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  140.8239178930162
+mean projection time of each subspace:  0.07494724430003771
+Max projection time of each subspace:  0.354223280000042
+Minimum projection time of each subspace:  0.0025809100006881636
+80
+Projection time of total space:  6.603911018000872
+Projection time of alternating projection:  4.704391320159984
+Projection time of inter projection:  0.001337739539992981
 vertex connectivity: 2
 edge connectivity: 2
 degree: 10
@@ -1691,9 +1691,9 @@ norm 1.9401990382906736e-07
 norm 1.5521592306326147e-07
 norm 1.2417273845054787e-07
 norm 9.933819076047931e-08
-Running time of Alberto Algo with 100 iterations:  529.4798442440006
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  799.841889921001
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  206.14488341000833
+Running time of Alberto Algo with 100 iterations:  529.6988414129992
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  677.2127391869999
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  188.1911891499676
 norm 36.13811491789974
 norm 10.134744222264901
 norm 6.077871536542363
@@ -1774,9 +1774,9 @@ norm 1.9401990382892437e-07
 norm 1.5521592306313317e-07
 norm 1.2417273845062673e-07
 norm 9.93381907605238e-08
-Running time of Alberto Algo with 100 iterations:  535.2152897199994
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  795.3224066290004
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  411.83015144397905
+Running time of Alberto Algo with 100 iterations:  528.5300529239994
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  676.3302028760008
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  189.2881535610104
 norm 35.590865503056655
 norm 10.132190276027412
 norm 6.076396862076386
@@ -1857,16 +1857,16 @@ norm 1.9401990382890039e-07
 norm 1.552159230631675e-07
 norm 1.2417273845057432e-07
 norm 9.933819076036476e-08
-Running time of Alberto Algo with 100 iterations:  533.297689731
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  801.2404439779984
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  618.4904048609715
-mean projection time of each subspace:  0.11605237279998619
-Max projection time of each subspace:  0.40426155000022845
-Minimum projection time of each subspace:  0.0025638699989940505
-240
-Projection time of total space:  6.760611128000164
-Projection time of alternating projection:  7.98768634439335
-Projection time of inter projection:  0.0018077622593421741
+Running time of Alberto Algo with 100 iterations:  527.5743886429991
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  682.9763331639988
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  191.65861110098558
+mean projection time of each subspace:  0.10881218470005478
+Max projection time of each subspace:  0.3352447800007212
+Minimum projection time of each subspace:  0.0024924600002123043
+80
+Projection time of total space:  6.630578697000601
+Projection time of alternating projection:  6.829441601340022
+Projection time of inter projection:  0.0016759936799680872
 vertex connectivity: 2
 edge connectivity: 2
 degree: 11
@@ -2157,9 +2157,9 @@ norm 1.940208624240049e-07
 norm 1.552166899390684e-07
 norm 1.2417335195115777e-07
 norm 9.933868156101864e-08
-Running time of Alberto Algo with 100 iterations:  532.9220548310004
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1012.4038689549998
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  226.2432572880207
+Running time of Alberto Algo with 100 iterations:  531.206303555
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  866.3463668259992
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  212.34526693608677
 norm 35.67980553165734
 norm 10.242140001375986
 norm 6.166498318839136
@@ -2240,9 +2240,9 @@ norm 1.9402086242391105e-07
 norm 1.5521668993902286e-07
 norm 1.2417335195119244e-07
 norm 9.933868156108625e-08
-Running time of Alberto Algo with 100 iterations:  535.690084419999
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1010.7479598099999
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  455.88870585608856
+Running time of Alberto Algo with 100 iterations:  527.7871071229983
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  893.3291084559987
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  214.4367644120066
 norm 35.02454742538965
 norm 10.23915590870978
 norm 6.164620231394936
@@ -2323,16 +2323,16 @@ norm 1.9402086242388288e-07
 norm 1.5521668993906315e-07
 norm 1.2417335195125875e-07
 norm 9.933868156101985e-08
-Running time of Alberto Algo with 100 iterations:  537.4198781699997
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1006.1071492080009
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  685.5192410621548
-mean projection time of each subspace:  0.15582122111980426
-Max projection time of each subspace:  0.4929889790000743
-Minimum projection time of each subspace:  0.002559010001277784
-240
-Projection time of total space:  6.787605297000482
-Projection time of alternating projection:  10.409411327436334
-Projection time of inter projection:  0.001873049807541862
+Running time of Alberto Algo with 100 iterations:  524.2682296739986
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  902.6753908930004
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  211.9865569919857
+mean projection time of each subspace:  0.13948817853995935
+Max projection time of each subspace:  0.39112899899919285
+Minimum projection time of each subspace:  0.008569790001274669
+80
+Projection time of total space:  6.5955474880011025
+Projection time of alternating projection:  9.305554800958694
+Projection time of inter projection:  0.0015957708247631521
 vertex connectivity: 2
 edge connectivity: 2
 degree: 12
@@ -2623,9 +2623,9 @@ norm 1.9402182101219945e-07
 norm 1.552174568096942e-07
 norm 1.2417396544781988e-07
 norm 9.933917235830267e-08
-Running time of Alberto Algo with 100 iterations:  529.2638348530018
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1260.0659132120018
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  260.34291157197003
+Running time of Alberto Algo with 100 iterations:  515.119807007999
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1108.3233567380012
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  246.57452981897222
 norm 35.012456459681765
 norm 10.354026525822032
 norm 6.258605369945489
@@ -2706,9 +2706,9 @@ norm 1.9402182101205304e-07
 norm 1.5521745680982408e-07
 norm 1.241739654479147e-07
 norm 9.933917235822399e-08
-Running time of Alberto Algo with 100 iterations:  534.0702198809995
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1264.2411100440004
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  521.620309420985
+Running time of Alberto Algo with 100 iterations:  530.2356214620013
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1124.3701268900004
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  250.0672029250636
 norm 35.31699191364372
 norm 10.35573990909485
 norm 6.259580529822632
@@ -2789,16 +2789,16 @@ norm 1.9402182101222629e-07
 norm 1.5521745680976743e-07
 norm 1.241739654478106e-07
 norm 9.933917235829254e-08
-Running time of Alberto Algo with 100 iterations:  535.1561164099985
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1257.5624204410014
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  782.5320063750369
-mean projection time of each subspace:  0.17685475051999675
-Max projection time of each subspace:  0.5388530800009903
-Minimum projection time of each subspace:  0.0025779099996725563
-240
-Projection time of total space:  6.781048318000103
-Projection time of alternating projection:  13.269081982375486
-Projection time of inter projection:  0.0018597196701816037
+Running time of Alberto Algo with 100 iterations:  528.1563837329995
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1089.805334124001
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  241.3246852630109
+mean projection time of each subspace:  0.16950648551992345
+Max projection time of each subspace:  0.5729790899968066
+Minimum projection time of each subspace:  0.00631032000092091
+80
+Projection time of total space:  6.628873117999319
+Projection time of alternating projection:  11.471230346357832
+Projection time of inter projection:  0.001422721431644229
 vertex connectivity: 2
 edge connectivity: 2
 degree: 14
@@ -3089,9 +3089,9 @@ norm 1.9402277959397445e-07
 norm 1.5521822367521056e-07
 norm 1.2417457894016506e-07
 norm 9.933966315211593e-08
-Running time of Alberto Algo with 100 iterations:  530.6384060429991
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1559.2179266330022
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  332.46385754899165
+Running time of Alberto Algo with 100 iterations:  517.675443406999
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1363.3380104839998
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  307.81876404097056
 norm 36.03204110708346
 norm 10.476172137247852
 norm 6.358219919705585
@@ -3172,9 +3172,9 @@ norm 1.940227795940852e-07
 norm 1.5521822367521668e-07
 norm 1.2417457894012832e-07
 norm 9.933966315237068e-08
-Running time of Alberto Algo with 100 iterations:  537.8173176900018
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1561.609031349999
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  664.6774016259915
+Running time of Alberto Algo with 100 iterations:  515.3969985289987
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1384.2487897200008
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  305.604417069957
 norm 35.24871401330907
 norm 10.470455540124815
 norm 6.354863181480819
@@ -3255,16 +3255,16 @@ norm 1.9402277959407903e-07
 norm 1.5521822367522406e-07
 norm 1.2417457894027904e-07
 norm 9.933966315219897e-08
-Running time of Alberto Algo with 100 iterations:  534.813244429999
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1559.7701038480009
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  994.5911530349513
-mean projection time of each subspace:  0.2464006021201203
-Max projection time of each subspace:  0.7962696899994626
-Minimum projection time of each subspace:  0.016332470000634203
-240
-Projection time of total space:  6.806328987000597
-Projection time of alternating projection:  16.42259962038944
-Projection time of inter projection:  0.0019394392063233617
+Running time of Alberto Algo with 100 iterations:  516.3305974180003
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1348.285442518998
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  303.3272576630043
+mean projection time of each subspace:  0.22077905702000863
+Max projection time of each subspace:  0.6045447399992554
+Minimum projection time of each subspace:  0.0059520100003283005
+80
+Projection time of total space:  6.474800787000277
+Projection time of alternating projection:  14.191987473673745
+Projection time of inter projection:  0.001382240399987878
 vertex connectivity: 2
 edge connectivity: 2
 degree: 15
@@ -3555,9 +3555,9 @@ norm 1.940237381701685e-07
 norm 1.5521899053597389e-07
 norm 1.241751924288073e-07
 norm 9.934015394305115e-08
-Running time of Alberto Algo with 100 iterations:  531.7595301120018
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1839.9283089229975
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  366.4371596610072
+Running time of Alberto Algo with 100 iterations:  516.0400198269999
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1587.630177320003
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  334.5299654559676
 norm 35.55248211359117
 norm 10.573267928973882
 norm 6.443354609403543
@@ -3638,9 +3638,9 @@ norm 1.9402373817018567e-07
 norm 1.5521899053599366e-07
 norm 1.2417519242891744e-07
 norm 9.934015394308811e-08
-Running time of Alberto Algo with 100 iterations:  537.1434248600017
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1837.3220652700038
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  732.9057265540905
+Running time of Alberto Algo with 100 iterations:  514.9079330979985
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1571.1261189430006
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  332.19978944001923
 norm 35.12766246037205
 norm 10.565110133439617
 norm 6.438514039814199
@@ -3721,16 +3721,16 @@ norm 1.9402373817011057e-07
 norm 1.5521899053614808e-07
 norm 1.2417519242886225e-07
 norm 9.93401539431066e-08
-Running time of Alberto Algo with 100 iterations:  521.8701570549965
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1832.444017967995
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  1101.906499783021
-mean projection time of each subspace:  0.3143585112698202
-Max projection time of each subspace:  0.7839585999972769
-Minimum projection time of each subspace:  0.025283819995820522
-240
-Projection time of total space:  6.785740067000006
-Projection time of alternating projection:  19.96201021805061
-Projection time of inter projection:  0.0019765653905857977
+Running time of Alberto Algo with 100 iterations:  531.4114095320001
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1597.8334894260006
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  336.1747591871281
+mean projection time of each subspace:  0.264516853950081
+Max projection time of each subspace:  0.6201685900014127
+Minimum projection time of each subspace:  0.0026310800021747127
+80
+Projection time of total space:  6.678529167998931
+Projection time of alternating projection:  17.367147864521584
+Projection time of inter projection:  0.0015254038695512344
 vertex connectivity: 3
 edge connectivity: 3
 degree: 16
@@ -4021,9 +4021,9 @@ norm 1.940246967394443e-07
 norm 1.5521975739162918e-07
 norm 1.2417580591323712e-07
 norm 9.934064473068444e-08
-Running time of Alberto Algo with 100 iterations:  521.4513991159984
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1925.5211560409953
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  377.65390733508684
+Running time of Alberto Algo with 100 iterations:  516.5964582769993
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1633.0076758799987
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  334.12447757201153
 norm 34.52448125507261
 norm 10.667502486961459
 norm 6.5276523711710075
@@ -4104,9 +4104,9 @@ norm 1.940246967394653e-07
 norm 1.552197573915426e-07
 norm 1.241758059133615e-07
 norm 9.934064473084907e-08
-Running time of Alberto Algo with 100 iterations:  539.177005698999
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1923.6924249440053
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  752.5332287391138
+Running time of Alberto Algo with 100 iterations:  534.1755546509958
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1511.1566966269966
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  315.62242798591615
 norm 34.622203983001796
 norm 10.66535587023564
 norm 6.526279716049094
@@ -4187,16 +4187,16 @@ norm 1.940246967395326e-07
 norm 1.5521975739167238e-07
 norm 1.241758059132107e-07
 norm 9.934064473080571e-08
-Running time of Alberto Algo with 100 iterations:  536.8043911600034
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1928.5273002600006
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  1129.0058058081122
-mean projection time of each subspace:  0.3585815497400472
-Max projection time of each subspace:  0.7627270800003316
-Minimum projection time of each subspace:  0.02312697000161279
-240
-Projection time of total space:  6.813334748003399
-Projection time of alternating projection:  23.775966770431854
-Projection time of inter projection:  0.0019976932428601877
+Running time of Alberto Algo with 100 iterations:  528.7925305530007
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1702.1096547170018
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  342.02250433377776
+mean projection time of each subspace:  0.32191981504016437
+Max projection time of each subspace:  0.7943628599969088
+Minimum projection time of each subspace:  0.06516394000209402
+80
+Projection time of total space:  6.703609907999635
+Projection time of alternating projection:  21.01299218490147
+Projection time of inter projection:  0.0014790205429753656
 vertex connectivity: 3
 edge connectivity: 3
 degree: 18
@@ -4487,9 +4487,9 @@ norm 1.940256553024486e-07
 norm 1.5522052424196727e-07
 norm 1.241764193936957e-07
 norm 9.934113551476524e-08
-Running time of Alberto Algo with 100 iterations:  522.3519552650032
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2274.1954707730038
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  455.018694706072
+Running time of Alberto Algo with 100 iterations:  528.7123458830029
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1974.562496355
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  407.97209968484094
 norm 34.337755219211644
 norm 10.76651173027909
 norm 6.615876436123277
@@ -4570,9 +4570,9 @@ norm 1.940256553024095e-07
 norm 1.5522052424199226e-07
 norm 1.241764193936148e-07
 norm 9.934113551465948e-08
-Running time of Alberto Algo with 100 iterations:  522.8255101850009
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2266.077452598998
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  908.1957398980667
+Running time of Alberto Algo with 100 iterations:  517.5065002170013
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1960.5015062599996
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  408.04759675810055
 norm 34.37229136766594
 norm 10.768690093471593
 norm 6.617271457129139
@@ -4653,16 +4653,16 @@ norm 1.9402565530251828e-07
 norm 1.5522052424195436e-07
 norm 1.241764193935606e-07
 norm 9.934113551484975e-08
-Running time of Alberto Algo with 100 iterations:  538.2992007699941
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2260.606721960001
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  1361.2763102887911
-mean projection time of each subspace:  0.4223353740397579
-Max projection time of each subspace:  1.1241248090009321
-Minimum projection time of each subspace:  0.03131852999649709
-240
-Projection time of total space:  6.82869265699992
-Projection time of alternating projection:  27.986172208691304
-Projection time of inter projection:  0.002058499678196874
+Running time of Alberto Algo with 100 iterations:  527.7526390929997
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1916.9919467460059
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  401.8490777907282
+mean projection time of each subspace:  0.37872434586010056
+Max projection time of each subspace:  0.9849582189999637
+Minimum projection time of each subspace:  0.0053934099996695295
+80
+Projection time of total space:  6.637058316999173
+Projection time of alternating projection:  23.66570676069162
+Projection time of inter projection:  0.0016699512343620881
 vertex connectivity: 3
 edge connectivity: 3
 degree: 20
@@ -4953,9 +4953,9 @@ norm 1.9402661385958152e-07
 norm 1.552212910874884e-07
 norm 1.2417703287000522e-07
 norm 9.934162629603253e-08
-Running time of Alberto Algo with 100 iterations:  522.0784751549945
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2630.0147593510046
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  525.5444915611733
+Running time of Alberto Algo with 100 iterations:  515.9701642569999
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2279.8032043810017
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  469.6887243079691
 norm 34.43245224628358
 norm 10.858444343343391
 norm 6.699969044861945
@@ -5036,9 +5036,9 @@ norm 1.9402661385933398e-07
 norm 1.5522129108745312e-07
 norm 1.2417703287002227e-07
 norm 9.934162629608265e-08
-Running time of Alberto Algo with 100 iterations:  522.0330454759969
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2627.9297593070005
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  1050.027426774017
+Running time of Alberto Algo with 100 iterations:  524.5334148040056
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2312.738898399002
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  472.4930446540311
 norm 35.03865293821172
 norm 10.86154005946307
 norm 6.70172668046758
@@ -5119,16 +5119,16 @@ norm 1.9402661385943178e-07
 norm 1.5522129108755677e-07
 norm 1.2417703286978986e-07
 norm 9.934162629602824e-08
-Running time of Alberto Algo with 100 iterations:  519.4377578560016
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2626.5048499990007
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  1575.8488766411392
-mean projection time of each subspace:  0.4926603300901479
-Max projection time of each subspace:  1.2442647599964403
-Minimum projection time of each subspace:  0.023061520005285274
-240
-Projection time of total space:  6.608939767000265
-Projection time of alternating projection:  32.445409849864475
-Projection time of inter projection:  0.002081421358095733
+Running time of Alberto Algo with 100 iterations:  530.0637761819962
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2277.541261498998
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  464.5595314389575
+mean projection time of each subspace:  0.3288850407502468
+Max projection time of each subspace:  0.8597393989984994
+Minimum projection time of each subspace:  0.013044490005995613
+80
+Projection time of total space:  6.667580717999954
+Projection time of alternating projection:  28.116945616407502
+Projection time of inter projection:  0.0015280393823941044
 vertex connectivity: 4
 edge connectivity: 4
 degree: 23
@@ -5419,9 +5419,9 @@ norm 1.940275532388052e-07
 norm 1.5522204259088384e-07
 norm 1.241776340727927e-07
 norm 9.934210725813149e-08
-Running time of Alberto Algo with 100 iterations:  518.6809512370019
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  3006.929240047997
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  604.6030873538839
+Running time of Alberto Algo with 100 iterations:  517.9262190869995
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2621.1623415159993
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  540.2748098229931
 norm 34.60011515396578
 norm 10.95347755487746
 norm 6.785990261674492
@@ -5502,9 +5502,9 @@ norm 1.940275532388439e-07
 norm 1.5522204259108045e-07
 norm 1.241776340728503e-07
 norm 9.934210725805331e-08
-Running time of Alberto Algo with 100 iterations:  524.8700127640041
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  3004.095184881
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  1210.1978794206516
+Running time of Alberto Algo with 100 iterations:  516.249556558003
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2508.0521833099992
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  515.3079912330941
 norm 33.908410242576146
 norm 10.953374164906226
 norm 6.786068364742488
@@ -5585,16 +5585,16 @@ norm 1.9402755323872945e-07
 norm 1.5522204259104946e-07
 norm 1.241776340727896e-07
 norm 9.934210725830161e-08
-Running time of Alberto Algo with 100 iterations:  521.9957644749957
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2996.524355939997
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  1816.0608774995053
-mean projection time of each subspace:  0.5653096134598309
-Max projection time of each subspace:  1.3646375789976446
-Minimum projection time of each subspace:  0.09435116000531707
-240
-Projection time of total space:  6.611157806997653
-Projection time of alternating projection:  37.0669998511073
-Projection time of inter projection:  0.0021609619889459133
+Running time of Alberto Algo with 100 iterations:  515.4771246480013
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2605.0273264310017
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  530.376846754014
+mean projection time of each subspace:  0.48193803713991656
+Max projection time of each subspace:  1.3397396090003895
+Minimum projection time of each subspace:  0.03435783000168158
+80
+Projection time of total space:  6.467439307998575
+Projection time of alternating projection:  32.15985316371631
+Projection time of inter projection:  0.0016911174542016212
 vertex connectivity: 4
 edge connectivity: 4
 degree: 24
@@ -5885,9 +5885,9 @@ norm 1.940285117833611e-07
 norm 1.5522280942664344e-07
 norm 1.2417824754135685e-07
 norm 9.934259803315068e-08
-Running time of Alberto Algo with 100 iterations:  520.7216235060041
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  3408.783051848004
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  656.3732053213898
+Running time of Alberto Algo with 100 iterations:  532.7855596109948
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2986.648302479007
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  585.6052342667317
 norm 34.90665781923814
 norm 11.040933340053646
 norm 6.868343348122283
@@ -5968,9 +5968,9 @@ norm 1.940285117832811e-07
 norm 1.5522280942671345e-07
 norm 1.241782475412513e-07
 norm 9.934259803319881e-08
-Running time of Alberto Algo with 100 iterations:  520.3887966659968
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2981.813027917
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  1236.621526910385
+Running time of Alberto Algo with 100 iterations:  526.2973995939974
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2911.2577012809925
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  574.0130130241596
 norm 34.261682839319164
 norm 11.0340550893131
 norm 6.864210147771561
@@ -6051,945 +6051,13 @@ norm 1.940285117832696e-07
 norm 1.5522280942658367e-07
 norm 1.241782475414649e-07
 norm 9.934259803312963e-08
-Running time of Alberto Algo with 100 iterations:  538.0521470700041
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  3384.838900791001
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  1891.6146221991949
-mean projection time of each subspace:  0.636885467080574
-Max projection time of each subspace:  1.6740458790009143
-Minimum projection time of each subspace:  0.050469809997593984
-240
-Projection time of total space:  6.771883458000957
-Projection time of alternating projection:  40.226884506732226
-Projection time of inter projection:  0.0022189344195749634
-vertex connectivity: 6
-edge connectivity: 6
-degree: 25
-(600, 1)
-(5088, 1)
-Shape of Hankel (1600, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  1000
-Shape of Hankel (13568, 1093)
-The Hankel matrix does NOT span the restricted behavior: rank(H) = 1000 
- mL+n = 12968
-Shape of Hankel (152, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
-Shape of Hankel (160, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
-Shape of Hankel (128, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
-Shape of Hankel (136, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
-Shape of Hankel (160, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
-Shape of Hankel (192, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  186
-Shape of Hankel (136, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
-Shape of Hankel (112, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
-Shape of Hankel (152, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
-Shape of Hankel (128, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
-Shape of Hankel (96, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
-Shape of Hankel (120, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
-Shape of Hankel (176, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
-Shape of Hankel (152, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
-Shape of Hankel (136, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
-Shape of Hankel (128, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
-Shape of Hankel (104, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
-Shape of Hankel (104, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
-Shape of Hankel (136, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
-Shape of Hankel (120, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
-Shape of Hankel (128, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
-Shape of Hankel (128, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
-Shape of Hankel (104, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
-Shape of Hankel (152, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
-Shape of Hankel (136, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
-Shape of Hankel (160, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
-Shape of Hankel (136, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
-Shape of Hankel (120, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
-Shape of Hankel (136, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
-Shape of Hankel (160, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
-Shape of Hankel (152, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
-Shape of Hankel (152, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
-Shape of Hankel (152, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
-Shape of Hankel (120, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
-Shape of Hankel (152, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
-Shape of Hankel (176, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
-Shape of Hankel (64, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
-Shape of Hankel (80, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
-Shape of Hankel (160, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
-Shape of Hankel (120, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
-Shape of Hankel (168, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  162
-Shape of Hankel (152, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
-Shape of Hankel (120, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
-Shape of Hankel (120, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
-Shape of Hankel (128, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
-Shape of Hankel (168, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  162
-Shape of Hankel (88, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
-Shape of Hankel (144, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  138
-Shape of Hankel (144, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  138
-Shape of Hankel (152, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
-Shape of Hankel (200, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  194
-Shape of Hankel (168, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  162
-Shape of Hankel (152, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
-Shape of Hankel (160, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
-Shape of Hankel (160, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
-Shape of Hankel (136, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
-Shape of Hankel (120, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
-Shape of Hankel (128, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
-Shape of Hankel (128, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
-Shape of Hankel (136, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
-Shape of Hankel (136, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
-Shape of Hankel (104, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
-Shape of Hankel (128, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
-Shape of Hankel (136, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
-Shape of Hankel (136, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
-Shape of Hankel (88, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
-Shape of Hankel (120, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
-Shape of Hankel (136, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
-Shape of Hankel (152, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
-Shape of Hankel (104, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
-Shape of Hankel (152, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
-Shape of Hankel (96, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
-Shape of Hankel (72, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
-Shape of Hankel (152, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
-Shape of Hankel (96, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
-Shape of Hankel (104, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
-Shape of Hankel (176, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
-Shape of Hankel (144, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  138
-Shape of Hankel (120, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
-Shape of Hankel (136, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
-Shape of Hankel (112, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
-Shape of Hankel (216, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  210
-Shape of Hankel (136, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
-Shape of Hankel (136, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
-Shape of Hankel (104, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
-Shape of Hankel (160, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
-Shape of Hankel (136, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
-Shape of Hankel (136, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
-Shape of Hankel (168, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  162
-Shape of Hankel (112, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
-Shape of Hankel (112, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
-Shape of Hankel (152, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
-Shape of Hankel (144, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  138
-Shape of Hankel (168, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  162
-Shape of Hankel (112, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
-Shape of Hankel (120, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
-Shape of Hankel (184, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  178
-Shape of Hankel (104, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
-Shape of Hankel (144, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  138
-Shape of Hankel (136, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
-norm 34.44683080175854
-norm 11.138514510262564
-norm 6.957204494588308
-norm 4.832473565262115
-norm 3.119111049237309
-norm 2.0044761629667103
-norm 1.4534124487941313
-norm 1.0994979972019694
-norm 0.8218713000437284
-norm 0.629340711784178
-norm 0.4964611067756718
-norm 0.3936031422808337
-norm 0.3119663828754614
-norm 0.2483995661510391
-norm 0.19844079312673008
-norm 0.15857365664382894
-norm 0.12672767942402086
-norm 0.10133667563943798
-norm 0.0810579457856686
-norm 0.06483753898876224
-norm 0.05186434338418147
-norm 0.04148975694180273
-norm 0.03319130863099972
-norm 0.026552619629201996
-norm 0.021241856325606354
-norm 0.016993420944976374
-norm 0.01359471367520402
-norm 0.010875750694001471
-norm 0.008700590761808147
-norm 0.006960470210160202
-norm 0.005568375048674362
-norm 0.00445469910413843
-norm 0.003563758893482325
-norm 0.0028510070228807225
-norm 0.0022808055629587043
-norm 0.0018246444083817944
-norm 0.001459715511579721
-norm 0.00116777240557324
-norm 0.0009342179217238712
-norm 0.0007473743355461259
-norm 0.0005978994678626407
-norm 0.00047831957413201607
-norm 0.0003826556591723185
-norm 0.00030612452726008554
-norm 0.0002448996217865821
-norm 0.0001959196974220343
-norm 0.00015673575793126687
-norm 0.00012538860634180658
-norm 0.0001003108850726429
-norm 8.024870805776714e-05
-norm 6.419896644591762e-05
-norm 5.135917315660568e-05
-norm 4.108733852525383e-05
-norm 3.286987082018612e-05
-norm 2.629589665613561e-05
-norm 2.1036717324903297e-05
-norm 1.682937385992148e-05
-norm 1.346349908793634e-05
-norm 1.0770799270348608e-05
-norm 8.616639416278624e-06
-norm 6.8933115330228495e-06
-norm 5.514649226418156e-06
-norm 4.411719381134756e-06
-norm 3.529375504907645e-06
-norm 2.823500403925983e-06
-norm 2.258800323141024e-06
-norm 1.8070402585126626e-06
-norm 1.4456322068101535e-06
-norm 1.156505765448244e-06
-norm 9.252046123584835e-07
-norm 7.401636898867752e-07
-norm 5.921309519094259e-07
-norm 4.7370476152741187e-07
-norm 3.789638092220532e-07
-norm 3.0317104737751625e-07
-norm 2.425368379021674e-07
-norm 1.940294703218076e-07
-norm 1.5522357625739675e-07
-norm 1.2417886100584076e-07
-norm 9.934308880466484e-08
-Running time of Alberto Algo with 100 iterations:  519.916646136
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  3860.1147102940013
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  727.2817108438176
-norm 34.94868473958802
-norm 11.141189525747587
-norm 6.958890655102636
-norm 4.833653762411137
-norm 3.119760192557666
-norm 2.004773198798172
-norm 1.4535833498848647
-norm 1.099598229077974
-norm 0.8219143298206935
-norm 0.6293578224693649
-norm 0.4964705920000868
-norm 0.3936081034877781
-norm 0.31196829347702215
-norm 0.24840034063239963
-norm 0.19844122941348546
-norm 0.15857387025739547
-norm 0.12672775843986597
-norm 0.10133670978596293
-norm 0.08105796524661497
-norm 0.06483754795216912
-norm 0.05186434664238258
-norm 0.041489758460430876
-norm 0.033191309490261584
-norm 0.02655262000102104
-norm 0.021241856461337076
-norm 0.016993421013146003
-norm 0.0135947137127382
-norm 0.010875750709301602
-norm 0.00870059076755187
-norm 0.006960470213232602
-norm 0.005568375050293931
-norm 0.004454699104765199
-norm 0.003563758893729762
-norm 0.0028510070230190025
-norm 0.002280805563027701
-norm 0.0018246444084074657
-norm 0.0014597155115905643
-norm 0.0011677724055794273
-norm 0.0009342179217267742
-norm 0.0007473743355471822
-norm 0.0005978994678631224
-norm 0.00047831957413229005
-norm 0.00038265565917243894
-norm 0.0003061245272601297
-norm 0.0002448996217866034
-norm 0.000195919697422046
-norm 0.00015673575793127194
-norm 0.00012538860634180826
-norm 0.00010031088507264409
-norm 8.024870805776756e-05
-norm 6.419896644591778e-05
-norm 5.135917315660546e-05
-norm 4.108733852525402e-05
-norm 3.2869870820186156e-05
-norm 2.629589665613561e-05
-norm 2.1036717324903646e-05
-norm 1.6829373859921514e-05
-norm 1.34634990879363e-05
-norm 1.0770799270348633e-05
-norm 8.616639416278653e-06
-norm 6.8933115330228495e-06
-norm 5.514649226418117e-06
-norm 4.411719381134533e-06
-norm 3.529375504907576e-06
-norm 2.8235004039261636e-06
-norm 2.258800323140958e-06
-norm 1.8070402585126868e-06
-norm 1.4456322068102593e-06
-norm 1.1565057654481513e-06
-norm 9.25204612358496e-07
-norm 7.401636898868703e-07
-norm 5.921309519094405e-07
-norm 4.7370476152775206e-07
-norm 3.7896380922194084e-07
-norm 3.0317104737774596e-07
-norm 2.4253683790203425e-07
-norm 1.940294703217189e-07
-norm 1.552235762572831e-07
-norm 1.2417886100594648e-07
-norm 9.934308880459536e-08
-Running time of Alberto Algo with 100 iterations:  520.5446226960048
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  3851.2579006450105
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  1453.259907059386
-norm 34.91657278138684
-norm 11.14462379611019
-norm 6.960929566831706
-norm 4.834915823448894
-norm 3.1203942142460654
-norm 2.0050610961091127
-norm 1.4537446737687392
-norm 1.0996873203726933
-norm 0.8219517793780986
-norm 0.6293728465331623
-norm 0.4964787328098864
-norm 0.3936122650175295
-norm 0.31196989527544955
-norm 0.24840099131547455
-norm 0.19844159105470455
-norm 0.15857404615430237
-norm 0.12672782364246618
-norm 0.10133673792104884
-norm 0.08105798118462353
-norm 0.06483755528317746
-norm 0.051864349310401126
-norm 0.04148975970166903
-norm 0.03319131019099344
-norm 0.026552620304235434
-norm 0.021241856572058085
-norm 0.016993421068687387
-norm 0.013594713743298497
-norm 0.010875750721760566
-norm 0.008700590772228615
-norm 0.006960470215732839
-norm 0.005568375051611684
-norm 0.0044546991052751865
-norm 0.003563758893931068
-norm 0.0028510070231314794
-norm 0.0022808055630838225
-norm 0.0018246444084283465
-norm 0.001459715511599385
-norm 0.0011677724055844595
-norm 0.0009342179217291364
-norm 0.000747374335548042
-norm 0.0005978994678635144
-norm 0.0004783195741325134
-norm 0.0003826556591725376
-norm 0.00030612452726016534
-norm 0.0002448996217866211
-norm 0.0001959196974220561
-norm 0.0001567357579312761
-norm 0.0001253886063418097
-norm 0.0001003108850726446
-norm 8.024870805776793e-05
-norm 6.419896644591799e-05
-norm 5.135917315660574e-05
-norm 4.108733852525414e-05
-norm 3.286987082018595e-05
-norm 2.629589665613548e-05
-norm 2.1036717324903256e-05
-norm 1.6829373859921493e-05
-norm 1.3463499087936362e-05
-norm 1.077079927034849e-05
-norm 8.616639416278687e-06
-norm 6.893311533022731e-06
-norm 5.514649226417997e-06
-norm 4.411719381134783e-06
-norm 3.5293755049075832e-06
-norm 2.82350040392614e-06
-norm 2.2588003231410868e-06
-norm 1.8070402585125824e-06
-norm 1.445632206810289e-06
-norm 1.1565057654481182e-06
-norm 9.252046123585996e-07
-norm 7.401636898866867e-07
-norm 5.921309519093466e-07
-norm 4.7370476152756094e-07
-norm 3.7896380922198076e-07
-norm 3.0317104737769143e-07
-norm 2.425368379021165e-07
-norm 1.9402947032165436e-07
-norm 1.5522357625737134e-07
-norm 1.2417886100599492e-07
-norm 9.934308880480425e-08
-Running time of Alberto Algo with 100 iterations:  517.9920129569946
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  3819.6234280880017
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  2175.0709695441183
-mean projection time of each subspace:  0.7349025869605248
-Max projection time of each subspace:  1.843641829007538
-Minimum projection time of each subspace:  0.08031576000212226
-240
-Projection time of total space:  6.568060277000768
-Projection time of alternating projection:  47.45138025163326
-Projection time of inter projection:  0.0022938072343918385
-vertex connectivity: 7
-edge connectivity: 7
-degree: 26
-(600, 1)
-(5388, 1)
-Shape of Hankel (1600, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  1000
-Shape of Hankel (14368, 1093)
-The Hankel matrix does NOT span the restricted behavior: rank(H) = 1000 
- mL+n = 13768
-Shape of Hankel (152, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
-Shape of Hankel (160, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
-Shape of Hankel (128, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
-Shape of Hankel (144, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  138
-Shape of Hankel (168, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  162
-Shape of Hankel (200, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  194
-Shape of Hankel (144, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  138
-Shape of Hankel (120, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
-Shape of Hankel (160, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
-Shape of Hankel (128, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
-Shape of Hankel (112, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
-Shape of Hankel (120, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
-Shape of Hankel (184, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  178
-Shape of Hankel (160, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
-Shape of Hankel (160, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
-Shape of Hankel (128, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
-Shape of Hankel (112, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
-Shape of Hankel (120, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
-Shape of Hankel (136, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
-Shape of Hankel (136, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
-Shape of Hankel (128, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
-Shape of Hankel (128, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
-Shape of Hankel (128, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
-Shape of Hankel (160, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
-Shape of Hankel (152, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
-Shape of Hankel (176, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
-Shape of Hankel (144, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  138
-Shape of Hankel (120, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
-Shape of Hankel (160, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
-Shape of Hankel (168, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  162
-Shape of Hankel (168, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  162
-Shape of Hankel (152, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
-Shape of Hankel (168, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  162
-Shape of Hankel (120, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
-Shape of Hankel (160, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
-Shape of Hankel (176, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
-Shape of Hankel (72, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
-Shape of Hankel (80, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
-Shape of Hankel (176, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
-Shape of Hankel (120, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
-Shape of Hankel (168, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  162
-Shape of Hankel (168, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  162
-Shape of Hankel (128, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
-Shape of Hankel (144, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  138
-Shape of Hankel (144, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  138
-Shape of Hankel (168, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  162
-Shape of Hankel (88, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
-Shape of Hankel (160, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
-Shape of Hankel (152, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
-Shape of Hankel (152, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
-Shape of Hankel (208, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  202
-Shape of Hankel (176, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
-Shape of Hankel (160, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
-Shape of Hankel (160, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
-Shape of Hankel (168, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  162
-Shape of Hankel (136, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
-Shape of Hankel (120, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
-Shape of Hankel (144, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  138
-Shape of Hankel (136, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
-Shape of Hankel (144, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  138
-Shape of Hankel (144, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  138
-Shape of Hankel (112, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
-Shape of Hankel (136, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
-Shape of Hankel (136, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
-Shape of Hankel (144, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  138
-Shape of Hankel (104, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
-Shape of Hankel (128, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
-Shape of Hankel (144, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  138
-Shape of Hankel (168, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  162
-Shape of Hankel (112, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
-Shape of Hankel (168, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  162
-Shape of Hankel (112, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
-Shape of Hankel (72, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
-Shape of Hankel (152, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
-Shape of Hankel (104, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
-Shape of Hankel (120, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
-Shape of Hankel (184, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  178
-Shape of Hankel (152, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
-Shape of Hankel (128, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
-Shape of Hankel (136, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
-Shape of Hankel (120, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
-Shape of Hankel (224, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  218
-Shape of Hankel (136, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
-Shape of Hankel (168, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  162
-Shape of Hankel (136, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
-Shape of Hankel (176, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
-Shape of Hankel (136, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
-Shape of Hankel (136, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
-Shape of Hankel (168, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  162
-Shape of Hankel (120, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
-Shape of Hankel (112, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
-Shape of Hankel (152, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
-Shape of Hankel (152, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
-Shape of Hankel (176, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
-Shape of Hankel (120, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
-Shape of Hankel (120, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
-Shape of Hankel (192, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  186
-Shape of Hankel (120, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
-Shape of Hankel (152, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
-Shape of Hankel (144, 1093)
-The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  138
-norm 34.19821919414174
-norm 11.207207969088795
-norm 7.028269690422339
-norm 4.913990859413517
-norm 3.193839992101757
-norm 2.046051680804152
-norm 1.474924142053161
-norm 1.1162725393508834
-norm 0.8322539230776497
-norm 0.6335413049869006
-norm 0.49848747840736
-norm 0.3950254012081192
-norm 0.31270026325019445
-norm 0.2486690168774564
-norm 0.19857827058962554
-norm 0.1586654406217296
-norm 0.1267705165268396
-norm 0.10135229879512561
-norm 0.0810666544133001
-norm 0.06484312068081373
-norm 0.05186684078523136
-norm 0.04149077697164967
-norm 0.033191953106415276
-norm 0.026553037270402445
-norm 0.021242074700444664
-norm 0.016993548031268853
-norm 0.013594807646281376
-norm 0.010875819350467861
-norm 0.008700639312485933
-norm 0.006960506864281456
-norm 0.005568404009685739
-norm 0.004454721862408236
-norm 0.0035637767673103505
-norm 0.0028510212263225753
-norm 0.0022808169070983406
-norm 0.0018246534591408025
-norm 0.0014597227355999337
-norm 0.0011677781807703993
-norm 0.0009342225408369703
-norm 0.0007473780294354986
-norm 0.0005979024221811739
-norm 0.00047832193742250234
-norm 0.0003826575497428042
-norm 0.0003061260396398669
-norm 0.0002449008316539328
-norm 0.000195920665309247
-norm 0.00015673653223731389
-norm 0.00012538922578261635
-norm 0.00010031138062367324
-norm 8.024910449831421e-05
-norm 6.419928359813392e-05
-norm 5.1359426878174364e-05
-norm 4.108754150243973e-05
-norm 3.287003320192266e-05
-norm 2.629602656151189e-05
-norm 2.10368212491946e-05
-norm 1.6829456999351384e-05
-norm 1.3463565599479867e-05
-norm 1.0770852479582603e-05
-norm 8.616681983665318e-06
-norm 6.893345586932046e-06
-norm 5.514676469545834e-06
-norm 4.4117411756364364e-06
-norm 3.529392940509052e-06
-norm 2.8235143524074535e-06
-norm 2.2588114819258726e-06
-norm 1.8070491855407696e-06
-norm 1.4456393484325829e-06
-norm 1.1565114787458212e-06
-norm 9.252091829968532e-07
-norm 7.401673463972711e-07
-norm 5.921338771178711e-07
-norm 4.7370710169432867e-07
-norm 3.789656813557512e-07
-norm 3.0317254508441303e-07
-norm 2.425380360675097e-07
-norm 1.9403042885403589e-07
-norm 1.5522434308314268e-07
-norm 1.2417947446673068e-07
-norm 9.93435795732875e-08
-Running time of Alberto Algo with 100 iterations:  521.5050432860007
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  4280.551469329002
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  776.9349321972986
-norm 34.65855659382893
-norm 11.211552993977783
-norm 7.030991825095742
-norm 4.91579490399598
-norm 3.1948204707821604
-norm 2.04650658732925
-norm 1.4751819796761436
-norm 1.1164263583047918
-norm 0.8323229734098585
-norm 0.6335688053399774
-norm 0.49850252125621924
-norm 0.3950336596718387
-norm 0.31270360205900205
-norm 0.24867033735062702
-norm 0.19857901035544145
-norm 0.15866582678668414
-norm 0.1267706658067288
-norm 0.10135236039383032
-norm 0.08106668975622389
-norm 0.06484313828194074
-norm 0.05186684740385444
-norm 0.041490779859621046
-norm 0.03319195478259299
-norm 0.026553038065041997
-norm 0.021242074994633126
-norm 0.0169935481677748
-norm 0.013594807725301205
-norm 0.010875819386087043
-norm 0.008700639325644443
-norm 0.006960506870775508
-norm 0.005568404013385194
-norm 0.004454721863995425
-norm 0.003563776767904127
-norm 0.0028510212266326922
-norm 0.002280816907270203
-norm 0.00182465345921122
-norm 0.0014597227356270134
-norm 0.001167778180785225
-norm 0.0009342225408448904
-norm 0.0007473780294386159
-norm 0.0005979024221824232
-norm 0.000478321937423211
-norm 0.0003826575497431665
-norm 0.0003061260396400051
-norm 0.0002449008316539917
-norm 0.00019592066530928082
-norm 0.0001567365322373302
-norm 0.0001253892257826228
-norm 0.00010031138062367602
-norm 8.02491044983159e-05
-norm 6.419928359813495e-05
-norm 5.135942687817488e-05
-norm 4.1087541502439956e-05
-norm 3.2870033201922916e-05
-norm 2.6296026561511864e-05
-norm 2.103682124919441e-05
-norm 1.6829456999351597e-05
-norm 1.3463565599479652e-05
-norm 1.0770852479582556e-05
-norm 8.61668198366527e-06
-norm 6.893345586932265e-06
-norm 5.514676469545758e-06
-norm 4.411741175636357e-06
-norm 3.5293929405091048e-06
-norm 2.8235143524074234e-06
-norm 2.2588114819259336e-06
-norm 1.8070491855408333e-06
-norm 1.4456393484325045e-06
-norm 1.1565114787459893e-06
-norm 9.25209182996771e-07
-norm 7.401673463974262e-07
-norm 5.921338771179919e-07
-norm 4.7370710169438797e-07
-norm 3.7896568135545877e-07
-norm 3.031725450843287e-07
-norm 2.425380360674013e-07
-norm 1.9403042885393459e-07
-norm 1.552243430831266e-07
-norm 1.2417947446661395e-07
-norm 9.934357957307311e-08
-Running time of Alberto Algo with 100 iterations:  521.7082295950095
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  4290.405827857001
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  1556.843035763275
-norm 34.53131454678238
-norm 11.210592456252582
-norm 7.030448165573368
-norm 4.91550377831651
-norm 3.194688776528551
-norm 2.0464463618090103
-norm 1.4751499373725419
-norm 1.1164095773341494
-norm 0.8323156690182703
-norm 0.6335658637305086
-norm 0.4985009969999004
-norm 0.39503284316940673
-norm 0.31270326915881425
-norm 0.24867020732636097
-norm 0.19857893853630737
-norm 0.15866578900646286
-norm 0.12677065120262035
-norm 0.10135235443073107
-norm 0.0810666863158307
-norm 0.06484313655931956
-norm 0.051866846759034475
-norm 0.04149077957872055
-norm 0.03319195461852667
-norm 0.026553037987209937
-norm 0.021242074965903242
-norm 0.01699354815441616
-norm 0.013594807717546497
-norm 0.010875819382593957
-norm 0.00870063932435495
-norm 0.006960506870137919
-norm 0.005568404013021731
-norm 0.004454721863839558
-norm 0.003563776767845804
-norm 0.002851021226602208
-norm 0.002280816907253309
-norm 0.0018246534592042997
-norm 0.0014597227356243517
-norm 0.0011677781807837677
-norm 0.0009342225408441119
-norm 0.00074737802943831
-norm 0.0005979024221823014
-norm 0.0004783219374231418
-norm 0.0003826575497431313
-norm 0.00030612603963999185
-norm 0.000244900831653986
-norm 0.00019592066530927795
-norm 0.00015673653223732885
-norm 0.00012538922578262204
-norm 0.00010031138062367563
-norm 8.024910449831561e-05
-norm 6.419928359813488e-05
-norm 5.1359426878175075e-05
-norm 4.108754150243996e-05
-norm 3.287003320192282e-05
-norm 2.6296026561511844e-05
-norm 2.103682124919444e-05
-norm 1.682945699935169e-05
-norm 1.3463565599479774e-05
-norm 1.0770852479582432e-05
-norm 8.61668198366544e-06
-norm 6.893345586932164e-06
-norm 5.514676469545506e-06
-norm 4.41174117563648e-06
-norm 3.5293929405094406e-06
-norm 2.823514352407261e-06
-norm 2.258811481926061e-06
-norm 1.807049185540583e-06
-norm 1.4456393484324855e-06
-norm 1.1565114787458587e-06
-norm 9.252091829967816e-07
-norm 7.401673463977124e-07
-norm 5.921338771179426e-07
-norm 4.7370710169443577e-07
-norm 3.7896568135544426e-07
-norm 3.031725450845829e-07
-norm 2.425380360673757e-07
-norm 1.940304288540392e-07
-norm 1.5522434308339808e-07
-norm 1.2417947446662986e-07
-norm 9.93435795731657e-08
-Running time of Alberto Algo with 100 iterations:  537.6064477600012
-Running time of distributed Algo with 100 outer iter and 5 alternating projection:  4271.824980913996
-Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  2332.095589433404
-mean projection time of each subspace:  0.8030446990797645
-Max projection time of each subspace:  1.8217432689998532
-Minimum projection time of each subspace:  0.01828208999359049
-240
-Projection time of total space:  6.783739356993465
-Projection time of alternating projection:  52.8494766075312
-Projection time of inter projection:  0.0022774673986019674
+Running time of Alberto Algo with 100 iterations:  524.6949202339893
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  2954.118926041003
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  574.9369663751422
+mean projection time of each subspace:  0.5766807651602721
+Max projection time of each subspace:  1.2935009799984982
+Minimum projection time of each subspace:  0.03511522999906447
+80
+Projection time of total space:  6.675494716997491
+Projection time of alternating projection:  36.46953158359256
+Projection time of inter projection:  0.001518890394952815
