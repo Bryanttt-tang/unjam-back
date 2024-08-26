@@ -6,8 +6,8 @@
 #SBATCH --tmp=4000                        # per node!!
 
 #SBATCH --job-name=power_unit
-#SBATCH --output=./euler/degree.out  # to be modified
-#SBATCH --error=./euler/degree.err   # to be modified
+#SBATCH --output=./euler/degree2.out  # to be modified
+#SBATCH --error=./euler/degree2.err   # to be modified
 
 # run experiment
 python ./connectivity.py

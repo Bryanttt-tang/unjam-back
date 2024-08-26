@@ -178,7 +178,7 @@ if __name__ == "__main__":
 
     graph = create_connected_graph(v)   
     # Incrementally add edges until the graph becomes fully connected
-    while graph.number_of_edges() <= 700:
+    while graph.number_of_edges() <= 950:
         e=2*len(graph.edges()) # directed graph  
         v_con=nx.node_connectivity(graph)
         e_con=nx.edge_connectivity(graph)
@@ -320,7 +320,7 @@ if __name__ == "__main__":
         dis_lqr_exp_time=[]
         dis_lqr_worst_time=[]
         
-        for exp in range(1,4):
+        for exp in range(1,6):
             F=functions(T,Tini, N, v, e, m, 1, p, M, h_total, h, connected_components, graph, alpha, max_iter, dis_iter)
             wini = wData[:, -(Tini+exp):-exp].reshape(-1, 1, order='F')
             wini_dis = wData_dis[:, -(Tini+exp):-exp].reshape(-1, 1, order='F')
@@ -380,7 +380,7 @@ if __name__ == "__main__":
     data = {'max_deg':degree_values,'edges': e_values, 'node_connectivity': v_con_values, 'edge_connectivity':e_con_values,'centralized_lqr_mean': lqr_mean, 'centralized_lqr_var': lqr_var, 
             'distributed_lqr_mean':dis_lqr_mean,'distributed_lqr_var':dis_lqr_var, 'distributed_worst_mean':dis_worst_mean,'distributed_worst_var':dis_worst_var}
     df = pd.DataFrame(data)
-    df.to_excel('results/degree-100units.xlsx', index=False)
+    df.to_excel('results/degree2-100units.xlsx', index=False)
 
         # start_alberto = time.time()
         # w_split = F.lqr(wini, wref, Phi, h_total)
