@@ -91,8 +91,8 @@ class functions():
 
     def timed_matmul(self,x, y):
         start_time = time.process_time()
-        # result = x @ y
-        result = self.matrix_vector_multiply(x,y)
+        result = x @ y
+        # result = self.matrix_vector_multiply(x,y)
         # result = self.proj(x,y)
         end_time = time.process_time()
         elapsed_time = end_time - start_time
@@ -272,8 +272,8 @@ class functions():
             v_proj=  2*z-w-2*self.alpha*z_squared # O(n)
             # print('v_proj:',v_proj.shape)
             start=time.process_time()
-            # v_plus = self.proj_h @ v_proj # O(n^2)
-            v_plus = self.matrix_vector_multiply(self.proj_h, v_proj) # O(n^2)
+            v_plus = self.proj_h @ v_proj # O(n^2)
+            # v_plus = self.matrix_vector_multiply(self.proj_h, v_proj) # O(n^2)
             # print('v_plus',v_plus.shape)
             end=time.process_time()
             self.time_proj.append(end-start)
@@ -284,14 +284,14 @@ class functions():
             
             end_lqr=time.process_time()
             self.time_lqr.append(end_lqr-start_lqr)
-            # e=np.dot((w[self.q*self.Tini:]-w_ref).T, (kron * (w[self.q*self.Tini:]-w_ref)))[0,0]
+            e=np.dot((w[self.q*self.Tini:]-w_ref).T, (kron * (w[self.q*self.Tini:]-w_ref)))[0,0]
             # e=np.dot( (w-np.vstack((w_ini,w_ref))).T, (w-np.vstack((w_ini,w_ref))))[0,0]
-            # self.E.append(e)
+            self.E.append(e)
             # Check for convergence
             k+=1
-            print( 'norm',np.linalg.norm(w - w_prev))
-            if np.linalg.norm(w - w_prev) < tol:
-                break
+            # print( 'norm',np.linalg.norm(w - w_prev))
+            # if np.linalg.norm(w - w_prev) < tol:
+            #     break
         self.k_lqr.append(k)
         return w
 
@@ -326,12 +326,12 @@ class functions():
                 end_dislqr=time.process_time()
                 self.time_dis_lqr.append(end_dislqr-start_dislqr)
                 
-                # e=np.dot((w[self.q_dis*self.Tini:]-w_ref).T, (kron * (w[self.q_dis*self.Tini:]-w_ref)))[0,0]
+                e=np.dot((w[self.q_dis*self.Tini:]-w_ref).T, (kron * (w[self.q_dis*self.Tini:]-w_ref)))[0,0]
                 # e=np.dot( (w-np.vstack((w_ini,w_ref))).T, (w-np.vstack((w_ini,w_ref))))[0,0]
-                # self.E_dis.append(e)
+                self.E_dis.append(e)
                 # Check for convergence
                 k+=1
-                if np.linalg.norm(w - w_prev) < tol:
-                    break
+                # if np.linalg.norm(w - w_prev) < tol:
+                #     break
             self.k_dis_lqr.append(k)
         return w

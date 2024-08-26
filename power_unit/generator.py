@@ -221,7 +221,7 @@ class DeePC():
         self.wref_dis = params_D['wref_dis']
         self.solver=solver
         self.E=[]
-        self.F=functions(self.T, self.Tini,self.N, self.v,self.e, self.m, self.p, self.M, self.H.Hankel, self.h_dis, self.connected_components, self.graph, self.alpha,self.max_iter,self.dis_iter)
+        self.F=functions(self.T, self.Tini,self.N, self.v,self.e, self.m, 1, self.p, self.M, self.H.Hankel, self.h_dis, self.connected_components, self.graph, self.alpha,self.max_iter,self.dis_iter)
     
     def solve_deepc(self,uini,yini):
         # COMPLETE THIS FUNCTION
@@ -257,7 +257,7 @@ class DeePC():
         y_reshape=yini.reshape(self.p_total,-1,order='F')
 
         wini=np.vstack((u_reshape,y_reshape)).reshape(-1,1, order='F')
-        w = self.F.lqr(wini, self.wref,self.Phi,self.H.Hankel)
+        w = self.F.lqr(wini, self.wref, self.Phi)
         return w[self.q_total*self.Tini:]
     
     def solve_dist_lqr(self,uini,yini):
@@ -266,7 +266,7 @@ class DeePC():
 #         print('uini:\n',u_reshape)
 #         print('yini:\n',y_reshape)
         wini=np.vstack((u_reshape,y_reshape)).reshape(-1,1, order='F')
-        w = self.F.distributed_lqr(wini, self.wref_dis, self.Phi_dis, self.h_dis)
+        w = self.F.distributed_lqr(wini, self.wref_dis, self.Phi_dis)
         return w[self.q_dis*self.Tini:]
     
     def get_next_input(self, uini, yini,s = 1):
@@ -306,9 +306,11 @@ class DeePC():
         if self.solver=='dis_lqr':
             usim = np.empty((self.m_total, Tsim)) # in total, Tsim simulation points
             ysim = np.empty((self.p_total, Tsim))
+            xsim = np.empty((self.n, self.v, Tsim+1))
             uini,yini = self.get_wini()
             
             x=x0.reshape(self.n, -1, order='F') # X0 = np.random.rand(n,10)  
+            xsim[:,:,0]=np.copy(x)
             for t in tqdm(range(Tsim)):
                 u = self.get_next_input(uini, yini)
                 # print('u_shape',u.shape)
@@ -332,19 +334,22 @@ class DeePC():
                 # usim[:, [t]] = u
                 # print(usim[:, [t]])
                 ysim[:, [t]] = y.reshape(-1, 1)
+                xsim[:,:,t+1]=np.copy(x)
                 uini = np.vstack((uini[self.m_dis:], u))
                 # uini is extended with the contents of u vertically (along the rows), with the first self.H.m rows of uini being excluded. 
                 yini = np.vstack((yini[self.p_total:], y.reshape(-1, 1)))
         else:
             usim = np.empty((self.m_total, Tsim))
             ysim = np.empty((self.p_total, Tsim))
+            xsim = np.empty((self.n, self.v, Tsim+1))
             uini,yini = self.get_wini()
             
             x=x0.reshape(self.n, -1, order='F') # X0 = np.random.rand(n,10)  
+            xsim[:,:,0]=np.copy(x)
             for t in tqdm(range(Tsim)):
                 u = self.get_next_input(uini, yini)
                 
-                # print('u:',u.shape)
+                # print('u:',u)
                 y=C@x
                 # print('y',y.shape)
                 for i in range(self.v):
@@ -361,8 +366,9 @@ class DeePC():
                 
                 usim[:, [t]] = u
                 ysim[:, [t]] = y.reshape(-1, 1)
+                xsim[:,:,t+1]=np.copy(x)
                 uini = np.vstack((uini[self.m_total:], u))
                 # uini is extended with the contents of u vertically (along the rows), with the first self.H.m rows of uini being excluded. 
                 yini = np.vstack((yini[self.p_total:], y.reshape(-1, 1)))
         
-        return usim, ysim
+        return xsim, usim, ysim

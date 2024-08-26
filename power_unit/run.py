@@ -190,8 +190,8 @@ if __name__ == "__main__":
 
     # random_vector=np.zeros((q_central, N))
     # random_vector_dis=np.zeros((q_dis, N))
-    random_vector=np.vstack((np.zeros((m_central,N)),10*np.ones((p_central, N)) ))
-    random_vector_dis=np.vstack((np.zeros((m_dis,N)),10*np.ones((p_dis, N)) ))
+    random_vector=np.vstack((np.zeros((m_central,N)),0.25*np.ones((p_central, N)) ))
+    random_vector_dis=np.vstack((np.zeros((m_dis,N)),0.25*np.ones((p_dis, N)) ))
     # wref=np.tile(r,N).reshape(-1,1, order='F')
     wref=random_vector.reshape(-1,1, order='F')
     wref_dis=random_vector_dis.reshape(-1,1, order='F')
@@ -266,11 +266,10 @@ if __name__ == "__main__":
     for i in range(len(H_j)):
         h.append(H_j[i].Hankel)
             
-    max_iter=100
+    max_iter=200
     dis_iter=10 
-    alpha=0.1
-    Tsim=200    
-    F=functions(T,Tini, N, v, e, m, p, M, h_total, h, connected_components, graph, alpha, max_iter, dis_iter)
+    alpha=0.05
+    F=functions(T,Tini, N, v, e, m, 1, p, M, h_total, h, connected_components, graph, alpha, max_iter, dis_iter)
     # lqr_exp_time=[]
     # dis_lqr_exp_time=[]
     
@@ -278,12 +277,12 @@ if __name__ == "__main__":
     wini = wData[:, -Tini:].reshape(-1, 1, order='F')
     wini_dis = wData_dis[:, -Tini:].reshape(-1, 1, order='F')
     start_alberto = time.process_time()
-    w_split = F.lqr(wini, wref, Phi, h_total)
+    w_split = F.lqr(wini, wref, Phi)
     end_alberto = time.process_time()
     print(f"Running time of Alberto Algo with {max_iter} iterations: ",end_alberto-start_alberto)
 
     start_dist = time.process_time()
-    w_split_dis = F.distributed_lqr(wini_dis, wref_dis,Phi_dis, h )
+    w_split_dis = F.distributed_lqr(wini_dis, wref_dis,Phi_dis)
     end_dist = time.process_time()
     print(f"Running time of distributed Algo with {max_iter} outer iter and {dis_iter} alternating projection: ",end_dist-start_dist)
     # print(f"Running time of worst case distributed Algo with {max_iter} outer iter and {dis_iter} alternating projection: ",end_dist-start_dist)
@@ -306,17 +305,6 @@ if __name__ == "__main__":
     # plt.title('Difference between direct Projection vs. Alternating Projection (System with 2 units)')
     # plt.grid(True)
     # plt.show()   
-    
-    # print('mean projection time of each subspace: ', statistics.mean(F.time_sub))
-    # print('Max projection time of each subspace: ', max(F.time_sub))
-    # print('Minimum projection time of each subspace: ', min(F.time_sub))
-    # # min_sub.append(min(F.time_sub))
-    
-    # print(len(F.time_proj))
-    # print('Projection time of total space: ',max(F.time_proj))
-    # print('Projection time of alternating projection: ',statistics.mean(F.time_alter_proj))
-    # print('Projection time of inter projection: ',statistics.mean(F.time_inter))
-    # print('Projection onto Cartisian of subspaces time: ',statistics.mean(F.time_proj2))
 
         
     # CVXPY
@@ -347,8 +335,8 @@ if __name__ == "__main__":
     plt.title('Convergence Error of LQR')
     plt.grid(True)
     plt.show()
-    # plt.show(block=False)
-    # plt.pause(0.001)
+    plt.show(block=False)
+    plt.pause(0.001)
 
     print('The final cost of CVX:',problem.value)
 #     # print('The output trajectory using CVXPY: \n',w_f.value)
@@ -358,7 +346,7 @@ if __name__ == "__main__":
     # print('The differnce between centralized and distributed methods: ',np.linalg.norm(w_split_dis[q_dis*Tini:] - w_split[q_dis*Tini:]) )
             
     
-    Tsim=200  
+    Tsim=100  
     solver='CVXPY'
     params_D = {'H': H, # an object of Hankel
                 'H_dis':H_dis,
@@ -382,14 +370,29 @@ if __name__ == "__main__":
                 'wref_dis' : wref_dis,
                 'wref' : wref}
 
-    deepc = DeePC(params_D,solver)   
-    x0 =  xData[:, -1]
+    deepc = DeePC(params_D,'CVXPY')   
+    x0 =  np.copy(xData[:, -1])
     print('x0:',xData[:,-1])
-    # print(x0[:,9:10])
-    start_deepc=time.time()
-    usim, ysim = deepc.loop(Tsim,A,B,C,D,x0)
-    end_deepc=time.time()
+    print(x0)
+    start_deepc=time.process_time()
+    xsim, usim, ysim = deepc.loop(Tsim,A,B,C,D,x0)
+    end_deepc=time.process_time()
     print('Total DeepC running time: ', end_deepc-start_deepc)
+    print('x0',xData[:,-1])
+
+    x0 =  np.copy(xData[:, -1])
+    deepc2 = DeePC(params_D,'lqr')   
+    start_deepc2=time.process_time()
+    xsim2, usim2, ysim2 = deepc2.loop(Tsim,A,B,C,D,x0)
+    end_deepc2=time.process_time()
+    print('Total Alberto running time: ', end_deepc2-start_deepc2)
+
+    # x0 =  np.copy(xData[:, -1])
+    # deepc3 = DeePC(params_D,'dis_lqr')   
+    # start_deepc3=time.process_time()
+    # xsim3, usim3, ysim3 = deepc3.loop(Tsim,A,B,C,D,x0)
+    # end_deepc3=time.process_time()
+    # print('Total Distributed Alberto running time: ', end_deepc3-start_deepc3)
 
     #     print(usim)
 
@@ -412,25 +415,51 @@ if __name__ == "__main__":
         ax.legend(loc='best')
         ax.grid(True)
 
-    fig, ax = plt.subplots(3, figsize=(8, 10))
+    fig, ax = plt.subplots(4, figsize=(8, 10))
 
     # Plot control input
     plot_behavior(ax[0], 'Control input', 'Time Steps', 'Input', usim, 'u', ylim=None)
     # Plot output
-    plot_behavior(ax[1], 'Output Y', 'Time Steps', 'Output', ysim, 'y', ylim=None)
+    plot_behavior(ax[1], 'State x1', 'Time Steps', 'x1', xsim[0,0,:].reshape(-1,Tsim+1), 'x', ylim=None)
+    # plot_behavior(ax[1], 'State x1', 'Time Steps', 'x1', xsim2[0,0,:].reshape(-1,Tsim), 'x', ylim=None)
+    plot_behavior(ax[2], 'State x2', 'Time Steps', 'x2', xsim[1,0,:].reshape(-1,Tsim+1), 'x', ylim=None)
     # Plot output error
     print('The reference:\n',wref[-p_central:])
     error = np.abs(ysim - np.tile(wref[-p_central:], Tsim))
     print('error:\n',error[:,-1])
     # error=ysim-wref.reshape(size_w,-1,order='F')[-2:,:]
-    plot_behavior(ax[2], 'Output error', 'Time Steps', 'Output error y - y_ref', error, 'y', ylim=None,log_scale=True)
-
-    # Adjust the space between plots
+    plot_behavior(ax[3], 'Output error', 'Time Steps', 'Output error y - y_ref', error, 'y', ylim=None,log_scale=True)
     plt.subplots_adjust(hspace=0.4)
-
-    # Show the plot
     plt.show()
-        # plt.pause(0.001)
+
+    plt.figure(figsize=(10, 6))
+    plt.plot(np.linspace(0, Tsim,Tsim+1), xsim[0,0,:], label='CVXPY', color='blue')
+    plt.plot(np.linspace(0, Tsim,Tsim+1), xsim2[0,0,:], label='lqr', color='red')
+    # plt.plot(np.linspace(0, Tsim,Tsim+1), xsim3[0,0,:], label='dis_lqr', color='black')
+    plt.grid(True)
+    plt.legend()
+    plt.show()
+
+    plt.figure(figsize=(10, 6))
+    plt.plot(np.linspace(0, Tsim,Tsim+1), xsim[1,0,:], label='CVXPY', color='blue')
+    plt.plot(np.linspace(0, Tsim,Tsim+1), xsim2[1,0,:], label='lqr', color='red')
+    # plt.plot(np.linspace(0, Tsim,Tsim+1), xsim3[1,0,:], label='dis_lqr', color='black')
+    plt.grid(True)
+    plt.legend()
+    plt.show()
+
+    # Create a time array
+    time = np.arange(xsim.shape[2])
+
+    # Combine the data into a dictionary
+    data = {'time': time}
+    for method_num, x_array in enumerate([xsim, xsim2, xsim3], start=1):
+        data[f'state_1_method_{method_num}'] = x_array[0, 0, :]  # Trajectory for state 1
+        data[f'state_2_method_{method_num}'] = x_array[1, 0, :]  # Trajectory for state 2
+
+    # Create a DataFrame and save to CSV
+    df = pd.DataFrame(data)
+    df.to_csv('state_trajectories.csv', index=False)
 
     def compute_metrics(t, response, ref, threshold=0.02):
         num_responses = response.shape[0]
