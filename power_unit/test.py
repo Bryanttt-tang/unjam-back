@@ -152,6 +152,7 @@ if __name__ == "__main__":
     dis_lqr_mean=[]
     dis_lqr_var=[]
     mean_sub=[]
+    degree_values=[]
     max_sub=[]
     var_sub=[]
     mean_alter=[]
@@ -173,7 +174,7 @@ if __name__ == "__main__":
     maxs = []
     vars=[]
     cvx_time=[]
-    for v in tqdm(np.arange(2, 11, 1)):
+    for v in tqdm(np.arange(10, 110, 10)):
         graph = create_connected_graph(v,'wheel') 
         # graph=create_reordered_mesh_graph(v,v)
         # plt.figure(figsize=(8, 6))
@@ -186,6 +187,8 @@ if __name__ == "__main__":
         e=2*len(graph.edges()) # directed graph  
         v_con=nx.node_connectivity(graph)
         e_con=nx.edge_connectivity(graph)
+        degree=max(dict(graph.degree()).values())
+        degree_values.append(degree)
         print('vertex connectivity:',v_con)
         print('edge connectivity:',e_con)
         # add_random_edge(graph)
@@ -202,11 +205,11 @@ if __name__ == "__main__":
         N = 5   # prediction horizon
         L=Tini+N
         T = v*L+v*n+100   # number of data points
-        R=1*np.eye(m_central)
+        R=0.1*np.eye(m_central)
         R_dis=0.1*np.eye(m_dis)
         # R[1,1]=0
         # R[3,3]=0
-        Q=1*np.eye(p_dis)
+        Q=10*np.eye(p_dis)
         Phi=np.block([[R, np.zeros((R.shape[0],Q.shape[1]))], [np.zeros((Q.shape[0],R.shape[1])), Q]])
         Phi_dis=np.block([[R_dis, np.zeros((R_dis.shape[0],Q.shape[1]))], [np.zeros((Q.shape[0],R_dis.shape[1])), Q]])
         lambda_g = 1          # lambda parameter for L1 penalty norm on g
@@ -237,8 +240,8 @@ if __name__ == "__main__":
 
         # random_vector=np.zeros((q_central, N))
         # random_vector_dis=np.zeros((q_dis, N))
-        random_vector=np.vstack((np.zeros((m_central,N)),1*np.ones((p_central, N)) ))
-        random_vector_dis=np.vstack((np.zeros((m_dis,N)),1*np.ones((p_dis, N)) ))
+        random_vector=np.vstack((np.zeros((m_central,N)),0.25*np.ones((p_central, N)) ))
+        random_vector_dis=np.vstack((np.zeros((m_dis,N)),0.25*np.ones((p_dis, N)) ))
         # wref=np.tile(r,N).reshape(-1,1, order='F')
         wref=random_vector.reshape(-1,1, order='F')
         wref_dis=random_vector_dis.reshape(-1,1, order='F')
@@ -313,7 +316,7 @@ if __name__ == "__main__":
         for i in range(len(H_j)):
             h.append(H_j[i].Hankel)
                 
-        max_iter=1000
+        max_iter=100
         dis_iter=10 
         alpha=0.1
         # F=functions(T,Tini, N, v, e, m, 1, p, M, h_total, h, connected_components, graph, alpha, max_iter, dis_iter)
@@ -329,9 +332,6 @@ if __name__ == "__main__":
             F=functions(T,Tini, N, v, e, m, 1, p, M, h_total, h, connected_components, graph, alpha, max_iter, dis_iter)
             wini = wData[:, -(Tini+exp):-exp].reshape(-1, 1, order='F')
             w_re=wini.reshape(-1,Tini,order='F')
-            print(np.clip(w_re[:m*v, :], -1, 1))
-            print('wData',wData[:, -(Tini+exp):-exp])
-            print('wini \n',wini)
             wini_dis = wData_dis[:, -(Tini+exp):-exp].reshape(-1, 1, order='F')
             start_alberto = time.process_time()
             w_split = F.lqr(wini, wref, Phi)
@@ -341,14 +341,14 @@ if __name__ == "__main__":
             lqr_exp_time.append(end_alberto-start_alberto)
             k=F.k_lqr
             print(F.k_lqr)
-            # start_dist = time.process_time()
-            # w_split_dis = F.distributed_lqr(wini_dis, wref_dis, Phi_dis)
-            # end_dist = time.process_time()
-            # print(f"Running time of distributed Algo with {max_iter} outer iter and {dis_iter} alternating projection: ",end_dist-start_dist)
-            # print(f"Running time of Worst case distributed Algo with {max_iter} outer iter and {dis_iter} alternating projection: ",sum(F.time_inter)+sum(F.time_worst)+sum(F.time_dis_lqr)-sum(F.time_alter_proj))
-            # dis_lqr_exp_time.append(end_dist-start_dist)
-            # dis_lqr_worst_time.append(sum(F.time_inter)+sum(F.time_worst)+sum(F.time_dis_lqr)-sum(F.time_alter_proj))
-            # dis_lqr_theory_time.append(sum(F.worst_sub))
+            start_dist = time.process_time()
+            w_split_dis = F.distributed_lqr(wini_dis, wref_dis, Phi_dis)
+            end_dist = time.process_time()
+            print(f"Running time of distributed Algo with {max_iter} outer iter and {dis_iter} alternating projection: ",end_dist-start_dist)
+            print(f"Running time of Worst case distributed Algo with {max_iter} outer iter and {dis_iter} alternating projection: ",sum(F.time_inter)+sum(F.time_worst)+sum(F.time_dis_lqr)-sum(F.time_alter_proj))
+            dis_lqr_exp_time.append(end_dist-start_dist)
+            dis_lqr_worst_time.append(sum(F.time_inter)+sum(F.time_worst)+sum(F.time_dis_lqr)-sum(F.time_alter_proj))
+            dis_lqr_theory_time.append(sum(F.worst_sub))
             # print(len(F.time_inter))
             # print(len(F.worst_sub))
 
@@ -357,37 +357,37 @@ if __name__ == "__main__":
             # print('proj2:',sum(F.time_worst))
             # print('O(n):',sum(F.time_dis_lqr)-sum(F.time_alter_proj))
 
-            start_cvx = time.process_time()
-            g = cp.Variable((T-Tini-N+1,1))
-            w_f = cp.Variable((N*q_central,1))
-            objective = cp.quad_form(w_f-wref, psd_wrap(np.kron(np.eye(N),Phi)))
-            #             + lambda_1*cp.quad_form((I-Pi)@g,psd_wrap(I))\
-            #             + lambda_g*cp.norm(g, 1)          
-            constraints = [ h_total[:Tini*q_central,:] @ g == wini,
-                            h_total[Tini*q_central:,:] @ g == w_f,
-                                        ]
-            problem = cp.Problem(cp.Minimize(objective), constraints) 
-            solver_opts = {
-            'max_iter': 10000,
-            'verbose': True     # Enable verbose output to debug
-        }
-            # problem.solve(solver = cp.OSQP,**solver_opts)
-            problem.solve(solver = cp.SCS)
-            end_cvx = time.process_time()
-            print('Running time of CVXPY for single LQR: ',end_cvx-start_cvx)
-            cvx_exp_time.append(end_cvx-start_cvx)
-            print('The differnce between CVX and Alberto methods: ',np.linalg.norm(w_f.value - w_split[q_central*Tini:]) )
+        #     start_cvx = time.process_time()
+        #     g = cp.Variable((T-Tini-N+1,1))
+        #     w_f = cp.Variable((N*q_central,1))
+        #     objective = cp.quad_form(w_f-wref, psd_wrap(np.kron(np.eye(N),Phi)))
+        #     #             + lambda_1*cp.quad_form((I-Pi)@g,psd_wrap(I))\
+        #     #             + lambda_g*cp.norm(g, 1)          
+        #     constraints = [ h_total[:Tini*q_central,:] @ g == wini,
+        #                     h_total[Tini*q_central:,:] @ g == w_f,
+        #                                 ]
+        #     problem = cp.Problem(cp.Minimize(objective), constraints) 
+        #     solver_opts = {
+        #     'max_iter': 10000,
+        #     'verbose': True     # Enable verbose output to debug
+        # }
+        #     # problem.solve(solver = cp.OSQP,**solver_opts)
+        #     problem.solve(solver = cp.SCS)
+        #     end_cvx = time.process_time()
+        #     print('Running time of CVXPY for single LQR: ',end_cvx-start_cvx)
+        #     cvx_exp_time.append(end_cvx-start_cvx)
+        #     print('The differnce between CVX and Alberto methods: ',np.linalg.norm(w_f.value - w_split[q_central*Tini:]) )
 
         lqr_mean.append(statistics.mean(lqr_exp_time))
         lqr_var.append(statistics.stdev(lqr_exp_time))
-        # dis_lqr_mean.append(statistics.mean(dis_lqr_exp_time))
-        # dis_lqr_var.append(statistics.stdev(dis_lqr_exp_time))
-        # dis_worst_mean.append(statistics.mean(dis_lqr_worst_time))
-        # dis_worst_var.append(statistics.stdev(dis_lqr_worst_time))  
+        dis_lqr_mean.append(statistics.mean(dis_lqr_exp_time))
+        dis_lqr_var.append(statistics.stdev(dis_lqr_exp_time))
+        dis_worst_mean.append(statistics.mean(dis_lqr_worst_time))
+        dis_worst_var.append(statistics.stdev(dis_lqr_worst_time))  
         # dis_theory_mean.append(statistics.mean(dis_lqr_theory_time))
         # dis_theory_var.append(statistics.stdev(dis_lqr_theory_time)) 
-        cvx_mean.append(statistics.mean(cvx_exp_time))
-        cvx_var.append(statistics.stdev(cvx_exp_time))
+        # cvx_mean.append(statistics.mean(cvx_exp_time))
+        # cvx_var.append(statistics.stdev(cvx_exp_time))
 
         # print('mean projection time of each subspace: ', statistics.mean(F.time_sub))
         # print('Max projection time of each subspace: ', max(F.time_sub))
@@ -396,64 +396,7 @@ if __name__ == "__main__":
         # var_sub.append(statistics.variance(F.time_sub))
         # max_sub.append(max(F.time_sub))
         # # min_sub.append(min(F.time_sub))
-        
-        # print(len(F.time_proj))
-        # print('Projection time of total space: ',max(F.time_proj))
-        # mean_total.append(statistics.mean(F.time_proj))
-        # # print(len(F.time_dis_lqr))
-        # mean_alter.append(statistics.mean(F.time_alter_proj))
-        # print('Projection time of alternating projection: ',statistics.mean(F.time_alter_proj))
-        # mean_lqr.append(statistics.mean(F.time_lqr))
-        # mean_dis_lqr.append(statistics.mean(F.time_dis_lqr))
-        # # mean_thread.append(statistics.mean(F.time_thread))
-        # # print(len(F.time_thread))
-        # mean_split.append(statistics.mean(F.time_split))
-        # mean_split2.append(statistics.mean(F.time_split2))
-        # mean_inter.append(statistics.mean(F.time_inter))
-        # print('Projection time of inter projection: ',statistics.mean(F.time_inter))
-        # for exp in range(1,6):
-        #     wini = wData[:, -(Tini+exp):-exp].reshape(-1, 1, order='F')
-        #     wini_dis = wData_dis[:, -(Tini+exp):-exp].reshape(-1, 1, order='F')
-        #     start_alberto = time.process_time()
-        #     w_split = F.lqr(wini, wref,Phi,h_total)
-        #     end_alberto = time.process_time()
-        #     print(f"Running time of Alberto Algo with {max_iter} iterations: ",end_alberto-start_alberto)
-        #     lqr_exp_time.append(end_alberto-start_alberto)
-
-        #     start_dist = time.process_time()
-        #     w_split_dis = F.distributed_lqr(wini_dis, wref_dis,Phi_dis, h )
-        #     end_dist = time.process_time()
-        #     print(f"Running time of distributed Algo with {max_iter} outer iter and {dis_iter} alternating projection: ",end_dist-start_dist)
-        #     dis_lqr_exp_time.append(end_dist-start_dist)
-        # lqr_mean.append(statistics.mean(lqr_exp_time))
-        # lqr_var.append(statistics.variance(lqr_exp_time))
-        # dis_lqr_mean.append(statistics.mean(dis_lqr_exp_time))
-        # dis_lqr_var.append(statistics.variance(dis_lqr_exp_time))
-        # print('mean projection time of each subspace: ', statistics.mean(F.time_sub))
-        # print('Max projection time of each subspace: ', max(F.time_sub))
-        # print('Minimum projection time of each subspace: ', min(F.time_sub))
-        # mean_sub.append(statistics.mean(F.time_sub))
-        # var_sub.append(statistics.variance(F.time_sub))
-        # max_sub.append(max(F.time_sub))
-        # # min_sub.append(min(F.time_sub))
-        
-        # print(len(F.time_proj))
-        # print('Projection time of total space: ',max(F.time_proj))
-        # mean_total.append(statistics.mean(F.time_proj))
-        # # print(len(F.time_dis_lqr))
-        # mean_alter.append(statistics.mean(F.time_alter_proj))
-        # print('Projection time of alternating projection: ',statistics.mean(F.time_alter_proj))
-        # mean_lqr.append(statistics.mean(F.time_lqr))
-        # mean_dis_lqr.append(statistics.mean(F.time_dis_lqr))
-        # mean_thread.append(statistics.mean(F.time_thread))
-        # print(len(F.time_thread))
-        # mean_split.append(statistics.mean(F.time_split))
-        # mean_split2.append(statistics.mean(F.time_split2))
-        # mean_inter.append(statistics.mean(F.time_inter))
-        # print('Projection time of inter projection: ',statistics.mean(F.time_inter))
-        # mean_proj2.append(statistics.mean(F.time_proj2))
-        # print('Projection onto Cartisian of subspaces time: ',statistics.mean(F.time_proj2))
-        
+    
         
         # array_of_lists = np.array(F.all_sub)
         # mean_list = np.mean(array_of_lists, axis=0)
@@ -473,12 +416,12 @@ if __name__ == "__main__":
     #     "maxs": maxs,
     #     "varss": vars
     # }
-    # data = {'units':v_values, 'centralized_lqr_mean': lqr_mean, 'centralized_lqr_var': lqr_var, 'distributed_lqr_mean':dis_lqr_mean,
-    #         'distributed_lqr_var':dis_lqr_var, 'distributed_worst_mean':dis_worst_mean,'distributed_worst_var':dis_worst_var,
-    #         'distributed_theory_mean':dis_theory_mean,'distributed_theory_var':dis_theory_var,'cvx_mean':cvx_mean,'cvx_var':cvx_var}
-    data = {'units':v_values, 'centralized_lqr_mean': lqr_mean, 'centralized_lqr_var': lqr_var, 'cvx_mean':cvx_mean,'cvx_var':cvx_var}
+    data = {'units':v_values, 'max_deg':degree_values,'centralized_lqr_mean': lqr_mean, 'centralized_lqr_var': lqr_var, 'distributed_lqr_mean':dis_lqr_mean,
+            'distributed_lqr_var':dis_lqr_var, 'distributed_worst_mean':dis_worst_mean,'distributed_worst_var':dis_worst_var,
+            'distributed_theory_mean':dis_theory_mean,'distributed_theory_var':dis_theory_var}
+    # data = {'units':v_values, 'centralized_lqr_mean': lqr_mean, 'centralized_lqr_var': lqr_var, 'cvx_mean':cvx_mean,'cvx_var':cvx_var}
     df = pd.DataFrame(data)
-    df.to_excel('results/10-100,mesh.xlsx', index=False)
+    df.to_excel('results/10-100,dist-wheel.xlsx', index=False)
     # data = {'units': v_values, 'centralized_lqr_mean': lqr_mean, 'centralized_lqr_var': lqr_var, 'distributed_lqr_mean':dis_lqr_mean,
     #         'distributed_lqr_var':dis_lqr_var, 'lqr_iteration':mean_lqr, 'dis_lqr_iteration':mean_dis_lqr, 'cvx':cvx_time,
     #         'average total proj':mean_total, 'mean thread':mean_thread,'average alternation proj':mean_alter, 'mean split':mean_split, 'mean split2':mean_split2, 

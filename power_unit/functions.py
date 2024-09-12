@@ -97,8 +97,8 @@ class functions():
 
     def timed_matmul(self,x, y):
         start_time = time.process_time()
-        result = x @ y
-        # result = self.matrix_vector_multiply(x,y)
+        # result = x @ y
+        result = self.matrix_vector_multiply(x,y)
         # result = self.proj(x,y)
         end_time = time.process_time()
         elapsed_time = end_time - start_time
@@ -286,7 +286,7 @@ class functions():
         e=np.dot( (w-np.vstack((w_ini,w_ref))).T, (w-np.vstack((w_ini,w_ref))))[0,0]
         self.E.append(e)
         k=0
-        for ite in range(self.max_iter):
+        for ite in tqdm(range(self.max_iter)):
             w_prev = w
             # Compute zk+1
             start_lqr=time.process_time()
@@ -299,8 +299,8 @@ class functions():
             # print('v_proj:',v_proj.shape)
             start=time.process_time()
             # v_plus = self.proj_h @ v_proj # O(n^2)
-            v_plus = self.alternating_projections2(self.proj_h_sub, v_proj, num_iterations=self.dis_iter) 
-            # v_plus = self.matrix_vector_multiply(self.proj_h, v_proj) # O(n^2)
+            # v_plus = self.alternating_projections2(self.proj_h_sub, v_proj, num_iterations=self.dis_iter) 
+            v_plus = self.matrix_vector_multiply(self.proj_h, v_proj) # O(n^2)
             # print('v_plus',v_plus.shape)
             end=time.process_time()
             self.time_proj.append(end-start)
@@ -326,13 +326,14 @@ class functions():
         # Initialize w, z, v
         with ThreadPool(processes=8) as pool:
             # w=np.vstack((w_ini, np.zeros((self.q_dis*self.N,1)) ))
-            w = np.ones((self.q_dis*self.L,1))
+            # w = np.ones((self.q_dis*self.L,1))
+            w=np.vstack((w_ini, w_ref ))
             kron=np.diag( np.kron(np.eye(self.N),Phi) ).reshape(-1, 1)
             # e=np.dot((w[self.q_dis*self.Tini:]-w_ref).T, (kron * (w[self.q_dis*self.Tini:]-w_ref)))[0,0]
             e=np.dot( (w-np.vstack((w_ini,w_ref))).T, (w-np.vstack((w_ini,w_ref))))[0,0]
             self.E_dis.append(e)
             k=0
-            for ite_dis in range(self.max_iter):
+            for ite_dis in tqdm(range(self.max_iter)):
                 w_prev = w
                 # Compute zk+1
                 start_dislqr=time.process_time()
