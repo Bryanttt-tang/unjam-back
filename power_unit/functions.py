@@ -47,6 +47,7 @@ class functions():
         self.time_lqr=[]
         self.time_proj=[]
         self.time_worst=[]
+        self.worst_sub=[]
         self.time_alter_proj=[]
         self.time_dis_lqr=[]
         self.time_proj2=[]
@@ -58,7 +59,12 @@ class functions():
         self.all_sub=[]
         self.h_total=h_total # a matrix
         self.h=h # h is a list
-        self.proj_h=self.h_total@np.linalg.pinv(self.h_total)
+        U, S, VT = np.linalg.svd(self.h_total)
+        self.rank_total = self.m_total*self.L+2*self.v
+        print('rank',self.rank_total)
+        self.U_truncated = U[:, :self.rank_total]  # Shape (48, 27)
+        self.proj_h=self.U_truncated@np.linalg.inv(self.U_truncated.T@self.U_truncated)@self.U_truncated.T
+        # self.proj_h=self.h_total@np.linalg.pinv(self.h_total)
         self.proj_h_sub=[]
         for k in range(len(self.h)):
             self.proj_h_sub.append(self.h[k]@np.linalg.pinv(self.h[k]))
@@ -122,6 +128,7 @@ class functions():
         w_proj=[result[0] for result in results]    
         self.time_sub=[result[1] for result in results]
         worst_sub=np.max(self.time_sub)
+        self.worst_sub.append(worst_sub) # get the worst subspace in each iteration
         mean_sub=statistics.mean(self.time_sub)
         var_sub=statistics.variance(self.time_sub)
         self.all_sub.append(self.time_sub)
@@ -200,7 +207,15 @@ class functions():
             w_re[group,:] = np.mean(w_re[group,:],axis=0)
         return w_re.reshape(-1,1,order='F')
     
-    def alternating_projections(self,h,x, pool, num_iterations=15, tol=1e-10):
+    def project_onto_box_constraints(self,w):
+        # w_projected = w.copy()
+        w_re=w.reshape(-1,self.L,order='F')
+        w_re[:self.m_total, :] = np.clip(w_re[:self.m_total, :], -1, 1)  # Apply box constraints to the inputs of each column
+        # print('w_re',w_re)
+        # print(w_re.shape)
+        return w_re.reshape(-1,1,order='F')
+    
+    def alternating_projections(self,h,x, pool, num_iterations=10, tol=1e-10):
         for _ in range(num_iterations):
             # start_proj2=time.process_time()
             # x = self.proj_full(h,x) # 2*O(n)+ m*O(n_small^2)/8, where m is the number of units
@@ -218,6 +233,17 @@ class functions():
     #             break
         return x
 
+    def alternating_projections2(self,h,x, num_iterations=10, tol=1e-10):
+        # x_copy=x.copy()
+        for _ in range(num_iterations):
+            x=self.proj_h @x
+            x=self.project_onto_box_constraints(x)
+            # x = self.proj_inter(M,M_inv,x)
+            # Check convergence
+    #         if np.linalg.norm(x - proj_square(x)) < tol:
+    #             break
+        return x
+    
     def average_projections(self,h,M,M_inv,x, num_iterations=150, tol=1e-10):
         for _ in range(num_iterations):
             x1 = self.proj_two(h,x)
@@ -251,10 +277,10 @@ class functions():
     #             break
         return x
     
-    def lqr(self,w_ini, w_ref, Phi, tol=1e-7): # Alberto's algorithm
+    def lqr(self,w_ini, w_ref, Phi, tol=1e-6): # Alberto's algorithm
         # Initialize w, z, v
-        # w=np.vstack((w_ini, np.zeros((self.q*self.N,1)) ))
-        w = np.ones((self.q*self.L,1))
+        w=np.vstack((w_ini, w_ref ))
+        # w = np.zeros((self.q*self.L,1))
         kron=np.diag( np.kron(np.eye(self.N),Phi) ).reshape(-1, 1) # a vector containing all diagonal elements
         # e=np.dot((w[self.q*self.Tini:]-w_ref).T, (kron * (w[self.q*self.Tini:]-w_ref)))[0,0]
         e=np.dot( (w-np.vstack((w_ini,w_ref))).T, (w-np.vstack((w_ini,w_ref))))[0,0]
@@ -272,7 +298,8 @@ class functions():
             v_proj=  2*z-w-2*self.alpha*z_squared # O(n)
             # print('v_proj:',v_proj.shape)
             start=time.process_time()
-            v_plus = self.proj_h @ v_proj # O(n^2)
+            # v_plus = self.proj_h @ v_proj # O(n^2)
+            v_plus = self.alternating_projections2(self.proj_h_sub, v_proj, num_iterations=self.dis_iter) 
             # v_plus = self.matrix_vector_multiply(self.proj_h, v_proj) # O(n^2)
             # print('v_plus',v_plus.shape)
             end=time.process_time()
@@ -290,8 +317,8 @@ class functions():
             # Check for convergence
             k+=1
             # print( 'norm',np.linalg.norm(w - w_prev))
-            # if np.linalg.norm(w - w_prev) < tol:
-            #     break
+            if np.linalg.norm(w - w_prev) < tol:
+                break
         self.k_lqr.append(k)
         return w
 
@@ -331,7 +358,7 @@ class functions():
                 self.E_dis.append(e)
                 # Check for convergence
                 k+=1
-                # if np.linalg.norm(w - w_prev) < tol:
-                #     break
+                if np.linalg.norm(w - w_prev) < tol:
+                    break
             self.k_dis_lqr.append(k)
         return w

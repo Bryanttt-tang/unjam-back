@@ -5,7 +5,7 @@ from tqdm import tqdm
 from cvxpy.atoms.affine.wraps import psd_wrap
 from functions import functions
 """Generic class to define past data, initial trajectory """
-np.random.seed(123)
+# np.random.seed(123)
 class UnionFind:
         def __init__(self):
             self.parent = {}
@@ -37,7 +37,7 @@ class UnionFind:
 
 class generate_data():
     
-    def __init__(self,T,Tini,N,p,m,n,v,e,A,B,C,D,graph):
+    def __init__(self,T,Tini,N,p,m,n,v,e,A,B,C,D,graph,noise):
         
         
         self.T = T
@@ -53,6 +53,7 @@ class generate_data():
         self.v= v
         self.e= e
         self.graph=graph
+        self.noise=noise
         
     def generate_pastdata(self,x0):
         
@@ -73,13 +74,15 @@ class generate_data():
         # original manifest variable
         uData = np.empty(( v*m,T)) 
         yData = np.empty((v*p,T))
+        yData_noise = np.empty((v*p,T))
+
         
         xData = np.empty((v*n,T+1))
         x=x0 # X0 = np.random.rand(n,10)  
         y=C@x
         for t in tqdm(range(self.T)):
-            u = np.array(np.random.randn(m, v))
-            # u=np.random.uniform(-20, 20, (m, v))
+            # u = np.array(np.random.randn(m, v))
+            u=np.random.uniform(-10, 10, (m, v))
             all_u = []
             y=C@x
             # print(y)
@@ -89,17 +92,20 @@ class generate_data():
                 x[:,i:i+1] = A@x[:,i:i+1]+B@(u[:,i:i+1])
                 all_u.append(u[:, i:i+1])
                 sum_term = np.zeros_like(B @ y[:, i:i+1])
-                neighbors = sorted(self.graph.neighbors(i))  # Sort neighbors
+                neighbors = sorted(list(self.graph.neighbors(i)))  # Sort neighbors
+
                 for j in neighbors:
                     sum_term += B @ ( y[:, j:j+1])
                     all_u.append(y[:,j:j+1])
                 x[:,i:i+1]+= sum_term
             
             # print(np.vstack(all_u).shape)
+            # print('noise',np.random.normal(0, 0.1, yData[:,[t]].shape))
             uData_dis[:,[t]] = np.vstack(all_u)
             yData_dis[:,[t]] = y.reshape(-1, 1,order='F')
             uData[:,[t]] = u.reshape(-1, 1,order='F')
             yData[:,[t]] = y.reshape(-1, 1,order='F')
+            yData_noise[:,[t]] = y.reshape(-1, 1,order='F') + np.random.normal(1, np.sqrt(self.noise), yData[:,[t]].shape)
             xData[:,[t+1]] = x.reshape(-1, 1, order='F')
          
         # u_mean = uData.mean(axis=1, keepdims=True)
@@ -112,7 +118,7 @@ class generate_data():
         # yData = (yData - y_mean) / y_std
         # xData = (xData - x_mean) / x_std
 
-        return  xData, uData ,yData, uData_dis ,yData_dis
+        return  xData, uData ,yData, uData_dis ,yData_dis, yData_noise
     
 
 """the minimal representation ( i.e. the smallest state dimension) in this case is 3 as X(k) stays in R^3
@@ -231,18 +237,24 @@ class DeePC():
 #         print('yini:\n',y_reshape)
         wini=np.vstack((u_reshape,y_reshape)).reshape(-1,1, order='F')
         
-        g=cp.Variable((self.T-self.L+1, 1))
+        # g=cp.Variable((self.T-self.L+1, 1))
+        g=cp.Variable((self.F.rank_total, 1))
         w_f=cp.Variable((self.q_total*self.N , 1)) 
         
         objective = cp.quad_form(w_f-self.wref, psd_wrap(np.kron(np.eye(self.N),self.Phi)))
 #             + lambda_1*cp.quad_form((I-Pi)@g,psd_wrap(I))\
 #             + lambda_g*cp.norm(g, 1)          
 
-        constraints = [ self.H.Hankel[:self.Tini*self.q_total,:] @ g == wini,
-                            self.H.Hankel[self.Tini*self.q_total:,:] @ g == w_f,
+        constraints = [ self.F.U_truncated[:self.Tini*self.q_total,:] @ g == wini,
+                            self.F.U_truncated[self.Tini*self.q_total:,:] @ g == w_f,
 #                             w_f>=0
                             ]
-        
+            # box constraint on inputs
+        w_f_reshaped = cp.reshape(w_f, (-1, self.N))
+        constraints += [
+            w_f_reshaped[:self.m_total, :] <= 1,
+            w_f_reshaped[:self.m_total, :] >= -1
+        ]
         problem = cp.Problem(cp.Minimize(objective), constraints) 
         problem.solve(solver='SCS', warm_start=True)
         e=problem.value
@@ -359,7 +371,7 @@ class DeePC():
                     x[:,i:i+1] = A@x[:,i:i+1]+B@(u[i].reshape(-1, 1))
                     sum_term = np.zeros_like(B @ y[:, i:i+1])
                     # print(sum_term.shape)
-                    neighbors = sorted(self.graph.neighbors(i))  # Sort neighbors
+                    neighbors = sorted(list(self.graph.neighbors(i)))  # Sort neighbors
                     for j in neighbors:
                         sum_term += B @ (y[:, j:j+1])
                     x[:,i:i+1]+= sum_term

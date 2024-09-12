@@ -11,13 +11,13 @@ from functions import functions
 from multiprocessing.pool import ThreadPool
 import networkx as nx
 if __name__ == "__main__":
-    np.random.seed(123)
+    np.random.seed(1)
     A = np.array([[1, 0.1],
-                   [-0.7,0.6]])
+                   [-0.5,0.7]])
     B = np.array([[0],[1]])
     C = np.array([[0.25,0]])
     D = np.zeros(1)
-    
+
     # A = np.array([[1, 0.05],
     #             [-0.05,0.5]])
     # B = np.array([[0],[0.1]])
@@ -73,14 +73,6 @@ if __name__ == "__main__":
         """
         Creates a connected graph with n nodes and n-1 edges (a tree).
         # """
-        # G = nx.Graph()
-        # G.add_nodes_from(range(n))
-        
-        # # Create a minimum spanning tree to ensure connectivity
-        # nodes = list(G.nodes())
-        # np.random.shuffle(nodes)
-        # for i in range(1, n):
-        #     G.add_edge(nodes[i - 1], nodes[i])
         G = nx.path_graph(n)
         return G
 
@@ -134,7 +126,7 @@ if __name__ == "__main__":
     v = 5 # number of units in the interconnected graph
 
     graph = create_connected_graph(v)   
-    increase_edge_connectivity(graph, 2)
+    # increase_edge_connectivity(graph, 2)
 
     # while graph.number_of_edges() <= (v * (v - 1)) // 2:
     e=2*len(graph.edges()) # directed graph  
@@ -153,11 +145,11 @@ if __name__ == "__main__":
     q_central=(m_central+p_central)
     ''' Simulation parameters '''
     Tini = 3 # length of the initial trajectory
-    N = 10   # prediction horizon
+    N = 5   # prediction horizon
     L=Tini+N
     T = v*L+v*n+100   # number of data points
     R=0.1*np.eye(m_central)
-    R_dis=0.1*np.eye(m_dis)
+    R_dis=1*np.eye(m_dis)
     # R[1,1]=0
     # R[3,3]=0
     Q=10*np.eye(p_dis)
@@ -168,16 +160,35 @@ if __name__ == "__main__":
     # r = np.ones((p,1)) # reference trajectory, try to give different defitions of this to see if DeePC works!
 
     ''' Generate data '''
+    def increase_snr(y, snr_db):
+        signal_variance = np.var(y)
+        desired_snr_linear = 10 ** (snr_db / 10)
+        noise_variance = signal_variance / desired_snr_linear
+        noise = np.random.normal(0, np.sqrt(noise_variance), y.shape)
+        y_noisy = y + noise
+        return y_noisy
+    SNR=[]
+    Error=[]
+    w_star=[]
 
+    # for noise in np.arange(0.1,1.1,0.1):
     X0 = np.random.rand(n,v)  
     # X0=np.random.uniform(-100, 100, (n, v))#initial state of 10 units
-    generator = generate_data(T,Tini,N,p,m,n,v,e,A,B,C,D,graph)
-    xData, uData ,yData, uData_dis ,yData_dis = generator.generate_pastdata(X0)
-    print('max U:',np.max(uData))
-    print('max Y:',np.max(yData))
-    print('max X:',np.max(xData))
+    generator = generate_data(T,Tini,N,p,m,n,v,e,A,B,C,D,graph,0)
+    xData, uData ,yData, uData_dis ,yData_dis, yData_noise = generator.generate_pastdata(X0)
+    print(np.var(uData))
+
+    # print('var in original',np.var(yData))
+    # print('max U:',np.max(uData))
+    # print('max Y:',np.max(yData))
+    # print('max X:',np.max(xData))
+    # snr_linear = np.var(yData) / noise
+    # snr_db = 10 * np.log10(snr_linear)
+    # print('SNR',snr_db)
+    # SNR.append(1/snr_linear)
     wData=np.vstack((uData,yData))
     wData_dis=np.vstack((uData_dis,yData_dis))
+    wData_noise=np.vstack((uData,yData_noise))
     # print('uData:',uData[:,2])
     # print('yData:',yData[:,2])
     # print('uData_dis:',uData_dis[:,2])
@@ -185,6 +196,7 @@ if __name__ == "__main__":
     # print('wData_dis:',wData_dis[:,2])
     wini = wData[:, -Tini:].reshape(-1, 1, order='F')
     wini_dis = wData_dis[:, -Tini:].reshape(-1, 1, order='F')
+    wini_noise = wData_noise[:, -Tini:].reshape(-1, 1, order='F')
     print(wini.shape) # (Tini*q=3*(m+p))
     print(wini_dis.shape) # (Tini*q_dis=3*(m^2+p))
 
@@ -235,6 +247,14 @@ if __name__ == "__main__":
                 "n":v*n,
             }
     H = Hankel(params_H)
+
+    params_H_noise = {"uData": uData,
+                "yData": yData_noise,
+                "Tini": Tini,
+                "N": N,
+                "n":v*n,
+            }
+    H_noise = Hankel(params_H_noise)
     
     params_H_dis = {"uData": uData_dis,
                 "yData": yData_dis,
@@ -267,9 +287,10 @@ if __name__ == "__main__":
         h.append(H_j[i].Hankel)
             
     max_iter=200
-    dis_iter=10 
-    alpha=0.05
+    dis_iter=1
+    alpha=0.1
     F=functions(T,Tini, N, v, e, m, 1, p, M, h_total, h, connected_components, graph, alpha, max_iter, dis_iter)
+    # F_noise=functions(T,Tini, N, v, e, m, 1, p, M, H_noise.Hankel, h, connected_components, graph, alpha, max_iter, dis_iter)
     # lqr_exp_time=[]
     # dis_lqr_exp_time=[]
     
@@ -280,12 +301,12 @@ if __name__ == "__main__":
     w_split = F.lqr(wini, wref, Phi)
     end_alberto = time.process_time()
     print(f"Running time of Alberto Algo with {max_iter} iterations: ",end_alberto-start_alberto)
-
-    start_dist = time.process_time()
-    w_split_dis = F.distributed_lqr(wini_dis, wref_dis,Phi_dis)
-    end_dist = time.process_time()
-    print(f"Running time of distributed Algo with {max_iter} outer iter and {dis_iter} alternating projection: ",end_dist-start_dist)
-    # print(f"Running time of worst case distributed Algo with {max_iter} outer iter and {dis_iter} alternating projection: ",end_dist-start_dist)
+    # w_split_noise = F_noise.lqr(wini, wref, Phi)
+    # start_dist = time.process_time()
+    # w_split_dis = F.distributed_lqr(wini_dis, wref_dis,Phi_dis)
+    # end_dist = time.process_time()
+    # print(f"Running time of distributed Algo with {max_iter} outer iter and {dis_iter} alternating projection: ",end_dist-start_dist)
+    # # print(f"Running time of worst case distributed Algo with {max_iter} outer iter and {dis_iter} alternating projection: ",end_dist-start_dist)
 
     # random_vector_dis=np.random.uniform(0, 10, size=(q_dis, L))
     # w_ran_dis=random_vector_dis.reshape(-1,1, order='F')
@@ -306,46 +327,86 @@ if __name__ == "__main__":
     # plt.grid(True)
     # plt.show()   
 
-        
+    U, S, VT = np.linalg.svd(h_total)
+    rank_total = np.linalg.matrix_rank(h_total)
+    U_truncated = U[:, :rank_total]
     # CVXPY
     start_cvx = time.time()
-    g = cp.Variable((T-Tini-N+1,1))
+    g = cp.Variable((T-L+1,1))
     w_f = cp.Variable((N*q_central,1))
     objective = cp.quad_form(w_f-wref, psd_wrap(np.kron(np.eye(N),Phi)))+ lambda_g*cp.norm(g, 1) 
     #             + lambda_1*cp.quad_form((I-Pi)@g,psd_wrap(I))\
-                     
+                    
     constraints = [ h_total[:Tini*q_central,:] @ g == wini,
-                    h_total[Tini*q_central:,:] @ g == w_f,
+                    h_total[Tini*q_central:,:] @ g == w_f
                                 ]
+    # box constraint on inputs
+    w_f_reshaped = cp.reshape(w_f, (-1, N))
+    constraints += [
+        w_f_reshaped[:m_central, :] <= 1,
+        w_f_reshaped[:m_central, :] >= 1
+    ]
     problem = cp.Problem(cp.Minimize(objective), constraints) 
     solver_opts = {
     'max_iter': 10000,
     'verbose': True     # Enable verbose output to debug
 }
     # problem.solve(solver = cp.OSQP,**solver_opts)
-    problem.solve(solver = cp.SCS,verbose=False)
+    problem.solve(solver = cp.OSQP,verbose=False)
     end_cvx = time.time()
     print('Running time of CVXPY for single LQR: ',end_cvx-start_cvx)
     # diff=np.linalg.norm(w_split-np.vstack((wini,wref)) )
-    print(len(F.E))
-    plt.plot(range(0, max_iter+1), np.squeeze(F.E))
-    plt.plot(range(0, max_iter+1), np.squeeze(F.E_dis))
-    plt.ylabel('Error')
-    plt.legend(['Centralize', 'Distributed'])
-    plt.title('Convergence Error of LQR')
-    plt.grid(True)
-    plt.show()
-    plt.show(block=False)
-    plt.pause(0.001)
-
+    # print(len(F.E))
+    # plt.plot(range(0, max_iter+1), np.squeeze(F.E))
+    # plt.plot(range(0, max_iter+1), np.squeeze(F_noise.E))
+    # # plt.plot(range(0, max_iter+1), np.squeeze(F.E_dis))
+    # plt.ylabel('Error')
+    # plt.legend(['Free', 'Noise'])
+    # plt.title('Convergence Error of LQR')
+    # plt.grid(True)
+    # plt.show()
+    # plt.show(block=False)
+    # plt.pause(0.001)
+    # g_off=np.linalg.inv(U_truncated[:Tini*q_central,:])@wini
+    print('iterations:',F.k_lqr)
+    # w_f_off=U_truncated[Tini*q_central:,:]@np.linalg.pinv(U_truncated[:Tini*q_central,:])@wini
+    w_f_off=h_total[Tini*q_central:,:]@np.linalg.pinv(h_total[:Tini*q_central,:])@wini
     print('The final cost of CVX:',problem.value)
+    print('cvx\n',w_f.value)
+    print('alberto\n',w_split[q_central*Tini:])
 #     # print('The output trajectory using CVXPY: \n',w_f.value)
 #     # print('The output trajectory using DS-splitting: \n',w_split[size_w*Tini:])
 #     # print('The output trajectory using Distributed LQR: \n',w_split_dis[size_w*Tini:])
     print('The differnce between CVX and Alberto methods: ',np.linalg.norm(w_f.value - w_split[q_central*Tini:]) )
+    print('The differnce between offline CVX and Alberto methods: ',np.linalg.norm(w_f_off - w_split[q_central*Tini:]) )
+    # print('The differnce between free and noisy Alberto methods: ',np.linalg.norm(w_split_noise[q_central*Tini:] - w_split[q_central*Tini:]) )
+    # print('error',F.E[-1])
+    # print('LQT tracking error: ',np.linalg.norm(F_noise.E[-1] -F.E[-1])/ np.linalg.norm(F.E[-1]))
+    # Error.append(np.linalg.norm(F_noise.E[-1] -F.E[-1])/ np.linalg.norm(F.E[-1]))
+    # w_star.append(np.linalg.norm(w_split_noise[q_central*Tini:] - w_split[q_central*Tini:])/np.linalg.norm(w_split[q_central*Tini:]))
     # print('The differnce between centralized and distributed methods: ',np.linalg.norm(w_split_dis[q_dis*Tini:] - w_split[q_dis*Tini:]) )
-            
     
+    # print(SNR)
+    # plt.figure(figsize=(10, 6))
+    # plt.plot(SNR, Error) 
+    # plt.xlabel('1/SNR')
+    # plt.ylabel('Error')
+    # plt.show()
+
+    # plt.figure(figsize=(10, 6))
+    # plt.plot(SNR, w_star) 
+    # plt.show()
+    # plt.xlabel('1/SNR')
+    # plt.ylabel('w*')
+        # plt.figure(figsize=(10, 6))
+        # plt.plot(np.linspace(0, Tsim,Tsim), usim[0,:], label='CVXPY', color='blue')
+        # plt.plot(np.linspace(0, Tsim,Tsim), usim2[0,:], label='lqr', color='red')
+        # plt.plot(np.linspace(0, Tsim,Tsim), usim3[0,:], label='dis_lqr', color='black')
+        # plt.ylabel('u')
+        # plt.grid(True)
+        # plt.legend()
+        # plt.show()
+
     Tsim=100  
     solver='CVXPY'
     params_D = {'H': H, # an object of Hankel
@@ -418,24 +479,43 @@ if __name__ == "__main__":
     fig, ax = plt.subplots(4, figsize=(8, 10))
 
     # Plot control input
-    plot_behavior(ax[0], 'Control input', 'Time Steps', 'Input', usim, 'u', ylim=None)
+    plot_behavior(ax[0], 'Control input', 'Time Steps', 'Input', usim2, 'u', ylim=None)
     # Plot output
-    plot_behavior(ax[1], 'State x1', 'Time Steps', 'x1', xsim[0,0,:].reshape(-1,Tsim+1), 'x', ylim=None)
+    plot_behavior(ax[1], 'State x1', 'Time Steps', 'x1', xsim2[0,0,:].reshape(-1,Tsim+1), 'x', ylim=None)
     # plot_behavior(ax[1], 'State x1', 'Time Steps', 'x1', xsim2[0,0,:].reshape(-1,Tsim), 'x', ylim=None)
-    plot_behavior(ax[2], 'State x2', 'Time Steps', 'x2', xsim[1,0,:].reshape(-1,Tsim+1), 'x', ylim=None)
+    plot_behavior(ax[2], 'State x2', 'Time Steps', 'x2', xsim2[1,0,:].reshape(-1,Tsim+1), 'x', ylim=None)
     # Plot output error
     print('The reference:\n',wref[-p_central:])
-    error = np.abs(ysim - np.tile(wref[-p_central:], Tsim))
+    error = np.abs(ysim2- np.tile(wref[-p_central:], Tsim))
     print('error:\n',error[:,-1])
     # error=ysim-wref.reshape(size_w,-1,order='F')[-2:,:]
-    plot_behavior(ax[3], 'Output error', 'Time Steps', 'Output error y - y_ref', error, 'y', ylim=None,log_scale=True)
+    plot_behavior(ax[3], 'Output error', 'Time Steps', 'Output error y - y_ref', error, 'y', ylim=None,log_scale=False)
     plt.subplots_adjust(hspace=0.4)
+    plt.show()
+
+    plt.figure(figsize=(10, 6))
+    plt.plot(np.linspace(0, Tsim,Tsim), usim[0,:], label='CVXPY', color='blue')
+    plt.plot(np.linspace(0, Tsim,Tsim), usim2[0,:], label='lqr', color='red')
+    # plt.plot(np.linspace(0, Tsim,Tsim), usim3[0,:], label='dis_lqr', color='black')
+    plt.ylabel('u')
+    plt.grid(True)
+    plt.legend()
+    plt.show()
+
+    plt.figure(figsize=(10, 6))
+    plt.plot(np.linspace(0, Tsim,Tsim), ysim[0,:], label='CVXPY', color='blue')
+    plt.plot(np.linspace(0, Tsim,Tsim), ysim2[0,:], label='lqr', color='red')
+    # plt.plot(np.linspace(0, Tsim,Tsim), ysim3[0,:], label='dis_lqr', color='black')
+    plt.ylabel('y')
+    plt.grid(True)
+    plt.legend()
     plt.show()
 
     plt.figure(figsize=(10, 6))
     plt.plot(np.linspace(0, Tsim,Tsim+1), xsim[0,0,:], label='CVXPY', color='blue')
     plt.plot(np.linspace(0, Tsim,Tsim+1), xsim2[0,0,:], label='lqr', color='red')
     # plt.plot(np.linspace(0, Tsim,Tsim+1), xsim3[0,0,:], label='dis_lqr', color='black')
+    plt.ylabel('phase')
     plt.grid(True)
     plt.legend()
     plt.show()
@@ -444,44 +524,54 @@ if __name__ == "__main__":
     plt.plot(np.linspace(0, Tsim,Tsim+1), xsim[1,0,:], label='CVXPY', color='blue')
     plt.plot(np.linspace(0, Tsim,Tsim+1), xsim2[1,0,:], label='lqr', color='red')
     # plt.plot(np.linspace(0, Tsim,Tsim+1), xsim3[1,0,:], label='dis_lqr', color='black')
+    plt.ylabel('frequency')
     plt.grid(True)
     plt.legend()
     plt.show()
 
     # Create a time array
     time = np.arange(xsim.shape[2])
-
-    # Combine the data into a dictionary
     data = {'time': time}
-    for method_num, x_array in enumerate([xsim, xsim2, xsim3], start=1):
+    for method_num, x_array in enumerate([xsim, xsim2], start=1):
         data[f'state_1_method_{method_num}'] = x_array[0, 0, :]  # Trajectory for state 1
         data[f'state_2_method_{method_num}'] = x_array[1, 0, :]  # Trajectory for state 2
 
     # Create a DataFrame and save to CSV
     df = pd.DataFrame(data)
-    df.to_csv('state_trajectories.csv', index=False)
+    df.to_csv('state_trajectories_box.csv', index=False)
 
-    def compute_metrics(t, response, ref, threshold=0.02):
-        num_responses = response.shape[0]
-        settling_times = []
-        steady_state_values = response[:, -1]
-        
-        for i in range(num_responses):
-            steady_state_value = response[i, -1]
-            settling_threshold = np.abs(threshold * steady_state_value)
-            # print('thre:',settling_threshold)
-            settling_time_indices = np.where(np.abs(response[i, :] - steady_state_value) > settling_threshold)[0]
-            # print(settling_time_indices)
-            if settling_time_indices.size > 0:
-                settling_time = t[settling_time_indices[-1]]
-            else:
-                settling_time = t[-1]
-            settling_times.append(settling_time)
-        steady_state_errors = np.abs(steady_state_values-ref )
-        return np.max(settling_times), np.max(steady_state_errors)
-    settling_time, steady_state_error = compute_metrics(np.linspace(0, Tsim-1,Tsim), ysim, wref[-p_central:])
+    time2 = np.arange(usim.shape[1])
+    data2 = {'time': time2}
+    for method_num, u_array in enumerate([usim, usim2], start=1):
+        data2[f'u_method_{method_num}'] = u_array[0, :]  # Trajectory for state 1
+    for method_num, y_array in enumerate([ysim, ysim2], start=1):
+        data2[f'y_method_{method_num}'] = y_array[0, :]  # Trajectory for state 1
 
-    # print(f"Rise time: {rise_time:.2f} s")
-    print(f"Settling time: {settling_time:.2f} s")
-    # print(f"Overshoot: {overshoot:.2f} %")
-    print(f"Steady state error: {steady_state_error}")
+    # Create a DataFrame and save to CSV
+    df2 = pd.DataFrame(data2)
+    df2.to_csv('w_box.csv', index=False)
+
+        # def compute_metrics(t, response, ref, threshold=0.02):
+        #     num_responses = response.shape[0]
+        #     settling_times = []
+        #     steady_state_values = response[:, -1]
+            
+        #     for i in range(num_responses):
+        #         steady_state_value = response[i, -1]
+        #         settling_threshold = np.abs(threshold * steady_state_value)
+        #         # print('thre:',settling_threshold)
+        #         settling_time_indices = np.where(np.abs(response[i, :] - steady_state_value) > settling_threshold)[0]
+        #         # print(settling_time_indices)
+        #         if settling_time_indices.size > 0:
+        #             settling_time = t[settling_time_indices[-1]]
+        #         else:
+        #             settling_time = t[-1]
+        #         settling_times.append(settling_time)
+        #     steady_state_errors = np.abs(steady_state_values-ref )
+        #     return np.max(settling_times), np.max(steady_state_errors)
+        # settling_time, steady_state_error = compute_metrics(np.linspace(0, Tsim-1,Tsim), ysim, wref[-p_central:])
+
+        # # print(f"Rise time: {rise_time:.2f} s")
+        # print(f"Settling time: {settling_time:.2f} s")
+        # # print(f"Overshoot: {overshoot:.2f} %")
+        # print(f"Steady state error: {steady_state_error}")
