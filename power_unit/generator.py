@@ -67,7 +67,7 @@ class generate_data():
         D = self.D
         v= self.v
         e= self.e
-        # if self.graph=='chain':
+    
         # augmented manifest variable
         uData_dis = np.empty(( (v*m+e*p),T)) 
         yData_dis = np.empty((v*p,T))
@@ -80,6 +80,7 @@ class generate_data():
         xData = np.empty((v*n,T+1))
         x=x0 # X0 = np.random.rand(n,10)  
         y=C@x
+        # print('v',v)
         for t in tqdm(range(self.T)):
             # u = np.array(np.random.randn(m, v))
             u=np.random.uniform(-10, 10, (m, v))
@@ -92,6 +93,8 @@ class generate_data():
                 x[:,i:i+1] = A@x[:,i:i+1]+B@(u[:,i:i+1])
                 all_u.append(u[:, i:i+1])
                 sum_term = np.zeros_like(B @ y[:, i:i+1])
+                # print(i)
+                # print(list(self.graph.neighbors(i)))
                 neighbors = sorted(list(self.graph.neighbors(i)))  # Sort neighbors
 
                 for j in neighbors:

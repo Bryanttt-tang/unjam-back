@@ -324,7 +324,7 @@ class functions():
 
     def distributed_lqr(self, w_ini, w_ref, Phi, tol=1e-7):
         # Initialize w, z, v
-        with ThreadPool(processes=8) as pool:
+        with ThreadPool(processes=16) as pool:
             # w=np.vstack((w_ini, np.zeros((self.q_dis*self.N,1)) ))
             # w = np.ones((self.q_dis*self.L,1))
             w=np.vstack((w_ini, w_ref ))

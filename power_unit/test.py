@@ -69,7 +69,7 @@ if __name__ == "__main__":
     m = np.shape(B)[1]  # dimesion of the input
     p = np.shape(C)[0]  # dimesion of the output
     q = p+m             # dimesion of input/output pair
-    def create_connected_graph(n,topo='chain'):
+    def create_connected_graph(n,topo='wheel'):
         """
         Creates a connected graph with n nodes and n-1 edges (a tree).
         # """
@@ -83,10 +83,12 @@ if __name__ == "__main__":
         #     G.add_edge(nodes[i - 1], nodes[i])
         if topo=='chain':
             G = nx.path_graph(n)
+        elif topo=='cycle':
+            G = nx.cycle_graph(n)
         elif topo=='star':
             G = nx.star_graph(n - 1)
         elif topo=='wheel':
-            G = nx.star_graph(n - 1)
+            G = nx.wheel_graph(n - 1)
         return G
     def create_reordered_mesh_graph(m, n):
         # Create a 2D grid graph (mesh grid)
@@ -175,7 +177,7 @@ if __name__ == "__main__":
     vars=[]
     cvx_time=[]
     for v in tqdm(np.arange(10, 110, 10)):
-        graph = create_connected_graph(v,'wheel') 
+        graph = create_connected_graph(v,'cycle') 
         # graph=create_reordered_mesh_graph(v,v)
         # plt.figure(figsize=(8, 6))
         # pos = nx.spring_layout(graph)  # You can change the layout for different visualizations
@@ -189,8 +191,10 @@ if __name__ == "__main__":
         e_con=nx.edge_connectivity(graph)
         degree=max(dict(graph.degree()).values())
         degree_values.append(degree)
+        print('Edges:',e)
         print('vertex connectivity:',v_con)
         print('edge connectivity:',e_con)
+        print('degree:',degree)
         # add_random_edge(graph)
         # print("Initial number of edges:", graph.number_of_edges())
         # print("Is the graph connected?", nx.is_connected(graph))
@@ -205,11 +209,11 @@ if __name__ == "__main__":
         N = 5   # prediction horizon
         L=Tini+N
         T = v*L+v*n+100   # number of data points
-        R=0.1*np.eye(m_central)
+        R=1*np.eye(m_central)
         R_dis=0.1*np.eye(m_dis)
         # R[1,1]=0
         # R[3,3]=0
-        Q=10*np.eye(p_dis)
+        Q=1*np.eye(p_dis)
         Phi=np.block([[R, np.zeros((R.shape[0],Q.shape[1]))], [np.zeros((Q.shape[0],R.shape[1])), Q]])
         Phi_dis=np.block([[R_dis, np.zeros((R_dis.shape[0],Q.shape[1]))], [np.zeros((Q.shape[0],R_dis.shape[1])), Q]])
         lambda_g = 1          # lambda parameter for L1 penalty norm on g
@@ -223,9 +227,9 @@ if __name__ == "__main__":
         # X0=np.random.uniform(-100, 100, (n, v))#initial state of 10 units
         generator = generate_data(T,Tini,N,p,m,n,v,e,A,B,C,D,graph,noise)
         xData, uData ,yData, uData_dis ,yData_dis,yData_noise= generator.generate_pastdata(X0)
-        print('max U:',np.max(uData))
-        print('max Y:',np.max(yData))
-        print('max X:',np.max(xData))
+        # print('max U:',np.max(uData))
+        # print('max Y:',np.max(yData))
+        # print('max X:',np.max(xData))
         wData=np.vstack((uData,yData))
         wData_dis=np.vstack((uData_dis,yData_dis))
         # print('uData:',uData[:,2])
@@ -317,7 +321,7 @@ if __name__ == "__main__":
             h.append(H_j[i].Hankel)
                 
         max_iter=100
-        dis_iter=10 
+        dis_iter=5
         alpha=0.1
         # F=functions(T,Tini, N, v, e, m, 1, p, M, h_total, h, connected_components, graph, alpha, max_iter, dis_iter)
         # lqr_exp_time=[]
@@ -384,8 +388,8 @@ if __name__ == "__main__":
         dis_lqr_var.append(statistics.stdev(dis_lqr_exp_time))
         dis_worst_mean.append(statistics.mean(dis_lqr_worst_time))
         dis_worst_var.append(statistics.stdev(dis_lqr_worst_time))  
-        # dis_theory_mean.append(statistics.mean(dis_lqr_theory_time))
-        # dis_theory_var.append(statistics.stdev(dis_lqr_theory_time)) 
+        dis_theory_mean.append(statistics.mean(dis_lqr_theory_time))
+        dis_theory_var.append(statistics.stdev(dis_lqr_theory_time)) 
         # cvx_mean.append(statistics.mean(cvx_exp_time))
         # cvx_var.append(statistics.stdev(cvx_exp_time))
 
@@ -421,7 +425,7 @@ if __name__ == "__main__":
             'distributed_theory_mean':dis_theory_mean,'distributed_theory_var':dis_theory_var}
     # data = {'units':v_values, 'centralized_lqr_mean': lqr_mean, 'centralized_lqr_var': lqr_var, 'cvx_mean':cvx_mean,'cvx_var':cvx_var}
     df = pd.DataFrame(data)
-    df.to_excel('results/10-100,dist-wheel.xlsx', index=False)
+    df.to_excel('results/10-100,dist-cycle.xlsx', index=False)
     # data = {'units': v_values, 'centralized_lqr_mean': lqr_mean, 'centralized_lqr_var': lqr_var, 'distributed_lqr_mean':dis_lqr_mean,
     #         'distributed_lqr_var':dis_lqr_var, 'lqr_iteration':mean_lqr, 'dis_lqr_iteration':mean_dis_lqr, 'cvx':cvx_time,
     #         'average total proj':mean_total, 'mean thread':mean_thread,'average alternation proj':mean_alter, 'mean split':mean_split, 'mean split2':mean_split2, 
