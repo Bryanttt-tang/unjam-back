@@ -177,7 +177,7 @@ if __name__ == "__main__":
     vars=[]
     cvx_time=[]
     for v in tqdm(np.arange(10, 110, 10)):
-        graph = create_connected_graph(v,'cycle') 
+        graph = create_connected_graph(v,'chain') 
         # graph=create_reordered_mesh_graph(v,v)
         # plt.figure(figsize=(8, 6))
         # pos = nx.spring_layout(graph)  # You can change the layout for different visualizations
@@ -425,7 +425,7 @@ if __name__ == "__main__":
             'distributed_theory_mean':dis_theory_mean,'distributed_theory_var':dis_theory_var}
     # data = {'units':v_values, 'centralized_lqr_mean': lqr_mean, 'centralized_lqr_var': lqr_var, 'cvx_mean':cvx_mean,'cvx_var':cvx_var}
     df = pd.DataFrame(data)
-    df.to_excel('results/10-100,dist-cycle.xlsx', index=False)
+    df.to_excel('results/10-100,dist-chain.xlsx', index=False)
     # data = {'units': v_values, 'centralized_lqr_mean': lqr_mean, 'centralized_lqr_var': lqr_var, 'distributed_lqr_mean':dis_lqr_mean,
     #         'distributed_lqr_var':dis_lqr_var, 'lqr_iteration':mean_lqr, 'dis_lqr_iteration':mean_dis_lqr, 'cvx':cvx_time,
     #         'average total proj':mean_total, 'mean thread':mean_thread,'average alternation proj':mean_alter, 'mean split':mean_split, 'mean split2':mean_split2, 

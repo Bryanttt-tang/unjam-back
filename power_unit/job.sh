@@ -6,8 +6,8 @@
 #SBATCH --tmp=4000                        # per node!!
 
 #SBATCH --job-name=power_unit
-#SBATCH --output=./euler/10-100,cycle.out  # to be modified
-#SBATCH --error=./euler/10-100,cycle.err   # to be modified
+#SBATCH --output=./euler/10-100,ring.out  # to be modified
+#SBATCH --error=./euler/10-100,ring.err   # to be modified
 
 # run experiment
 python ./test.py
