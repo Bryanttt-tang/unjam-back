@@ -11,75 +11,24 @@ from functions import functions
 from multiprocessing.pool import ThreadPool
 import networkx as nx
 if __name__ == "__main__":
-    np.random.seed(1)
-#     n_subsystems = 5
-
-#     # Time step
-#     d_t = 0.1
-
-#     # Initialize lists to store matrices A, B, C, D for each subsystem
-#     A_list = []
-#     B_list = []
-#     C_list = []
-#     D_list = []
-
-#     # Generate random values for m_i (inertia), d_i (damping), k_ij (coupling)
-#     m = np.random.uniform(0.5, 1.0, n_subsystems)  # Inertia between [0.5, 1]
-#     d = np.random.uniform(0, 10, n_subsystems)    # Damping between [0, 10]
-#     K = np.random.uniform(0.5, 1.0, (n_subsystems, n_subsystems))  # Coupling between neighbors
-
-#     # Ensure no self-coupling (diagonal is 0)
-#     np.fill_diagonal(K, 0)
-
-#     # Generate system matrices for each subsystem
-#     for i in range(n_subsystems):
-#         # Compute K_i as sum of couplings from neighbors
-#         K_i = np.sum(K[i, :])
-        
-#         # A_i matrix (2x2)
-#         A_i = np.array([[1, d_t],
-#                         [-K_i * d_t / m[i], 1 - d[i] * d_t / m[i]]])
-        
-#         # B_i matrix (2x1)
-#         B_i = np.array([[0],
-#                         [d_t / m[i]]])
-        
-#         # C_i matrix (1x2) - Can scale the phase angle (x_i[0])
-#         C_i = np.array([[0.25 * d_t / m[i], 0]])
-        
-#         # D_i matrix (1x1)
-#         D_i = np.zeros((1, 1))
-        
-#         # Append matrices to respective lists
-#         A_list.append(A_i)
-#         B_list.append(B_i)
-#         C_list.append(C_i)
-#         D_list.append(D_i)
-
-# # Display the generated matrices for each subsystem
-#     for i in range(n_subsystems):
-#         print(f"Subsystem {i+1}:")
-#         print(f"A_{i+1} = \n{A_list[i]}")
-#         print(f"B_{i+1} = \n{B_list[i]}")
-#         print(f"C_{i+1} = \n{C_list[i]}")
-#         print(f"D_{i+1} = \n{D_list[i]}")
-    
+    # np.random.seed(1)
     A = np.array([[1, 0.1],
                    [-0.5,0.7]])
     B = np.array([[0],[1]])
     C = np.array([[0.25,0]])
     D = np.zeros(1)
 
-    # A = np.array([[1, 0.05],
-    #             [-0.05,0.5]])
-    # B = np.array([[0],[0.1]])
-    # C = np.array([[0.1,0]])
+    A = np.array([[1.01, 0.01],
+                   [0.00,0.01]])
+    B = np.eye(2)
+    C = np.eye(2)
+    # D = np.zeros((3,3))
     # A = np.array([[-1, 0, 2],
     #             [-2, -3, -4],
     #             [1,0,-1]])
     # B = np.array([[1,1],[0,2],[-1,3]])
     # C = np.array([[1,0,0],[0,1,0]])
-    # D = np.zeros(1)
+    D = np.zeros(1)
     eigenvalues, _ = np.linalg.eig(A)
     # Check for stability (all eigenvalues should have magnitudes less than 1 for discrete-time system)
     is_stable = np.all(np.abs(eigenvalues) < 1)
@@ -118,8 +67,10 @@ if __name__ == "__main__":
     ''' Integer invariants '''
 
     n = np.shape(A)[0]  # dimesion of the state
-    m = np.shape(B)[1]  # dimesion of the input
-    p = np.shape(C)[0]  # dimesion of the output
+    # m = np.shape(B)[1]  # dimesion of the input
+    # p = np.shape(C)[0]  # dimesion of the output
+    m=1
+    p=1
     q = p+m             # dimesion of input/output pair
     def create_connected_graph(n):
         """
@@ -175,7 +126,7 @@ if __name__ == "__main__":
         return list(components.values())
     # create random graph
 
-    v = 5 # number of units in the interconnected graph
+    v = 2 # number of units in the interconnected graph
 
     graph = create_connected_graph(v)   
     # increase_edge_connectivity(graph, 2)
@@ -197,7 +148,7 @@ if __name__ == "__main__":
     q_central=(m_central+p_central)
     ''' Simulation parameters '''
     Tini = 3 # length of the initial trajectory
-    N = 5   # prediction horizon
+    N = 5  # prediction horizon
     L=Tini+N
     T = v*L+v*n+100   # number of data points
     R=1*np.eye(m_central)
@@ -231,9 +182,9 @@ if __name__ == "__main__":
     print(np.var(uData))
 
     # print('var in original',np.var(yData))
-    print('max U:',np.max(uData))
-    print('max Y:',np.max(yData))
-    print('max X:',np.max(xData))
+    # print('max U:',np.max(uData))
+    # print('max Y:',np.max(yData))
+    # print('max X:',np.max(xData))
     # snr_linear = np.var(yData) / noise
     # snr_db = 10 * np.log10(snr_linear)
     # print('SNR',snr_db)
@@ -249,13 +200,13 @@ if __name__ == "__main__":
     wini = wData[:, -Tini:].reshape(-1, 1, order='F')
     wini_dis = wData_dis[:, -Tini:].reshape(-1, 1, order='F')
     wini_noise = wData_noise[:, -Tini:].reshape(-1, 1, order='F')
-    # print('wini\n',wini) # (Tini*q=3*(m+p))
+    print(wini.shape) # (Tini*q=3*(m+p))
     print(wini_dis.shape) # (Tini*q_dis=3*(m^2+p))
 
     # random_vector=np.zeros((q_central, N))
     # random_vector_dis=np.zeros((q_dis, N))
-    random_vector=np.vstack((0*np.ones((m_central,N)),0.25*np.ones((p_central, N)) ))
-    random_vector_dis=np.vstack((0*np.ones((m_dis,N)),0*np.ones((p_dis, N)) ))
+    random_vector=np.vstack((np.zeros((m_central,N)),0*np.ones((p_central, N)) ))
+    random_vector_dis=np.vstack((np.zeros((m_dis,N)),0*np.ones((p_dis, N)) ))
     # wref=np.tile(r,N).reshape(-1,1, order='F')
     wref=random_vector.reshape(-1,1, order='F')
     wref_dis=random_vector_dis.reshape(-1,1, order='F')
@@ -280,8 +231,8 @@ if __name__ == "__main__":
     pairs = np.transpose([first_indices, second_indices])
     # print('pairs: \n',pairs)
     # Initialize the kernel matrix M
-    M = np.zeros(( len(pairs), q_dis))
     # Assign -1 and 1 to the corresponding places in M
+    M = np.zeros(( len(pairs), q_dis))
     for i, (idx1, idx2) in enumerate(pairs):
         M[i, idx1] = -1
         M[i, idx2] = 1
@@ -338,90 +289,36 @@ if __name__ == "__main__":
     for i in range(len(H_j)):
         h.append(H_j[i].Hankel)
             
-    max_iter=200
-    dis_iter=5
+    max_iter=2000
+    dis_iter=1
     alpha=0.1
-    num_runs=1000
-    cost_data = np.zeros((num_runs, max_iter+1))
-    cost_data1 = np.zeros((num_runs, max_iter+1))
-   # Get the optimum w*
-    g = cp.Variable((T-L+1,1))
-    w_f = cp.Variable((N*q_central,1))
-    objective = cp.quad_form(w_f-wref, psd_wrap(np.kron(np.eye(N),Phi)))
-                # + lambda_g*cp.norm(g, 1) 
-    #             + lambda_1*cp.quad_form((I-Pi)@g,psd_wrap(I))\                  
-    constraints = [ h_total[:Tini*q_central,:] @ g == wini,
-                    h_total[Tini*q_central:,:] @ g == w_f
-                                ]
-    # box constraint on inputs
-    # w_f_reshaped = cp.reshape(w_f, (-1, N))
-    # constraints += [
-    #     w_f_reshaped[:m_central, :] <= 1,
-    #     w_f_reshaped[:m_central, :] >= 1
-    # ]
-    problem = cp.Problem(cp.Minimize(objective), constraints) 
-    solver_opts = {
-    'max_iter': 10000,
-    'verbose': True     # Enable verbose output to debug
-}
-    # problem.solve(solver = cp.OSQP,**solver_opts)
-    problem.solve(solver = cp.SCS,verbose=False)
-
-    for exp in range(num_runs):
-        np.random.seed(exp)
-        F=functions(T,Tini, N, v, e, m, 1, p, M, h_total, h, connected_components, graph, alpha, max_iter, dis_iter,w_f.value)
-        # F_noise=functions(T,Tini, N, v, e, m, 1, p, M, H_noise.Hankel, h, connected_components, graph, alpha, max_iter, dis_iter)
-        # lqr_exp_time=[]
-        # dis_lqr_exp_time=[]
-        
-
-        wini = wData[:, -Tini:].reshape(-1, 1, order='F')
-        # print('wini\n',wini)
-        wini_dis = wData_dis[:, -Tini:].reshape(-1, 1, order='F')
-        start_alberto = time.process_time()
-        w_split = F.lqr(wini, wref, Phi)
-        end_alberto = time.process_time()
-        print(f"Running time of Alberto Algo with {max_iter} iterations: ",end_alberto-start_alberto)
-        print(F.k_lqr)
-        cost_data[exp, :] = np.squeeze(F.E)
-        cost_data1[exp, :] = np.squeeze(F.E1)
-
-    mean_cost = np.mean(cost_data, axis=0)
-    std_cost = np.std(cost_data, axis=0)
-    mean_cost1 = np.mean(cost_data1, axis=0)
-    std_cost1 = np.std(cost_data1, axis=0)
+    num_runs=10
+    cost_data = np.zeros((num_runs, max_iter))
+    F=functions(T,Tini, N, v, e, m, 1, p, M, h_total, h, connected_components, graph, alpha, max_iter, dis_iter)
+    # F_noise=functions(T,Tini, N, v, e, m, 1, p, M, H_noise.Hankel, h, connected_components, graph, alpha, max_iter, dis_iter)
+    # lqr_exp_time=[]
+    # dis_lqr_exp_time=[]        
+    wini = wData[:, -Tini:].reshape(-1, 1, order='F')
+    wini_dis = wData_dis[:, -Tini:].reshape(-1, 1, order='F')
+    start_alberto = time.process_time()
+    w_split = F.lqr(wini, wref, Phi)
+    end_alberto = time.process_time()
+    print(f"Running time of Alberto Algo with {max_iter} iterations: ",end_alberto-start_alberto)
     plt.figure(figsize=(10, 6))
-    plt.plot(np.arange(max_iter+1), mean_cost, color='red', label='Mean cost')
-    plt.fill_between(np.arange(max_iter+1), mean_cost - std_cost, mean_cost + std_cost, color='red', alpha=0.3)
-    plt.yscale('log')  # Use logarithmic scale if you want to show linear convergence clearly
-    plt.xlabel('Iterations')
-    plt.ylabel('Cost')
-    plt.title('Cost vs Iterations (Convergence of LQT Algorithm)')
-    plt.legend()
+    print('wini',wini)
+    print('w_split',w_split)
+    print('final error', F.E1[-1])
+    # plt.plot(range(0, F.k_lqr[0]+1), np.squeeze(F.E))
+    # plt.plot(range(0, F.k_lqr[0]+1), np.squeeze(F.E0))
+    plt.plot(range(0, F.k_lqr[0]+1), np.squeeze(F.E1))
+    # plt.plot(range(0, max_iter+1), np.squeeze(F_noise.E))
+    # # plt.plot(range(0, max_iter+1), np.squeeze(F.E_dis))
+    plt.ylabel('Error')
+    # plt.legend([ 'wini','wf'])
+    # plt.title('Convergence Error of LQR')
     plt.grid(True)
     plt.show()
 
-    plt.figure(figsize=(10, 6))
-    plt.plot(np.arange(max_iter+1), mean_cost1, color='red', label='Mean cost')
-    plt.fill_between(np.arange(max_iter+1), mean_cost1 - std_cost1, mean_cost1 + std_cost1, color='red', alpha=0.3)
-
-    plt.yscale('log')  # Use logarithmic scale if you want to show linear convergence clearly
-    plt.xlabel('Iterations')
-    plt.ylabel('Cost')
-    plt.title('Cost vs Iterations (Convergence of LQT Algorithm)')
-    plt.legend()
-    plt.grid(True)
-    plt.show()
-
-    df = pd.DataFrame({
-    'Mean': mean_cost,
-    'Std': std_cost,
-    'Mean1': mean_cost1,
-    'Std1': std_cost1
-        })
-
-        # Save DataFrame to CSV
-    df.to_csv('convergence-2.csv', index=False)
     # w_split_noise = F_noise.lqr(wini, wref, Phi)
     # start_dist = time.process_time()
     # w_split_dis = F.distributed_lqr(wini_dis, wref_dis,Phi_dis)
@@ -448,45 +345,43 @@ if __name__ == "__main__":
     # plt.grid(True)
     # plt.show()   
 
-    # U, S, VT = np.linalg.svd(h_total)
-    # rank_total = np.linalg.matrix_rank(h_total)
-    # U_truncated = U[:, :rank_total]
+    U, S, VT = np.linalg.svd(h_total)
+    rank_total = np.linalg.matrix_rank(h_total)
+    U_truncated = U[:, :rank_total]
     # CVXPY
     start_cvx = time.time()
     g = cp.Variable((T-L+1,1))
-    
     w_f = cp.Variable((N*q_central,1))
-    objective = cp.quad_form(w_f-wref, psd_wrap(np.kron(np.eye(N),Phi)))
-                # + lambda_g*cp.norm(g, 1) 
+    objective = cp.quad_form(w_f-wref, psd_wrap(np.kron(np.eye(N),Phi)))+ lambda_g*cp.norm(g, 1) 
     #             + lambda_1*cp.quad_form((I-Pi)@g,psd_wrap(I))\
                     
     constraints = [ h_total[:Tini*q_central,:] @ g == wini,
                     h_total[Tini*q_central:,:] @ g == w_f
                                 ]
     # box constraint on inputs
-    # w_f_reshaped = cp.reshape(w_f, (-1, N))
-    # constraints += [
-    #     w_f_reshaped[:m_central, :] <= 1,
-    #     w_f_reshaped[:m_central, :] >= 1
-    # ]
+    w_f_reshaped = cp.reshape(w_f, (-1, N))
+    constraints += [
+        w_f_reshaped[:m_central, :] <= 1,
+        w_f_reshaped[:m_central, :] >= 1
+    ]
     problem = cp.Problem(cp.Minimize(objective), constraints) 
     solver_opts = {
     'max_iter': 10000,
     'verbose': True     # Enable verbose output to debug
 }
     # problem.solve(solver = cp.OSQP,**solver_opts)
-    problem.solve(solver = cp.SCS,verbose=False)
+    problem.solve(solver = cp.OSQP,verbose=False)
     end_cvx = time.time()
     print('Running time of CVXPY for single LQR: ',end_cvx-start_cvx)
     # diff=np.linalg.norm(w_split-np.vstack((wini,wref)) )
-    print('error',F.E[-1])
-    print('last error',F.E1[-1])
-    plt.plot(range(0, len(F.E)), np.squeeze(F.E))
-    plt.plot(range(0, len(F.E)), np.squeeze(F.E1))
+    # plt.figure(figsize=(10, 6))
+    # plt.plot(range(0, F.k_lqr[0]+1), np.squeeze(F.E))
+    # plt.plot(range(0, F.k_lqr[0]+1), np.squeeze(F.E0))
+    # plt.plot(range(0, F.k_lqr[0]+1), np.squeeze(F.E1))
     # plt.plot(range(0, max_iter+1), np.squeeze(F_noise.E))
     # # plt.plot(range(0, max_iter+1), np.squeeze(F.E_dis))
     # plt.ylabel('Error')
-    plt.legend(['Total', 'last'])
+    # plt.legend([ 'wini','wf'])
     # plt.title('Convergence Error of LQR')
     plt.grid(True)
     plt.show()
@@ -502,7 +397,7 @@ if __name__ == "__main__":
 #     # print('The output trajectory using CVXPY: \n',w_f.value)
 #     # print('The output trajectory using DS-splitting: \n',w_split[size_w*Tini:])
 #     # print('The output trajectory using Distributed LQR: \n',w_split_dis[size_w*Tini:])
-    print('The differnce between CVX and Alberto methods: ',np.linalg.norm(w_f.value - w_split[q_central*Tini:])/np.linalg.norm(w_f.value) )
+    print('The differnce between CVX and Alberto methods: ',np.linalg.norm(w_f.value - w_split[q_central*Tini:]) )
     print('The differnce between offline CVX and Alberto methods: ',np.linalg.norm(w_f_off - w_split[q_central*Tini:]) )
     # print('The differnce between free and noisy Alberto methods: ',np.linalg.norm(w_split_noise[q_central*Tini:] - w_split[q_central*Tini:]) )
     # print('error',F.E[-1])
@@ -556,24 +451,23 @@ if __name__ == "__main__":
                 'wref_dis' : wref_dis,
                 'wref' : wref}
 
-    deepc = DeePC(params_D,'CVXPY')   
-    x0 =  np.copy(xData[:, -1])
-    print('x0:',x0)
+    # deepc = DeePC(params_D,'CVXPY')   
+    # x0 =  np.copy(xData[:, -1])
+    # print('x0:',xData[:,-1])
     # print(x0)
-    start_deepc=time.process_time()
-    xsim, usim, ysim = deepc.loop(Tsim,A,B,C,D,x0)
-    end_deepc=time.process_time()
-    print('Total DeepC running time: ', end_deepc-start_deepc)
+    # start_deepc=time.process_time()
+    # xsim, usim, ysim = deepc.loop(Tsim,A,B,C,D,x0)
+    # end_deepc=time.process_time()
+    # print('Total DeepC running time: ', end_deepc-start_deepc)
     # print('x0',xData[:,-1])
 
     x0 =  np.copy(xData[:, -1])
-    print(x0)
     deepc2 = DeePC(params_D,'lqr')   
     start_deepc2=time.process_time()
     xsim2, usim2, ysim2 = deepc2.loop(Tsim,A,B,C,D,x0)
     end_deepc2=time.process_time()
     print('Total Alberto running time: ', end_deepc2-start_deepc2)
-
+    # print('wini',wini)
     # x0 =  np.copy(xData[:, -1])
     # deepc3 = DeePC(params_D,'dis_lqr')   
     # start_deepc3=time.process_time()
@@ -619,7 +513,6 @@ if __name__ == "__main__":
     plt.subplots_adjust(hspace=0.4)
     plt.show()
 
-    print('u_lqr',usim2[0,0])
     plt.figure(figsize=(10, 6))
     plt.plot(np.linspace(0, Tsim,Tsim), usim[0,:], label='CVXPY', color='blue')
     plt.plot(np.linspace(0, Tsim,Tsim), usim2[0,:], label='lqr', color='red')
@@ -665,7 +558,7 @@ if __name__ == "__main__":
 
     # Create a DataFrame and save to CSV
     df = pd.DataFrame(data)
-    df.to_csv('state_trajectories_box_2.csv', index=False)
+    df.to_csv('state_trajectories_box.csv', index=False)
 
     time2 = np.arange(usim.shape[1])
     data2 = {'time': time2}
@@ -676,7 +569,7 @@ if __name__ == "__main__":
 
     # Create a DataFrame and save to CSV
     df2 = pd.DataFrame(data2)
-    df2.to_csv('w_box_2.csv', index=False)
+    df2.to_csv('w_box.csv', index=False)
 
         # def compute_metrics(t, response, ref, threshold=0.02):
         #     num_responses = response.shape[0]

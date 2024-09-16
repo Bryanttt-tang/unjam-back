@@ -12,7 +12,7 @@ import statistics
 np.random.seed(123)
 class functions():
         
-    def __init__(self, T, Tini, N, v, e, m, m_inter, p, M, h_total, h, connected_components, graph, alpha, max_iter, dis_iter):
+    def __init__(self, T, Tini, N, v, e, m, m_inter, p, M, h_total, h, connected_components, graph, alpha, max_iter, dis_iter,w_star):
         
         
         self.T = T
@@ -30,7 +30,9 @@ class functions():
         self.q=self.m_total+self.p_total
         self.q_dis=self.m_dis+self.p_total
         self.E=[]
+        self.E1=[]
         self.M=M
+        self.w_star=w_star
         self.M_inv=np.linalg.inv(self.M@self.M.T)  
         self.connected_components=connected_components 
         self.graph=graph
@@ -277,16 +279,19 @@ class functions():
     #             break
         return x
     
-    def lqr(self,w_ini, w_ref, Phi, tol=1e-6): # Alberto's algorithm
+    def lqr(self,w_ini, w_ref, Phi, tol=1e-8): # Alberto's algorithm
         # Initialize w, z, v
-        w=np.vstack((w_ini, w_ref ))
+        # w=np.vstack((w_ini, w_ref ))
         # w = np.zeros((self.q*self.L,1))
+        w = 10*np.random.rand(self.q*self.L,1)-5
         kron=np.diag( np.kron(np.eye(self.N),Phi) ).reshape(-1, 1) # a vector containing all diagonal elements
-        # e=np.dot((w[self.q*self.Tini:]-w_ref).T, (kron * (w[self.q*self.Tini:]-w_ref)))[0,0]
-        e=np.dot( (w-np.vstack((w_ini,w_ref))).T, (w-np.vstack((w_ini,w_ref))))[0,0]
+        e=np.dot((w[self.q*self.Tini:]-w_ref).T, (kron * (w[self.q*self.Tini:]-w_ref)))[0,0]
+        # e=np.dot( (w-np.vstack((w_ini,w_ref))).T, (w-np.vstack((w_ini,w_ref))))[0,0]
+        e1=np.linalg.norm(self.w_star - w[self.q*self.Tini:])/np.linalg.norm(self.w_star)
         self.E.append(e)
+        self.E1.append(e1)
         k=0
-        for ite in tqdm(range(self.max_iter)):
+        for ite in range(self.max_iter):
             w_prev = w
             # Compute zk+1
             start_lqr=time.process_time()
@@ -298,9 +303,9 @@ class functions():
             v_proj=  2*z-w-2*self.alpha*z_squared # O(n)
             # print('v_proj:',v_proj.shape)
             start=time.process_time()
-            # v_plus = self.proj_h @ v_proj # O(n^2)
+            v_plus = self.proj_h @ v_proj # O(n^2)
             # v_plus = self.alternating_projections2(self.proj_h_sub, v_proj, num_iterations=self.dis_iter) 
-            v_plus = self.matrix_vector_multiply(self.proj_h, v_proj) # O(n^2)
+            # v_plus = self.matrix_vector_multiply(self.proj_h, v_proj) # O(n^2)
             # print('v_plus',v_plus.shape)
             end=time.process_time()
             self.time_proj.append(end-start)
@@ -312,13 +317,15 @@ class functions():
             end_lqr=time.process_time()
             self.time_lqr.append(end_lqr-start_lqr)
             e=np.dot((w[self.q*self.Tini:]-w_ref).T, (kron * (w[self.q*self.Tini:]-w_ref)))[0,0]
+            e1=np.linalg.norm(self.w_star - w[self.q*self.Tini:])/np.linalg.norm(self.w_star)
             # e=np.dot( (w-np.vstack((w_ini,w_ref))).T, (w-np.vstack((w_ini,w_ref))))[0,0]
             self.E.append(e)
+            self.E1.append(e1)
             # Check for convergence
             k+=1
-            # print( 'norm',np.linalg.norm(w - w_prev))
-            if np.linalg.norm(w - w_prev) < tol:
-                break
+            # # print( 'norm',np.linalg.norm(w - w_prev))
+            # if np.linalg.norm(w - w_prev) < tol:
+            #     break
         self.k_lqr.append(k)
         return w
 

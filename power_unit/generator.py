@@ -83,7 +83,7 @@ class generate_data():
         # print('v',v)
         for t in tqdm(range(self.T)):
             # u = np.array(np.random.randn(m, v))
-            u=np.random.uniform(-10, 10, (m, v))
+            u=np.random.uniform(-5, 5, (m, v))
             all_u = []
             y=C@x
             # print(y)
