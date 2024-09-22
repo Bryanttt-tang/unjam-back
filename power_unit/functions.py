@@ -99,8 +99,8 @@ class functions():
 
     def timed_matmul(self,x, y):
         start_time = time.process_time()
-        # result = x @ y
-        result = self.matrix_vector_multiply(x,y)
+        result = x @ y
+        # result = self.matrix_vector_multiply(x,y)
         # result = self.proj(x,y)
         end_time = time.process_time()
         elapsed_time = end_time - start_time
@@ -212,7 +212,7 @@ class functions():
     def project_onto_box_constraints(self,w):
         # w_projected = w.copy()
         w_re=w.reshape(-1,self.L,order='F')
-        w_re[:self.m_total, :] = np.clip(w_re[:self.m_total, :], -1, 1)  # Apply box constraints to the inputs of each column
+        w_re[:self.m_total, :] = np.clip(w_re[:self.m_total, :], -0.5, 0.5)  # Apply box constraints to the inputs of each column
         # print('w_re',w_re)
         # print(w_re.shape)
         return w_re.reshape(-1,1,order='F')
@@ -282,14 +282,14 @@ class functions():
     def lqr(self,w_ini, w_ref, Phi, tol=1e-8): # Alberto's algorithm
         # Initialize w, z, v
         # w=np.vstack((w_ini, w_ref ))
-        # w = np.zeros((self.q*self.L,1))
-        w = 10*np.random.rand(self.q*self.L,1)-5
+        w = np.zeros((self.q*self.L,1))
+        # w = 10*np.random.rand(self.q*self.L,1)-5
         kron=np.diag( np.kron(np.eye(self.N),Phi) ).reshape(-1, 1) # a vector containing all diagonal elements
         e=np.dot((w[self.q*self.Tini:]-w_ref).T, (kron * (w[self.q*self.Tini:]-w_ref)))[0,0]
         # e=np.dot( (w-np.vstack((w_ini,w_ref))).T, (w-np.vstack((w_ini,w_ref))))[0,0]
-        e1=np.linalg.norm(self.w_star - w[self.q*self.Tini:])/np.linalg.norm(self.w_star)
+        # e1=np.linalg.norm(self.w_star - w[self.q*self.Tini:])/np.linalg.norm(self.w_star)
         self.E.append(e)
-        self.E1.append(e1)
+        # self.E1.append(e1)
         k=0
         for ite in range(self.max_iter):
             w_prev = w
@@ -317,13 +317,13 @@ class functions():
             end_lqr=time.process_time()
             self.time_lqr.append(end_lqr-start_lqr)
             e=np.dot((w[self.q*self.Tini:]-w_ref).T, (kron * (w[self.q*self.Tini:]-w_ref)))[0,0]
-            e1=np.linalg.norm(self.w_star - w[self.q*self.Tini:])/np.linalg.norm(self.w_star)
+            # e1=np.linalg.norm(self.w_star - w[self.q*self.Tini:])/np.linalg.norm(self.w_star)
             # e=np.dot( (w-np.vstack((w_ini,w_ref))).T, (w-np.vstack((w_ini,w_ref))))[0,0]
             self.E.append(e)
-            self.E1.append(e1)
+            # self.E1.append(e1)
             # Check for convergence
             k+=1
-            # # print( 'norm',np.linalg.norm(w - w_prev))
+            # # # print( 'norm',np.linalg.norm(w - w_prev))
             # if np.linalg.norm(w - w_prev) < tol:
             #     break
         self.k_lqr.append(k)

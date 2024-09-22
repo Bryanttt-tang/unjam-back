@@ -79,26 +79,30 @@ class generate_data():
         
         xData = np.empty((v*n,T+1))
         x=x0 # X0 = np.random.rand(n,10)  
-        y=C@x
+        # y=C[0]@x
         # print('v',v)
         for t in tqdm(range(self.T)):
             # u = np.array(np.random.randn(m, v))
-            u=np.random.uniform(-5, 5, (m, v))
+            u=np.random.uniform(-10, 10, (m, v))
             all_u = []
-            y=C@x
-            # print(y)
+            y=np.zeros((p,v))
+            # print('y.shape',y.shape)
+            for i in range(v):
+                # print(C[i].shape)
+                y[:,i:i+1]=C[i]@x[:,i:i+1]
             for i in range(v):
                 # print(x[:,i:i+1].shape)
                 # print(y[:,i+1].shape)
-                x[:,i:i+1] = A@x[:,i:i+1]+B@(u[:,i:i+1])
+                # y[:,i:i+1]=C[i]@x[:,i:i+1]
+                x[:,i:i+1] = A[i]@x[:,i:i+1]+B[i]@(u[:,i:i+1])
                 all_u.append(u[:, i:i+1])
-                sum_term = np.zeros_like(B @ y[:, i:i+1])
+                sum_term = np.zeros_like(B[i] @ y[:, i:i+1])
                 # print(i)
                 # print(list(self.graph.neighbors(i)))
                 neighbors = sorted(list(self.graph.neighbors(i)))  # Sort neighbors
 
                 for j in neighbors:
-                    sum_term += B @ ( y[:, j:j+1])
+                    sum_term += B[i] @ ( y[:, j:j+1])
                     all_u.append(y[:,j:j+1])
                 x[:,i:i+1]+= sum_term
             
@@ -228,9 +232,10 @@ class DeePC():
 #         self.lambda_g = params_D['lambda_g'] # lambda parameter for L1 penalty norm on g
         self.wref = params_D['wref'] # the reference trajectory to be tracked
         self.wref_dis = params_D['wref_dis']
+        self.w_star = params_D['w_star']
         self.solver=solver
         self.E=[]
-        self.F=functions(self.T, self.Tini,self.N, self.v,self.e, self.m, 1, self.p, self.M, self.H.Hankel, self.h_dis, self.connected_components, self.graph, self.alpha,self.max_iter,self.dis_iter)
+        self.F=functions(self.T, self.Tini,self.N, self.v,self.e, self.m, 1, self.p, self.M, self.H.Hankel, self.h_dis, self.connected_components, self.graph, self.alpha,self.max_iter,self.dis_iter,self.w_star)
     
     def solve_deepc(self,uini,yini):
         # COMPLETE THIS FUNCTION
@@ -255,8 +260,8 @@ class DeePC():
             # box constraint on inputs
         w_f_reshaped = cp.reshape(w_f, (-1, self.N))
         constraints += [
-            w_f_reshaped[:self.m_total, :] <= 1,
-            w_f_reshaped[:self.m_total, :] >= -1
+            w_f_reshaped[:self.m_total, :] <= 0.5,
+            w_f_reshaped[:self.m_total, :] >= -0.5
         ]
         problem = cp.Problem(cp.Minimize(objective), constraints) 
         problem.solve(solver='SCS', warm_start=True)
@@ -336,7 +341,7 @@ class DeePC():
                     neighbors = sorted(self.graph.neighbors(i)) # to distinguish externel and inter inputs
                     # print('u',u[base_index].reshape(-1, 1))
                     # print('base',base_index)
-                    x[:,i:i+1] = A@x[:,i:i+1]+B@(u[base_index].reshape(-1, 1))
+                    x[:,i:i+1] = A[i]@x[:,i:i+1]+B[i]@(u[base_index].reshape(-1, 1))
                     usim[i, [t]] = u[base_index]
                     base_index += len(neighbors)+1
                     
@@ -364,19 +369,21 @@ class DeePC():
             for t in tqdm(range(Tsim)):
                 u = self.get_next_input(uini, yini)
                 
-                # print('u:',u)
-                y=C@x
-                # print('y',y.shape)
+                y=C[0]@x
+                # print(y)
+                for i in range(self.v):
+                    y[:,i:i+1]=C[i]@x[:,i:i+1]
                 for i in range(self.v):
                     # x[:,i:i+1] = A@x[:,i:i+1]+B@(u[i].reshape(-1, 1)+np.sum(y,axis=1, keepdims=True) - self.v*self.p*y[:, i])
                     # print('x:',x[:,i:i+1].shape)
                     # print('u',u[i].reshape(-1, 1))
-                    x[:,i:i+1] = A@x[:,i:i+1]+B@(u[i].reshape(-1, 1))
-                    sum_term = np.zeros_like(B @ y[:, i:i+1])
+                    y[:,i:i+1]=C[i]@x[:,i:i+1]
+                    x[:,i:i+1] = A[i]@x[:,i:i+1]+B[i]@(u[i].reshape(-1, 1))
+                    sum_term = np.zeros_like(B[i] @ y[:, i:i+1])
                     # print(sum_term.shape)
                     neighbors = sorted(list(self.graph.neighbors(i)))  # Sort neighbors
                     for j in neighbors:
-                        sum_term += B @ (y[:, j:j+1])
+                        sum_term += B[i] @ (y[:, j:j+1])
                     x[:,i:i+1]+= sum_term
                 
                 usim[:, [t]] = u

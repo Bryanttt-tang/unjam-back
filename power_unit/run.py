@@ -12,64 +12,79 @@ from multiprocessing.pool import ThreadPool
 import networkx as nx
 if __name__ == "__main__":
     np.random.seed(1)
-#     n_subsystems = 5
+    v = 5 # number of units in the interconnected graph
+    n_subsystems = v
+    G = nx.path_graph(n_subsystems)
+    # Time step
+    d_t = 0.01
 
-#     # Time step
-#     d_t = 0.1
+    # Initialize lists to store matrices A, B, C, D for each subsystem
+    A_list = []
+    B_list = []
+    C_list = []
+    D_list = []
 
-#     # Initialize lists to store matrices A, B, C, D for each subsystem
-#     A_list = []
-#     B_list = []
-#     C_list = []
-#     D_list = []
+    # Generate random values for m_i (inertia), d_i (damping), k_ij (coupling)
+    # mi = np.random.uniform(0.5, 1.0, n_subsystems)  # Inertia between [0.5, 1]
+    mi = 2 # Inertia between [0.5, 1]
+    d = np.random.uniform(0.5, 1, n_subsystems)    # Damping between [0, 10]
+    k = np.random.uniform(1, 1.5, (n_subsystems, n_subsystems))  # Coupling between neighbors
 
-#     # Generate random values for m_i (inertia), d_i (damping), k_ij (coupling)
-#     m = np.random.uniform(0.5, 1.0, n_subsystems)  # Inertia between [0.5, 1]
-#     d = np.random.uniform(0, 10, n_subsystems)    # Damping between [0, 10]
-#     K = np.random.uniform(0.5, 1.0, (n_subsystems, n_subsystems))  # Coupling between neighbors
+    # Ensure no self-coupling (diagonal is 0)
+    # np.fill_diagonal(K, 0)
 
-#     # Ensure no self-coupling (diagonal is 0)
-#     np.fill_diagonal(K, 0)
+    # Generate system matrices for each subsystem
+    for i in range(n_subsystems):
+        # Compute the coupling constant K_i as the sum of k_ij from neighbors in the graph
+        neighbors = list(G.neighbors(i))  # Get neighbors of subsystem i
+        K_i = np.sum([k[i, j] for j in neighbors])  # Sum of k_ij for neighbors
 
-#     # Generate system matrices for each subsystem
-#     for i in range(n_subsystems):
-#         # Compute K_i as sum of couplings from neighbors
-#         K_i = np.sum(K[i, :])
+        # Define the A_i matrix
+        A_i = np.array([[1, d_t],
+                        [-K_i / mi * d_t, 1 - (d[i] / mi) * d_t]])
         
-#         # A_i matrix (2x2)
-#         A_i = np.array([[1, d_t],
-#                         [-K_i * d_t / m[i], 1 - d[i] * d_t / m[i]]])
+        # Define the B_i matrix
+        B_i = np.array([[0],
+                        [1]])
         
-#         # B_i matrix (2x1)
-#         B_i = np.array([[0],
-#                         [d_t / m[i]]])
+        # Define the C_i matrix based on neighbors' coupling constants
+        if neighbors:
+            C_i_value = np.sum([k[i, j] / mi for j in neighbors]) * d_t
+        else:
+            C_i_value = 0  # No neighbors case (edge node in the graph)
         
-#         # C_i matrix (1x2) - Can scale the phase angle (x_i[0])
-#         C_i = np.array([[0.25 * d_t / m[i], 0]])
+        C_i = np.array([[C_i_value, 0]])
         
-#         # D_i matrix (1x1)
-#         D_i = np.zeros((1, 1))
+        # Define the D_i matrix (zero)
+        D_i = np.zeros((1, 1))
         
-#         # Append matrices to respective lists
-#         A_list.append(A_i)
-#         B_list.append(B_i)
-#         C_list.append(C_i)
-#         D_list.append(D_i)
+        # Append matrices to respective lists
+        A_list.append(A_i)
+        B_list.append(B_i)
+        C_list.append(C_i)
+        D_list.append(D_i)
 
-# # Display the generated matrices for each subsystem
-#     for i in range(n_subsystems):
-#         print(f"Subsystem {i+1}:")
-#         print(f"A_{i+1} = \n{A_list[i]}")
-#         print(f"B_{i+1} = \n{B_list[i]}")
-#         print(f"C_{i+1} = \n{C_list[i]}")
-#         print(f"D_{i+1} = \n{D_list[i]}")
-    
+    # print(C_list[0].shape)
     A = np.array([[1, 0.1],
                    [-0.5,0.7]])
     B = np.array([[0],[1]])
     C = np.array([[0.25,0]])
     D = np.zeros(1)
+    A_list = []
+    B_list = []
+    C_list = []
+    for i in range(v):
+        A_list.append(A)
+        B_list.append(B)
+        C_list.append(C)
 
+        # # Display the generated matrices for each subsystem
+    for i in range(n_subsystems):
+        print(f"Subsystem {i+1}:")
+        print(f"A_{i+1} = \n{A_list[i]}")
+        print(f"B_{i+1} = \n{B_list[i]}")
+        print(f"C_{i+1} = \n{C_list[i]}")
+        print(f"D_{i+1} = \n{D_list[i]}")
     # A = np.array([[1, 0.05],
     #             [-0.05,0.5]])
     # B = np.array([[0],[0.1]])
@@ -80,7 +95,7 @@ if __name__ == "__main__":
     # B = np.array([[1,1],[0,2],[-1,3]])
     # C = np.array([[1,0,0],[0,1,0]])
     # D = np.zeros(1)
-    eigenvalues, _ = np.linalg.eig(A)
+    eigenvalues, _ = np.linalg.eig(A_list[-1])
     # Check for stability (all eigenvalues should have magnitudes less than 1 for discrete-time system)
     is_stable = np.all(np.abs(eigenvalues) < 1)
     print("Eigenvalues:")
@@ -175,7 +190,7 @@ if __name__ == "__main__":
         return list(components.values())
     # create random graph
 
-    v = 5 # number of units in the interconnected graph
+    # v = 5 # number of units in the interconnected graph
 
     graph = create_connected_graph(v)   
     # increase_edge_connectivity(graph, 2)
@@ -199,12 +214,12 @@ if __name__ == "__main__":
     Tini = 3 # length of the initial trajectory
     N = 5   # prediction horizon
     L=Tini+N
-    T = v*L+v*n+100   # number of data points
+    T = v*L+v*n+150   # number of data points
     R=1*np.eye(m_central)
     R_dis=1*np.eye(m_dis)
     # R[1,1]=0
     # R[3,3]=0
-    Q=1*np.eye(p_dis)
+    Q=10*np.eye(p_dis)
     Phi=np.block([[R, np.zeros((R.shape[0],Q.shape[1]))], [np.zeros((Q.shape[0],R.shape[1])), Q]])
     Phi_dis=np.block([[R_dis, np.zeros((R_dis.shape[0],Q.shape[1]))], [np.zeros((Q.shape[0],R_dis.shape[1])), Q]])
     lambda_g = 1          # lambda parameter for L1 penalty norm on g
@@ -226,7 +241,7 @@ if __name__ == "__main__":
     # for noise in np.arange(0.1,1.1,0.1):
     X0 = np.random.rand(n,v)  
     # X0=np.random.uniform(-100, 100, (n, v))#initial state of 10 units
-    generator = generate_data(T,Tini,N,p,m,n,v,e,A,B,C,D,graph,0)
+    generator = generate_data(T,Tini,N,p,m,n,v,e,A_list,B_list,C_list,D_list,graph,0)
     xData, uData ,yData, uData_dis ,yData_dis, yData_noise = generator.generate_pastdata(X0)
     print(np.var(uData))
 
@@ -254,8 +269,8 @@ if __name__ == "__main__":
 
     # random_vector=np.zeros((q_central, N))
     # random_vector_dis=np.zeros((q_dis, N))
-    random_vector=np.vstack((0*np.ones((m_central,N)),0.25*np.ones((p_central, N)) ))
-    random_vector_dis=np.vstack((0*np.ones((m_dis,N)),0*np.ones((p_dis, N)) ))
+    random_vector=np.vstack((0.15*np.ones((m_central,N)),0.25*np.ones((p_central, N)) ))
+    random_vector_dis=np.vstack((0.15*np.ones((m_dis,N)),0.25*np.ones((p_dis, N)) ))
     # wref=np.tile(r,N).reshape(-1,1, order='F')
     wref=random_vector.reshape(-1,1, order='F')
     wref_dis=random_vector_dis.reshape(-1,1, order='F')
@@ -337,11 +352,12 @@ if __name__ == "__main__":
     h=[]
     for i in range(len(H_j)):
         h.append(H_j[i].Hankel)
-            
-    max_iter=200
-    dis_iter=5
+    
+
+    max_iter=500
+    dis_iter=2
     alpha=0.1
-    num_runs=1000
+    num_runs=1
     cost_data = np.zeros((num_runs, max_iter+1))
     cost_data1 = np.zeros((num_runs, max_iter+1))
    # Get the optimum w*
@@ -390,16 +406,16 @@ if __name__ == "__main__":
     std_cost = np.std(cost_data, axis=0)
     mean_cost1 = np.mean(cost_data1, axis=0)
     std_cost1 = np.std(cost_data1, axis=0)
-    plt.figure(figsize=(10, 6))
-    plt.plot(np.arange(max_iter+1), mean_cost, color='red', label='Mean cost')
-    plt.fill_between(np.arange(max_iter+1), mean_cost - std_cost, mean_cost + std_cost, color='red', alpha=0.3)
-    plt.yscale('log')  # Use logarithmic scale if you want to show linear convergence clearly
-    plt.xlabel('Iterations')
-    plt.ylabel('Cost')
-    plt.title('Cost vs Iterations (Convergence of LQT Algorithm)')
-    plt.legend()
-    plt.grid(True)
-    plt.show()
+    # plt.figure(figsize=(10, 6))
+    # plt.plot(np.arange(max_iter+1), mean_cost, color='red', label='Mean cost')
+    # plt.fill_between(np.arange(max_iter+1), mean_cost - std_cost, mean_cost + std_cost, color='red', alpha=0.3)
+    # plt.yscale('log')  # Use logarithmic scale if you want to show linear convergence clearly
+    # plt.xlabel('Iterations')
+    # plt.ylabel('Cost')
+    # plt.title('Cost vs Iterations (Convergence of LQT Algorithm)')
+    # plt.legend()
+    # plt.grid(True)
+    # plt.show()
 
     plt.figure(figsize=(10, 6))
     plt.plot(np.arange(max_iter+1), mean_cost1, color='red', label='Mean cost')
@@ -497,8 +513,8 @@ if __name__ == "__main__":
     # w_f_off=U_truncated[Tini*q_central:,:]@np.linalg.pinv(U_truncated[:Tini*q_central,:])@wini
     w_f_off=h_total[Tini*q_central:,:]@np.linalg.pinv(h_total[:Tini*q_central,:])@wini
     print('The final cost of CVX:',problem.value)
-    print('cvx\n',w_f.value)
-    print('alberto\n',w_split[q_central*Tini:])
+    # print('cvx\n',w_f.value)
+    # print('alberto\n',w_split[q_central*Tini:])
 #     # print('The output trajectory using CVXPY: \n',w_f.value)
 #     # print('The output trajectory using DS-splitting: \n',w_split[size_w*Tini:])
 #     # print('The output trajectory using Distributed LQR: \n',w_split_dis[size_w*Tini:])
@@ -532,7 +548,7 @@ if __name__ == "__main__":
         # plt.legend()
         # plt.show()
 
-    Tsim=100  
+    Tsim=300  
     solver='CVXPY'
     params_D = {'H': H, # an object of Hankel
                 'H_dis':H_dis,
@@ -554,14 +570,15 @@ if __name__ == "__main__":
                 'max_iter':max_iter,
                 'dis_iter':dis_iter,
                 'wref_dis' : wref_dis,
-                'wref' : wref}
+                'wref' : wref,
+                'w_star':w_f.value}
 
     deepc = DeePC(params_D,'CVXPY')   
     x0 =  np.copy(xData[:, -1])
     print('x0:',x0)
     # print(x0)
     start_deepc=time.process_time()
-    xsim, usim, ysim = deepc.loop(Tsim,A,B,C,D,x0)
+    xsim, usim, ysim = deepc.loop(Tsim,A_list,B_list,C_list,D_list,x0)
     end_deepc=time.process_time()
     print('Total DeepC running time: ', end_deepc-start_deepc)
     # print('x0',xData[:,-1])
@@ -570,7 +587,7 @@ if __name__ == "__main__":
     print(x0)
     deepc2 = DeePC(params_D,'lqr')   
     start_deepc2=time.process_time()
-    xsim2, usim2, ysim2 = deepc2.loop(Tsim,A,B,C,D,x0)
+    xsim2, usim2, ysim2 = deepc2.loop(Tsim,A_list,B_list,C_list,D_list,x0)
     end_deepc2=time.process_time()
     print('Total Alberto running time: ', end_deepc2-start_deepc2)
 
@@ -605,11 +622,11 @@ if __name__ == "__main__":
     fig, ax = plt.subplots(4, figsize=(8, 10))
 
     # Plot control input
-    plot_behavior(ax[0], 'Control input', 'Time Steps', 'Input', usim2, 'u', ylim=None)
+    plot_behavior(ax[0], 'Control input', 'Time Steps', 'Input', usim, 'u', ylim=None)
     # Plot output
-    plot_behavior(ax[1], 'State x1', 'Time Steps', 'x1', xsim2[0,0,:].reshape(-1,Tsim+1), 'x', ylim=None)
+    plot_behavior(ax[1], 'State x1', 'Time Steps', 'x1', xsim[0,0,:].reshape(-1,Tsim+1), 'x', ylim=None)
     # plot_behavior(ax[1], 'State x1', 'Time Steps', 'x1', xsim2[0,0,:].reshape(-1,Tsim), 'x', ylim=None)
-    plot_behavior(ax[2], 'State x2', 'Time Steps', 'x2', xsim2[1,0,:].reshape(-1,Tsim+1), 'x', ylim=None)
+    plot_behavior(ax[2], 'State x2', 'Time Steps', 'x2', xsim[1,0,:].reshape(-1,Tsim+1), 'x', ylim=None)
     # Plot output error
     print('The reference:\n',wref[-p_central:])
     error = np.abs(ysim2- np.tile(wref[-p_central:], Tsim))
