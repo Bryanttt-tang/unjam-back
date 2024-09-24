@@ -11,17 +11,17 @@ from functions import functions
 import networkx as nx
 if __name__ == "__main__":
     np.random.seed(123)
-    A = np.array([[1, 0.1],
-                   [-0.7,0.6]])
-    B = np.array([[0],[1]])
-    C = np.array([[0.25,0]])
-    D = np.zeros(1)
-    # A = np.array([[0.5, 0.05],
-    #             [-0.05,0.5]])
+    # A = np.array([[1, 0.1],
+    #                [-0.7,0.6]])
     # B = np.array([[0],[1]])
-    # C = np.array([[0.1,0]])
+    # C = np.array([[0.25,0]])
     # D = np.zeros(1)
-    v = 10 # number of units in the interconnected graph
+    A = np.array([[0.5, 0.05],
+                [-0.05,0.5]])
+    B = np.array([[0],[1]])
+    C = np.array([[0.1,0]])
+    D = np.zeros(1)
+    v = 100 # number of units in the interconnected graph
     n_subsystems = v
     G = nx.path_graph(n_subsystems)
     # Time step
@@ -72,6 +72,19 @@ if __name__ == "__main__":
         B_list.append(B_i)
         C_list.append(C_i)
         D_list.append(D_i)
+
+    # A = np.array([[1, 0.1],
+    #                [-0.5,0.7]])
+    # B = np.array([[0],[1]])
+    # C = np.array([[0.25,0]])
+    # D = np.zeros(1)
+    A_list = []
+    B_list = []
+    C_list = []
+    for i in range(v):
+        A_list.append(A)
+        B_list.append(B)
+        C_list.append(C)
     eigenvalues, _ = np.linalg.eig(A)
     # Check for stability (all eigenvalues should have magnitudes less than 1 for discrete-time system)
     is_stable = np.all(np.abs(eigenvalues) < 1)
@@ -198,9 +211,9 @@ if __name__ == "__main__":
 
         return list(components.values())
     # create random graph
-    EXP=2
-    total_edge=30
-    edge_incre=10
+    EXP=5
+    total_edge=850
+    edge_incre=50
     lqr_exp_time=np.empty((EXP, (total_edge-v)//edge_incre+1) )
     dis_lqr_exp_time=np.empty((EXP, (total_edge-v)//edge_incre+1) )
     dis_lqr_worst_time=np.empty((EXP, (total_edge-v)//edge_incre+1) )
@@ -208,7 +221,7 @@ if __name__ == "__main__":
     e_con_values=np.empty((EXP, (total_edge-v)//edge_incre+1) )
     v_con_values=np.empty((EXP, (total_edge-v)//edge_incre+1) )
     degree_values=np.empty((EXP, (total_edge-v)//edge_incre+1) )
-    for exp in range(EXP): 
+    for exp in tqdm(range(EXP), desc='Current experiment'):
         np.random.seed(exp)
         graph = create_connected_graph(v)  
         # Incrementally add edges until the graph becomes fully connected
@@ -411,9 +424,9 @@ if __name__ == "__main__":
             assert nx.is_connected(graph), "The graph must remain connected"
 
     print('degree \n',degree_values)
-    print(np.round(np.mean(degree_values,axis=0)))
+    # print(np.round(np.mean(degree_values,axis=0)))
 
-    data = {'max_deg':np.round(np.mean(degree_values,axis=0)),'edges': np.round(np.mean(e_values,axis=0)), 'node_connectivity': np.round(np.mean(v_con_values,axis=0)), 'edge_connectivity':np.round(np.mean(e_con_values,axis=0)),'centralized_lqr_mean': np.mean(lqr_exp_time,axis=0), 'centralized_lqr_var': np.std(lqr_exp_time,axis=0)} 
-            # 'distributed_lqr_mean':np.mean(dis_lqr_exp_time),'distributed_lqr_var':np.std(dis_lqr_exp_time), 'distributed_worst_mean':np.mean(dis_lqr_worst_time),'distributed_worst_var':np.std(dis_lqr_worst_time)}
+    data = {'max_deg':np.round(np.mean(degree_values,axis=0)),'edges': np.round(np.mean(e_values,axis=0)), 'node_connectivity': np.round(np.mean(v_con_values,axis=0)), 'edge_connectivity':np.round(np.mean(e_con_values,axis=0)),'centralized_lqr_mean': np.mean(lqr_exp_time,axis=0), 'centralized_lqr_var': np.std(lqr_exp_time,axis=0), 
+            'distributed_lqr_mean':np.mean(dis_lqr_exp_time,axis=0),'distributed_lqr_var':np.std(dis_lqr_exp_time,axis=0), 'distributed_worst_mean':np.mean(dis_lqr_worst_time,axis=0),'distributed_worst_var':np.std(dis_lqr_worst_time,axis=0)}
     df = pd.DataFrame(data)
     df.to_excel('results/degree-100units.xlsx', index=False)
