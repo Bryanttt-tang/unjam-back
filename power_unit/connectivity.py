@@ -211,7 +211,7 @@ if __name__ == "__main__":
 
         return list(components.values())
     # create random graph
-    EXP=5
+    EXP=10
     total_edge=850
     edge_incre=50
     lqr_exp_time=np.empty((EXP, (total_edge-v)//edge_incre+1) )
@@ -359,8 +359,8 @@ if __name__ == "__main__":
             for i in range(len(H_j)):
                 h.append(H_j[i].Hankel)
                     
-            max_iter=100
-            dis_iter=5 
+            max_iter=200
+            dis_iter=10 
             alpha=0.1
             Tsim=100    
 
@@ -396,6 +396,7 @@ if __name__ == "__main__":
             w_split = F.lqr(wini, wref, Phi)
             end_alberto = time.process_time()
             print(f"Running time of Alberto Algo with {max_iter} iterations: ",end_alberto-start_alberto)
+            print('iteration',F.k_lqr[0])
             lqr_exp_time[exp,k]=end_alberto-start_alberto
 
             start_dist = time.process_time()
@@ -403,6 +404,7 @@ if __name__ == "__main__":
             end_dist = time.process_time()
             print(f"Running time of distributed Algo with {max_iter} outer iter and {dis_iter} alternating projection: ",end_dist-start_dist)
             print(f"Running time of Worst case distributed Algo with {max_iter} outer iter and {dis_iter} alternating projection: ",sum(F.time_inter)+sum(F.time_worst)+sum(F.time_dis_lqr)-sum(F.time_alter_proj))
+            print('iteration',F.k_dis_lqr[0])
             dis_lqr_exp_time[exp,k]=end_dist-start_dist
             dis_lqr_worst_time[exp,k]=sum(F.time_inter)+sum(F.time_worst)+sum(F.time_dis_lqr)-sum(F.time_alter_proj)
 
@@ -429,4 +431,4 @@ if __name__ == "__main__":
     data = {'max_deg':np.round(np.mean(degree_values,axis=0)),'edges': np.round(np.mean(e_values,axis=0)), 'node_connectivity': np.round(np.mean(v_con_values,axis=0)), 'edge_connectivity':np.round(np.mean(e_con_values,axis=0)),'centralized_lqr_mean': np.mean(lqr_exp_time,axis=0), 'centralized_lqr_var': np.std(lqr_exp_time,axis=0), 
             'distributed_lqr_mean':np.mean(dis_lqr_exp_time,axis=0),'distributed_lqr_var':np.std(dis_lqr_exp_time,axis=0), 'distributed_worst_mean':np.mean(dis_lqr_worst_time,axis=0),'distributed_worst_var':np.std(dis_lqr_worst_time,axis=0)}
     df = pd.DataFrame(data)
-    df.to_excel('results/degree-100units.xlsx', index=False)
+    df.to_excel('results/degree-100units-stable.xlsx', index=False)

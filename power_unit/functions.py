@@ -352,7 +352,11 @@ class functions():
                 # Compute vk+1
                 v_proj=  2*z-w-2*self.alpha*z_squared
                 start=time.process_time()
-                v_plus = self.alternating_projections(self.proj_h_sub, v_proj, pool, num_iterations=self.dis_iter) 
+                if ite_dis<=self.max_iter-20:
+                    v_plus = self.alternating_projections(self.proj_h_sub, v_proj, pool, num_iterations=1) 
+                else:
+                    v_plus = self.alternating_projections(self.proj_h_sub, v_proj, pool, num_iterations=self.dis_iter) 
+                # v_plus = self.alternating_projections(self.proj_h_sub, v_proj, pool, num_iterations=self.dis_iter) 
                 end=time.process_time()
                 self.time_alter_proj.append(end-start)
                 # v_plus = self.alternating_projections(h, self.M, self.M_inv, v_proj, num_iterations=self.dis_iter) 
