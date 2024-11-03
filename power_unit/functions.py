@@ -65,12 +65,18 @@ class functions():
         self.rank_total = self.m_total*self.L+2*self.v
         print('rank',self.rank_total)
         self.U_truncated = U[:, :self.rank_total]  # Shape (48, 27)
-        self.proj_h=self.U_truncated@np.linalg.inv(self.U_truncated.T@self.U_truncated)@self.U_truncated.T
-        # self.proj_h=self.h_total@np.linalg.pinv(self.h_total)
+        # self.proj_h=self.U_truncated@np.linalg.inv(self.U_truncated.T@self.U_truncated)@self.U_truncated.T
+        start_lqr_off = time.process_time()
+        self.proj_h=self.h_total@np.linalg.pinv(self.h_total)
+        end_lqr_off = time.process_time()
+        self.lqr_off_time=end_lqr_off-start_lqr_off
+
+        start_dislqr_off = time.process_time()
         self.proj_h_sub=[]
         for k in range(len(self.h)):
             self.proj_h_sub.append(self.h[k]@np.linalg.pinv(self.h[k]))
-    
+        end_dislqr_off = time.process_time()
+        self.dislqr_off_time=end_dislqr_off-start_dislqr_off
     def matrix_vector_multiply(self,matrix, vector):
         """
         Multiplies a matrix by a vector.
@@ -99,8 +105,8 @@ class functions():
 
     def timed_matmul(self,x, y):
         start_time = time.process_time()
-        # result = x @ y
-        result = self.matrix_vector_multiply(x,y)
+        result = x @ y
+        # result = self.matrix_vector_multiply(x,y)
         # result = self.proj(x,y)
         end_time = time.process_time()
         elapsed_time = end_time - start_time
@@ -303,9 +309,9 @@ class functions():
             v_proj=  2*z-w-2*self.alpha*z_squared # O(n)
             # print('v_proj:',v_proj.shape)
             start=time.process_time()
-            # v_plus = self.proj_h @ v_proj # O(n^2)
+            v_plus = self.proj_h @ v_proj # O(n^2)
             # v_plus = self.alternating_projections2(self.proj_h_sub, v_proj, num_iterations=self.dis_iter) 
-            v_plus = self.matrix_vector_multiply(self.proj_h, v_proj) # O(n^2)
+            # v_plus = self.matrix_vector_multiply(self.proj_h, v_proj) # O(n^2)
             # print('v_plus',v_plus.shape)
             end=time.process_time()
             self.time_proj.append(end-start)
@@ -324,8 +330,8 @@ class functions():
             # Check for convergence
             k+=1
             # # # print( 'norm',np.linalg.norm(w - w_prev))
-            if np.linalg.norm(w - w_prev) < tol:
-                break
+            # if np.linalg.norm(w - w_prev) < tol:
+            #     break
         self.k_lqr.append(k)
         return w
 
@@ -336,8 +342,8 @@ class functions():
             w = np.zeros((self.q_dis*self.L,1))
             # w=np.vstack((w_ini, w_ref ))
             kron=np.diag( np.kron(np.eye(self.N),Phi) ).reshape(-1, 1)
-            # e=np.dot((w[self.q_dis*self.Tini:]-w_ref).T, (kron * (w[self.q_dis*self.Tini:]-w_ref)))[0,0]
-            e=np.dot( (w-np.vstack((w_ini,w_ref))).T, (w-np.vstack((w_ini,w_ref))))[0,0]
+            e=np.dot((w[self.q_dis*self.Tini:]-w_ref).T, (kron * (w[self.q_dis*self.Tini:]-w_ref)))[0,0]
+            # e=np.dot( (w-np.vstack((w_ini,w_ref))).T, (w-np.vstack((w_ini,w_ref))))[0,0]
             self.E_dis.append(e)
             k=0
             for ite_dis in tqdm(range(self.max_iter)):
@@ -352,11 +358,11 @@ class functions():
                 # Compute vk+1
                 v_proj=  2*z-w-2*self.alpha*z_squared
                 start=time.process_time()
-                if ite_dis<=self.max_iter-20:
-                    v_plus = self.alternating_projections(self.proj_h_sub, v_proj, pool, num_iterations=1) 
-                else:
-                    v_plus = self.alternating_projections(self.proj_h_sub, v_proj, pool, num_iterations=self.dis_iter) 
-                # v_plus = self.alternating_projections(self.proj_h_sub, v_proj, pool, num_iterations=self.dis_iter) 
+                # if ite_dis<=self.max_iter-20:
+                #     v_plus = self.alternating_projections(self.proj_h_sub, v_proj, pool, num_iterations=1) 
+                # else:
+                #     v_plus = self.alternating_projections(self.proj_h_sub, v_proj, pool, num_iterations=self.dis_iter) 
+                v_plus = self.alternating_projections(self.proj_h_sub, v_proj, pool, num_iterations=self.dis_iter) 
                 end=time.process_time()
                 self.time_alter_proj.append(end-start)
                 # v_plus = self.alternating_projections(h, self.M, self.M_inv, v_proj, num_iterations=self.dis_iter) 
@@ -370,7 +376,7 @@ class functions():
                 self.E_dis.append(e)
                 # Check for convergence
                 # k+=1
-                if np.linalg.norm(w - w_prev) < tol:
-                    break
+                # if np.linalg.norm(w - w_prev) < tol:
+                #     break
             self.k_dis_lqr.append(k)
         return w

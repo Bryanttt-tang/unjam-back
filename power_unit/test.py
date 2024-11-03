@@ -11,30 +11,87 @@ from functions import functions
 from multiprocessing.pool import ThreadPool
 import networkx as nx
 if __name__ == "__main__":
-    np.random.seed(123)
+    np.random.seed(1)
+    v = 3 # number of units in the interconnected graph
+    n_subsystems = v
+    G = nx.path_graph(n_subsystems)
+    # Time step
+    d_t = 0.01
+
+    # Initialize lists to store matrices A, B, C, D for each subsystem
+    A_list = []
+    B_list = []
+    C_list = []
+    D_list = []
+
+    # Generate random values for m_i (inertia), d_i (damping), k_ij (coupling)
+    # mi = np.random.uniform(0.5, 1.0, n_subsystems)  # Inertia between [0.5, 1]
+    mi = 2 # Inertia between [0.5, 1]
+    d = np.random.uniform(0.5, 1, n_subsystems)    # Damping between [0, 10]
+    k = np.random.uniform(1, 1.5, (n_subsystems, n_subsystems))  # Coupling between neighbors
+
+    # Ensure no self-coupling (diagonal is 0)
+    # np.fill_diagonal(K, 0)
+
+    # Generate system matrices for each subsystem
+    for i in range(n_subsystems):
+        # Compute the coupling constant K_i as the sum of k_ij from neighbors in the graph
+        neighbors = list(G.neighbors(i))  # Get neighbors of subsystem i
+        K_i = np.sum([k[i, j] for j in neighbors])  # Sum of k_ij for neighbors
+
+        # Define the A_i matrix
+        A_i = np.array([[1, d_t],
+                        [-K_i / mi * d_t, 1 - (d[i] / mi) * d_t]])
+        
+        # Define the B_i matrix
+        B_i = np.array([[0],
+                        [1]])
+        
+        # Define the C_i matrix based on neighbors' coupling constants
+        if neighbors:
+            C_i_value = np.sum([k[i, j] / mi for j in neighbors]) * d_t
+        else:
+            C_i_value = 0  # No neighbors case (edge node in the graph)
+        
+        C_i = np.array([[C_i_value, 0]])
+        
+        # Define the D_i matrix (zero)
+        D_i = np.zeros((1, 1))
+        
+        # Append matrices to respective lists
+        A_list.append(A_i)
+        B_list.append(B_i)
+        C_list.append(C_i)
+        D_list.append(D_i)
+
     A = np.array([[1, 0.1],
-                   [-0.7,0.6]])
+                   [-0.5,0.7]])
     B = np.array([[0],[1]])
-    C = np.array([[0.025,0]])
+    C = np.array([[0.25,0]])
     D = np.zeros(1)
-    
-    # A = np.array([[1, 0.05],
-    #             [-0.05,0.5]])
-    # B = np.array([[0],[0.1]])
-    # C = np.array([[0.1,0]])
-    # A = np.array([[-1, 0, 2],
-    #             [-2, -3, -4],
-    #             [1,0,-1]])
-    # B = np.array([[1,1],[0,2],[-1,3]])
-    # C = np.array([[1,0,0],[0,1,0]])
-    D = np.zeros(1)
-    eigenvalues, _ = np.linalg.eig(A)
+    A_list = []
+    B_list = []
+    C_list = []
+    for i in range(v):
+        A_list.append(A)
+        B_list.append(B)
+        C_list.append(C)
+
+        # # Display the generated matrices for each subsystem
+    for i in range(n_subsystems):
+        print(f"Subsystem {i+1}:")
+        print(f"A_{i+1} = \n{A_list[i]}")
+        print(f"B_{i+1} = \n{B_list[i]}")
+        print(f"C_{i+1} = \n{C_list[i]}")
+        print(f"D_{i+1} = \n{D_list[i]}")
+
+    eigenvalues, _ = np.linalg.eig(A_list[-1])
     # Check for stability (all eigenvalues should have magnitudes less than 1 for discrete-time system)
     is_stable = np.all(np.abs(eigenvalues) < 1)
     print("Eigenvalues:")
     print(eigenvalues)
     print("Is the system stable? --", is_stable)
-    # print('The reference: \n',wref)
+
     def check_controllability(A, B):
         n = A.shape[0]
         controllability_matrix = B
@@ -59,12 +116,7 @@ if __name__ == "__main__":
         
         return observability_matrix, is_observable
 
-    controllability_matrix, is_controllable = check_controllability(A, B)
-    observability_matrix, is_observable = check_observability(A, C)
-    print("Is the system controllable?", is_controllable)
-    print("Is the system observable?",is_observable)
-    ''' Integer invariants '''
-
+ 
     n = np.shape(A)[0]  # dimesion of the state
     m = np.shape(B)[1]  # dimesion of the input
     p = np.shape(C)[0]  # dimesion of the output
@@ -149,6 +201,8 @@ if __name__ == "__main__":
     # create random graph
 
     v_values = []
+    markov_mean = []
+    markov_var=[]
     lqr_mean = []
     lqr_var=[]
     dis_lqr_mean=[]
@@ -178,6 +232,70 @@ if __name__ == "__main__":
     cvx_time=[]
     for v in tqdm(np.arange(10, 110, 10)):
         graph = create_connected_graph(v,'chain') 
+
+        n_subsystems = v
+        # G = nx.path_graph(n_subsystems)
+        # Time step
+        d_t = 0.01
+
+        # Initialize lists to store matrices A, B, C, D for each subsystem
+        A_list = []
+        B_list = []
+        C_list = []
+        D_list = []
+
+        # Generate random values for m_i (inertia), d_i (damping), k_ij (coupling)
+        # mi = np.random.uniform(0.5, 1.0, n_subsystems)  # Inertia between [0.5, 1]
+        mi = 2 # Inertia between [0.5, 1]
+        d = np.random.uniform(0.5, 1, n_subsystems)    # Damping between [0, 10]
+        k = np.random.uniform(1, 1.5, (n_subsystems, n_subsystems))  # Coupling between neighbors
+
+        # Ensure no self-coupling (diagonal is 0)
+        # np.fill_diagonal(K, 0)
+
+        # Generate system matrices for each subsystem
+        for i in range(n_subsystems):
+            # Compute the coupling constant K_i as the sum of k_ij from neighbors in the graph
+            neighbors = list(graph.neighbors(i))  # Get neighbors of subsystem i
+            K_i = np.sum([k[i, j] for j in neighbors])  # Sum of k_ij for neighbors
+
+            # Define the A_i matrix
+            A_i = np.array([[1, d_t],
+                            [-K_i / mi * d_t, 1 - (d[i] / mi) * d_t]])
+            
+            # Define the B_i matrix
+            B_i = np.array([[0],
+                            [1]])
+            
+            # Define the C_i matrix based on neighbors' coupling constants
+            if neighbors:
+                C_i_value = np.sum([k[i, j] / mi for j in neighbors]) * d_t
+            else:
+                C_i_value = 0  # No neighbors case (edge node in the graph)
+            
+            C_i = np.array([[C_i_value, 0]])
+            
+            # Define the D_i matrix (zero)
+            D_i = np.zeros((1, 1))
+            
+            # Append matrices to respective lists
+            A_list.append(A_i)
+            B_list.append(B_i)
+            C_list.append(C_i)
+            D_list.append(D_i)
+
+        A = np.array([[1, 0.1],
+                    [-0.5,0.7]])
+        B = np.array([[0],[1]])
+        C = np.array([[0.25,0]])
+        D = np.zeros(1)
+        A_list = []
+        B_list = []
+        C_list = []
+        for i in range(v):
+            A_list.append(A)
+            B_list.append(B)
+            C_list.append(C)
         # graph=create_reordered_mesh_graph(v,v)
         # plt.figure(figsize=(8, 6))
         # pos = nx.spring_layout(graph)  # You can change the layout for different visualizations
@@ -205,12 +323,12 @@ if __name__ == "__main__":
         q_dis=(m_dis+p_dis)
         q_central=(m_central+p_central)
         ''' Simulation parameters '''
-        Tini = 3 # length of the initial trajectory
+        Tini = v*n+1 # length of the initial trajectory
         N = 5   # prediction horizon
         L=Tini+N
         T = v*L+v*n+100   # number of data points
         R=1*np.eye(m_central)
-        R_dis=0.1*np.eye(m_dis)
+        R_dis=1*np.eye(m_dis)
         # R[1,1]=0
         # R[3,3]=0
         Q=1*np.eye(p_dis)
@@ -225,7 +343,7 @@ if __name__ == "__main__":
         X0 = np.random.rand(n,v)  
         noise=0
         # X0=np.random.uniform(-100, 100, (n, v))#initial state of 10 units
-        generator = generate_data(T,Tini,N,p,m,n,v,e,A,B,C,D,graph,noise)
+        generator = generate_data(T,Tini,N,p,m,n,v,e,A_list,B_list,C_list,D_list,graph,0)
         xData, uData ,yData, uData_dis ,yData_dis,yData_noise= generator.generate_pastdata(X0)
         # print('max U:',np.max(uData))
         # print('max Y:',np.max(yData))
@@ -314,6 +432,10 @@ if __name__ == "__main__":
             start_row = end_row
             
         h_total=H.Hankel
+        Up = H.Up
+        Uf = H.Uf
+        Yp = H.Yp
+        Yf = H.Yf
         # h_total=H_dis.Hankel
         # print(h_total.shape)
         h=[]
@@ -328,31 +450,54 @@ if __name__ == "__main__":
         # dis_lqr_exp_time=[]
         
         lqr_exp_time=[]
+        markov_exp_time=[]
         dis_lqr_exp_time=[]
         dis_lqr_worst_time=[]
         dis_lqr_theory_time=[]
         cvx_exp_time=[]
         for exp in range(1,6):
-            F=functions(T,Tini, N, v, e, m, 1, p, M, h_total, h, connected_components, graph, alpha, max_iter, dis_iter)
+            F=functions(T,Tini, N, v, e, m, 1, p, M, h_total, h, connected_components, graph, alpha, max_iter, dis_iter,[])
             wini = wData[:, -(Tini+exp):-exp].reshape(-1, 1, order='F')
             w_re=wini.reshape(-1,Tini,order='F')
             wini_dis = wData_dis[:, -(Tini+exp):-exp].reshape(-1, 1, order='F')
+
+            start_markovski = time.process_time()
+            # Markovski solution of data-driven control
+            W0=h_total[q_central*Tini:,:]
+            # print('m*Tf+n:',m_central*N+n*v)
+            # print('rank W0:',np.linalg.matrix_rank(W0))
+            g_free=np.linalg.pinv(np.vstack((Up,Yp,Uf)))@np.vstack((wini, np.zeros((m_central*N,1)) ))
+            y_free=Yf@g_free
+            # y_free=F.matrix_vector_multiply(Yf,g_free)
+            w_free=np.vstack((np.zeros((m_central,N)),y_free.reshape(-1,N))).reshape(-1, 1, order='F')
+            # print('w_free \n',w_free)
+            proj_markov=W0@np.linalg.pinv(W0.T@W0)@W0.T
+            # start_markovski = time.process_time()    
+            w_markov=proj_markov@(wref-w_free)+w_free
+            end_markovski = time.process_time()
+            markov_exp_time.append(end_markovski-start_markovski)
+
             start_alberto = time.process_time()
             w_split = F.lqr(wini, wref, Phi)
             # print('w_split \n',w_split[:q_central*Tini])
             end_alberto = time.process_time()
-            print(f"Running time of Alberto Algo with {max_iter} iterations: ",end_alberto-start_alberto)
+            print(f"Running time of Markovski Algo: ",end_markovski-start_markovski)
+            print(f"Running time of Alberto Algo with {max_iter} iterations: ",end_alberto-start_alberto+F.lqr_off_time)
             lqr_exp_time.append(end_alberto-start_alberto)
+
             k=F.k_lqr
             print(F.k_lqr)
             start_dist = time.process_time()
             w_split_dis = F.distributed_lqr(wini_dis, wref_dis, Phi_dis)
             end_dist = time.process_time()
-            print(f"Running time of distributed Algo with {max_iter} outer iter and {dis_iter} alternating projection: ",end_dist-start_dist)
-            print(f"Running time of Worst case distributed Algo with {max_iter} outer iter and {dis_iter} alternating projection: ",sum(F.time_inter)+sum(F.time_worst)+sum(F.time_dis_lqr)-sum(F.time_alter_proj))
+            print(f"Running time of distributed Algo with {max_iter} outer iter and {dis_iter} alternating projection: ",end_dist-start_dist+F.dislqr_off_time)
+            print(f"Running time of Worst case distributed Algo with {max_iter} outer iter and {dis_iter} alternating projection: ",sum(F.time_inter)+sum(F.time_worst)+sum(F.time_dis_lqr)-sum(F.time_alter_proj)+F.dislqr_off_time)
             dis_lqr_exp_time.append(end_dist-start_dist)
-            dis_lqr_worst_time.append(sum(F.time_inter)+sum(F.time_worst)+sum(F.time_dis_lqr)-sum(F.time_alter_proj))
-            dis_lqr_theory_time.append(sum(F.worst_sub))
+            dis_lqr_worst_time.append(sum(F.time_inter)+sum(F.time_worst)+sum(F.time_dis_lqr)-sum(F.time_alter_proj)+F.dislqr_off_time)
+            dis_lqr_theory_time.append(sum(F.worst_sub)+F.dislqr_off_time)
+            print(len(F.worst_sub))
+            print(f"Running time of theory case distributed Algo with {max_iter} outer iter and {dis_iter} alternating projection: ",sum(F.time_worst)+F.dislqr_off_time)
+
             # print(len(F.time_inter))
             # print(len(F.worst_sub))
 
@@ -382,14 +527,16 @@ if __name__ == "__main__":
         #     cvx_exp_time.append(end_cvx-start_cvx)
         #     print('The differnce between CVX and Alberto methods: ',np.linalg.norm(w_f.value - w_split[q_central*Tini:]) )
 
+        markov_mean.append(statistics.mean(markov_exp_time))
+        markov_var.append(statistics.stdev(markov_exp_time))
         lqr_mean.append(statistics.mean(lqr_exp_time))
         lqr_var.append(statistics.stdev(lqr_exp_time))
         dis_lqr_mean.append(statistics.mean(dis_lqr_exp_time))
         dis_lqr_var.append(statistics.stdev(dis_lqr_exp_time))
         dis_worst_mean.append(statistics.mean(dis_lqr_worst_time))
         dis_worst_var.append(statistics.stdev(dis_lqr_worst_time))  
-        dis_theory_mean.append(statistics.mean(dis_lqr_theory_time))
-        dis_theory_var.append(statistics.stdev(dis_lqr_theory_time)) 
+        # dis_theory_mean.append(statistics.mean(dis_lqr_theory_time))
+        # dis_theory_var.append(statistics.stdev(dis_lqr_theory_time)) 
         # cvx_mean.append(statistics.mean(cvx_exp_time))
         # cvx_var.append(statistics.stdev(cvx_exp_time))
 
@@ -422,10 +569,10 @@ if __name__ == "__main__":
     # }
     data = {'units':v_values, 'max_deg':degree_values,'centralized_lqr_mean': lqr_mean, 'centralized_lqr_var': lqr_var, 'distributed_lqr_mean':dis_lqr_mean,
             'distributed_lqr_var':dis_lqr_var, 'distributed_worst_mean':dis_worst_mean,'distributed_worst_var':dis_worst_var,
-            'distributed_theory_mean':dis_theory_mean,'distributed_theory_var':dis_theory_var}
+            'distributed_theory_mean':dis_theory_mean,'distributed_theory_var':dis_theory_var,'markovski_mean': markov_mean,'markovski_var': markov_var}
     # data = {'units':v_values, 'centralized_lqr_mean': lqr_mean, 'centralized_lqr_var': lqr_var, 'cvx_mean':cvx_mean,'cvx_var':cvx_var}
     df = pd.DataFrame(data)
-    df.to_excel('results/10-100,dist-chain.xlsx', index=False)
+    df.to_excel('results/10-100ecc,chain.xlsx', index=False)
     # data = {'units': v_values, 'centralized_lqr_mean': lqr_mean, 'centralized_lqr_var': lqr_var, 'distributed_lqr_mean':dis_lqr_mean,
     #         'distributed_lqr_var':dis_lqr_var, 'lqr_iteration':mean_lqr, 'dis_lqr_iteration':mean_dis_lqr, 'cvx':cvx_time,
     #         'average total proj':mean_total, 'mean thread':mean_thread,'average alternation proj':mean_alter, 'mean split':mean_split, 'mean split2':mean_split2, 

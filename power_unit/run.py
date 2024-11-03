@@ -12,7 +12,7 @@ from multiprocessing.pool import ThreadPool
 import networkx as nx
 if __name__ == "__main__":
     np.random.seed(1)
-    v = 5 # number of units in the interconnected graph
+    v = 2 # number of units in the interconnected graph
     n_subsystems = v
     G = nx.path_graph(n_subsystems)
     # Time step
@@ -190,7 +190,6 @@ if __name__ == "__main__":
         return list(components.values())
     # create random graph
 
-    # v = 5 # number of units in the interconnected graph
 
     graph = create_connected_graph(v)   
     # increase_edge_connectivity(graph, 2)
@@ -212,14 +211,14 @@ if __name__ == "__main__":
     q_central=(m_central+p_central)
     ''' Simulation parameters '''
     Tini = 3 # length of the initial trajectory
-    N = 5   # prediction horizon
+    N = 5  # prediction horizon
     L=Tini+N
     T = v*L+v*n+150   # number of data points
     R=1*np.eye(m_central)
     R_dis=1*np.eye(m_dis)
-    # R[1,1]=0
-    # R[3,3]=0
-    Q=10*np.eye(p_dis)
+    # R_dis[1,1]=0
+    # R_dis[3,3]=0
+    Q=1*np.eye(p_dis)
     Phi=np.block([[R, np.zeros((R.shape[0],Q.shape[1]))], [np.zeros((Q.shape[0],R.shape[1])), Q]])
     Phi_dis=np.block([[R_dis, np.zeros((R_dis.shape[0],Q.shape[1]))], [np.zeros((Q.shape[0],R_dis.shape[1])), Q]])
     lambda_g = 1          # lambda parameter for L1 penalty norm on g
@@ -269,12 +268,15 @@ if __name__ == "__main__":
 
     # random_vector=np.zeros((q_central, N))
     # random_vector_dis=np.zeros((q_dis, N))
-    random_vector=np.vstack((0.15*np.ones((m_central,N)),0.25*np.ones((p_central, N)) ))
-    random_vector_dis=np.vstack((0.15*np.ones((m_dis,N)),0.25*np.ones((p_dis, N)) ))
+    ref_dis = np.array([[1], [10], [1], [10]])
+    print(np.tile(ref_dis, N))
+    random_vector=np.vstack((0.1*np.ones((m_central,N)),0.25*np.ones((p_central, N)) ))
+    random_vector_dis=np.vstack((0.1*np.ones((m_dis, N)),0.25*np.ones((p_dis, N)) ))
     # wref=np.tile(r,N).reshape(-1,1, order='F')
     wref=random_vector.reshape(-1,1, order='F')
     wref_dis=random_vector_dis.reshape(-1,1, order='F')
-    
+    print('wref.shape:',wref_dis.shape)
+
     # Get M matrix
     second_indices = []
     excluded_indices=[]
@@ -347,6 +349,13 @@ if __name__ == "__main__":
         start_row = end_row
         
     h_total=H.Hankel
+    Up = H.Up
+    Uf = H.Uf
+    Yp = H.Yp
+    Yf = H.Yf
+
+    print('q*L',L*q*v)
+    print('shape of H',h_total.shape)
     # h_total=H_dis.Hankel
     # print(h_total.shape)
     h=[]
@@ -354,8 +363,8 @@ if __name__ == "__main__":
         h.append(H_j[i].Hankel)
     
 
-    max_iter=500
-    dis_iter=2
+    max_iter=200
+    dis_iter=20
     alpha=0.1
     num_runs=1
     cost_data = np.zeros((num_runs, max_iter+1))
@@ -390,23 +399,43 @@ if __name__ == "__main__":
         # lqr_exp_time=[]
         # dis_lqr_exp_time=[]
         
-
         wini = wData[:, -Tini:].reshape(-1, 1, order='F')
         # print('wini\n',wini)
         wini_dis = wData_dis[:, -Tini:].reshape(-1, 1, order='F')
+        start_markovski = time.process_time()
+        # Markovski solution of data-driven control
+        W0=h_total[q_central*Tini:,:]
+        print('m*Tf+n:',m_central*N+n*v)
+        print('rank W0:',np.linalg.matrix_rank(W0))
+        g_free=np.linalg.pinv(np.vstack((Up,Yp,Uf)))@np.vstack((wini, np.zeros((m_central*N,1)) ))
+        y_free=Yf@g_free
+        w_free=np.vstack((np.zeros((m_central,N)),y_free.reshape(-1,N))).reshape(-1, 1, order='F')
+        print('w_free \n',w_free)
+        w_markov=W0@np.linalg.pinv(W0.T@W0)@W0.T@(wref-w_free)+w_free
+        end_markovski = time.process_time()
+
         start_alberto = time.process_time()
         w_split = F.lqr(wini, wref, Phi)
         end_alberto = time.process_time()
+
+        w_split_dis = F.distributed_lqr(wini_dis, wref_dis, Phi_dis)
+        print('w_markov \n',w_markov)
+        print('w_split \n',w_split[q_central*Tini:])
+        print('CVX \n',w_f.value)
+        print('The differnce between CVX and Alberto methods: ',np.linalg.norm(w_f.value - w_split[q_central*Tini:])/np.linalg.norm(w_f.value) )
+        print('The differnce between CVX and Markovski methods: ',np.linalg.norm(w_f.value - w_markov)/np.linalg.norm(w_f.value) )
+        # print('w_split-dis \n',w_split_dis)
+        print(f"Running time of Markovski Algo: ",end_markovski-start_markovski)
         print(f"Running time of Alberto Algo with {max_iter} iterations: ",end_alberto-start_alberto)
         print(F.k_lqr)
-        cost_data[exp, :] = np.squeeze(F.E)
-        cost_data1[exp, :] = np.squeeze(F.E1)
+        # cost_data[exp, :] = np.squeeze(F.E)
+        # cost_data1[exp, :] = np.squeeze(F.E1)
 
-    mean_cost = np.mean(cost_data, axis=0)
-    std_cost = np.std(cost_data, axis=0)
-    mean_cost1 = np.mean(cost_data1, axis=0)
-    std_cost1 = np.std(cost_data1, axis=0)
-    # plt.figure(figsize=(10, 6))
+    # mean_cost = np.mean(cost_data, axis=0)
+    # std_cost = np.std(cost_data, axis=0)
+    # mean_cost1 = np.mean(cost_data1, axis=0)
+    # std_cost1 = np.std(cost_data1, axis=0)
+    # # plt.figure(figsize=(10, 6))
     # plt.plot(np.arange(max_iter+1), mean_cost, color='red', label='Mean cost')
     # plt.fill_between(np.arange(max_iter+1), mean_cost - std_cost, mean_cost + std_cost, color='red', alpha=0.3)
     # plt.yscale('log')  # Use logarithmic scale if you want to show linear convergence clearly
@@ -417,27 +446,27 @@ if __name__ == "__main__":
     # plt.grid(True)
     # plt.show()
 
-    plt.figure(figsize=(10, 6))
-    plt.plot(np.arange(max_iter+1), mean_cost1, color='red', label='Mean cost')
-    plt.fill_between(np.arange(max_iter+1), mean_cost1 - std_cost1, mean_cost1 + std_cost1, color='red', alpha=0.3)
+    # plt.figure(figsize=(10, 6))
+    # plt.plot(np.arange(max_iter+1), mean_cost1, color='red', label='Mean cost')
+    # plt.fill_between(np.arange(max_iter+1), mean_cost1 - std_cost1, mean_cost1 + std_cost1, color='red', alpha=0.3)
 
-    plt.yscale('log')  # Use logarithmic scale if you want to show linear convergence clearly
-    plt.xlabel('Iterations')
-    plt.ylabel('Cost')
-    plt.title('Cost vs Iterations (Convergence of LQT Algorithm)')
-    plt.legend()
-    plt.grid(True)
-    plt.show()
+    # plt.yscale('log')  # Use logarithmic scale if you want to show linear convergence clearly
+    # plt.xlabel('Iterations')
+    # plt.ylabel('Cost')
+    # plt.title('Cost vs Iterations (Convergence of LQT Algorithm)')
+    # plt.legend()
+    # plt.grid(True)
+    # plt.show()
 
-    df = pd.DataFrame({
-    'Mean': mean_cost,
-    'Std': std_cost,
-    'Mean1': mean_cost1,
-    'Std1': std_cost1
-        })
+    # df = pd.DataFrame({
+    # 'Mean': mean_cost,
+    # 'Std': std_cost,
+    # 'Mean1': mean_cost1,
+    # 'Std1': std_cost1
+    #     })
 
-        # Save DataFrame to CSV
-    df.to_csv('convergence-2.csv', index=False)
+    #     # Save DataFrame to CSV
+    # df.to_csv('convergence-2.csv', index=False)
     # w_split_noise = F_noise.lqr(wini, wref, Phi)
     # start_dist = time.process_time()
     # w_split_dis = F.distributed_lqr(wini_dis, wref_dis,Phi_dis)
@@ -496,9 +525,9 @@ if __name__ == "__main__":
     print('Running time of CVXPY for single LQR: ',end_cvx-start_cvx)
     # diff=np.linalg.norm(w_split-np.vstack((wini,wref)) )
     print('error',F.E[-1])
-    print('last error',F.E1[-1])
+    # print('last error',F.E1[-1])
     plt.plot(range(0, len(F.E)), np.squeeze(F.E))
-    plt.plot(range(0, len(F.E)), np.squeeze(F.E1))
+    # plt.plot(range(0, len(F.E)), np.squeeze(F.E1))
     # plt.plot(range(0, max_iter+1), np.squeeze(F_noise.E))
     # # plt.plot(range(0, max_iter+1), np.squeeze(F.E_dis))
     # plt.ylabel('Error')
@@ -513,11 +542,6 @@ if __name__ == "__main__":
     # w_f_off=U_truncated[Tini*q_central:,:]@np.linalg.pinv(U_truncated[:Tini*q_central,:])@wini
     w_f_off=h_total[Tini*q_central:,:]@np.linalg.pinv(h_total[:Tini*q_central,:])@wini
     print('The final cost of CVX:',problem.value)
-    # print('cvx\n',w_f.value)
-    # print('alberto\n',w_split[q_central*Tini:])
-#     # print('The output trajectory using CVXPY: \n',w_f.value)
-#     # print('The output trajectory using DS-splitting: \n',w_split[size_w*Tini:])
-#     # print('The output trajectory using Distributed LQR: \n',w_split_dis[size_w*Tini:])
     print('The differnce between CVX and Alberto methods: ',np.linalg.norm(w_f.value - w_split[q_central*Tini:])/np.linalg.norm(w_f.value) )
     print('The differnce between offline CVX and Alberto methods: ',np.linalg.norm(w_f_off - w_split[q_central*Tini:]) )
     # print('The differnce between free and noisy Alberto methods: ',np.linalg.norm(w_split_noise[q_central*Tini:] - w_split[q_central*Tini:]) )
