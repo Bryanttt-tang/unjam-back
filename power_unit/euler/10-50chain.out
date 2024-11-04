@@ -1,0 +1,1036 @@
+Subsystem 1:
+A_1 = 
+[[ 1.   0.1]
+ [-0.5  0.7]]
+B_1 = 
+[[0]
+ [1]]
+C_1 = 
+[[0.25 0.  ]]
+D_1 = 
+[[0.]]
+Subsystem 2:
+A_2 = 
+[[ 1.   0.1]
+ [-0.5  0.7]]
+B_2 = 
+[[0]
+ [1]]
+C_2 = 
+[[0.25 0.  ]]
+D_2 = 
+[[0.]]
+Subsystem 3:
+A_3 = 
+[[ 1.   0.1]
+ [-0.5  0.7]]
+B_3 = 
+[[0]
+ [1]]
+C_3 = 
+[[0.25 0.  ]]
+D_3 = 
+[[0.]]
+Eigenvalues:
+[0.85+0.16583124j 0.85-0.16583124j]
+Is the system stable? -- True
+Edges: 18
+vertex connectivity: 1
+edge connectivity: 1
+degree: 2
+(420, 1)
+(798, 1)
+Shape of Hankel (520, 355)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  280
+Shape of Hankel (988, 355)
+The Hankel matrix does NOT span the restricted behavior: rank(H) = 280 
+ mL+n = 748
+Shape of Hankel (78, 355)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  54
+Shape of Hankel (104, 355)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  80
+Shape of Hankel (104, 355)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  80
+Shape of Hankel (104, 355)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  80
+Shape of Hankel (104, 355)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  80
+Shape of Hankel (104, 355)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  80
+Shape of Hankel (104, 355)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  80
+Shape of Hankel (104, 355)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  80
+Shape of Hankel (104, 355)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  80
+Shape of Hankel (78, 355)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  54
+rank 280
+Running time of Markovski Algo:  0.04077526999999992
+Running time of Alberto Algo with 200 iterations:  0.034025440000000184
+[67]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  1.32574716
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  0.7203619800000123
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  0.46619837000000275
+rank 280
+Running time of Markovski Algo:  0.03864111999999986
+Running time of Alberto Algo with 200 iterations:  0.032534139999999656
+[67]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  1.3376991390000001
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  0.7374155099999928
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  0.47313127999998716
+rank 280
+Running time of Markovski Algo:  0.038506139999999967
+Running time of Alberto Algo with 200 iterations:  0.032147519999998764
+[67]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  1.27504216
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  0.7062894699999909
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  0.4747965199999946
+rank 280
+Running time of Markovski Algo:  0.03863864000000028
+Running time of Alberto Algo with 200 iterations:  0.03205858000000106
+[67]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  1.2544840600000002
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  0.6741830000000082
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  0.4687390199999779
+rank 280
+Running time of Markovski Algo:  0.03836731999999987
+Running time of Alberto Algo with 200 iterations:  0.032101839000000965
+[67]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  1.3043403300000005
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  0.7110196299999476
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  0.45910697999996053
+Edges: 28
+vertex connectivity: 1
+edge connectivity: 1
+degree: 2
+(930, 1)
+(1798, 1)
+Shape of Hankel (1080, 635)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  570
+Shape of Hankel (2088, 635)
+The Hankel matrix does NOT span the restricted behavior: rank(H) = 570 
+ mL+n = 1578
+Shape of Hankel (108, 635)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (144, 635)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  110
+Shape of Hankel (144, 635)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  110
+Shape of Hankel (144, 635)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  110
+Shape of Hankel (144, 635)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  110
+Shape of Hankel (144, 635)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  110
+Shape of Hankel (144, 635)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  110
+Shape of Hankel (144, 635)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  110
+Shape of Hankel (144, 635)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  110
+Shape of Hankel (144, 635)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  110
+Shape of Hankel (144, 635)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  110
+Shape of Hankel (144, 635)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  110
+Shape of Hankel (144, 635)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  110
+Shape of Hankel (144, 635)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  110
+Shape of Hankel (108, 635)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+rank 570
+Running time of Markovski Algo:  0.2080324700000009
+Running time of Alberto Algo with 200 iterations:  0.18057115000000223
+[68]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  1.7950998989999984
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  1.0012992390000086
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  0.7023125990000185
+rank 570
+Running time of Markovski Algo:  0.20743749000000022
+Running time of Alberto Algo with 200 iterations:  0.1788695699999998
+[68]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  1.7284265089999984
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  0.9400433300000355
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  0.6630676000000246
+rank 570
+Running time of Markovski Algo:  0.2095754000000003
+Running time of Alberto Algo with 200 iterations:  0.17939499999999953
+[68]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  1.7899460200000004
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  0.9861558800000587
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  0.6835963700000001
+rank 570
+Running time of Markovski Algo:  0.20715825000000088
+Running time of Alberto Algo with 200 iterations:  0.17813920899999935
+[68]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  1.736519760000002
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  0.9538881000000412
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  0.6747793099999893
+rank 570
+Running time of Markovski Algo:  0.2097801600000011
+Running time of Alberto Algo with 200 iterations:  0.17968534000000247
+[68]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  1.7460515090000008
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  0.9688294500000332
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  0.6746624400000165
+Edges: 38
+vertex connectivity: 1
+edge connectivity: 1
+degree: 2
+(1640, 1)
+(3198, 1)
+Shape of Hankel (1840, 1015)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  960
+Shape of Hankel (3588, 1015)
+The Hankel matrix does NOT span the restricted behavior: rank(H) = 960 
+ mL+n = 2708
+Shape of Hankel (138, 1015)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  94
+Shape of Hankel (184, 1015)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  140
+Shape of Hankel (184, 1015)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  140
+Shape of Hankel (184, 1015)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  140
+Shape of Hankel (184, 1015)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  140
+Shape of Hankel (184, 1015)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  140
+Shape of Hankel (184, 1015)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  140
+Shape of Hankel (184, 1015)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  140
+Shape of Hankel (184, 1015)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  140
+Shape of Hankel (184, 1015)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  140
+Shape of Hankel (184, 1015)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  140
+Shape of Hankel (184, 1015)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  140
+Shape of Hankel (184, 1015)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  140
+Shape of Hankel (184, 1015)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  140
+Shape of Hankel (184, 1015)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  140
+Shape of Hankel (184, 1015)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  140
+Shape of Hankel (184, 1015)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  140
+Shape of Hankel (184, 1015)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  140
+Shape of Hankel (184, 1015)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  140
+Shape of Hankel (138, 1015)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  94
+rank 960
+Running time of Markovski Algo:  0.8255874300000023
+Running time of Alberto Algo with 200 iterations:  0.7306029299999999
+[69]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  2.456698838000001
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  1.3984510700001778
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  1.0183084900000843
+rank 960
+Running time of Markovski Algo:  0.8198212399999996
+Running time of Alberto Algo with 200 iterations:  0.7289100490000031
+[69]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  2.5291385589999997
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  1.4170806399998739
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  1.0336077099998384
+rank 960
+Running time of Markovski Algo:  0.8256954889999975
+Running time of Alberto Algo with 200 iterations:  0.7283438199999956
+[69]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  2.564229020000006
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  1.4962056300002828
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  1.0864435500000766
+rank 960
+Running time of Markovski Algo:  0.8225158099999987
+Running time of Alberto Algo with 200 iterations:  0.7287069700000046
+[69]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  2.4936315489999927
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  1.4110567800000595
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  1.0233446799999797
+rank 960
+Running time of Markovski Algo:  0.8238425400000011
+Running time of Alberto Algo with 200 iterations:  0.728346608999999
+[69]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  2.5028036090000043
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  1.4563354399998047
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  1.0546917999997518
+Edges: 48
+vertex connectivity: 1
+edge connectivity: 1
+degree: 2
+(2550, 1)
+(4998, 1)
+Shape of Hankel (2800, 1495)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  1450
+Shape of Hankel (5488, 1495)
+The Hankel matrix does NOT span the restricted behavior: rank(H) = 1450 
+ mL+n = 4138
+Shape of Hankel (168, 1495)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (224, 1495)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
+Shape of Hankel (224, 1495)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
+Shape of Hankel (224, 1495)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
+Shape of Hankel (224, 1495)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
+Shape of Hankel (224, 1495)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
+Shape of Hankel (224, 1495)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
+Shape of Hankel (224, 1495)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
+Shape of Hankel (224, 1495)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
+Shape of Hankel (224, 1495)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
+Shape of Hankel (224, 1495)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
+Shape of Hankel (224, 1495)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
+Shape of Hankel (224, 1495)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
+Shape of Hankel (224, 1495)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
+Shape of Hankel (224, 1495)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
+Shape of Hankel (224, 1495)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
+Shape of Hankel (224, 1495)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
+Shape of Hankel (224, 1495)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
+Shape of Hankel (224, 1495)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
+Shape of Hankel (224, 1495)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
+Shape of Hankel (224, 1495)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
+Shape of Hankel (224, 1495)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
+Shape of Hankel (224, 1495)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
+Shape of Hankel (224, 1495)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
+Shape of Hankel (168, 1495)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+rank 1450
+Running time of Markovski Algo:  2.6047467490000002
+Running time of Alberto Algo with 200 iterations:  2.3281817290000006
+[69]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  3.550006369000002
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  2.1683605590000496
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  1.6636890089999454
+rank 1450
+Running time of Markovski Algo:  2.6036546889999954
+Running time of Alberto Algo with 200 iterations:  2.3248352889999992
+[69]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  3.4887181889999965
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  2.1155232290002317
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  1.6327519590003448
+rank 1450
+Running time of Markovski Algo:  2.611268698999993
+Running time of Alberto Algo with 200 iterations:  2.3263331890000103
+[69]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  3.5453296089999924
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  2.126771120000768
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  1.6412287200009672
+rank 1450
+Running time of Markovski Algo:  2.603547939000009
+Running time of Alberto Algo with 200 iterations:  2.3241555089999935
+[69]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  3.589795869000014
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  2.178321768998572
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  1.6690614699989794
+rank 1450
+Running time of Markovski Algo:  2.603621548999996
+Running time of Alberto Algo with 200 iterations:  2.3241702689999926
+[69]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  3.6141590080000014
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  2.1924918499998114
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  1.6784041199998398
+Edges: 58
+vertex connectivity: 1
+edge connectivity: 1
+degree: 2
+(3660, 1)
+(7198, 1)
+Shape of Hankel (3960, 2075)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  2040
+Shape of Hankel (7788, 2075)
+The Hankel matrix does NOT span the restricted behavior: rank(H) = 2040 
+ mL+n = 5868
+Shape of Hankel (198, 2075)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  134
+Shape of Hankel (264, 2075)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  200
+Shape of Hankel (264, 2075)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  200
+Shape of Hankel (264, 2075)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  200
+Shape of Hankel (264, 2075)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  200
+Shape of Hankel (264, 2075)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  200
+Shape of Hankel (264, 2075)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  200
+Shape of Hankel (264, 2075)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  200
+Shape of Hankel (264, 2075)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  200
+Shape of Hankel (264, 2075)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  200
+Shape of Hankel (264, 2075)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  200
+Shape of Hankel (264, 2075)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  200
+Shape of Hankel (264, 2075)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  200
+Shape of Hankel (264, 2075)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  200
+Shape of Hankel (264, 2075)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  200
+Shape of Hankel (264, 2075)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  200
+Shape of Hankel (264, 2075)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  200
+Shape of Hankel (264, 2075)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  200
+Shape of Hankel (264, 2075)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  200
+Shape of Hankel (264, 2075)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  200
+Shape of Hankel (264, 2075)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  200
+Shape of Hankel (264, 2075)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  200
+Shape of Hankel (264, 2075)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  200
+Shape of Hankel (264, 2075)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  200
+Shape of Hankel (264, 2075)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  200
+Shape of Hankel (264, 2075)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  200
+Shape of Hankel (264, 2075)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  200
+Shape of Hankel (264, 2075)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  200
+Shape of Hankel (264, 2075)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  200
+Shape of Hankel (198, 2075)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  134
+rank 2040
+Running time of Markovski Algo:  6.895039158000003
+Running time of Alberto Algo with 200 iterations:  6.158148007999998
+[69]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  5.086819426000005
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  3.173093187000376
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  2.581728009000429
+rank 2040
+Running time of Markovski Algo:  6.897045918000003
+Running time of Alberto Algo with 200 iterations:  6.152991347999972
+[69]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  5.059883897999981
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  3.2012754380000104
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  2.610577138999247
+rank 2040
+Running time of Markovski Algo:  6.912426596999978
+Running time of Alberto Algo with 200 iterations:  6.164325677000022
+[69]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  5.118866628999996
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  3.210803729999469
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  2.6113089100000195
+rank 2040
+Running time of Markovski Algo:  6.905420198000002
+Running time of Alberto Algo with 200 iterations:  6.152128036999983
+[69]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  5.076055778000011
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  3.1966051879990403
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  2.59565266900006
+rank 2040
+Running time of Markovski Algo:  6.899349948000008
+Running time of Alberto Algo with 200 iterations:  6.149186877999995
+[69]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  5.0372888180000075
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  3.168038569000572
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  2.579163359000205
+Edges: 68
+vertex connectivity: 1
+edge connectivity: 1
+degree: 2
+(4970, 1)
+(9798, 1)
+Shape of Hankel (5320, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  2730
+Shape of Hankel (10488, 2755)
+The Hankel matrix does NOT span the restricted behavior: rank(H) = 2730 
+ mL+n = 7898
+Shape of Hankel (228, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
+Shape of Hankel (304, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  230
+Shape of Hankel (304, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  230
+Shape of Hankel (304, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  230
+Shape of Hankel (304, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  230
+Shape of Hankel (304, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  230
+Shape of Hankel (304, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  230
+Shape of Hankel (304, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  230
+Shape of Hankel (304, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  230
+Shape of Hankel (304, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  230
+Shape of Hankel (304, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  230
+Shape of Hankel (304, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  230
+Shape of Hankel (304, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  230
+Shape of Hankel (304, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  230
+Shape of Hankel (304, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  230
+Shape of Hankel (304, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  230
+Shape of Hankel (304, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  230
+Shape of Hankel (304, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  230
+Shape of Hankel (304, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  230
+Shape of Hankel (304, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  230
+Shape of Hankel (304, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  230
+Shape of Hankel (304, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  230
+Shape of Hankel (304, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  230
+Shape of Hankel (304, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  230
+Shape of Hankel (304, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  230
+Shape of Hankel (304, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  230
+Shape of Hankel (304, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  230
+Shape of Hankel (304, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  230
+Shape of Hankel (304, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  230
+Shape of Hankel (304, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  230
+Shape of Hankel (304, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  230
+Shape of Hankel (304, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  230
+Shape of Hankel (304, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  230
+Shape of Hankel (304, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  230
+Shape of Hankel (228, 2755)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
+rank 2730
+Running time of Markovski Algo:  17.425067652999985
+Running time of Alberto Algo with 200 iterations:  14.950549344999985
+[70]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  7.775667897999995
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  5.123565419001864
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  4.390766119002876
+rank 2730
+Running time of Markovski Algo:  17.420103114000028
+Running time of Alberto Algo with 200 iterations:  14.958062293000069
+[70]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  7.859180448000075
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  5.1712262679996
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  4.401882808001517
+rank 2730
+Running time of Markovski Algo:  17.448015173999977
+Running time of Alberto Algo with 200 iterations:  14.962577373999977
+[70]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  7.875519137000083
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  5.078281328995388
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  4.355936968998435
+rank 2730
+Running time of Markovski Algo:  17.406559793999975
+Running time of Alberto Algo with 200 iterations:  14.949552935000042
+[70]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  7.894659185000023
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  5.135285247003708
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  4.391881778002528
+rank 2730
+Running time of Markovski Algo:  17.493757384000048
+Running time of Alberto Algo with 200 iterations:  14.992603584999983
+[70]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  7.760133406000023
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  5.058345156999451
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  4.360827008000399
+Edges: 78
+vertex connectivity: 1
+edge connectivity: 1
+degree: 2
+(6480, 1)
+(12798, 1)
+Shape of Hankel (6880, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  3520
+Shape of Hankel (13588, 3535)
+The Hankel matrix does NOT span the restricted behavior: rank(H) = 3520 
+ mL+n = 10228
+Shape of Hankel (258, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  174
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (344, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  260
+Shape of Hankel (258, 3535)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  174
+rank 3520
+Running time of Markovski Algo:  37.92627357599997
+Running time of Alberto Algo with 200 iterations:  32.069446207000055
+[70]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  12.386041105999993
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  8.10739405699644
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  7.205052657996816
+rank 3520
+Running time of Markovski Algo:  38.143288267
+Running time of Alberto Algo with 200 iterations:  32.15789452899992
+[70]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  12.039903944999992
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  7.857085416997961
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  7.007279006997464
+rank 3520
+Running time of Markovski Algo:  38.04294904599999
+Running time of Alberto Algo with 200 iterations:  32.11418674799995
+[70]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  11.830008144999965
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  7.950135886998282
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  7.0886551870005405
+rank 3520
+Running time of Markovski Algo:  38.06277944599992
+Running time of Alberto Algo with 200 iterations:  32.107750227
+[70]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  11.843674405999991
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  7.860922366999716
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  7.029095017000486
+rank 3520
+Running time of Markovski Algo:  37.950653326000065
+Running time of Alberto Algo with 200 iterations:  32.07235084800004
+[70]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  12.296317025999997
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  8.003443405988719
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  7.140335316985556
+Edges: 88
+vertex connectivity: 1
+edge connectivity: 1
+degree: 2
+(8190, 1)
+(16198, 1)
+Shape of Hankel (8640, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  4410
+Shape of Hankel (17088, 4415)
+The Hankel matrix does NOT span the restricted behavior: rank(H) = 4410 
+ mL+n = 12858
+Shape of Hankel (288, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  194
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (384, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  290
+Shape of Hankel (288, 4415)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  194
+rank 4410
+Running time of Markovski Algo:  76.12013936200015
+Running time of Alberto Algo with 200 iterations:  63.439039156000035
+[70]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  18.97781515299971
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  12.967345334992388
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  11.90103337599703
+rank 4410
+Running time of Markovski Algo:  76.1706813610001
+Running time of Alberto Algo with 200 iterations:  63.401743977000024
+[70]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  19.661955343000045
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  13.598693575004063
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  12.488409506002426
+rank 4410
+Running time of Markovski Algo:  76.24328737199994
+Running time of Alberto Algo with 200 iterations:  63.474053585999854
+[70]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  19.490645563000044
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  13.514285595001184
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  12.426140054995358
+rank 4410
+Running time of Markovski Algo:  76.03390243100012
+Running time of Alberto Algo with 200 iterations:  63.36839018700016
+[70]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  19.697793462000163
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  13.57051550200731
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  12.460907654004359
+rank 4410
+Running time of Markovski Algo:  76.17402393300017
+Running time of Alberto Algo with 200 iterations:  63.43949941600022
+[70]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  19.227717313000085
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  13.396751496008164
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  12.347495676007384
+Edges: 98
+vertex connectivity: 1
+edge connectivity: 1
+degree: 2
+(10100, 1)
+(19998, 1)
+Shape of Hankel (10600, 5395)
+The Hankel matrix does NOT span the restricted behavior: rank(H) = 5395 
+ mL+n = 5400
+Shape of Hankel (20988, 5395)
+The Hankel matrix does NOT span the restricted behavior: rank(H) = 5395 
+ mL+n = 15788
+Shape of Hankel (318, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  214
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (424, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  320
+Shape of Hankel (318, 5395)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  214
+rank 5400
+Running time of Markovski Algo:  140.73799801799987
+Running time of Alberto Algo with 200 iterations:  119.96681530500064
+[200]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  25.649995539999964
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  18.388594580993413
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  17.084360130999812
+rank 5400
+Running time of Markovski Algo:  140.79380827800014
+Running time of Alberto Algo with 200 iterations:  120.0464348659998
+[200]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  24.84089120999988
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  18.186384363017623
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  16.92021049300456
+rank 5400
+Running time of Markovski Algo:  141.18995010800018
+Running time of Alberto Algo with 200 iterations:  120.15570206499979
+[200]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  25.409525100999872
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  18.24173470296364
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  16.90492052396621
+rank 5400
+Running time of Markovski Algo:  141.51103916700004
+Running time of Alberto Algo with 200 iterations:  120.39491884500012
+[200]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  24.818704350999724
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  18.17784554300306
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  16.91648000300256
+rank 5400
+Running time of Markovski Algo:  140.72518264799965
+Running time of Alberto Algo with 200 iterations:  119.97216498500029
+[200]
+Running time of distributed Algo with 200 outer iter and 10 alternating projection:  24.86708972100041
+Running time of Worst case distributed Algo with 200 outer iter and 10 alternating projection:  18.24713307402999
+2000
+Running time of theory case distributed Algo with 200 outer iter and 10 alternating projection:  16.93268362401068

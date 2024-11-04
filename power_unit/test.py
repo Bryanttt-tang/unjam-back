@@ -230,7 +230,7 @@ if __name__ == "__main__":
     maxs = []
     vars=[]
     cvx_time=[]
-    for v in tqdm(np.arange(10, 110, 10)):
+    for v in tqdm(np.arange(10, 55, 5)):
         graph = create_connected_graph(v,'chain') 
 
         n_subsystems = v
@@ -442,8 +442,8 @@ if __name__ == "__main__":
         for i in range(len(H_j)):
             h.append(H_j[i].Hankel)
                 
-        max_iter=100
-        dis_iter=5
+        max_iter=200
+        dis_iter=10
         alpha=0.1
         # F=functions(T,Tini, N, v, e, m, 1, p, M, h_total, h, connected_components, graph, alpha, max_iter, dis_iter)
         # lqr_exp_time=[]
@@ -535,8 +535,8 @@ if __name__ == "__main__":
         dis_lqr_var.append(statistics.stdev(dis_lqr_exp_time))
         dis_worst_mean.append(statistics.mean(dis_lqr_worst_time))
         dis_worst_var.append(statistics.stdev(dis_lqr_worst_time))  
-        # dis_theory_mean.append(statistics.mean(dis_lqr_theory_time))
-        # dis_theory_var.append(statistics.stdev(dis_lqr_theory_time)) 
+        dis_theory_mean.append(statistics.mean(dis_lqr_theory_time))
+        dis_theory_var.append(statistics.stdev(dis_lqr_theory_time)) 
         # cvx_mean.append(statistics.mean(cvx_exp_time))
         # cvx_var.append(statistics.stdev(cvx_exp_time))
 
@@ -572,7 +572,7 @@ if __name__ == "__main__":
             'distributed_theory_mean':dis_theory_mean,'distributed_theory_var':dis_theory_var,'markovski_mean': markov_mean,'markovski_var': markov_var}
     # data = {'units':v_values, 'centralized_lqr_mean': lqr_mean, 'centralized_lqr_var': lqr_var, 'cvx_mean':cvx_mean,'cvx_var':cvx_var}
     df = pd.DataFrame(data)
-    df.to_excel('results/10-100ecc,chain.xlsx', index=False)
+    df.to_excel('results/10-50ecc,chain.xlsx', index=False)
     # data = {'units': v_values, 'centralized_lqr_mean': lqr_mean, 'centralized_lqr_var': lqr_var, 'distributed_lqr_mean':dis_lqr_mean,
     #         'distributed_lqr_var':dis_lqr_var, 'lqr_iteration':mean_lqr, 'dis_lqr_iteration':mean_dis_lqr, 'cvx':cvx_time,
     #         'average total proj':mean_total, 'mean thread':mean_thread,'average alternation proj':mean_alter, 'mean split':mean_split, 'mean split2':mean_split2, 

@@ -330,8 +330,8 @@ class functions():
             # Check for convergence
             k+=1
             # # # print( 'norm',np.linalg.norm(w - w_prev))
-            # if np.linalg.norm(w - w_prev) < tol:
-            #     break
+            if np.linalg.norm(w - w_prev) < tol:
+                break
         self.k_lqr.append(k)
         return w
 
@@ -376,7 +376,7 @@ class functions():
                 self.E_dis.append(e)
                 # Check for convergence
                 # k+=1
-                # if np.linalg.norm(w - w_prev) < tol:
-                #     break
+                if np.linalg.norm(w - w_prev) < tol:
+                    break
             self.k_dis_lqr.append(k)
         return w
