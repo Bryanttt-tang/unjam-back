@@ -64,12 +64,93 @@ if __name__ == "__main__":
         C_list.append(C_i)
         D_list.append(D_i)
 
-    # print(C_list[0].shape)
+    # Markovsky matrix
+    def markov_parameters(A, B, C, D, L):
+        """Generate the Markov parameters h(0), h(1), ..., h(L-1) of the system."""
+        h = [D]  # Start with h(0) = D
+        Ak = np.eye(A.shape[0])  # A^0 = Identity
+        for k in range(1, L):
+            Ak = Ak @ A
+            h.append(C @ Ak @ B)
+        return h
+
+    def observability_matrix(A, C, L):
+        """Construct the extended observability matrix O_L with L block rows."""
+        obs_matrix = C
+        Ak = A
+        for _ in range(1, L):
+            obs_matrix = np.vstack((obs_matrix, C @ Ak))
+            Ak = Ak @ A
+        return obs_matrix
+
+    def convolution_matrix(h, L):
+        """Construct the convolution matrix C_L using the Markov parameters."""
+        # Each row i has h(i), h(i-1), ..., h(0), padded with zeros
+        rows = []
+        for i in range(L):
+            row_blocks = [h[j] if j <= i else np.zeros_like(h[0]) for j in range(i, -1, -1)]
+            row_blocks += [np.zeros_like(h[0])]*(L - len(row_blocks))  # Pad zeros to reach L blocks
+            rows.append(np.hstack(row_blocks))
+        return np.vstack(rows)
+
+    def markov_matrix(A, B, C, D, L):
+        """Construct the Markov matrix M_L using A, B, C, D, and length L."""
+        h = markov_parameters(A, B, C, D, L)
+        OL = observability_matrix(A, C, L)
+        print('shape of OL:',OL.shape)
+        CL = convolution_matrix(h, L)
+        print('shape of CL:',CL.shape)
+        # Construct M_L, which has an identity block on the top-left
+        n = A.shape[0]  # State dimension
+        mL = B.shape[1] * L
+        identity_block = np.eye(mL)
+        zero_block = np.zeros((mL,n))
+        # upper_block = np.hstack((identity_block, zero_block))
+        upper_block = np.hstack((zero_block,identity_block))
+        lower_block = np.hstack((OL, CL))
+        
+        ML = np.vstack((upper_block, lower_block))
+        print('shape of ML:',ML.shape)
+        return ML
+
+    def check_rank(M, expected_rank):
+        """Check the rank of matrix M and verify it against expected_rank."""
+        rank = np.linalg.matrix_rank(M)
+        print(f"Rank of M_L: {rank}")
+        return rank == expected_rank
+
+    # Define example system matrices A, B, C, D
+    # Replace with actual system matrices for your specific case
     A = np.array([[1, 0.1],
-                   [-0.5,0.7]])
+                [-0.5,0.7]])
     B = np.array([[0],[1]])
     C = np.array([[0.25,0]])
     D = np.zeros(1)
+    A_couple=np.zeros((v*2,v*2))
+    # print(A_couple)
+    # print(A_couple[[0,1],[2,-1]])
+    A_couple[1,2]=0.25
+    A_couple[3,0]=0.25
+    A_aug=np.kron(np.eye(v),A)+A_couple
+    B_aug=np.kron(np.eye(v),B)
+    C_aug=np.kron(np.eye(v),C)
+    D_aug=np.kron(np.eye(v),D)
+
+    # Define desired L and expected rank
+    Tini = 3 # length of the initial trajectory
+    N = 5  # prediction horizon
+    L=Tini+N
+
+    mL = B_aug.shape[1] * L
+    n = A_aug.shape[0]
+    expected_rank = mL + n
+
+    # Construct M_L and check its rank
+    ML = markov_matrix(A_aug, B_aug, C_aug, D_aug, L)
+    is_full_rank = check_rank(ML, expected_rank)
+    print(f"M_L has the expected rank {expected_rank}: {is_full_rank}")
+
+    # print('A_aug',A_aug)
     A_list = []
     B_list = []
     C_list = []
@@ -79,12 +160,12 @@ if __name__ == "__main__":
         C_list.append(C)
 
         # # Display the generated matrices for each subsystem
-    for i in range(n_subsystems):
-        print(f"Subsystem {i+1}:")
-        print(f"A_{i+1} = \n{A_list[i]}")
-        print(f"B_{i+1} = \n{B_list[i]}")
-        print(f"C_{i+1} = \n{C_list[i]}")
-        print(f"D_{i+1} = \n{D_list[i]}")
+    # for i in range(n_subsystems):
+    #     print(f"Subsystem {i+1}:")
+    #     print(f"A_{i+1} = \n{A_list[i]}")
+    #     print(f"B_{i+1} = \n{B_list[i]}")
+    #     print(f"C_{i+1} = \n{C_list[i]}")
+    #     print(f"D_{i+1} = \n{D_list[i]}")
     # A = np.array([[1, 0.05],
     #             [-0.05,0.5]])
     # B = np.array([[0],[0.1]])
@@ -136,6 +217,7 @@ if __name__ == "__main__":
     m = np.shape(B)[1]  # dimesion of the input
     p = np.shape(C)[0]  # dimesion of the output
     q = p+m             # dimesion of input/output pair
+    
     def create_connected_graph(n):
         """
         Creates a connected graph with n nodes and n-1 edges (a tree).
@@ -209,10 +291,6 @@ if __name__ == "__main__":
     p_central=v*p
     q_dis=(m_dis+p_dis)
     q_central=(m_central+p_central)
-    ''' Simulation parameters '''
-    Tini = 3 # length of the initial trajectory
-    N = 5  # prediction horizon
-    L=Tini+N
     T = v*L+v*n+150   # number of data points
     R=1*np.eye(m_central)
     R_dis=1*np.eye(m_dis)
@@ -224,6 +302,7 @@ if __name__ == "__main__":
     lambda_g = 1          # lambda parameter for L1 penalty norm on g
     lambda_1=1
     # r = np.ones((p,1)) # reference trajectory, try to give different defitions of this to see if DeePC works!
+
 
     ''' Generate data '''
     def increase_snr(y, snr_db):
@@ -270,8 +349,10 @@ if __name__ == "__main__":
     # random_vector_dis=np.zeros((q_dis, N))
     ref_dis = np.array([[1], [10], [1], [10]])
     print(np.tile(ref_dis, N))
-    random_vector=np.vstack((0.1*np.ones((m_central,N)),0.25*np.ones((p_central, N)) ))
-    random_vector_dis=np.vstack((0.1*np.ones((m_dis, N)),0.25*np.ones((p_dis, N)) ))
+    u_ref=0.25*np.ones((m_central,1))
+    y_ref=0.25*np.ones((p_central,1))
+    random_vector=np.vstack((0.25*np.ones((m_central,N)),0.25*np.ones((p_central, N)) ))
+    random_vector_dis=np.vstack((0.25*np.ones((m_dis, N)),0.25*np.ones((p_dis, N)) ))
     # wref=np.tile(r,N).reshape(-1,1, order='F')
     wref=random_vector.reshape(-1,1, order='F')
     wref_dis=random_vector_dis.reshape(-1,1, order='F')
@@ -523,6 +604,34 @@ if __name__ == "__main__":
     problem.solve(solver = cp.SCS,verbose=False)
     end_cvx = time.time()
     print('Running time of CVXPY for single LQR: ',end_cvx-start_cvx)
+
+    # MPC
+    x = cp.Variable((2*n, N+1))  # State trajectory
+    u = cp.Variable((m_central, N))    # Control input trajectory
+    y= cp.Variable((p_central, N))
+    # Objective function and constraints
+    cost = 0
+    constraints = [x[:, 0] == xData[:,-1]]  # Initial state constraint
+
+    for k in range(N):
+        # Quadratic cost function for tracking
+        cost += cp.quad_form(y[:, k:k+1] - y_ref, Q) + cp.quad_form(u[:, k:k+1]-u_ref, R)
+        
+        # System dynamics constraint
+        constraints += [y[:, k] == C_aug @ x[:, k]]
+        constraints += [x[:, k+1] == A_aug @ x[:, k] + B_aug @ u[:, k]]
+        # # Input constraints
+        # constraints += [cp.norm_inf(u[:, k]) <= u_max]
+        
+        # # State constraints
+        # constraints += [cp.norm_inf(x[:, k]) <= x_max]
+
+    # Solve the optimization problem
+    problem_mpc = cp.Problem(cp.Minimize(cost), constraints)
+    problem_mpc.solve()
+    print('mpc solver \n',np.vstack((u.value, y.value)) )
+    print('The differnce between CVX and MPC methods: ',np.linalg.norm(w_f.value - np.vstack((u.value, y.value)).reshape(-1, 1, order='F'))/np.linalg.norm(w_f.value) )
+
     # diff=np.linalg.norm(w_split-np.vstack((wini,wref)) )
     print('error',F.E[-1])
     # print('last error',F.E1[-1])
@@ -572,13 +681,17 @@ if __name__ == "__main__":
         # plt.legend()
         # plt.show()
 
-    Tsim=300  
+    Tsim=200  
     solver='CVXPY'
     params_D = {'H': H, # an object of Hankel
                 'H_dis':H_dis,
                 'h_dis':h,
+                'ML':ML,
+                'xData':xData,
                 'Phi':Phi,
                 'Phi_dis':Phi_dis,
+                'Q':Q,
+                'R':R,
                 'T':T,
                 'Tini':Tini,
                 'N':N,
@@ -595,26 +708,98 @@ if __name__ == "__main__":
                 'dis_iter':dis_iter,
                 'wref_dis' : wref_dis,
                 'wref' : wref,
-                'w_star':w_f.value}
+                'w_star':w_f.value,
+                'A_aug':A_aug,
+                'B_aug':B_aug,
+                'C_aug':C_aug}
+    Xsim=[]
+    Usim=[]
+    Ysim=[]
+    Xsim2=[]
+    Usim2=[]
+    Ysim2=[]
+    Xsim3=[]
+    Usim3=[]
+    Ysim3=[]
+    Xsim4=[]
+    Usim4=[]
+    Ysim4=[]
+    for exp in range(1,6):
+        deepc = DeePC(params_D,'CVXPY','Hankel',exp)   
+        x0 =  np.copy(xData[:, -(exp+1)])
+        print('x0:',x0)
+        start_deepc=time.process_time()
+        xsim, usim, ysim = deepc.loop(Tsim,A_list,B_list,C_list,D_list,x0)
+        end_deepc=time.process_time()
+        Xsim.append(xsim)
+        Usim.append(usim)
+        Ysim.append(ysim)
+        print('Total DeepC running time: ', end_deepc-start_deepc)
+        # print('x0',xData[:,-1])
+        # x0 =  np.copy(xData[:, -1])
 
-    deepc = DeePC(params_D,'CVXPY')   
-    x0 =  np.copy(xData[:, -1])
-    print('x0:',x0)
+        deepc2 = DeePC(params_D,'lqr','Hankel',exp)   
+        # x0 =  np.copy(xData[:, -1])
+        # print('x0:',x0)
+        start_deepc2=time.process_time()
+        xsim2, usim2, ysim2 = deepc2.loop(Tsim,A_list,B_list,C_list,D_list,x0)
+        end_deepc2=time.process_time()
+        Xsim2.append(xsim2)
+        Usim2.append(usim2)
+        Ysim2.append(ysim2)
+        print('Total Alberto running time: ', end_deepc2-start_deepc2)
+
+        # deepc3 = DeePC(params_D,'lqr','Markov',exp)   
+        # start_deepc3=time.process_time()
+        # xsim3, usim3, ysim3 = deepc3.loop(Tsim,A_list,B_list,C_list,D_list,x0)
+        # end_deepc3=time.process_time()
+        # Xsim3.append(xsim3)
+        # Usim3.append(usim3)
+        # Ysim3.append(ysim3)
+        # print('Total Markov running time: ', end_deepc3-start_deepc3)
+
+        
+        # deepc4 = DeePC(params_D,'mpc','Hankel',exp)   
+        # start_deepc4=time.process_time()
+        # xsim4, usim4, ysim4 = deepc4.loop(Tsim,A_list,B_list,C_list,D_list,x0)
+        # end_deepc4=time.process_time()
+        # Xsim4.append(xsim4)
+        # Usim4.append(usim4)
+        # Ysim4.append(ysim4)
+        # print('Total mpc running time: ', end_deepc3-start_deepc3)
+
+    usim_results = np.array(Usim)  # Shape (5, control_dim, Tsim)
+    xsim_results = np.array(Xsim)  # Shape (5, state_dim, Tsim)
+    ysim_results = np.array(Ysim)
+    usim_results2 = np.array(Usim2)  # Shape (5, control_dim, Tsim)
+    xsim_results2 = np.array(Xsim2)  # Shape (5, state_dim, Tsim)
+    ysim_results2 = np.array(Ysim2)
+    # usim_results3 = np.array(Usim3)  # Shape (5, control_dim, Tsim)
+    # xsim_results3 = np.array(Xsim3)  # Shape (5, state_dim, Tsim)
+    # ysim_results3 = np.array(Ysim3)
+    # usim_results4 = np.array(Usim4)  # Shape (5, control_dim, Tsim)
+    # xsim_results4 = np.array(Xsim4)  # Shape (5, state_dim, Tsim)
+    # ysim_results4 = np.array(Ysim4)
+    print('shape of Xsim:',xsim_results.shape)
+
+    # x0 =  np.copy(xData[:, -1])
     # print(x0)
-    start_deepc=time.process_time()
-    xsim, usim, ysim = deepc.loop(Tsim,A_list,B_list,C_list,D_list,x0)
-    end_deepc=time.process_time()
-    print('Total DeepC running time: ', end_deepc-start_deepc)
+    # deepc2 = DeePC(params_D,'lqr','Hankel')   
+    # start_deepc2=time.process_time()
+    # xsim2, usim2, ysim2 = deepc2.loop(Tsim,A_list,B_list,C_list,D_list,x0)
+    # end_deepc2=time.process_time()
+    # print('Total Alberto running time: ', end_deepc2-start_deepc2)
+
+    # deepc3 = DeePC(params_D,'lqr','Markov')   
+    # x0 =  np.copy(xData[:, -1])
+    # print('x0:',x0)
+    # # print(x0)
+    # start_deepc3=time.process_time()
+    # xsim3, usim3, ysim3 = deepc3.loop(Tsim,A_list,B_list,C_list,D_list,x0)
+    # end_deepc3=time.process_time()
+    # print('Total DeepC running time: ', end_deepc3-start_deepc3)
+
     # print('x0',xData[:,-1])
-
-    x0 =  np.copy(xData[:, -1])
-    print(x0)
-    deepc2 = DeePC(params_D,'lqr')   
-    start_deepc2=time.process_time()
-    xsim2, usim2, ysim2 = deepc2.loop(Tsim,A_list,B_list,C_list,D_list,x0)
-    end_deepc2=time.process_time()
-    print('Total Alberto running time: ', end_deepc2-start_deepc2)
-
     # x0 =  np.copy(xData[:, -1])
     # deepc3 = DeePC(params_D,'dis_lqr')   
     # start_deepc3=time.process_time()
@@ -646,25 +831,70 @@ if __name__ == "__main__":
     fig, ax = plt.subplots(4, figsize=(8, 10))
 
     # Plot control input
-    plot_behavior(ax[0], 'Control input', 'Time Steps', 'Input', usim, 'u', ylim=None)
-    # Plot output
-    plot_behavior(ax[1], 'State x1', 'Time Steps', 'x1', xsim[0,0,:].reshape(-1,Tsim+1), 'x', ylim=None)
-    # plot_behavior(ax[1], 'State x1', 'Time Steps', 'x1', xsim2[0,0,:].reshape(-1,Tsim), 'x', ylim=None)
-    plot_behavior(ax[2], 'State x2', 'Time Steps', 'x2', xsim[1,0,:].reshape(-1,Tsim+1), 'x', ylim=None)
-    # Plot output error
-    print('The reference:\n',wref[-p_central:])
-    error = np.abs(ysim2- np.tile(wref[-p_central:], Tsim))
-    print('error:\n',error[:,-1])
-    # error=ysim-wref.reshape(size_w,-1,order='F')[-2:,:]
-    plot_behavior(ax[3], 'Output error', 'Time Steps', 'Output error y - y_ref', error, 'y', ylim=None,log_scale=False)
-    plt.subplots_adjust(hspace=0.4)
+    # plot_behavior(ax[0], 'Control input', 'Time Steps', 'Input', usim, 'u', ylim=None)
+    # # Plot output
+    # plot_behavior(ax[1], 'State x1', 'Time Steps', 'x1', xsim[0,0,:].reshape(-1,Tsim+1), 'x', ylim=None)
+    # # plot_behavior(ax[1], 'State x1', 'Time Steps', 'x1', xsim2[0,0,:].reshape(-1,Tsim), 'x', ylim=None)
+    # plot_behavior(ax[2], 'State x2', 'Time Steps', 'x2', xsim[1,0,:].reshape(-1,Tsim+1), 'x', ylim=None)
+    # # Plot output error
+    # print('The reference:\n',wref[-p_central:])
+    # error = np.abs(ysim2- np.tile(wref[-p_central:], Tsim))
+    # print('eysim-wref.reshape(size_w,-1,order='F')[-2:,:]
+    # plot_behavior(ax[3], 'Output error', 'Time Steps', 'Output error y - y_ref', error, 'y', ylim=None,log_scale=False)
+    # plt.subplots_adjust(hspace=0.4)
+    # plt.show()rror:\n',error[:,-1])
+    # # error=
+
+    # print('u_lqr',usim2[0,0])
+    # print(usim_results3)
+    mean_usim = usim_results.mean(axis=0)[0, :]  # Mean across experiments for the first control input
+    std_usim = usim_results.std(axis=0)[0, :]    # Standard deviation for shading
+    mean_usim2 = usim_results2.mean(axis=0)[0, :]  # Mean across experiments for the first control input
+    std_usim2 = usim_results2.std(axis=0)[0, :]    # Standard deviation for shading
+    # mean_usim3 = usim_results3.mean(axis=0)[0, :]  # Mean across experiments for the first control input
+    # std_usim3 = usim_results3.std(axis=0)[0, :]    # Standard deviation for shading
+    # mean_usim4 = usim_results4.mean(axis=0)[0, :]  # Mean across experiments for the first control input
+    # std_usim4 = usim_results4.std(axis=0)[0, :] 
+
+    mean_ysim = ysim_results.mean(axis=0)[0, :]  # Mean across experiments for the first control input
+    std_ysim = ysim_results.std(axis=0)[0, :]    # Standard deviation for shading
+    mean_ysim2 = ysim_results2.mean(axis=0)[0, :]  # Mean across experiments for the first control input
+    std_ysim2 = ysim_results2.std(axis=0)[0, :]    # Standard deviation for shading
+    # mean_ysim3 = ysim_results3.mean(axis=0)[0, :]  # Mean across experiments for the first control input
+    # std_ysim3 = ysim_results3.std(axis=0)[0, :]    # Standard deviation for shading
+    # mean_ysim4 = ysim_results4.mean(axis=0)[0, :]  # Mean across experiments for the first control input
+    # std_ysim4 = ysim_results4.std(axis=0)[0, :] 
+
+    plt.figure(figsize=(10, 6))
+    plt.plot(np.linspace(0, Tsim,Tsim), mean_usim, label='Mean CVXPY', color='blue')
+    plt.fill_between(np.linspace(0, Tsim,Tsim), mean_usim - std_usim, mean_usim + std_usim, color='blue', alpha=0.3)
+    plt.plot(np.linspace(0, Tsim,Tsim), mean_usim2, label='Mean lqr', color='red')
+    plt.fill_between(np.linspace(0, Tsim,Tsim), mean_usim2 - std_usim2, mean_usim2 + std_usim2, color='red', alpha=0.3)
+    # plt.plot(np.linspace(0, Tsim,Tsim), mean_usim3, label='Mean Markov', color='black')
+    # plt.fill_between(np.linspace(0, Tsim,Tsim), mean_usim3 - std_usim3, mean_usim3 + std_usim3, color='black', alpha=0.3)
+    plt.ylabel('u')
+    plt.grid(True)
+    plt.legend()
     plt.show()
 
-    print('u_lqr',usim2[0,0])
+
+    plt.figure(figsize=(10, 6))
+    plt.plot(np.linspace(0, Tsim,Tsim), mean_ysim, label='Mean CVXPY', color='blue')
+    plt.fill_between(np.linspace(0, Tsim,Tsim), mean_ysim - std_ysim, mean_ysim + std_ysim, color='blue', alpha=0.3)
+    plt.plot(np.linspace(0, Tsim,Tsim), mean_ysim2, label='Mean lqr', color='red')
+    plt.fill_between(np.linspace(0, Tsim,Tsim), mean_ysim2 - std_ysim2, mean_ysim2 + std_ysim2, color='red', alpha=0.3)
+    plt.plot(np.linspace(0, Tsim,Tsim), mean_ysim3, label='Mean Markov', color='black')
+    plt.fill_between(np.linspace(0, Tsim,Tsim), mean_ysim3 - std_ysim3, mean_ysim3 + std_ysim3, color='black', alpha=0.3)
+    plt.ylabel('y')
+    plt.grid(True)
+    plt.legend()
+    plt.show()
+
+
     plt.figure(figsize=(10, 6))
     plt.plot(np.linspace(0, Tsim,Tsim), usim[0,:], label='CVXPY', color='blue')
     plt.plot(np.linspace(0, Tsim,Tsim), usim2[0,:], label='lqr', color='red')
-    # plt.plot(np.linspace(0, Tsim,Tsim), usim3[0,:], label='dis_lqr', color='black')
+    plt.plot(np.linspace(0, Tsim,Tsim), usim3[0,:], label='Markoc', color='black')
     plt.ylabel('u')
     plt.grid(True)
     plt.legend()
@@ -673,7 +903,7 @@ if __name__ == "__main__":
     plt.figure(figsize=(10, 6))
     plt.plot(np.linspace(0, Tsim,Tsim), ysim[0,:], label='CVXPY', color='blue')
     plt.plot(np.linspace(0, Tsim,Tsim), ysim2[0,:], label='lqr', color='red')
-    # plt.plot(np.linspace(0, Tsim,Tsim), ysim3[0,:], label='dis_lqr', color='black')
+    plt.plot(np.linspace(0, Tsim,Tsim), ysim3[0,:], label='Markov', color='black')
     plt.ylabel('y')
     plt.grid(True)
     plt.legend()
@@ -682,7 +912,7 @@ if __name__ == "__main__":
     plt.figure(figsize=(10, 6))
     plt.plot(np.linspace(0, Tsim,Tsim+1), xsim[0,0,:], label='CVXPY', color='blue')
     plt.plot(np.linspace(0, Tsim,Tsim+1), xsim2[0,0,:], label='lqr', color='red')
-    # plt.plot(np.linspace(0, Tsim,Tsim+1), xsim3[0,0,:], label='dis_lqr', color='black')
+    plt.plot(np.linspace(0, Tsim,Tsim+1), xsim3[0,0,:], label='Markov', color='black')
     plt.ylabel('phase')
     plt.grid(True)
     plt.legend()
@@ -691,7 +921,7 @@ if __name__ == "__main__":
     plt.figure(figsize=(10, 6))
     plt.plot(np.linspace(0, Tsim,Tsim+1), xsim[1,0,:], label='CVXPY', color='blue')
     plt.plot(np.linspace(0, Tsim,Tsim+1), xsim2[1,0,:], label='lqr', color='red')
-    # plt.plot(np.linspace(0, Tsim,Tsim+1), xsim3[1,0,:], label='dis_lqr', color='black')
+    plt.plot(np.linspace(0, Tsim,Tsim+1), xsim3[1,0,:], label='Markov', color='black')
     plt.ylabel('frequency')
     plt.grid(True)
     plt.legend()
@@ -699,25 +929,25 @@ if __name__ == "__main__":
 
     # Create a time array
     time = np.arange(xsim.shape[2])
-    data = {'time': time}
-    for method_num, x_array in enumerate([xsim, xsim2], start=1):
-        data[f'state_1_method_{method_num}'] = x_array[0, 0, :]  # Trajectory for state 1
-        data[f'state_2_method_{method_num}'] = x_array[1, 0, :]  # Trajectory for state 2
-
-    # Create a DataFrame and save to CSV
-    df = pd.DataFrame(data)
-    df.to_csv('state_trajectories_box_2.csv', index=False)
+    # data = {'time': time}
+    # for method_num, x_array in enumerate([xsim, xsim2, xsim3], start=1):
+    #     data[f'state_1_method_{method_num}'] = x_array[0, 0, :]  # Trajectory for state 1
+    #     data[f'state_2_method_{method_num}'] = x_array[1, 0, :]  # Trajectory for state 2
+    #     data[f'state_3_method_{method_num}'] = x_array[2, 0, :]  # Trajectory for state 3
+    # # Create a DataFrame and save to CSV
+    # df = pd.DataFrame(data)
+    # df.to_csv('state_trajectories_ecc.csv', index=False)
 
     time2 = np.arange(usim.shape[1])
     data2 = {'time': time2}
-    for method_num, u_array in enumerate([usim, usim2], start=1):
+    for method_num, u_array in enumerate([usim, usim2,usim3], start=1):
         data2[f'u_method_{method_num}'] = u_array[0, :]  # Trajectory for state 1
-    for method_num, y_array in enumerate([ysim, ysim2], start=1):
+    for method_num, y_array in enumerate([ysim, ysim2,ysim3], start=1):
         data2[f'y_method_{method_num}'] = y_array[0, :]  # Trajectory for state 1
 
     # Create a DataFrame and save to CSV
     df2 = pd.DataFrame(data2)
-    df2.to_csv('w_box_2.csv', index=False)
+    df2.to_csv('w_ecc.csv', index=False)
 
         # def compute_metrics(t, response, ref, threshold=0.02):
         #     num_responses = response.shape[0]

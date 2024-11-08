@@ -200,22 +200,25 @@ class Hankel():
             
 class DeePC():
     
-    def __init__(self,params_D,solver):
+    def __init__(self,params_D,solver,represent,exp):
         
         self.H = params_D['H'] # Hankel matrix object
         self.H_dis = params_D['H_dis'] # Hankel matrix object
         self.h_dis = params_D['h_dis'] # a list containing hankel matrix of each unit
-        # self.Q = params_D['Q']
-        # self.R = params_D['R']
+        self.Q = params_D['Q']
+        self.R = params_D['R']
         self.Phi=params_D['Phi']
         self.Phi_dis=params_D['Phi_dis']
         self.T = params_D['T']
         self.Tini = params_D['Tini']
         self.N = params_D['N']
+        self.ML=params_D['ML'] # Markovsky matrix
         self.L=self.Tini+self.N
         self.n = params_D['n']
         self.v = params_D['v']
         self.e = params_D['e']
+        self.exp=exp
+        self.xData=params_D['xData']
         self.m=params_D['m'] # num_input of each unit
         self.m_total= self.m*self.v # total manifest variable
         self.m_dis = self.m_total+self.e
@@ -234,8 +237,15 @@ class DeePC():
         self.wref_dis = params_D['wref_dis']
         self.w_star = params_D['w_star']
         self.solver=solver
+        self.represent=represent
         self.E=[]
-        self.F=functions(self.T, self.Tini,self.N, self.v,self.e, self.m, 1, self.p, self.M, self.H.Hankel, self.h_dis, self.connected_components, self.graph, self.alpha,self.max_iter,self.dis_iter,self.w_star)
+        self.A_aug=params_D['A_aug']
+        self.B_aug=params_D['B_aug']
+        self.C_aug=params_D['C_aug']
+        if self.represent=='Hankel':
+            self.F=functions(self.T, self.Tini,self.N, self.v,self.e, self.m, 1, self.p, self.M, self.H.Hankel, self.h_dis, self.connected_components, self.graph, self.alpha,self.max_iter,self.dis_iter,self.w_star)
+        elif self.represent=='Markov':
+            self.F=functions(self.T, self.Tini,self.N, self.v,self.e, self.m, 1, self.p, self.M, self.ML, self.h_dis, self.connected_components, self.graph, self.alpha,self.max_iter,self.dis_iter,self.w_star)
     
     def solve_deepc(self,uini,yini):
         # COMPLETE THIS FUNCTION
@@ -255,7 +265,6 @@ class DeePC():
 
         constraints = [ self.F.U_truncated[:self.Tini*self.q_total,:] @ g == wini,
                             self.F.U_truncated[self.Tini*self.q_total:,:] @ g == w_f,
-#                             w_f>=0
                             ]
             # box constraint on inputs
         w_f_reshaped = cp.reshape(w_f, (-1, self.N))
@@ -272,6 +281,32 @@ class DeePC():
         # print('u:',u.value)
         return (g.value.reshape(-1,1, order='F'), w_f.value.reshape(-1,1, order='F'),e)
     
+    def solve_mpc(self,xini):
+        # COMPLETE THIS FUNCTION
+
+        x0=xini
+        # print('x0.shape',x0.shape)
+        x = cp.Variable((self.v*self.n, self.N+1))  # State trajectory
+        u = cp.Variable((self.m_total, self.N))    # Control input trajectory
+        y= cp.Variable((self.p_total, self.N))
+        # Objective function and constraints
+        cost = 0
+        constraints = [x[:, 0:1] == x0.reshape(-1,1)]  # Initial state constraint
+
+        for k in range(self.N):
+            # Quadratic cost function for tracking
+            cost += cp.quad_form(y[:, k:k+1] - self.wref[self.m_total:self.m_total+self.p_total], self.Q) + cp.quad_form(u[:, k:k+1]-self.wref[:self.m_total], self.R)
+            
+            # System dynamics constraint
+            constraints += [y[:, k] == self.C_aug @ x[:, k]]
+            constraints += [x[:, k+1] == self.A_aug @ x[:, k] + self.B_aug @ u[:, k]]
+
+        # Solve the optimization problem
+        problem_mpc = cp.Problem(cp.Minimize(cost), constraints)
+        problem_mpc.solve()
+
+        return (np.vstack((u.value, y.value)).reshape(-1, 1, order='F'))
+
     def solve_lqr(self,uini,yini):
         u_reshape=uini.reshape(self.m_total,-1,order='F')
         y_reshape=yini.reshape(self.p_total,-1,order='F')
@@ -289,7 +324,7 @@ class DeePC():
         w = self.F.distributed_lqr(wini, self.wref_dis, self.Phi_dis)
         return w[self.q_dis*self.Tini:]
     
-    def get_next_input(self, uini, yini,s = 1):
+    def get_next_input(self, uini, yini,xini,s = 1):
         # Return the first control action in the predicted optimal sequence
         if self.solver=='CVXPY':
             (g, w_f,e) = self.solve_deepc(uini, yini) # u is u*
@@ -307,6 +342,11 @@ class DeePC():
             w_f=w_f.reshape(self.q_dis,-1,order='F')
             u=w_f[:self.m_dis,:].reshape(-1,1, order='F')
             return u[:self.m_dis*s].reshape(-1,1, order='F')
+        elif self.solver=='MPC':
+            w_f=self.solve_mpc(xini)
+            w_f=w_f.reshape(self.q_total,-1,order='F')
+            u=w_f[:self.m_total,:].reshape(-1,1, order='F')
+            return u[:self.m_total*s].reshape(-1,1, order='F')
         elif self.solver=='NoControl':
             u=np.zeros((self.m_total*self.N,1))
             return u[:self.m_total*s].reshape(-1,1, order='F')
@@ -316,8 +356,10 @@ class DeePC():
             uini = self.H_dis.uData[:, -self.Tini:].reshape(-1, 1, order='F')
             yini = self.H_dis.yData[:, -self.Tini:].reshape(-1, 1, order='F') 
         else:    
-            uini = self.H.uData[:, -self.Tini:].reshape(-1, 1, order='F')
-            yini = self.H.yData[:, -self.Tini:].reshape(-1, 1, order='F')
+            uini = self.H.uData[:, -(self.Tini+self.exp):-self.exp].reshape(-1, 1, order='F')
+            yini = self.H.yData[:, -(self.Tini+self.exp):-self.exp].reshape(-1, 1, order='F')
+            # uini = self.H.uData[:, -self.Tini:].reshape(-1, 1, order='F')
+            # yini = self.H.yData[:, -self.Tini:].reshape(-1, 1, order='F')
         
         return uini ,yini
     
@@ -328,11 +370,12 @@ class DeePC():
             ysim = np.empty((self.p_total, Tsim))
             xsim = np.empty((self.n, self.v, Tsim+1))
             uini,yini = self.get_wini()
-            
-            x=x0.reshape(self.n, -1, order='F') # X0 = np.random.rand(n,10)  
+            xini=self.xData[:,-1]
+            x=np.copy(x0).reshape(self.n, -1, order='F') # X0 = np.random.rand(n,10)  
             xsim[:,:,0]=np.copy(x)
             for t in tqdm(range(Tsim)):
-                u = self.get_next_input(uini, yini)
+                
+                u = self.get_next_input(uini, yini,xini)
                 # print('u_shape',u.shape)
                 y=C@x
     #             print(y.shape)
@@ -358,16 +401,19 @@ class DeePC():
                 uini = np.vstack((uini[self.m_dis:], u))
                 # uini is extended with the contents of u vertically (along the rows), with the first self.H.m rows of uini being excluded. 
                 yini = np.vstack((yini[self.p_total:], y.reshape(-1, 1)))
+                xini=np.copy(x).reshape(-1, 1,order='F')
+
         else:
             usim = np.empty((self.m_total, Tsim))
             ysim = np.empty((self.p_total, Tsim))
             xsim = np.empty((self.n, self.v, Tsim+1))
             uini,yini = self.get_wini()
-            
-            x=x0.reshape(self.n, -1, order='F') # X0 = np.random.rand(n,10)  
+            # xini=self.xData[:,-self.exp-1]
+            xini=self.xData[:,-1]
+            x=np.copy(x0).reshape(self.n, -1, order='F') # X0 = np.random.rand(n,10)  
             xsim[:,:,0]=np.copy(x)
             for t in tqdm(range(Tsim)):
-                u = self.get_next_input(uini, yini)
+                u = self.get_next_input(uini, yini,xini)
                 
                 y=C[0]@x
                 # print(y)
@@ -392,5 +438,5 @@ class DeePC():
                 uini = np.vstack((uini[self.m_total:], u))
                 # uini is extended with the contents of u vertically (along the rows), with the first self.H.m rows of uini being excluded. 
                 yini = np.vstack((yini[self.p_total:], y.reshape(-1, 1)))
-        
+                xini=np.copy(x).reshape(-1, 1,order='F')
         return xsim, usim, ysim
