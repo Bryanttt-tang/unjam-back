@@ -1,0 +1,1181 @@
+Eigenvalues:
+[0.5+0.05j 0.5-0.05j]
+Is the system stable? -- True
+Is the system controllable? True
+Is the system observable? True
+vertex connectivity: 1
+edge connectivity: 1
+(180, 1)
+(354, 1)
+Shape of Hankel (480, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  300
+Shape of Hankel (944, 393)
+The Hankel matrix does NOT span the restricted behavior: rank(H) = 300 
+ mL+n = 764
+Shape of Hankel (24, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  18
+Shape of Hankel (32, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (24, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  18
+Running time of Alberto Algo with 50 iterations:  29.724602461
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  20.082730843
+Running time of Alberto Algo with 50 iterations:  29.582045328999996
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  20.689651716
+Running time of Alberto Algo with 50 iterations:  29.917518083999994
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  16.281095574999995
+mean projection time of each subspace:  0.021197593133330393
+Max projection time of each subspace:  0.08135843499999851
+Minimum projection time of each subspace:  0.002566916999995783
+150
+Projection time of total space:  0.6079063600000012
+Projection time of alternating projection:  0.38002184698666674
+450
+Projection time of inter projection:  0.0006881813644447653
+Projection onto Cartisian of subspaces time:  0.1259777014355556
+vertex connectivity: 2
+edge connectivity: 2
+(180, 1)
+(534, 1)
+Shape of Hankel (480, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  300
+Shape of Hankel (1424, 393)
+The Hankel matrix does NOT span the restricted behavior: rank(H) = 300 
+ mL+n = 1244
+Shape of Hankel (32, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (64, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (48, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (56, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (48, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (56, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (48, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (40, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (48, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (40, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (56, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (48, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (48, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (56, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (64, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (40, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (40, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (48, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (56, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (32, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (56, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (48, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (64, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (40, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (40, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (32, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (48, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (48, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (48, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (32, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Running time of Alberto Algo with 50 iterations:  29.96919965500001
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  41.30808730999999
+Running time of Alberto Algo with 50 iterations:  29.860630181999994
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  38.01412363799997
+Running time of Alberto Algo with 50 iterations:  29.763901839000027
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  39.656133255999976
+mean projection time of each subspace:  0.07379504376666925
+Max projection time of each subspace:  0.16923110300001554
+Minimum projection time of each subspace:  0.009257975000025453
+150
+Projection time of total space:  0.6028966879999871
+Projection time of alternating projection:  0.7928621932466674
+450
+Projection time of inter projection:  0.0007794835822244295
+Projection onto Cartisian of subspaces time:  0.26350128029333436
+vertex connectivity: 3
+edge connectivity: 3
+(180, 1)
+(642, 1)
+Shape of Hankel (480, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  300
+Shape of Hankel (1712, 393)
+The Hankel matrix does NOT span the restricted behavior: rank(H) = 300 
+ mL+n = 1532
+Shape of Hankel (40, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (64, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (64, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (56, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (64, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (64, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (56, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (48, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (64, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (56, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (72, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (56, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (56, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (64, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (64, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (64, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (48, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (56, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (64, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (48, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (64, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (64, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (72, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (48, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (56, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (48, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (56, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (48, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (48, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (40, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Running time of Alberto Algo with 50 iterations:  28.898786531999974
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  60.16333374200002
+Running time of Alberto Algo with 50 iterations:  29.20066871199998
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  59.01112449599998
+Running time of Alberto Algo with 50 iterations:  29.48231110100005
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  55.96806265099997
+mean projection time of each subspace:  0.08382294813333525
+Max projection time of each subspace:  0.2754047170000149
+Minimum projection time of each subspace:  0.011680329000000711
+150
+Projection time of total space:  0.6025530760000493
+Projection time of alternating projection:  1.1672180975866695
+450
+Projection time of inter projection:  0.0009527811422203235
+Projection onto Cartisian of subspaces time:  0.3881128261488895
+vertex connectivity: 4
+edge connectivity: 4
+(180, 1)
+(840, 1)
+Shape of Hankel (480, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  300
+Shape of Hankel (2240, 393)
+The Hankel matrix does NOT span the restricted behavior: rank(H) = 300 
+ mL+n = 2060
+Shape of Hankel (48, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (72, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (72, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (56, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (64, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (64, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (80, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (88, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (64, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (80, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (56, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (88, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (72, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (72, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (96, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (72, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (96, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (80, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (64, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (80, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (96, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (72, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (72, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (80, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (80, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (56, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (72, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (64, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (64, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Running time of Alberto Algo with 50 iterations:  29.895592525999973
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  109.86257838300003
+Running time of Alberto Algo with 50 iterations:  29.56669508699997
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  102.57845429999998
+Running time of Alberto Algo with 50 iterations:  29.816158795999968
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  96.471545182
+mean projection time of each subspace:  0.27364897660001664
+Max projection time of each subspace:  0.6875051879999319
+Minimum projection time of each subspace:  0.016184790000011162
+150
+Projection time of total space:  0.6062765030000037
+Projection time of alternating projection:  2.0589959379399945
+450
+Projection time of inter projection:  0.0011765589911131732
+Projection onto Cartisian of subspaces time:  0.6851479810399986
+vertex connectivity: 5
+edge connectivity: 5
+(180, 1)
+(846, 1)
+Shape of Hankel (480, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  300
+Shape of Hankel (2256, 393)
+The Hankel matrix does NOT span the restricted behavior: rank(H) = 300 
+ mL+n = 2076
+Shape of Hankel (56, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (72, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (72, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (56, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (64, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (64, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (80, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (88, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (64, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (80, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (56, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (88, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (72, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (72, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (96, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (72, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (96, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (80, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (64, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (80, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (96, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (72, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (72, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (80, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (80, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (56, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (72, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (64, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (72, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Running time of Alberto Algo with 50 iterations:  29.82251865000012
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  107.9403780099999
+Running time of Alberto Algo with 50 iterations:  29.83145195400016
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  101.53416599100001
+Running time of Alberto Algo with 50 iterations:  28.925231148999956
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  105.46770615200012
+mean projection time of each subspace:  0.17375857479998255
+Max projection time of each subspace:  0.42099566000001687
+Minimum projection time of each subspace:  0.020915392999995674
+150
+Projection time of total space:  0.6023937840000144
+Projection time of alternating projection:  2.0991764183066577
+450
+Projection time of inter projection:  0.0011362090266624767
+Projection onto Cartisian of subspaces time:  0.6985817533222214
+vertex connectivity: 6
+edge connectivity: 6
+(180, 1)
+(1026, 1)
+Shape of Hankel (480, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  300
+Shape of Hankel (2736, 393)
+The Hankel matrix does NOT span the restricted behavior: rank(H) = 300 
+ mL+n = 2556
+Shape of Hankel (72, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (96, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (88, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (80, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (64, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (144, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  138
+Shape of Hankel (72, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (88, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (88, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (80, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (64, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (112, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (88, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (72, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (104, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (80, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (88, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (72, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (104, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (112, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (80, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (104, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (80, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (88, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (88, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (104, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (96, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (88, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Running time of Alberto Algo with 50 iterations:  29.867909415999975
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  159.686939338
+Running time of Alberto Algo with 50 iterations:  29.837766270999964
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  156.84038977900013
+Running time of Alberto Algo with 50 iterations:  29.67596991100004
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  155.38925195699994
+mean projection time of each subspace:  0.44386182883329184
+Max projection time of each subspace:  1.1059155940001801
+Minimum projection time of each subspace:  0.0647754320000331
+150
+Projection time of total space:  0.6052991229998952
+Projection time of alternating projection:  3.145636332486671
+450
+Projection time of inter projection:  0.0013102852222255023
+Projection onto Cartisian of subspaces time:  1.0472277310155516
+vertex connectivity: 7
+edge connectivity: 7
+(180, 1)
+(1056, 1)
+Shape of Hankel (480, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  300
+Shape of Hankel (2816, 393)
+The Hankel matrix does NOT span the restricted behavior: rank(H) = 300 
+ mL+n = 2636
+Shape of Hankel (72, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (96, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (96, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (80, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (72, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (144, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  138
+Shape of Hankel (72, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (88, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (88, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (80, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (128, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
+Shape of Hankel (72, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (112, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (96, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (72, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (104, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (80, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (88, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (72, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (112, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (80, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (104, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (96, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (88, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (88, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (104, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (104, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (88, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Running time of Alberto Algo with 50 iterations:  29.92765991300007
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  157.2975268360001
+Running time of Alberto Algo with 50 iterations:  29.80159691300014
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  173.87234862000014
+Running time of Alberto Algo with 50 iterations:  29.774268286999813
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  169.78386826000042
+mean projection time of each subspace:  0.5056843518667241
+Max projection time of each subspace:  1.1513094490001095
+Minimum projection time of each subspace:  0.07561353800019788
+150
+Projection time of total space:  0.6050493829998231
+Projection time of alternating projection:  3.3392253947066606
+450
+Projection time of inter projection:  0.0013100243377802043
+Projection onto Cartisian of subspaces time:  1.111758155968891
+vertex connectivity: 8
+edge connectivity: 8
+(180, 1)
+(1278, 1)
+Shape of Hankel (480, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  300
+Shape of Hankel (3408, 393)
+The Hankel matrix does NOT span the restricted behavior: rank(H) = 300 
+ mL+n = 3228
+Shape of Hankel (88, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (128, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
+Shape of Hankel (104, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (88, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (168, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  162
+Shape of Hankel (80, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (112, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (112, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (104, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (128, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
+Shape of Hankel (96, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (104, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (80, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (128, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
+Shape of Hankel (104, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (152, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
+Shape of Hankel (104, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (96, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (128, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (96, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (136, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
+Shape of Hankel (112, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Running time of Alberto Algo with 50 iterations:  29.50156070999992
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  228.2880275560001
+Running time of Alberto Algo with 50 iterations:  28.993145541000104
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  240.8440447150001
+Running time of Alberto Algo with 50 iterations:  29.251203412999985
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  250.19845736100024
+mean projection time of each subspace:  0.4995830950000254
+Max projection time of each subspace:  0.921663460000218
+Minimum projection time of each subspace:  0.07017256500012081
+150
+Projection time of total space:  0.5960821210001086
+Projection time of alternating projection:  4.795003058800006
+450
+Projection time of inter projection:  0.001535972002216618
+Projection onto Cartisian of subspaces time:  1.5967909423111057
+vertex connectivity: 9
+edge connectivity: 9
+(180, 1)
+(1314, 1)
+Shape of Hankel (480, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  300
+Shape of Hankel (3504, 393)
+The Hankel matrix does NOT span the restricted behavior: rank(H) = 300 
+ mL+n = 3324
+Shape of Hankel (96, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (128, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
+Shape of Hankel (112, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (96, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (176, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
+Shape of Hankel (88, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (112, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (112, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (128, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
+Shape of Hankel (96, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (112, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (88, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (128, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
+Shape of Hankel (104, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (152, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
+Shape of Hankel (104, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (104, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (136, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (96, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (128, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
+Shape of Hankel (136, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
+Shape of Hankel (112, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Running time of Alberto Algo with 50 iterations:  28.962140008000006
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  261.7073456119997
+Running time of Alberto Algo with 50 iterations:  28.888476291000188
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  254.03462082900023
+Running time of Alberto Algo with 50 iterations:  29.457089419999647
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  251.0474222160001
+mean projection time of each subspace:  0.9343658348334126
+Max projection time of each subspace:  2.014541010999892
+Minimum projection time of each subspace:  0.36419966999983444
+150
+Projection time of total space:  0.5920883010003308
+Projection time of alternating projection:  5.111416379273351
+450
+Projection time of inter projection:  0.0016049127355765652
+Projection onto Cartisian of subspaces time:  1.7021932055222089
+vertex connectivity: 10
+edge connectivity: 10
+(180, 1)
+(1356, 1)
+Shape of Hankel (480, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  300
+Shape of Hankel (3616, 393)
+The Hankel matrix does NOT span the restricted behavior: rank(H) = 300 
+ mL+n = 3436
+Shape of Hankel (96, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (128, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
+Shape of Hankel (112, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (128, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
+Shape of Hankel (104, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (176, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
+Shape of Hankel (96, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (112, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (128, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
+Shape of Hankel (104, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (136, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
+Shape of Hankel (112, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (96, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (136, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
+Shape of Hankel (104, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (160, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
+Shape of Hankel (104, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (128, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (104, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (136, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
+Shape of Hankel (128, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
+Shape of Hankel (104, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (128, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
+Shape of Hankel (144, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  138
+Shape of Hankel (112, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Running time of Alberto Algo with 50 iterations:  29.560767611999836
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  280.99780530099997
+Running time of Alberto Algo with 50 iterations:  29.72936249399936
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  279.23181948599995
+Running time of Alberto Algo with 50 iterations:  29.756185002000166
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  274.94627350799965
+mean projection time of each subspace:  0.7786081609000273
+Max projection time of each subspace:  1.767648465000093
+Minimum projection time of each subspace:  0.17792747400017106
+150
+Projection time of total space:  0.5981800059998932
+Projection time of alternating projection:  5.56730509746667
+450
+Projection time of inter projection:  0.0016026500777863678
+Projection onto Cartisian of subspaces time:  1.8541590779422181
+vertex connectivity: 11
+edge connectivity: 11
+(180, 1)
+(1500, 1)
+Shape of Hankel (480, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  300
+Shape of Hankel (4000, 393)
+The Hankel matrix does NOT span the restricted behavior: rank(H) = 300 
+ mL+n = 3820
+Shape of Hankel (104, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (144, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  138
+Shape of Hankel (128, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
+Shape of Hankel (144, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  138
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (176, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
+Shape of Hankel (128, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
+Shape of Hankel (128, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
+Shape of Hankel (128, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
+Shape of Hankel (136, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
+Shape of Hankel (136, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
+Shape of Hankel (112, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (152, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (104, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (160, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (160, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
+Shape of Hankel (112, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (152, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (104, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (144, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  138
+Shape of Hankel (136, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (168, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  162
+Shape of Hankel (168, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  162
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (136, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
+Running time of Alberto Algo with 50 iterations:  29.55929904599998
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  334.3247220409994
+Running time of Alberto Algo with 50 iterations:  29.635763562999273
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  335.22533636999924
+Running time of Alberto Algo with 50 iterations:  29.07778704500015
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  334.8920886119995
+mean projection time of each subspace:  0.9444542453665842
+Max projection time of each subspace:  1.5762297929995839
+Minimum projection time of each subspace:  0.31578613000056066
+150
+Projection time of total space:  0.6041401709999263
+Projection time of alternating projection:  6.695763785280026
+450
+Projection time of inter projection:  0.0016684353711106169
+Projection onto Cartisian of subspaces time:  2.230246326868898
+vertex connectivity: 12
+edge connectivity: 12
+(180, 1)
+(1620, 1)
+Shape of Hankel (480, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  300
+Shape of Hankel (4320, 393)
+The Hankel matrix does NOT span the restricted behavior: rank(H) = 300 
+ mL+n = 4140
+Shape of Hankel (136, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
+Shape of Hankel (152, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
+Shape of Hankel (128, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
+Shape of Hankel (144, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  138
+Shape of Hankel (128, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
+Shape of Hankel (192, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  186
+Shape of Hankel (136, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
+Shape of Hankel (144, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  138
+Shape of Hankel (128, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
+Shape of Hankel (160, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
+Shape of Hankel (136, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
+Shape of Hankel (152, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
+Shape of Hankel (168, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  162
+Shape of Hankel (128, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
+Shape of Hankel (112, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (176, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
+Shape of Hankel (136, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
+Shape of Hankel (160, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (160, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
+Shape of Hankel (136, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
+Shape of Hankel (128, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
+Shape of Hankel (112, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (160, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
+Shape of Hankel (160, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (184, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  178
+Shape of Hankel (168, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  162
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (136, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
+Running time of Alberto Algo with 50 iterations:  28.875988245999906
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  388.77086381499976
+Running time of Alberto Algo with 50 iterations:  28.9372318730002
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  386.677082573
+Running time of Alberto Algo with 50 iterations:  29.42955895400064
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  387.3350740779997
+mean projection time of each subspace:  1.1484179244999724
+Max projection time of each subspace:  2.3452396110005793
+Minimum projection time of each subspace:  0.39535122600045725
+150
+Projection time of total space:  0.6103477959995871
+Projection time of alternating projection:  7.751366432313328
+450
+Projection time of inter projection:  0.0018398767533290084
+Projection onto Cartisian of subspaces time:  2.5819425552155817
+vertex connectivity: 13
+edge connectivity: 13
+(180, 1)
+(1638, 1)
+Shape of Hankel (480, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  300
+Shape of Hankel (4368, 393)
+The Hankel matrix does NOT span the restricted behavior: rank(H) = 300 
+ mL+n = 4188
+Shape of Hankel (136, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
+Shape of Hankel (152, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
+Shape of Hankel (128, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
+Shape of Hankel (144, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  138
+Shape of Hankel (144, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  138
+Shape of Hankel (192, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  186
+Shape of Hankel (136, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
+Shape of Hankel (144, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  138
+Shape of Hankel (128, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
+Shape of Hankel (160, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
+Shape of Hankel (136, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
+Shape of Hankel (152, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
+Shape of Hankel (168, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  162
+Shape of Hankel (128, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (176, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
+Shape of Hankel (136, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
+Shape of Hankel (160, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (160, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
+Shape of Hankel (144, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  138
+Shape of Hankel (128, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (160, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
+Shape of Hankel (160, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (184, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  178
+Shape of Hankel (168, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  162
+Shape of Hankel (120, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (144, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  138
+Running time of Alberto Algo with 50 iterations:  29.735235920000378
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  397.1872148880002
+Running time of Alberto Algo with 50 iterations:  29.846123222999267
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  395.247640691
+Running time of Alberto Algo with 50 iterations:  29.682076267999946
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  397.29970917300125
+mean projection time of each subspace:  1.1410187076333993
+Max projection time of each subspace:  2.435962986000959
+Minimum projection time of each subspace:  0.38149814099961077
+150
+Projection time of total space:  0.6120143409998491
+Projection time of alternating projection:  7.931070104966603
+450
+Projection time of inter projection:  0.001773668862222419
+Projection onto Cartisian of subspaces time:  2.64191041015115
+vertex connectivity: 14
+edge connectivity: 14
+(180, 1)
+(1770, 1)
+Shape of Hankel (480, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  300
+Shape of Hankel (4720, 393)
+The Hankel matrix does NOT span the restricted behavior: rank(H) = 300 
+ mL+n = 4540
+Shape of Hankel (152, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
+Shape of Hankel (160, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
+Shape of Hankel (152, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
+Shape of Hankel (144, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  138
+Shape of Hankel (152, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
+Shape of Hankel (192, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  186
+Shape of Hankel (144, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  138
+Shape of Hankel (168, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  162
+Shape of Hankel (136, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
+Shape of Hankel (168, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  162
+Shape of Hankel (152, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
+Shape of Hankel (160, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  154
+Shape of Hankel (184, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  178
+Shape of Hankel (144, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  138
+Shape of Hankel (128, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
+Shape of Hankel (192, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  186
+Shape of Hankel (136, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
+Shape of Hankel (168, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  162
+Shape of Hankel (136, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
+Shape of Hankel (184, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  178
+Shape of Hankel (144, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  138
+Shape of Hankel (152, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
+Shape of Hankel (128, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
+Shape of Hankel (176, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
+Shape of Hankel (176, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
+Shape of Hankel (152, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
+Shape of Hankel (184, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  178
+Shape of Hankel (176, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  170
+Shape of Hankel (128, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
+Shape of Hankel (152, 393)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  146
+Running time of Alberto Algo with 50 iterations:  29.123202851000315
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  463.6773157909993
+Running time of Alberto Algo with 50 iterations:  29.940260809999018
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  464.5756779750009
+Running time of Alberto Algo with 50 iterations:  30.057262111000455
+Running time of distributed Algo with 50 outer iter and 3 alternating projection:  469.5814658419986
+mean projection time of each subspace:  1.3929091802666032
+Max projection time of each subspace:  2.647169343999849
+Minimum projection time of each subspace:  0.5804929189998802
+150
+Projection time of total space:  0.6052133829998638
+Projection time of alternating projection:  9.318357691826714
+450
+Projection time of inter projection:  0.0019003350777954135
+Projection onto Cartisian of subspaces time:  3.1042128624711607

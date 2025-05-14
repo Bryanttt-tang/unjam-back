@@ -1,0 +1,8 @@
+Eigenvalues:
+[0.8+0.17320508j 0.8-0.17320508j]
+Is the system stable? -- True
+Is the system controllable? True
+Is the system observable? True
+vertex connectivity: 1
+edge connectivity: 1
+degree: 2
