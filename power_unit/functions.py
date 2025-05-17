@@ -217,8 +217,8 @@ class functions():
     
     def project_onto_box_constraints(self,w):
         # w_projected = w.copy()
-        w_re=w.reshape(-1,self.L,order='F')
-        w_re[:self.m_total, :] = np.clip(w_re[:self.m_total, :], -0.5, 0.5)  # Apply box constraints to the inputs of each column
+        w_re=np.copy(w).reshape(-1,self.L,order='F')
+        w_re[:self.m_total, self.Tini:] = np.clip(w_re[:self.m_total, self.Tini:], -0.5, 0.5)  # Apply box constraints to the inputs of each column
         # print('w_re',w_re)
         # print(w_re.shape)
         return w_re.reshape(-1,1,order='F')
@@ -242,15 +242,15 @@ class functions():
         return x
 
     def alternating_projections2(self,h,x, num_iterations=10, tol=1e-10):
-        # x_copy=x.copy()
+        x_copy=x.copy()
         for _ in range(num_iterations):
-            x=self.proj_h @x
-            x=self.project_onto_box_constraints(x)
+            x_copy=self.proj_h @x_copy
+            x_copy=self.project_onto_box_constraints(x_copy)
             # x = self.proj_inter(M,M_inv,x)
             # Check convergence
     #         if np.linalg.norm(x - proj_square(x)) < tol:
     #             break
-        return x
+        return x_copy
     
     def average_projections(self,h,M,M_inv,x, num_iterations=150, tol=1e-10):
         for _ in range(num_iterations):
@@ -298,7 +298,7 @@ class functions():
         # self.E1.append(e1)
         k=0
         for ite in range(self.max_iter):
-            w_prev = w
+            # w_prev = w
             # Compute zk+1
             start_lqr=time.process_time()
             z = np.vstack((w_ini,w[-self.q*self.N:] )) # O(n), n=q*(Tini+Tf)
@@ -309,8 +309,8 @@ class functions():
             v_proj=  2*z-w-2*self.alpha*z_squared # O(n)
             # print('v_proj:',v_proj.shape)
             start=time.process_time()
-            v_plus = self.proj_h @ v_proj # O(n^2)
-            # v_plus = self.alternating_projections2(self.proj_h_sub, v_proj, num_iterations=self.dis_iter) 
+            # v_plus = self.proj_h @ v_proj # O(n^2)
+            v_plus = self.alternating_projections2(self.proj_h_sub, v_proj, num_iterations=self.dis_iter) 
             # v_plus = self.matrix_vector_multiply(self.proj_h, v_proj) # O(n^2)
             # print('v_plus',v_plus.shape)
             end=time.process_time()

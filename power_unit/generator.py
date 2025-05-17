@@ -255,22 +255,22 @@ class DeePC():
 #         print('yini:\n',y_reshape)
         wini=np.vstack((u_reshape,y_reshape)).reshape(-1,1, order='F')
         
-        # g=cp.Variable((self.T-self.L+1, 1))
-        g=cp.Variable((self.F.rank_total, 1))
+        g=cp.Variable((self.T-self.L+1, 1))
+        # g=cp.Variable((self.F.rank_total, 1))
         w_f=cp.Variable((self.q_total*self.N , 1)) 
         
         objective = cp.quad_form(w_f-self.wref, psd_wrap(np.kron(np.eye(self.N),self.Phi)))
 #             + lambda_1*cp.quad_form((I-Pi)@g,psd_wrap(I))\
 #             + lambda_g*cp.norm(g, 1)          
 
-        constraints = [ self.F.U_truncated[:self.Tini*self.q_total,:] @ g == wini,
-                            self.F.U_truncated[self.Tini*self.q_total:,:] @ g == w_f,
+        constraints = [ self.F.h_total[:self.Tini*self.q_total,:] @ g == wini,
+                            self.F.h_total[self.Tini*self.q_total:,:] @ g == w_f,
                             ]
             # box constraint on inputs
         w_f_reshaped = cp.reshape(w_f, (-1, self.N))
         constraints += [
             w_f_reshaped[:self.m_total, :] <= 0.5,
-            w_f_reshaped[:self.m_total, :] >= -0.5
+            w_f_reshaped[:self.m_total, :] >= -0.5,
         ]
         problem = cp.Problem(cp.Minimize(objective), constraints) 
         problem.solve(solver='SCS', warm_start=True)
@@ -417,8 +417,8 @@ class DeePC():
                 
                 y=C[0]@x
                 # print(y)
-                for i in range(self.v):
-                    y[:,i:i+1]=C[i]@x[:,i:i+1]
+                # for i in range(self.v):
+                #     y[:,i:i+1]=C[i]@x[:,i:i+1]
                 for i in range(self.v):
                     # x[:,i:i+1] = A@x[:,i:i+1]+B@(u[i].reshape(-1, 1)+np.sum(y,axis=1, keepdims=True) - self.v*self.p*y[:, i])
                     # print('x:',x[:,i:i+1].shape)
@@ -431,8 +431,18 @@ class DeePC():
                     for j in neighbors:
                         sum_term += B[i] @ (y[:, j:j+1])
                     x[:,i:i+1]+= sum_term
+                    if t==0:
+                        x[1,i:i+1]+=2
+                        u[i]+=2
+                    if t==50:
+                        x[1,i:i+1]+=5
+                        u[i]+=5
                 
                 usim[:, [t]] = u
+                if t==0:
+                    usim[:, [t]]-=2
+                if t==50:
+                    usim[:, [t]]-=5
                 ysim[:, [t]] = y.reshape(-1, 1)
                 xsim[:,:,t+1]=np.copy(x)
                 uini = np.vstack((uini[self.m_total:], u))

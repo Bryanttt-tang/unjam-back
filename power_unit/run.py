@@ -44,7 +44,7 @@ if __name__ == "__main__":
                         [-K_i / mi * d_t, 1 - (d[i] / mi) * d_t]])
         
         # Define the B_i matrix
-        B_i = np.array([[0],
+        B_i = np.array([[1],
                         [1]])
         
         # Define the C_i matrix based on neighbors' coupling constants
@@ -123,6 +123,8 @@ if __name__ == "__main__":
     # Replace with actual system matrices for your specific case
     A = np.array([[1, 0.1],
                 [-0.5,0.7]])
+    # A = np.array([[1, 0.1],
+    #             [-0.5,1]])
     B = np.array([[0],[1]])
     C = np.array([[0.25,0]])
     D = np.zeros(1)
@@ -137,7 +139,7 @@ if __name__ == "__main__":
     D_aug=np.kron(np.eye(v),D)
 
     # Define desired L and expected rank
-    Tini = 3 # length of the initial trajectory
+    Tini = 3*v+1 # length of the initial trajectory
     N = 5  # prediction horizon
     L=Tini+N
 
@@ -160,22 +162,13 @@ if __name__ == "__main__":
         C_list.append(C)
 
         # # Display the generated matrices for each subsystem
-    # for i in range(n_subsystems):
-    #     print(f"Subsystem {i+1}:")
-    #     print(f"A_{i+1} = \n{A_list[i]}")
-    #     print(f"B_{i+1} = \n{B_list[i]}")
-    #     print(f"C_{i+1} = \n{C_list[i]}")
-    #     print(f"D_{i+1} = \n{D_list[i]}")
-    # A = np.array([[1, 0.05],
-    #             [-0.05,0.5]])
-    # B = np.array([[0],[0.1]])
-    # C = np.array([[0.1,0]])
-    # A = np.array([[-1, 0, 2],
-    #             [-2, -3, -4],
-    #             [1,0,-1]])
-    # B = np.array([[1,1],[0,2],[-1,3]])
-    # C = np.array([[1,0,0],[0,1,0]])
-    # D = np.zeros(1)
+    for i in range(n_subsystems):
+        print(f"Subsystem {i+1}:")
+        print(f"A_{i+1} = \n{A_list[i]}")
+        print(f"B_{i+1} = \n{B_list[i]}")
+        print(f"C_{i+1} = \n{C_list[i]}")
+        print(f"D_{i+1} = \n{D_list[i]}")
+
     eigenvalues, _ = np.linalg.eig(A_list[-1])
     # Check for stability (all eigenvalues should have magnitudes less than 1 for discrete-time system)
     is_stable = np.all(np.abs(eigenvalues) < 1)
@@ -292,11 +285,11 @@ if __name__ == "__main__":
     q_dis=(m_dis+p_dis)
     q_central=(m_central+p_central)
     T = v*L+v*n+150   # number of data points
-    R=1*np.eye(m_central)
+    R=0.1*np.eye(m_central)
     R_dis=1*np.eye(m_dis)
     # R_dis[1,1]=0
     # R_dis[3,3]=0
-    Q=1*np.eye(p_dis)
+    Q=10*np.eye(p_dis)
     Phi=np.block([[R, np.zeros((R.shape[0],Q.shape[1]))], [np.zeros((Q.shape[0],R.shape[1])), Q]])
     Phi_dis=np.block([[R_dis, np.zeros((R_dis.shape[0],Q.shape[1]))], [np.zeros((Q.shape[0],R_dis.shape[1])), Q]])
     lambda_g = 1          # lambda parameter for L1 penalty norm on g
@@ -445,7 +438,7 @@ if __name__ == "__main__":
     
 
     max_iter=200
-    dis_iter=20
+    dis_iter=3
     alpha=0.1
     num_runs=1
     cost_data = np.zeros((num_runs, max_iter+1))
@@ -460,11 +453,11 @@ if __name__ == "__main__":
                     h_total[Tini*q_central:,:] @ g == w_f
                                 ]
     # box constraint on inputs
-    # w_f_reshaped = cp.reshape(w_f, (-1, N))
-    # constraints += [
-    #     w_f_reshaped[:m_central, :] <= 1,
-    #     w_f_reshaped[:m_central, :] >= 1
-    # ]
+    w_f_reshaped = cp.reshape(w_f, (-1, N))
+    constraints += [
+        w_f_reshaped[:m_central, :] <= 0.5,
+        w_f_reshaped[:m_central, :] >= -0.5
+    ]
     problem = cp.Problem(cp.Minimize(objective), constraints) 
     solver_opts = {
     'max_iter': 10000,
@@ -485,9 +478,11 @@ if __name__ == "__main__":
         wini_dis = wData_dis[:, -Tini:].reshape(-1, 1, order='F')
         start_markovski = time.process_time()
         # Markovski solution of data-driven control
+        # W0, S, VT = np.linalg.svd(h_total[q_central*Tini:,:])
         W0=h_total[q_central*Tini:,:]
         print('m*Tf+n:',m_central*N+n*v)
         print('rank W0:',np.linalg.matrix_rank(W0))
+        print(W0.shape)
         g_free=np.linalg.pinv(np.vstack((Up,Yp,Uf)))@np.vstack((wini, np.zeros((m_central*N,1)) ))
         y_free=Yf@g_free
         w_free=np.vstack((np.zeros((m_central,N)),y_free.reshape(-1,N))).reshape(-1, 1, order='F')
@@ -590,11 +585,11 @@ if __name__ == "__main__":
                     h_total[Tini*q_central:,:] @ g == w_f
                                 ]
     # box constraint on inputs
-    # w_f_reshaped = cp.reshape(w_f, (-1, N))
-    # constraints += [
-    #     w_f_reshaped[:m_central, :] <= 1,
-    #     w_f_reshaped[:m_central, :] >= 1
-    # ]
+    w_f_reshaped = cp.reshape(w_f, (-1, N))
+    constraints += [
+        w_f_reshaped[:m_central, :] <= 0.5,
+        w_f_reshaped[:m_central, :] >= 0
+    ]
     problem = cp.Problem(cp.Minimize(objective), constraints) 
     solver_opts = {
     'max_iter': 10000,
@@ -605,32 +600,32 @@ if __name__ == "__main__":
     end_cvx = time.time()
     print('Running time of CVXPY for single LQR: ',end_cvx-start_cvx)
 
-    # MPC
-    x = cp.Variable((2*n, N+1))  # State trajectory
-    u = cp.Variable((m_central, N))    # Control input trajectory
-    y= cp.Variable((p_central, N))
-    # Objective function and constraints
-    cost = 0
-    constraints = [x[:, 0] == xData[:,-1]]  # Initial state constraint
+    # # MPC
+    # x = cp.Variable((2*n, N+1))  # State trajectory
+    # u = cp.Variable((m_central, N))    # Control input trajectory
+    # y= cp.Variable((p_central, N))
+    # # Objective function and constraints
+    # cost = 0
+    # constraints = [x[:, 0] == xData[:,-1]]  # Initial state constraint
 
-    for k in range(N):
-        # Quadratic cost function for tracking
-        cost += cp.quad_form(y[:, k:k+1] - y_ref, Q) + cp.quad_form(u[:, k:k+1]-u_ref, R)
+    # for k in range(N):
+    #     # Quadratic cost function for tracking
+    #     cost += cp.quad_form(y[:, k:k+1] - y_ref, Q) + cp.quad_form(u[:, k:k+1]-u_ref, R)
         
-        # System dynamics constraint
-        constraints += [y[:, k] == C_aug @ x[:, k]]
-        constraints += [x[:, k+1] == A_aug @ x[:, k] + B_aug @ u[:, k]]
-        # # Input constraints
-        # constraints += [cp.norm_inf(u[:, k]) <= u_max]
+    #     # System dynamics constraint
+    #     constraints += [y[:, k] == C_aug @ x[:, k]]
+    #     constraints += [x[:, k+1] == A_aug @ x[:, k] + B_aug @ u[:, k]]
+    #     # # Input constraints
+    #     # constraints += [cp.norm_inf(u[:, k]) <= u_max]
         
-        # # State constraints
-        # constraints += [cp.norm_inf(x[:, k]) <= x_max]
+    #     # # State constraints
+    #     # constraints += [cp.norm_inf(x[:, k]) <= x_max]
 
-    # Solve the optimization problem
-    problem_mpc = cp.Problem(cp.Minimize(cost), constraints)
-    problem_mpc.solve()
-    print('mpc solver \n',np.vstack((u.value, y.value)) )
-    print('The differnce between CVX and MPC methods: ',np.linalg.norm(w_f.value - np.vstack((u.value, y.value)).reshape(-1, 1, order='F'))/np.linalg.norm(w_f.value) )
+    # # Solve the optimization problem
+    # problem_mpc = cp.Problem(cp.Minimize(cost), constraints)
+    # problem_mpc.solve()
+    # print('mpc solver \n',np.vstack((u.value, y.value)) )
+    # print('The differnce between CVX and MPC methods: ',np.linalg.norm(w_f.value - np.vstack((u.value, y.value)).reshape(-1, 1, order='F'))/np.linalg.norm(w_f.value) )
 
     # diff=np.linalg.norm(w_split-np.vstack((wini,wref)) )
     print('error',F.E[-1])
@@ -652,7 +647,7 @@ if __name__ == "__main__":
     w_f_off=h_total[Tini*q_central:,:]@np.linalg.pinv(h_total[:Tini*q_central,:])@wini
     print('The final cost of CVX:',problem.value)
     print('The differnce between CVX and Alberto methods: ',np.linalg.norm(w_f.value - w_split[q_central*Tini:])/np.linalg.norm(w_f.value) )
-    print('The differnce between offline CVX and Alberto methods: ',np.linalg.norm(w_f_off - w_split[q_central*Tini:]) )
+    # print('The differnce between offline CVX and Alberto methods: ',np.linalg.norm(w_f_off - w_split[q_central*Tini:]) )
     # print('The differnce between free and noisy Alberto methods: ',np.linalg.norm(w_split_noise[q_central*Tini:] - w_split[q_central*Tini:]) )
     # print('error',F.E[-1])
     # print('LQT tracking error: ',np.linalg.norm(F_noise.E[-1] -F.E[-1])/ np.linalg.norm(F.E[-1]))
@@ -681,7 +676,7 @@ if __name__ == "__main__":
         # plt.legend()
         # plt.show()
 
-    Tsim=200  
+    Tsim=101  
     solver='CVXPY'
     params_D = {'H': H, # an object of Hankel
                 'H_dis':H_dis,
@@ -724,7 +719,7 @@ if __name__ == "__main__":
     Xsim4=[]
     Usim4=[]
     Ysim4=[]
-    for exp in range(1,6):
+    for exp in range(1,2):
         deepc = DeePC(params_D,'CVXPY','Hankel',exp)   
         x0 =  np.copy(xData[:, -(exp+1)])
         print('x0:',x0)
@@ -735,12 +730,10 @@ if __name__ == "__main__":
         Usim.append(usim)
         Ysim.append(ysim)
         print('Total DeepC running time: ', end_deepc-start_deepc)
-        # print('x0',xData[:,-1])
-        # x0 =  np.copy(xData[:, -1])
 
         deepc2 = DeePC(params_D,'lqr','Hankel',exp)   
         # x0 =  np.copy(xData[:, -1])
-        # print('x0:',x0)
+        print('x0:',x0)
         start_deepc2=time.process_time()
         xsim2, usim2, ysim2 = deepc2.loop(Tsim,A_list,B_list,C_list,D_list,x0)
         end_deepc2=time.process_time()
@@ -883,8 +876,8 @@ if __name__ == "__main__":
     plt.fill_between(np.linspace(0, Tsim,Tsim), mean_ysim - std_ysim, mean_ysim + std_ysim, color='blue', alpha=0.3)
     plt.plot(np.linspace(0, Tsim,Tsim), mean_ysim2, label='Mean lqr', color='red')
     plt.fill_between(np.linspace(0, Tsim,Tsim), mean_ysim2 - std_ysim2, mean_ysim2 + std_ysim2, color='red', alpha=0.3)
-    plt.plot(np.linspace(0, Tsim,Tsim), mean_ysim3, label='Mean Markov', color='black')
-    plt.fill_between(np.linspace(0, Tsim,Tsim), mean_ysim3 - std_ysim3, mean_ysim3 + std_ysim3, color='black', alpha=0.3)
+    # plt.plot(np.linspace(0, Tsim,Tsim), mean_ysim3, label='Mean Markov', color='black')
+    # plt.fill_between(np.linspace(0, Tsim,Tsim), mean_ysim3 - std_ysim3, mean_ysim3 + std_ysim3, color='black', alpha=0.3)
     plt.ylabel('y')
     plt.grid(True)
     plt.legend()
@@ -894,7 +887,7 @@ if __name__ == "__main__":
     plt.figure(figsize=(10, 6))
     plt.plot(np.linspace(0, Tsim,Tsim), usim[0,:], label='CVXPY', color='blue')
     plt.plot(np.linspace(0, Tsim,Tsim), usim2[0,:], label='lqr', color='red')
-    plt.plot(np.linspace(0, Tsim,Tsim), usim3[0,:], label='Markoc', color='black')
+    # plt.plot(np.linspace(0, Tsim,Tsim), usim3[0,:], label='Markoc', color='black')
     plt.ylabel('u')
     plt.grid(True)
     plt.legend()
@@ -903,7 +896,7 @@ if __name__ == "__main__":
     plt.figure(figsize=(10, 6))
     plt.plot(np.linspace(0, Tsim,Tsim), ysim[0,:], label='CVXPY', color='blue')
     plt.plot(np.linspace(0, Tsim,Tsim), ysim2[0,:], label='lqr', color='red')
-    plt.plot(np.linspace(0, Tsim,Tsim), ysim3[0,:], label='Markov', color='black')
+    # plt.plot(np.linspace(0, Tsim,Tsim), ysim3[0,:], label='Markov', color='black')
     plt.ylabel('y')
     plt.grid(True)
     plt.legend()
@@ -912,7 +905,7 @@ if __name__ == "__main__":
     plt.figure(figsize=(10, 6))
     plt.plot(np.linspace(0, Tsim,Tsim+1), xsim[0,0,:], label='CVXPY', color='blue')
     plt.plot(np.linspace(0, Tsim,Tsim+1), xsim2[0,0,:], label='lqr', color='red')
-    plt.plot(np.linspace(0, Tsim,Tsim+1), xsim3[0,0,:], label='Markov', color='black')
+    # plt.plot(np.linspace(0, Tsim,Tsim+1), xsim3[0,0,:], label='Markov', color='black')
     plt.ylabel('phase')
     plt.grid(True)
     plt.legend()
@@ -921,7 +914,7 @@ if __name__ == "__main__":
     plt.figure(figsize=(10, 6))
     plt.plot(np.linspace(0, Tsim,Tsim+1), xsim[1,0,:], label='CVXPY', color='blue')
     plt.plot(np.linspace(0, Tsim,Tsim+1), xsim2[1,0,:], label='lqr', color='red')
-    plt.plot(np.linspace(0, Tsim,Tsim+1), xsim3[1,0,:], label='Markov', color='black')
+    # plt.plot(np.linspace(0, Tsim,Tsim+1), xsim3[1,0,:], label='Markov', color='black')
     plt.ylabel('frequency')
     plt.grid(True)
     plt.legend()
@@ -940,9 +933,9 @@ if __name__ == "__main__":
 
     time2 = np.arange(usim.shape[1])
     data2 = {'time': time2}
-    for method_num, u_array in enumerate([usim, usim2,usim3], start=1):
+    for method_num, u_array in enumerate([usim, usim2], start=1):
         data2[f'u_method_{method_num}'] = u_array[0, :]  # Trajectory for state 1
-    for method_num, y_array in enumerate([ysim, ysim2,ysim3], start=1):
+    for method_num, y_array in enumerate([ysim, ysim2], start=1):
         data2[f'y_method_{method_num}'] = y_array[0, :]  # Trajectory for state 1
 
     # Create a DataFrame and save to CSV
