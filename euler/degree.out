@@ -1,0 +1,5064 @@
+Eigenvalues:
+[0.5+0.05j 0.5-0.05j]
+Is the system stable? -- True
+Is the system controllable? True
+Is the system observable? True
+vertex connectivity: 1
+edge connectivity: 1
+degree: 2
+(600, 1)
+(1194, 1)
+Shape of Hankel (1600, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  1000
+Shape of Hankel (3184, 1093)
+The Hankel matrix does NOT span the restricted behavior: rank(H) = 1000 
+ mL+n = 2584
+Shape of Hankel (24, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  18
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (24, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  18
+norm 35.45077189664082
+norm 9.776532630730722
+norm 5.796352667408019
+norm 3.7223304385915643
+norm 2.3354715103124124
+norm 1.6450417689775405
+norm 1.2568818970963522
+norm 0.9703831905026006
+norm 0.7625114068582195
+norm 0.6069892927187471
+norm 0.48425410780326755
+norm 0.386734460043146
+norm 0.30922143918234873
+norm 0.24732822281988606
+norm 0.19783416946297624
+norm 0.15825818198522934
+norm 0.1266045006602061
+norm 0.10128251653308971
+norm 0.08102554797454778
+norm 0.06482033437248642
+norm 0.05185622850296608
+norm 0.04148496166243814
+norm 0.03318796354154875
+norm 0.02655036935521734
+norm 0.021240294627940554
+norm 0.016992235391789803
+norm 0.013593788246268048
+norm 0.010875030565400106
+norm 0.008700024437214736
+norm 0.006960019546162628
+norm 0.005568015635788048
+norm 0.004454412507976146
+norm 0.00356353000618071
+norm 0.002850824004898449
+norm 0.0022806592038933614
+norm 0.0018245273631043262
+norm 0.001459621890481188
+norm 0.0011676975123840333
+norm 0.0009341580099067461
+norm 0.0007473264079252709
+norm 0.000597861126340183
+norm 0.0004782889010721265
+norm 0.00038263112085769454
+norm 0.00030610489668615444
+norm 0.0002448839173489227
+norm 0.00019590713387913797
+norm 0.00015672570710331042
+norm 0.0001253805656826483
+norm 0.00010030445254611866
+norm 8.024356203689495e-05
+norm 6.419484962951596e-05
+norm 5.1355879703612844e-05
+norm 4.10847037628902e-05
+norm 3.286776301031211e-05
+norm 2.6294210408249786e-05
+norm 2.1035368326599842e-05
+norm 1.6828294661279885e-05
+norm 1.346263572902396e-05
+norm 1.0770108583219126e-05
+norm 8.616086866575289e-06
+norm 6.892869493260178e-06
+norm 5.514295594608217e-06
+norm 4.411436475686588e-06
+norm 3.529149180549226e-06
+norm 2.823319344439349e-06
+norm 2.2586554755515303e-06
+norm 1.8069243804412268e-06
+norm 1.4455395043529905e-06
+norm 1.156431603482368e-06
+norm 9.251452827858622e-07
+norm 7.401162262287382e-07
+norm 5.920929809829532e-07
+norm 4.736743847863659e-07
+norm 3.7893950782905244e-07
+norm 3.0315160626322286e-07
+norm 2.42521285010596e-07
+norm 1.940170280085111e-07
+norm 1.5521362240678626e-07
+norm 1.24170897925454e-07
+norm 9.933671834034134e-08
+Running time of Alberto Algo with 100 iterations:  523.9224532239999
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  217.64943680499994
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  75.4730069379998
+norm 35.57335081801699
+norm 9.77731137761105
+norm 5.796841426797367
+norm 3.7225825439314075
+norm 2.335565326681696
+norm 1.6450790557854131
+norm 1.2568996238443857
+norm 0.9703892051399364
+norm 0.7625132272361672
+norm 0.6069901057938404
+norm 0.4842544193556286
+norm 0.3867345481039549
+norm 0.3092214731715326
+norm 0.24732823763154477
+norm 0.19783417394063743
+norm 0.158258183419012
+norm 0.12660450131505938
+norm 0.10128251676107089
+norm 0.08102554803928305
+norm 0.06482033439986322
+norm 0.05185622851407031
+norm 0.041484961665604045
+norm 0.033187963542674025
+norm 0.0265503693557236
+norm 0.02124029462810129
+norm 0.01699223539183796
+norm 0.01359378824628968
+norm 0.010875030565408115
+norm 0.008700024437216972
+norm 0.006960019546163514
+norm 0.00556801563578843
+norm 0.004454412507976258
+norm 0.003563530006180747
+norm 0.0028508240048984662
+norm 0.0022806592038933675
+norm 0.0018245273631043288
+norm 0.0014596218904811891
+norm 0.0011676975123840333
+norm 0.0009341580099067459
+norm 0.0007473264079252708
+norm 0.0005978611263401828
+norm 0.0004782889010721264
+norm 0.00038263112085769454
+norm 0.00030610489668615406
+norm 0.0002448839173489225
+norm 0.00019590713387913775
+norm 0.00015672570710331026
+norm 0.0001253805656826482
+norm 0.00010030445254611864
+norm 8.024356203689501e-05
+norm 6.419484962951598e-05
+norm 5.1355879703612797e-05
+norm 4.1084703762890264e-05
+norm 3.286776301031224e-05
+norm 2.629421040824981e-05
+norm 2.1035368326599876e-05
+norm 1.6828294661279835e-05
+norm 1.3462635729023932e-05
+norm 1.077010858321909e-05
+norm 8.616086866575297e-06
+norm 6.892869493260286e-06
+norm 5.514295594608166e-06
+norm 4.41143647568656e-06
+norm 3.5291491805492915e-06
+norm 2.8233193444394127e-06
+norm 2.2586554755515434e-06
+norm 1.8069243804412222e-06
+norm 1.4455395043529477e-06
+norm 1.1564316034823952e-06
+norm 9.251452827858899e-07
+norm 7.401162262287067e-07
+norm 5.920929809829919e-07
+norm 4.736743847863978e-07
+norm 3.7893950782915964e-07
+norm 3.0315160626331926e-07
+norm 2.425212850106374e-07
+norm 1.9401702800852515e-07
+norm 1.5521362240680982e-07
+norm 1.2417089792542082e-07
+norm 9.933671834033955e-08
+Running time of Alberto Algo with 100 iterations:  522.7684855929999
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  215.00864796199994
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  74.69729395500053
+norm 35.785510088377926
+norm 9.77705742380593
+norm 5.796668487860719
+norm 3.7224945035194184
+norm 2.3355328822495514
+norm 1.6450661635869825
+norm 1.2568935535456172
+norm 0.9703871647441039
+norm 0.7625126084381857
+norm 0.606989830649578
+norm 0.48425431476702885
+norm 0.38673451848758167
+norm 0.3092214617470396
+norm 0.2473282326846324
+norm 0.19783417244163543
+norm 0.15825818293813276
+norm 0.12660450109676802
+norm 0.10128251668480653
+norm 0.08102554801751662
+norm 0.06482033439072919
+norm 0.051856228510352695
+norm 0.04148496166453368
+norm 0.033187963542296695
+norm 0.026550369355553886
+norm 0.02124029462804666
+norm 0.016992235391821653
+norm 0.01359378824628242
+norm 0.010875030565405392
+norm 0.00870002443721621
+norm 0.00696001954616322
+norm 0.005568015635788305
+norm 0.00445441250797622
+norm 0.003563530006180735
+norm 0.002850824004898462
+norm 0.0022806592038933666
+norm 0.0018245273631043294
+norm 0.00145962189048119
+norm 0.0011676975123840346
+norm 0.0009341580099067464
+norm 0.0007473264079252716
+norm 0.0005978611263401835
+norm 0.0004782889010721269
+norm 0.0003826311208576947
+norm 0.00030610489668615444
+norm 0.0002448839173489229
+norm 0.00019590713387913794
+norm 0.0001567257071033104
+norm 0.00012538056568264823
+norm 0.00010030445254611871
+norm 8.024356203689494e-05
+norm 6.4194849629516e-05
+norm 5.135587970361281e-05
+norm 4.108470376289028e-05
+norm 3.286776301031225e-05
+norm 2.629421040824981e-05
+norm 2.1035368326599914e-05
+norm 1.6828294661279885e-05
+norm 1.3462635729023898e-05
+norm 1.0770108583219173e-05
+norm 8.616086866575353e-06
+norm 6.89286949326026e-06
+norm 5.514295594608263e-06
+norm 4.411436475686566e-06
+norm 3.5291491805492237e-06
+norm 2.823319344439414e-06
+norm 2.2586554755515066e-06
+norm 1.8069243804411836e-06
+norm 1.4455395043529943e-06
+norm 1.1564316034823942e-06
+norm 9.251452827858943e-07
+norm 7.401162262286826e-07
+norm 5.920929809829974e-07
+norm 4.736743847863761e-07
+norm 3.7893950782917086e-07
+norm 3.031516062632869e-07
+norm 2.4252128501059446e-07
+norm 1.9401702800853574e-07
+norm 1.5521362240679245e-07
+norm 1.2417089792549213e-07
+norm 9.933671834037177e-08
+Running time of Alberto Algo with 100 iterations:  521.79249508
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  218.51492988299992
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  75.49577989199156
+norm 35.542046425679914
+norm 9.777140993511106
+norm 5.796722818873936
+norm 3.722518231904211
+norm 2.3355404522990657
+norm 1.645069193081284
+norm 1.256894754677915
+norm 0.9703874671602091
+norm 0.7625127028824826
+norm 0.6069898694917905
+norm 0.4842543235983442
+norm 0.3867345205626195
+norm 0.30922146276658896
+norm 0.24732823287704345
+norm 0.19783417244338128
+norm 0.15825818295339708
+norm 0.12660450109792748
+norm 0.10128251668120002
+norm 0.0810255480168035
+norm 0.06482033439051091
+norm 0.05185622851006104
+norm 0.04148496166443523
+norm 0.03318796354227498
+norm 0.026550369355537194
+norm 0.021240294628039315
+norm 0.016992235391819998
+norm 0.013593788246281598
+norm 0.010875030565404951
+norm 0.008700024437216096
+norm 0.00696001954616318
+norm 0.005568015635788282
+norm 0.0044544125079762145
+norm 0.0035635300061807353
+norm 0.002850824004898462
+norm 0.0022806592038933666
+norm 0.001824527363104329
+norm 0.0014596218904811902
+norm 0.001167697512384034
+norm 0.0009341580099067468
+norm 0.0007473264079252719
+norm 0.0005978611263401835
+norm 0.00047828890107212707
+norm 0.00038263112085769514
+norm 0.0003061048966861548
+norm 0.00024488391734892305
+norm 0.00019590713387913818
+norm 0.0001567257071033105
+norm 0.00012538056568264834
+norm 0.0001003044525461187
+norm 8.024356203689495e-05
+norm 6.419484962951598e-05
+norm 5.135587970361286e-05
+norm 4.108470376289032e-05
+norm 3.286776301031229e-05
+norm 2.6294210408249833e-05
+norm 2.1035368326599927e-05
+norm 1.6828294661279923e-05
+norm 1.3462635729023932e-05
+norm 1.0770108583219166e-05
+norm 8.616086866575292e-06
+norm 6.892869493260222e-06
+norm 5.514295594608132e-06
+norm 4.411436475686547e-06
+norm 3.5291491805492398e-06
+norm 2.8233193444394123e-06
+norm 2.2586554755515608e-06
+norm 1.8069243804412643e-06
+norm 1.4455395043529706e-06
+norm 1.156431603482389e-06
+norm 9.251452827859291e-07
+norm 7.401162262287256e-07
+norm 5.920929809829872e-07
+norm 4.7367438478635887e-07
+norm 3.7893950782909955e-07
+norm 3.0315160626327067e-07
+norm 2.4252128501060213e-07
+norm 1.9401702800851997e-07
+norm 1.5521362240679473e-07
+norm 1.2417089792547694e-07
+norm 9.93367183403778e-08
+Running time of Alberto Algo with 100 iterations:  522.5899687709998
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  219.3425745489999
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  74.40789577400756
+norm 35.71671175600455
+norm 9.775703783912704
+norm 5.795950867350671
+norm 3.72212229385465
+norm 2.3353937398715816
+norm 1.6450109246465618
+norm 1.2568671701367187
+norm 0.9703781508885815
+norm 0.7625098831521947
+norm 0.6069886124953107
+norm 0.48425384414834793
+norm 0.38673438515689623
+norm 0.309221410485684
+norm 0.24732821018279585
+norm 0.19783416559551498
+norm 0.1582581807577062
+norm 0.12660450009763852
+norm 0.10128251633378822
+norm 0.08102554791805695
+norm 0.06482033434878935
+norm 0.05185622849317916
+norm 0.04148496165962107
+norm 0.03318796354056339
+norm 0.026550369354768743
+norm 0.021240294627795434
+norm 0.016992235391746883
+norm 0.013593788246248815
+norm 0.010875030565392822
+norm 0.008700024437212713
+norm 0.006960019546161844
+norm 0.0055680156357877115
+norm 0.00445441250797605
+norm 0.0035635300061806815
+norm 0.002850824004898438
+norm 0.002280659203893361
+norm 0.001824527363104329
+norm 0.0014596218904811902
+norm 0.001167697512384035
+norm 0.0009341580099067473
+norm 0.0007473264079252721
+norm 0.0005978611263401837
+norm 0.00047828890107212756
+norm 0.0003826311208576953
+norm 0.0003061048966861547
+norm 0.000244883917348923
+norm 0.00019590713387913824
+norm 0.00015672570710331053
+norm 0.00012538056568264837
+norm 0.00010030445254611875
+norm 8.024356203689504e-05
+norm 6.4194849629516e-05
+norm 5.1355879703612776e-05
+norm 4.108470376289035e-05
+norm 3.286776301031229e-05
+norm 2.6294210408249837e-05
+norm 2.10353683265999e-05
+norm 1.6828294661279926e-05
+norm 1.346263572902395e-05
+norm 1.0770108583219085e-05
+norm 8.616086866575297e-06
+norm 6.8928694932602855e-06
+norm 5.514295594608194e-06
+norm 4.411436475686592e-06
+norm 3.5291491805492436e-06
+norm 2.8233193444394204e-06
+norm 2.2586554755515443e-06
+norm 1.8069243804412634e-06
+norm 1.4455395043529793e-06
+norm 1.1564316034823652e-06
+norm 9.251452827858922e-07
+norm 7.401162262287573e-07
+norm 5.92092980983003e-07
+norm 4.736743847863785e-07
+norm 3.7893950782909966e-07
+norm 3.031516062632388e-07
+norm 2.425212850106139e-07
+norm 1.940170280084582e-07
+norm 1.5521362240674586e-07
+norm 1.241708979254421e-07
+norm 9.93367183403354e-08
+Running time of Alberto Algo with 100 iterations:  525.4513749370003
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  218.74429143999987
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  74.00609734400723
+mean projection time of each subspace:  0.022602952710008138
+Max projection time of each subspace:  0.14843901199992615
+Minimum projection time of each subspace:  0.0024919309998949757
+80
+Projection time of total space:  6.6316597820000425
+Projection time of alternating projection:  2.1872475549300043
+Projection time of inter projection:  0.0015989511519965162
+vertex connectivity: 2
+edge connectivity: 2
+degree: 6
+(600, 1)
+(1494, 1)
+Shape of Hankel (1600, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  1000
+Shape of Hankel (3984, 1093)
+The Hankel matrix does NOT span the restricted behavior: rank(H) = 1000 
+ mL+n = 3384
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+norm 36.176042415407075
+norm 9.886380123294328
+norm 5.883733846067818
+norm 3.7972804343381936
+norm 2.3776509724834622
+norm 1.6614822630223909
+norm 1.2660629959895118
+norm 0.9749386717732851
+norm 0.7639764326281431
+norm 0.6075873397237043
+norm 0.48456824283716954
+norm 0.3868449822299052
+norm 0.3092575858469545
+norm 0.247347036863311
+norm 0.19784238992339498
+norm 0.15826107559147026
+norm 0.12660602214011815
+norm 0.10128344618878828
+norm 0.08102608308754827
+norm 0.06482069961833964
+norm 0.05185650740444665
+norm 0.04148517504515302
+norm 0.033188129944854816
+norm 0.02655050163567996
+norm 0.021240400059549067
+norm 0.016992319491176442
+norm 0.013593855463095852
+norm 0.010875084322999131
+norm 0.008700067431545541
+norm 0.006960053937285387
+norm 0.0055680431478545575
+norm 0.004454434517149447
+norm 0.0035635476132622715
+norm 0.0028508380905064626
+norm 0.00228067047236146
+norm 0.0018245363778659825
+norm 0.0014596291022864968
+norm 0.0011677032818274591
+norm 0.0009341626254609421
+norm 0.0007473301003683794
+norm 0.0005978640802946184
+norm 0.00047829126423565386
+norm 0.0003826330113885033
+norm 0.0003061064091107974
+norm 0.0002448851272886361
+norm 0.00019590810183090776
+norm 0.00015672648146472593
+norm 0.0001253811851717807
+norm 0.00010030494813742428
+norm 8.024395850993933e-05
+norm 6.41951668079515e-05
+norm 5.135613344636117e-05
+norm 4.108490675708883e-05
+norm 3.286792540567102e-05
+norm 2.6294340324536807e-05
+norm 2.1035472259629495e-05
+norm 1.682837780770357e-05
+norm 1.346270224616289e-05
+norm 1.0770161796930288e-05
+norm 8.61612943754423e-06
+norm 6.892903550035243e-06
+norm 5.5143228400282466e-06
+norm 4.41145827202258e-06
+norm 3.5291666176180757e-06
+norm 2.823333294094615e-06
+norm 2.258666635275437e-06
+norm 1.8069333082205912e-06
+norm 1.4455466465764267e-06
+norm 1.1564373172612152e-06
+norm 9.251498538088641e-07
+norm 7.401198830471297e-07
+norm 5.920959064376573e-07
+norm 4.736767251502243e-07
+norm 3.789413801201534e-07
+norm 3.0315310409598693e-07
+norm 2.425224832768627e-07
+norm 1.940179866215836e-07
+norm 1.552143892972671e-07
+norm 1.2417151143772557e-07
+norm 9.933720915028519e-08
+Running time of Alberto Algo with 100 iterations:  522.7656252440006
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  345.90516446200036
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  117.37243165503878
+norm 35.60232564072064
+norm 9.879164936000135
+norm 5.879593439003594
+norm 3.7951351184444118
+norm 2.376839594552737
+norm 1.6611571754372412
+norm 1.2659065034706756
+norm 0.9748839942742699
+norm 0.7639597585510329
+norm 0.6075799171100554
+norm 0.4845652944938826
+norm 0.38684412649734834
+norm 0.30925726337489645
+norm 0.24734689213726416
+norm 0.1978423437734011
+norm 0.15826106113344737
+norm 0.12660601555018156
+norm 0.1012834437262041
+norm 0.08102608237707978
+norm 0.06482069933199056
+norm 0.051856507280490315
+norm 0.041485175007330864
+norm 0.033188129932269064
+norm 0.026550501629887098
+norm 0.021240400057506395
+norm 0.01699231949057843
+norm 0.01359385546284076
+norm 0.01087508432289365
+norm 0.008700067431514349
+norm 0.0069600539372742815
+norm 0.005568043147849487
+norm 0.004454434517147753
+norm 0.0035635476132617563
+norm 0.0028508380905062332
+norm 0.0022806704723613686
+norm 0.0018245363778659552
+norm 0.0014596291022864849
+norm 0.0011677032818274546
+norm 0.0009341626254609403
+norm 0.0007473301003683779
+norm 0.000597864080294618
+norm 0.0004782912642356534
+norm 0.0003826330113885028
+norm 0.0003061064091107969
+norm 0.00024488512728863566
+norm 0.00019590810183090746
+norm 0.00015672648146472553
+norm 0.00012538118517178032
+norm 0.00010030494813742406
+norm 8.024395850993926e-05
+norm 6.419516680795131e-05
+norm 5.135613344636117e-05
+norm 4.1084906757088694e-05
+norm 3.286792540567123e-05
+norm 2.6294340324536865e-05
+norm 2.1035472259629468e-05
+norm 1.6828377807703514e-05
+norm 1.3462702246162816e-05
+norm 1.0770161796930293e-05
+norm 8.616129437544159e-06
+norm 6.89290355003538e-06
+norm 5.514322840028327e-06
+norm 4.4114582720225635e-06
+norm 3.529166617618112e-06
+norm 2.8233332940945674e-06
+norm 2.258666635275586e-06
+norm 1.806933308220463e-06
+norm 1.4455466465763267e-06
+norm 1.1564373172610217e-06
+norm 9.25149853809049e-07
+norm 7.401198830470779e-07
+norm 5.920959064377782e-07
+norm 4.736767251500392e-07
+norm 3.7894138011998593e-07
+norm 3.031531040961555e-07
+norm 2.425224832768488e-07
+norm 1.9401798662150004e-07
+norm 1.5521438929723242e-07
+norm 1.2417151143769346e-07
+norm 9.933720915025139e-08
+Running time of Alberto Algo with 100 iterations:  524.709270069
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  286.8491945830001
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  108.15480897402267
+norm 35.02269300952094
+norm 9.874703456345198
+norm 5.876938868199685
+norm 3.7937467981422603
+norm 2.376310657623864
+norm 1.6609452531571964
+norm 1.2658037732442766
+norm 0.9748477901226723
+norm 0.7639487242526153
+norm 0.6075749944700795
+norm 0.4845633221083519
+norm 0.3868435529564405
+norm 0.30925704773168883
+norm 0.24734679467994403
+norm 0.19784231256616938
+norm 0.15826105138974433
+norm 0.12660601109298114
+norm 0.10128344205201394
+norm 0.08102608189488562
+norm 0.06482069913765133
+norm 0.0518565071959564
+norm 0.041485174981527345
+norm 0.03318812992369941
+norm 0.026550501625929108
+norm 0.021240400056108506
+norm 0.016992319490169914
+norm 0.013593855462666235
+norm 0.010875084322821351
+norm 0.008700067431492991
+norm 0.006960053937266679
+norm 0.005568043147846009
+norm 0.004454434517146591
+norm 0.003563547613261406
+norm 0.0028508380905060775
+norm 0.0022806704723613066
+norm 0.0018245363778659368
+norm 0.0014596291022864784
+norm 0.0011677032818274515
+norm 0.0009341626254609391
+norm 0.0007473301003683781
+norm 0.0005978640802946179
+norm 0.0004782912642356534
+norm 0.00038263301138850283
+norm 0.00030610640911079694
+norm 0.00024488512728863577
+norm 0.00019590810183090743
+norm 0.0001567264814647255
+norm 0.00012538118517178026
+norm 0.00010030494813742421
+norm 8.024395850993928e-05
+norm 6.419516680795137e-05
+norm 5.135613344636107e-05
+norm 4.1084906757088714e-05
+norm 3.286792540567101e-05
+norm 2.6294340324536868e-05
+norm 2.1035472259629387e-05
+norm 1.682837780770354e-05
+norm 1.3462702246162882e-05
+norm 1.0770161796930317e-05
+norm 8.61612943754427e-06
+norm 6.892903550035374e-06
+norm 5.5143228400282915e-06
+norm 4.411458272022559e-06
+norm 3.529166617618131e-06
+norm 2.8233332940945323e-06
+norm 2.258666635275497e-06
+norm 1.8069333082205275e-06
+norm 1.4455466465764165e-06
+norm 1.1564373172611314e-06
+norm 9.251498538088206e-07
+norm 7.401198830471254e-07
+norm 5.920959064377017e-07
+norm 4.736767251500678e-07
+norm 3.789413801201358e-07
+norm 3.0315310409628096e-07
+norm 2.425224832767309e-07
+norm 1.940179866214934e-07
+norm 1.5521438929718126e-07
+norm 1.241715114376916e-07
+norm 9.933720915020929e-08
+Running time of Alberto Algo with 100 iterations:  526.8945540779996
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  286.8746616999997
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  105.86628617998667
+norm 34.630640718864285
+norm 9.877813262938366
+norm 5.878650627494503
+norm 3.794624897579773
+norm 2.376639229821864
+norm 1.6610768296602738
+norm 1.2658665657918005
+norm 0.97486938175415
+norm 0.7639552992518325
+norm 0.6075779204705607
+norm 0.48456446235588213
+norm 0.3868438805438608
+norm 0.30925717239184675
+norm 0.24734684975164556
+norm 0.19784232977001684
+norm 0.15826105683445774
+norm 0.12660601356699988
+norm 0.10128344295230399
+norm 0.08102608215403188
+norm 0.06482069924355946
+norm 0.05185650724069024
+norm 0.04148517499492866
+norm 0.03318812992825248
+norm 0.026550501628000798
+norm 0.02124040005681803
+norm 0.016992319490379677
+norm 0.013593855462756611
+norm 0.01087508432285757
+norm 0.008700067431503592
+norm 0.006960053937270545
+norm 0.005568043147847738
+norm 0.004454434517147151
+norm 0.003563547613261577
+norm 0.0028508380905061517
+norm 0.0022806704723613348
+norm 0.0018245363778659441
+norm 0.0014596291022864814
+norm 0.0011677032818274515
+norm 0.0009341626254609388
+norm 0.0007473301003683774
+norm 0.0005978640802946171
+norm 0.000478291264235653
+norm 0.0003826330113885022
+norm 0.0003061064091107964
+norm 0.00024488512728863555
+norm 0.0001959081018309073
+norm 0.0001567264814647255
+norm 0.0001253811851717803
+norm 0.0001003049481374242
+norm 8.024395850993924e-05
+norm 6.419516680795152e-05
+norm 5.135613344636105e-05
+norm 4.108490675708863e-05
+norm 3.286792540567098e-05
+norm 2.6294340324536845e-05
+norm 2.103547225962939e-05
+norm 1.682837780770359e-05
+norm 1.3462702246162909e-05
+norm 1.0770161796930344e-05
+norm 8.616129437544352e-06
+norm 6.892903550035404e-06
+norm 5.514322840028389e-06
+norm 4.411458272022536e-06
+norm 3.5291666176181875e-06
+norm 2.8233332940944806e-06
+norm 2.2586666352755558e-06
+norm 1.8069333082204324e-06
+norm 1.4455466465763068e-06
+norm 1.1564373172611087e-06
+norm 9.251498538088329e-07
+norm 7.401198830469258e-07
+norm 5.920959064376978e-07
+norm 4.7367672515021104e-07
+norm 3.7894138012002743e-07
+norm 3.031531040960947e-07
+norm 2.4252248327693794e-07
+norm 1.940179866216016e-07
+norm 1.5521438929736448e-07
+norm 1.2417151143764475e-07
+norm 9.933720915016462e-08
+Running time of Alberto Algo with 100 iterations:  524.7357333740001
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  299.58263318599984
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  110.86553324198121
+norm 34.37865660664584
+norm 9.881225844666027
+norm 5.880715011900757
+norm 3.7956980327172447
+norm 2.3770464704884926
+norm 1.661239877558854
+norm 1.2659452909331148
+norm 0.974897082400734
+norm 0.763963753299836
+norm 0.6075816798173089
+norm 0.48456596955689435
+norm 0.38684432086327514
+norm 0.3092573373021254
+norm 0.2473469243031855
+norm 0.19784235385722457
+norm 0.1582610643437647
+norm 0.1266060169859157
+norm 0.10128344425149907
+norm 0.08102608253059648
+norm 0.06482069939355727
+norm 0.05185650730655986
+norm 0.04148517501535003
+norm 0.03318812993495491
+norm 0.02655050163109589
+norm 0.02124040005793461
+norm 0.016992319490705773
+norm 0.013593855462893894
+norm 0.010875084322915615
+norm 0.008700067431520995
+norm 0.006960053937276609
+norm 0.005568043147850537
+norm 0.0044544345171481136
+norm 0.003563547613261865
+norm 0.002850838090506281
+norm 0.0022806704723613886
+norm 0.001824536377865961
+norm 0.0014596291022864875
+norm 0.001167703281827455
+norm 0.0009341626254609402
+norm 0.0007473301003683784
+norm 0.0005978640802946182
+norm 0.0004782912642356538
+norm 0.0003826330113885028
+norm 0.00030610640911079727
+norm 0.00024488512728863593
+norm 0.00019590810183090767
+norm 0.00015672648146472555
+norm 0.0001253811851717805
+norm 0.00010030494813742425
+norm 8.024395850993924e-05
+norm 6.41951668079514e-05
+norm 5.1356133446361086e-05
+norm 4.108490675708876e-05
+norm 3.286792540567103e-05
+norm 2.629434032453686e-05
+norm 2.1035472259629407e-05
+norm 1.6828377807703585e-05
+norm 1.3462702246162905e-05
+norm 1.0770161796930336e-05
+norm 8.616129437544159e-06
+norm 6.892903550035375e-06
+norm 5.514322840028285e-06
+norm 4.41145827202256e-06
+norm 3.529166617618044e-06
+norm 2.8233332940944823e-06
+norm 2.2586666352755824e-06
+norm 1.806933308220473e-06
+norm 1.4455466465763017e-06
+norm 1.156437317261068e-06
+norm 9.25149853808859e-07
+norm 7.401198830471843e-07
+norm 5.920959064375991e-07
+norm 4.7367672515004815e-07
+norm 3.789413801202213e-07
+norm 3.0315310409597703e-07
+norm 2.4252248327684714e-07
+norm 1.94017986621416e-07
+norm 1.5521438929710857e-07
+norm 1.241715114378439e-07
+norm 9.933720915022062e-08
+Running time of Alberto Algo with 100 iterations:  526.6507137070002
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  300.86903021800026
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  110.20886249199066
+mean projection time of each subspace:  0.040719688099998166
+Max projection time of each subspace:  0.25134684600016044
+Minimum projection time of each subspace:  0.0024953510001068935
+80
+Projection time of total space:  6.607794602000467
+Projection time of alternating projection:  3.0084841299099843
+Projection time of inter projection:  0.0013044952339951123
+vertex connectivity: 2
+edge connectivity: 2
+degree: 8
+(600, 1)
+(1794, 1)
+Shape of Hankel (1600, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  1000
+Shape of Hankel (4784, 1093)
+The Hankel matrix does NOT span the restricted behavior: rank(H) = 1000 
+ mL+n = 4184
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+norm 35.584492785472925
+norm 10.007725302761195
+norm 5.978591162501897
+norm 3.877999062485619
+norm 2.423963454457623
+norm 1.6798522155813347
+norm 1.276335859300851
+norm 0.9802104508826862
+norm 0.76572359950081
+norm 0.6082881060633168
+norm 0.48494559553509725
+norm 0.38698422706786395
+norm 0.30930244064584106
+norm 0.2473700945281599
+norm 0.1978529264815839
+norm 0.1582647242135405
+norm 0.12660780691321186
+norm 0.10128452967423972
+norm 0.08102667964812899
+norm 0.064821082472186
+norm 0.05185679513794498
+norm 0.04148539281586238
+norm 0.03318829765598718
+norm 0.026550634394969037
+norm 0.021240505760996963
+norm 0.016992403687778632
+norm 0.01359392270754768
+norm 0.010875138094917728
+norm 0.008700110432281223
+norm 0.00696008833007142
+norm 0.0055680706604909445
+norm 0.004454456526585299
+norm 0.0035635652203658543
+norm 0.0028508521760651586
+norm 0.0022806817407797185
+norm 0.0018245453925796297
+norm 0.0014596363140486914
+norm 0.0011677090512354914
+norm 0.0009341672409865224
+norm 0.0007473337927883323
+norm 0.0005978670342304509
+norm 0.00047829362738428566
+norm 0.00038263490190738403
+norm 0.0003061079215258927
+norm 0.0002448863372207105
+norm 0.00019590906977656663
+norm 0.0001567272558212523
+norm 0.00012538180465700152
+norm 0.00010030544372560104
+norm 8.02443549804808e-05
+norm 6.419548398438453e-05
+norm 5.135638718750777e-05
+norm 4.1085109750005955e-05
+norm 3.286808780000469e-05
+norm 2.629447024000399e-05
+norm 2.103557619200295e-05
+norm 1.682846095360247e-05
+norm 1.3462768762881811e-05
+norm 1.0770215010305625e-05
+norm 8.616172008244459e-06
+norm 6.892937606595527e-06
+norm 5.514350085276415e-06
+norm 4.411480068221119e-06
+norm 3.5291840545770166e-06
+norm 2.8233472436616434e-06
+norm 2.2586777949291966e-06
+norm 1.8069422359432667e-06
+norm 1.445553788754707e-06
+norm 1.1564430310037142e-06
+norm 9.251544248029744e-07
+norm 7.401235398424248e-07
+norm 5.92098831873827e-07
+norm 4.7367906549920415e-07
+norm 3.7894325239940194e-07
+norm 3.031546019194048e-07
+norm 2.425236815356055e-07
+norm 1.9401894522844796e-07
+norm 1.5521515618287962e-07
+norm 1.24172124946062e-07
+norm 9.933769995699428e-08
+Running time of Alberto Algo with 100 iterations:  508.0972631730001
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  431.1713917039997
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  142.71174549403258
+norm 36.0283642498322
+norm 10.010981664351082
+norm 5.980353712520032
+norm 3.878850358092093
+norm 2.4242670580734123
+norm 1.6799750730688452
+norm 1.2763918064322664
+norm 0.9802282774119434
+norm 0.7657290544786269
+norm 0.6082905103396216
+norm 0.4849464434322674
+norm 0.386984460824114
+norm 0.3093025337688759
+norm 0.2473701320430116
+norm 0.19785293703947043
+norm 0.15826472777462028
+norm 0.12660780847671296
+norm 0.10128453016293508
+norm 0.0810266797892937
+norm 0.06482108253378717
+norm 0.05185679516017384
+norm 0.041485392821842285
+norm 0.03318829765831626
+norm 0.026550634395934032
+norm 0.021240505761265696
+norm 0.016992403687865715
+norm 0.013593922707587051
+norm 0.010875138094930044
+norm 0.008700110432284573
+norm 0.006960088330072916
+norm 0.005568070660491494
+norm 0.0044544565265854305
+norm 0.0035635652203659016
+norm 0.00285085217606518
+norm 0.0022806817407797215
+norm 0.001824545392579628
+norm 0.00145963631404869
+norm 0.0011677090512354899
+norm 0.000934167240986521
+norm 0.0007473337927883313
+norm 0.0005978670342304497
+norm 0.00047829362738428506
+norm 0.00038263490190738333
+norm 0.0003061079215258922
+norm 0.0002448863372207101
+norm 0.0001959090697765666
+norm 0.00015672725582125202
+norm 0.0001253818046570016
+norm 0.00010030544372560114
+norm 8.02443549804808e-05
+norm 6.419548398438452e-05
+norm 5.135638718750763e-05
+norm 4.108510975000599e-05
+norm 3.286808780000495e-05
+norm 2.62944702400039e-05
+norm 2.1035576192002986e-05
+norm 1.6828460953602408e-05
+norm 1.3462768762882e-05
+norm 1.0770215010305716e-05
+norm 8.616172008244242e-06
+norm 6.892937606595344e-06
+norm 5.514350085276431e-06
+norm 4.411480068221052e-06
+norm 3.529184054576874e-06
+norm 2.8233472436615955e-06
+norm 2.258677794929327e-06
+norm 1.8069422359433097e-06
+norm 1.4455537887548307e-06
+norm 1.1564430310035639e-06
+norm 9.251544248031195e-07
+norm 7.401235398424554e-07
+norm 5.920988318739264e-07
+norm 4.7367906549905714e-07
+norm 3.7894325239933106e-07
+norm 3.031546019194289e-07
+norm 2.425236815355908e-07
+norm 1.940189452283835e-07
+norm 1.5521515618273205e-07
+norm 1.241721249461308e-07
+norm 9.933769995682368e-08
+Running time of Alberto Algo with 100 iterations:  526.1645475710011
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  426.8536744889989
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  140.9582857290152
+norm 36.10464740539585
+norm 10.011032333518408
+norm 5.980458827948272
+norm 3.8788551938770257
+norm 2.42425222441601
+norm 1.6799690053524163
+norm 1.276386009633403
+norm 0.9802247190326754
+norm 0.7657279513409887
+norm 0.6082899980453891
+norm 0.4849461479217035
+norm 0.38698436275789083
+norm 0.3093025011722648
+norm 0.2473701138765845
+norm 0.1978529298954288
+norm 0.1582647257282606
+norm 0.12660780751515785
+norm 0.10128452971293755
+norm 0.08102667965499971
+norm 0.06482108248533268
+norm 0.051856795135292184
+norm 0.04148539281312011
+norm 0.03318829765573359
+norm 0.026550634394693788
+norm 0.02124050576073916
+norm 0.01699240368771311
+norm 0.013593922707528043
+norm 0.010875138094901335
+norm 0.008700110432275115
+norm 0.006960088330069977
+norm 0.0055680706604900685
+norm 0.004454456526584862
+norm 0.003563565220365738
+norm 0.00285085217606511
+norm 0.002280681740779689
+norm 0.0018245453925796176
+norm 0.0014596363140486868
+norm 0.0011677090512354877
+norm 0.00093416724098652
+norm 0.000747333792788331
+norm 0.0005978670342304496
+norm 0.0004782936273842848
+norm 0.0003826349019073833
+norm 0.0003061079215258921
+norm 0.00024488633722071016
+norm 0.0001959090697765662
+norm 0.0001567272558212516
+norm 0.00012538180465700114
+norm 0.00010030544372560107
+norm 8.02443549804806e-05
+norm 6.419548398438441e-05
+norm 5.1356387187507534e-05
+norm 4.108510975000598e-05
+norm 3.286808780000476e-05
+norm 2.629447024000396e-05
+norm 2.1035576192003114e-05
+norm 1.6828460953602445e-05
+norm 1.3462768762881833e-05
+norm 1.0770215010305718e-05
+norm 8.616172008244574e-06
+norm 6.892937606595478e-06
+norm 5.514350085276505e-06
+norm 4.41148006822126e-06
+norm 3.5291840545769023e-06
+norm 2.8233472436615663e-06
+norm 2.2586777949291377e-06
+norm 1.8069422359433175e-06
+norm 1.4455537887547634e-06
+norm 1.1564430310036725e-06
+norm 9.251544248030566e-07
+norm 7.401235398424748e-07
+norm 5.920988318739047e-07
+norm 4.7367906549944894e-07
+norm 3.789432523990769e-07
+norm 3.0315460191961396e-07
+norm 2.425236815355565e-07
+norm 1.9401894522849775e-07
+norm 1.5521515618276159e-07
+norm 1.2417212494631093e-07
+norm 9.933769995692469e-08
+Running time of Alberto Algo with 100 iterations:  523.3567166280009
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  418.8841751210002
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  139.6090847510186
+norm 35.860577765609904
+norm 10.00788909690879
+norm 5.978595942844689
+norm 3.877886330894685
+norm 2.4238821614190984
+norm 1.679819305318603
+norm 1.2763132991782415
+norm 0.9801990041800026
+norm 0.765720069075887
+norm 0.6082864846258781
+norm 0.48494473789729275
+norm 0.38698394983253015
+norm 0.30930234629942777
+norm 0.24737004397162696
+norm 0.19785290723904247
+norm 0.15826471863261704
+norm 0.12660780430139162
+norm 0.10128452848858441
+norm 0.08102667929599978
+norm 0.06482108234333399
+norm 0.05185679507312122
+norm 0.04148539279348732
+norm 0.033188297649281495
+norm 0.026550634391761505
+norm 0.021240505759660615
+norm 0.01699240368739123
+norm 0.013593922707396323
+norm 0.010875138094845197
+norm 0.00870011043225756
+norm 0.006960088330063979
+norm 0.0055680706604873545
+norm 0.004454456526583886
+norm 0.0035635652203654397
+norm 0.0028508521760649856
+norm 0.002280681740779636
+norm 0.0018245453925796005
+norm 0.0014596363140486803
+norm 0.0011677090512354845
+norm 0.0009341672409865187
+norm 0.0007473337927883301
+norm 0.0005978670342304496
+norm 0.0004782936273842846
+norm 0.0003826349019073828
+norm 0.00030610792152589196
+norm 0.00024488633722071
+norm 0.000195909069776566
+norm 0.00015672725582125194
+norm 0.00012538180465700141
+norm 0.00010030544372560109
+norm 8.024435498048057e-05
+norm 6.419548398438424e-05
+norm 5.1356387187507575e-05
+norm 4.1085109750006064e-05
+norm 3.286808780000472e-05
+norm 2.6294470240003782e-05
+norm 2.1035576192003128e-05
+norm 1.6828460953602503e-05
+norm 1.3462768762881794e-05
+norm 1.0770215010305418e-05
+norm 8.616172008244443e-06
+norm 6.89293760659563e-06
+norm 5.514350085276513e-06
+norm 4.411480068221151e-06
+norm 3.529184054576981e-06
+norm 2.823347243661534e-06
+norm 2.2586777949293033e-06
+norm 1.8069422359433906e-06
+norm 1.4455537887546882e-06
+norm 1.1564430310037117e-06
+norm 9.251544248029291e-07
+norm 7.401235398423432e-07
+norm 5.920988318739177e-07
+norm 4.7367906549906523e-07
+norm 3.7894325239944075e-07
+norm 3.0315460191940394e-07
+norm 2.425236815355268e-07
+norm 1.9401894522850492e-07
+norm 1.5521515618283644e-07
+norm 1.2417212494628245e-07
+norm 9.933769995694296e-08
+Running time of Alberto Algo with 100 iterations:  524.3504650609993
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  521.258413376001
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  155.87913351495263
+norm 35.5835752607077
+norm 10.00641580285477
+norm 5.977758886908029
+norm 3.877414980923219
+norm 2.4236884936919614
+norm 1.6797409184964773
+norm 1.2762730459743958
+norm 0.9801833745738217
+norm 0.7657152378214739
+norm 0.6082843327572972
+norm 0.48494378542641514
+norm 0.3869836558305985
+norm 0.30930224115750565
+norm 0.24736999314079564
+norm 0.1978528891610708
+norm 0.1582647131696821
+norm 0.12660780182275364
+norm 0.10128452743709143
+norm 0.08102667898080876
+norm 0.0648210822261982
+norm 0.05185679501727005
+norm 0.04148539277443958
+norm 0.0331882976434208
+norm 0.02655063438904147
+norm 0.021240505758550937
+norm 0.016992403687063746
+norm 0.013593922707269314
+norm 0.010875138094785727
+norm 0.00870011043223801
+norm 0.006960088330057809
+norm 0.005568070660484449
+norm 0.004454456526582749
+norm 0.0035635652203651106
+norm 0.0028508521760648555
+norm 0.002280681740779578
+norm 0.0018245453925795835
+norm 0.001459636314048676
+norm 0.001167709051235484
+norm 0.0009341672409865193
+norm 0.0007473337927883314
+norm 0.0005978670342304503
+norm 0.00047829362738428533
+norm 0.00038263490190738376
+norm 0.0003061079215258926
+norm 0.0002448863372207105
+norm 0.00019590906977656625
+norm 0.0001567272558212522
+norm 0.00012538180465700158
+norm 0.00010030544372560122
+norm 8.024435498048068e-05
+norm 6.419548398438453e-05
+norm 5.1356387187507724e-05
+norm 4.108510975000616e-05
+norm 3.286808780000488e-05
+norm 2.629447024000394e-05
+norm 2.1035576192003033e-05
+norm 1.6828460953602534e-05
+norm 1.346276876288201e-05
+norm 1.077021501030558e-05
+norm 8.616172008244428e-06
+norm 6.892937606595626e-06
+norm 5.514350085276526e-06
+norm 4.411480068221207e-06
+norm 3.5291840545767955e-06
+norm 2.8233472436615544e-06
+norm 2.2586777949291305e-06
+norm 1.8069422359433904e-06
+norm 1.4455537887547602e-06
+norm 1.1564430310038258e-06
+norm 9.251544248029823e-07
+norm 7.401235398423023e-07
+norm 5.920988318738805e-07
+norm 4.736790654991809e-07
+norm 3.789432523993254e-07
+norm 3.0315460191950765e-07
+norm 2.425236815355181e-07
+norm 1.940189452283953e-07
+norm 1.5521515618270407e-07
+norm 1.2417212494626223e-07
+norm 9.933769995688004e-08
+Running time of Alberto Algo with 100 iterations:  529.2958186279993
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  430.8369941159999
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  143.19409267398078
+mean projection time of each subspace:  0.07018332652001845
+Max projection time of each subspace:  0.36234952099948714
+Minimum projection time of each subspace:  0.0024854610001057154
+80
+Projection time of total space:  6.681557993999377
+Projection time of alternating projection:  4.308097351030046
+Projection time of inter projection:  0.0012518484059910405
+vertex connectivity: 2
+edge connectivity: 2
+degree: 10
+(600, 1)
+(2094, 1)
+Shape of Hankel (1600, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  1000
+Shape of Hankel (5584, 1093)
+The Hankel matrix does NOT span the restricted behavior: rank(H) = 1000 
+ mL+n = 4984
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+norm 35.778458708128795
+norm 10.135782015201164
+norm 6.078379787840894
+norm 3.963103855542171
+norm 2.474291783674369
+norm 1.700218027099988
+norm 1.2877267271133248
+norm 0.9863193376876567
+norm 0.7678296472599558
+norm 0.6091134443512507
+norm 0.48540253024628593
+norm 0.38716340810612915
+norm 0.30935953847369096
+norm 0.24739879721016694
+norm 0.19786682227614327
+norm 0.15826955221511047
+norm 0.12660997435018934
+norm 0.10128584134451574
+norm 0.08102737760888543
+norm 0.06482149440447417
+norm 0.05185709635073473
+norm 0.04148561798433457
+norm 0.033188467766157866
+norm 0.026550767942553115
+norm 0.021240611920051864
+norm 0.016992488072289112
+norm 0.013593990004371502
+norm 0.01087519189163333
+norm 0.008700153445735943
+norm 0.006960122726630438
+norm 0.005568098174304688
+norm 0.004454478536649191
+norm 0.003563582827651604
+norm 0.0028508662616133986
+norm 0.0022806930091636445
+norm 0.0018245544072531207
+norm 0.0014596435257685939
+norm 0.001167714820607023
+norm 0.00093417185648239
+norm 0.0007473374851840026
+norm 0.0005978699881466317
+norm 0.0004782959905171599
+norm 0.00038263679241363775
+norm 0.0003061094339308721
+norm 0.00024488754714468834
+norm 0.00019591003771574702
+norm 0.00015672803017259548
+norm 0.00012538242413807557
+norm 0.00010030593931046042
+norm 8.024475144836822e-05
+norm 6.419580115869446e-05
+norm 5.1356640926955505e-05
+norm 4.108531274156441e-05
+norm 3.286825019325173e-05
+norm 2.629460015460128e-05
+norm 2.1035680123681008e-05
+norm 1.6828544098944853e-05
+norm 1.346283527915591e-05
+norm 1.0770268223324685e-05
+norm 8.616214578659659e-06
+norm 6.892971662927802e-06
+norm 5.514377330342298e-06
+norm 4.411501864273829e-06
+norm 3.529201491419186e-06
+norm 2.8233611931352844e-06
+norm 2.2586889545082405e-06
+norm 1.806951163606582e-06
+norm 1.4455609308850701e-06
+norm 1.1564487447081285e-06
+norm 9.251589957664282e-07
+norm 7.401271966133034e-07
+norm 5.921017572905008e-07
+norm 4.736814058325597e-07
+norm 3.7894512466596794e-07
+norm 3.031560997326071e-07
+norm 2.4252487978621963e-07
+norm 1.9401990382906736e-07
+norm 1.5521592306326147e-07
+norm 1.2417273845054787e-07
+norm 9.933819076047931e-08
+Running time of Alberto Algo with 100 iterations:  525.4986955960012
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  586.8892134409998
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  177.7218080599905
+norm 36.13811491789974
+norm 10.134744222264901
+norm 6.077871536542363
+norm 3.9628903825031325
+norm 2.4742280396231116
+norm 1.700191762663284
+norm 1.2877168962430852
+norm 0.986317759498886
+norm 0.7678292182177756
+norm 0.609113243967192
+norm 0.4854025730105699
+norm 0.387163443754955
+norm 0.30935954442394753
+norm 0.24739880433511388
+norm 0.197866827074075
+norm 0.15826955349174326
+norm 0.12660997488987782
+norm 0.10128584171408034
+norm 0.081027377736786
+norm 0.06482149444165307
+norm 0.05185709637322196
+norm 0.04148561799433317
+norm 0.033188467768898666
+norm 0.02655076794376849
+norm 0.021240611920704044
+norm 0.016992488072496696
+norm 0.013593990004438006
+norm 0.010875191891670008
+norm 0.00870015344575063
+norm 0.006960122726634576
+norm 0.005568098174306569
+norm 0.004454478536650116
+norm 0.0035635828276518937
+norm 0.002850866261613496
+norm 0.0022806930091636983
+norm 0.001824554407253142
+norm 0.0014596435257686025
+norm 0.0011677148206070272
+norm 0.0009341718564823924
+norm 0.0007473374851840039
+norm 0.0005978699881466323
+norm 0.00047829599051716037
+norm 0.0003826367924136383
+norm 0.0003061094339308723
+norm 0.0002448875471446887
+norm 0.00019591003771574723
+norm 0.0001567280301725956
+norm 0.00012538242413807603
+norm 0.00010030593931046052
+norm 8.024475144836828e-05
+norm 6.419580115869469e-05
+norm 5.135664092695535e-05
+norm 4.10853127415645e-05
+norm 3.286825019325168e-05
+norm 2.6294600154601186e-05
+norm 2.1035680123681153e-05
+norm 1.682854409894488e-05
+norm 1.3462835279155798e-05
+norm 1.0770268223324633e-05
+norm 8.616214578659747e-06
+norm 6.892971662927795e-06
+norm 5.514377330342421e-06
+norm 4.411501864273864e-06
+norm 3.5292014914189713e-06
+norm 2.8233611931350858e-06
+norm 2.258688954508225e-06
+norm 1.806951163606534e-06
+norm 1.4455609308852563e-06
+norm 1.156448744708156e-06
+norm 9.251589957665329e-07
+norm 7.40127196613209e-07
+norm 5.921017572905455e-07
+norm 4.7368140583249194e-07
+norm 3.78945124665849e-07
+norm 3.031560997328351e-07
+norm 2.425248797861566e-07
+norm 1.9401990382892437e-07
+norm 1.5521592306313317e-07
+norm 1.2417273845062673e-07
+norm 9.93381907605238e-08
+Running time of Alberto Algo with 100 iterations:  522.2955528149996
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  577.3283218699999
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  176.02848558895312
+norm 35.590865503056655
+norm 10.132190276027412
+norm 6.076396862076386
+norm 3.9621565577929982
+norm 2.473956075760482
+norm 1.7000809205468825
+norm 1.2876644556473742
+norm 0.9862997754506396
+norm 0.7678236624487105
+norm 0.6091107927699045
+norm 0.4854016191963217
+norm 0.3871631640519546
+norm 0.309359439074232
+norm 0.24739875801887712
+norm 0.19786681206858328
+norm 0.15826954872651278
+norm 0.12660997278102953
+norm 0.10128584091103045
+norm 0.08102737749557419
+norm 0.06482149434813615
+norm 0.05185709633256944
+norm 0.041485617981048356
+norm 0.033188467764552865
+norm 0.02655076794184429
+norm 0.021240611919970048
+norm 0.01699248807227179
+norm 0.013593990004349944
+norm 0.010875191891631688
+norm 0.008700153445737952
+norm 0.006960122726630373
+norm 0.005568098174304699
+norm 0.004454478536649394
+norm 0.0035635828276516673
+norm 0.002850866261613406
+norm 0.002280693009163657
+norm 0.001824554407253127
+norm 0.0014596435257685956
+norm 0.0011677148206070233
+norm 0.0009341718564823908
+norm 0.0007473374851840029
+norm 0.0005978699881466315
+norm 0.0004782959905171598
+norm 0.00038263679241363775
+norm 0.00030610943393087186
+norm 0.00024488754714468855
+norm 0.000195910037715747
+norm 0.00015672803017259535
+norm 0.0001253824241380757
+norm 0.00010030593931046041
+norm 8.024475144836813e-05
+norm 6.419580115869444e-05
+norm 5.135664092695576e-05
+norm 4.108531274156438e-05
+norm 3.286825019325147e-05
+norm 2.6294600154601203e-05
+norm 2.1035680123681055e-05
+norm 1.6828544098944856e-05
+norm 1.346283527915588e-05
+norm 1.077026822332458e-05
+norm 8.616214578659522e-06
+norm 6.8929716629278024e-06
+norm 5.51437733034218e-06
+norm 4.411501864273795e-06
+norm 3.5292014914189904e-06
+norm 2.823361193135327e-06
+norm 2.2586889545082105e-06
+norm 1.8069511636063996e-06
+norm 1.4455609308852304e-06
+norm 1.1564487447080891e-06
+norm 9.251589957665022e-07
+norm 7.401271966132492e-07
+norm 5.921017572906529e-07
+norm 4.7368140583247944e-07
+norm 3.789451246660115e-07
+norm 3.0315609973287705e-07
+norm 2.425248797862632e-07
+norm 1.9401990382890039e-07
+norm 1.552159230631675e-07
+norm 1.2417273845057432e-07
+norm 9.933819076036476e-08
+Running time of Alberto Algo with 100 iterations:  525.6721498759998
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  586.0362472950001
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  175.98264635602573
+norm 35.75006560639288
+norm 10.133067770904535
+norm 6.076963831649426
+norm 3.962508661423398
+norm 2.4741124886325987
+norm 1.7001445586328732
+norm 1.2876990131676802
+norm 0.9863143710861275
+norm 0.7678282328943586
+norm 0.6091128185459003
+norm 0.48540258465890895
+norm 0.38716347634407106
+norm 0.3093595469309991
+norm 0.247398812183492
+norm 0.19786683276916953
+norm 0.15826955492905084
+norm 0.1266099755382529
+norm 0.10128584216870885
+norm 0.08102737788907916
+norm 0.06482149448674271
+norm 0.05185709640114326
+norm 0.04148561800635696
+norm 0.03318846777217195
+norm 0.026550767945273935
+norm 0.021240611921490554
+norm 0.016992488072740827
+norm 0.01359399000451886
+norm 0.010875191891714283
+norm 0.008700153445767744
+norm 0.0069601227266394275
+norm 0.005568098174308813
+norm 0.00445447853665118
+norm 0.003563582827652213
+norm 0.002850866261613605
+norm 0.002280693009163753
+norm 0.0018245544072531612
+norm 0.0014596435257686056
+norm 0.0011677148206070281
+norm 0.000934171856482392
+norm 0.000747337485184003
+norm 0.0005978699881466317
+norm 0.00047829599051715967
+norm 0.00038263679241363775
+norm 0.0003061094339308715
+norm 0.00024488754714468855
+norm 0.00019591003771574677
+norm 0.00015672803017259545
+norm 0.0001253824241380754
+norm 0.00010030593931046031
+norm 8.024475144836828e-05
+norm 6.419580115869447e-05
+norm 5.1356640926955634e-05
+norm 4.108531274156443e-05
+norm 3.2868250193251605e-05
+norm 2.6294600154601328e-05
+norm 2.1035680123681096e-05
+norm 1.682854409894471e-05
+norm 1.3462835279155698e-05
+norm 1.0770268223324751e-05
+norm 8.616214578659759e-06
+norm 6.892971662927882e-06
+norm 5.514377330342113e-06
+norm 4.411501864273764e-06
+norm 3.529201491418967e-06
+norm 2.823361193135311e-06
+norm 2.2586889545082257e-06
+norm 1.8069511636065268e-06
+norm 1.445560930885292e-06
+norm 1.1564487447080953e-06
+norm 9.251589957666532e-07
+norm 7.401271966131299e-07
+norm 5.921017572907409e-07
+norm 4.736814058323781e-07
+norm 3.789451246660327e-07
+norm 3.031560997328141e-07
+norm 2.425248797861436e-07
+norm 1.9401990382902125e-07
+norm 1.552159230632589e-07
+norm 1.2417273845050904e-07
+norm 9.93381907605614e-08
+Running time of Alberto Algo with 100 iterations:  518.7180742699984
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  598.1509132430001
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  178.31224073203703
+norm 35.02999577493014
+norm 10.132366407445028
+norm 6.0765635198916295
+norm 3.9623335384092666
+norm 2.474056563158886
+norm 1.700121746796404
+norm 1.2876897539104708
+norm 0.9863121716803894
+norm 0.7678275833631807
+norm 0.609112531805524
+norm 0.4854025370030441
+norm 0.38716347402065243
+norm 0.3093595423550805
+norm 0.24739881255579893
+norm 0.1978668341412237
+norm 0.15826955523815017
+norm 0.12660997566675347
+norm 0.1012858423000217
+norm 0.08102737793659776
+norm 0.06482149449908158
+norm 0.05185709640971513
+norm 0.041485618010453446
+norm 0.03318846777324347
+norm 0.026550767945754544
+norm 0.021240611921766895
+norm 0.016992488072828413
+norm 0.013593990004546044
+norm 0.010875191891730019
+norm 0.008700153445774138
+norm 0.00696012272664117
+norm 0.005568098174309616
+norm 0.004454478536651582
+norm 0.003563582827652334
+norm 0.0028508662616136445
+norm 0.0022806930091637738
+norm 0.0018245544072531678
+norm 0.0014596435257686069
+norm 0.0011677148206070283
+norm 0.0009341718564823922
+norm 0.0007473374851840034
+norm 0.0005978699881466311
+norm 0.0004782959905171595
+norm 0.0003826367924136376
+norm 0.0003061094339308716
+norm 0.00024488754714468844
+norm 0.00019591003771574677
+norm 0.00015672803017259535
+norm 0.00012538242413807565
+norm 0.0001003059393104604
+norm 8.024475144836798e-05
+norm 6.419580115869446e-05
+norm 5.135664092695535e-05
+norm 4.108531274156454e-05
+norm 3.286825019325145e-05
+norm 2.629460015460115e-05
+norm 2.1035680123680825e-05
+norm 1.682854409894474e-05
+norm 1.3462835279155827e-05
+norm 1.0770268223324626e-05
+norm 8.616214578659784e-06
+norm 6.8929716629277525e-06
+norm 5.514377330342208e-06
+norm 4.4115018642737475e-06
+norm 3.5292014914189853e-06
+norm 2.8233611931353077e-06
+norm 2.258688954507986e-06
+norm 1.8069511636065461e-06
+norm 1.4455609308851843e-06
+norm 1.156448744708305e-06
+norm 9.251589957663387e-07
+norm 7.40127196613277e-07
+norm 5.921017572904778e-07
+norm 4.73681405832498e-07
+norm 3.7894512466605084e-07
+norm 3.0315609973285307e-07
+norm 2.425248797862769e-07
+norm 1.940199038289754e-07
+norm 1.5521592306312936e-07
+norm 1.241727384507122e-07
+norm 9.93381907604228e-08
+Running time of Alberto Algo with 100 iterations:  521.6209883230003
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  593.5312430250015
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  178.47657456491288
+mean projection time of each subspace:  0.08533536225018906
+Max projection time of each subspace:  0.2745486330022686
+Minimum projection time of each subspace:  0.002504141000827076
+80
+Projection time of total space:  6.570665076000296
+Projection time of alternating projection:  5.935026446929806
+Projection time of inter projection:  0.0013131933879412827
+vertex connectivity: 2
+edge connectivity: 2
+degree: 11
+(600, 1)
+(2394, 1)
+Shape of Hankel (1600, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  1000
+Shape of Hankel (6384, 1093)
+The Hankel matrix does NOT span the restricted behavior: rank(H) = 1000 
+ mL+n = 5784
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (104, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+norm 35.35888295212835
+norm 10.246796674382892
+norm 6.169182343706718
+norm 4.044878577910862
+norm 2.5249960258957653
+norm 1.7211045909439118
+norm 1.2994857708625025
+norm 0.9929082816005249
+norm 0.7701829777203846
+norm 0.6100196525651562
+norm 0.48591503641484657
+norm 0.38737508908795937
+norm 0.3094270016895372
+norm 0.24743188246043055
+norm 0.19788362296068138
+norm 0.1582755240869168
+norm 0.1266124872535074
+norm 0.10128735671020608
+norm 0.08102817989579152
+norm 0.06482193755468214
+norm 0.051857410256903366
+norm 0.04148585090630777
+norm 0.0331886407473005
+norm 0.02655090233906694
+norm 0.02124071856131051
+norm 0.016992572690635158
+norm 0.013594057368813606
+norm 0.010875245715516393
+norm 0.008700196475076895
+norm 0.00696015712875094
+norm 0.005568125689652761
+norm 0.0044545005475322905
+norm 0.0035636004352782302
+norm 0.002850880347205321
+norm 0.00228070427753248
+norm 0.0018245634219028065
+norm 0.0014596507374561663
+norm 0.0011677205899475154
+norm 0.0009341764719526848
+norm 0.0007473411775586404
+norm 0.00059787294204559
+norm 0.00047829835363617193
+norm 0.0003826386829087816
+norm 0.00030611094632694016
+norm 0.0002448887570615295
+norm 0.0001959110056492172
+norm 0.0001567288045193694
+norm 0.0001253830436154937
+norm 0.00010030643489239492
+norm 8.024514791391579e-05
+norm 6.419611833113246e-05
+norm 5.1356894664905854e-05
+norm 4.1085515731925065e-05
+norm 3.286841258553996e-05
+norm 2.6294730068432008e-05
+norm 2.1035784054745354e-05
+norm 1.682862724379652e-05
+norm 1.3462901795037236e-05
+norm 1.0770321436029663e-05
+norm 8.61625714882378e-06
+norm 6.893005719059034e-06
+norm 5.514404575247378e-06
+norm 4.411523660197654e-06
+norm 3.529218928158241e-06
+norm 2.823375142526611e-06
+norm 2.258700114021212e-06
+norm 1.8069600912170274e-06
+norm 1.4455680729737942e-06
+norm 1.15645445837889e-06
+norm 9.251635667030717e-07
+norm 7.401308533623989e-07
+norm 5.92104682689977e-07
+norm 4.736837461520467e-07
+norm 3.789469969216804e-07
+norm 3.031575975372147e-07
+norm 2.425260780298861e-07
+norm 1.940208624240049e-07
+norm 1.552166899390684e-07
+norm 1.2417335195115777e-07
+norm 9.933868156101864e-08
+Running time of Alberto Algo with 100 iterations:  527.0907468629994
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  726.5750725389989
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  194.95468054294906
+norm 35.67980553165734
+norm 10.242140001375986
+norm 6.166498318839136
+norm 4.043394679885425
+norm 2.524380638566245
+norm 1.7208516527992441
+norm 1.2993552611911527
+norm 0.9928555265627133
+norm 0.7701661974888578
+norm 0.6100123371641394
+norm 0.48591164862034164
+norm 0.3873739718026906
+norm 0.3094266157296364
+norm 0.24743169394511805
+norm 0.19788354886475595
+norm 0.15827550132700793
+norm 0.12661247755044616
+norm 0.1012873521794229
+norm 0.0810281783971904
+norm 0.06482193704511034
+norm 0.05185741000770644
+norm 0.0414858508074157
+norm 0.033188640717085015
+norm 0.026550902326299832
+norm 0.02124071855530521
+norm 0.016992572688642474
+norm 0.013594057368142709
+norm 0.01087524571518831
+norm 0.008700196474945894
+norm 0.006960157128711031
+norm 0.005568125689636022
+norm 0.004454500547524381
+norm 0.0035636004352755965
+norm 0.0028508803472044393
+norm 0.002280704277532049
+norm 0.0018245634219026337
+norm 0.001459650737456113
+norm 0.0011677205899474927
+norm 0.0009341764719526741
+norm 0.0007473411775586366
+norm 0.0005978729420455884
+norm 0.0004782983536361712
+norm 0.0003826386829087812
+norm 0.00030611094632694027
+norm 0.00024488875706152953
+norm 0.0001959110056492172
+norm 0.0001567288045193692
+norm 0.00012538304361549385
+norm 0.00010030643489239487
+norm 8.024514791391572e-05
+norm 6.419611833113258e-05
+norm 5.135689466490592e-05
+norm 4.108551573192474e-05
+norm 3.2868412585539976e-05
+norm 2.6294730068431934e-05
+norm 2.1035784054745487e-05
+norm 1.6828627243796496e-05
+norm 1.3462901795037146e-05
+norm 1.0770321436029774e-05
+norm 8.616257148823933e-06
+norm 6.893005719059099e-06
+norm 5.514404575247283e-06
+norm 4.411523660197717e-06
+norm 3.529218928158287e-06
+norm 2.8233751425265815e-06
+norm 2.258700114021162e-06
+norm 1.8069600912170253e-06
+norm 1.4455680729735388e-06
+norm 1.1564544583789429e-06
+norm 9.251635667032629e-07
+norm 7.401308533623125e-07
+norm 5.921046826899786e-07
+norm 4.736837461519568e-07
+norm 3.7894699692153865e-07
+norm 3.031575975372448e-07
+norm 2.4252607802985077e-07
+norm 1.9402086242391105e-07
+norm 1.5521668993902286e-07
+norm 1.2417335195119244e-07
+norm 9.933868156108625e-08
+Running time of Alberto Algo with 100 iterations:  525.9163700739991
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  745.7195989459979
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  193.61855171204297
+norm 35.02454742538965
+norm 10.23915590870978
+norm 6.164620231394936
+norm 4.042321054322434
+norm 2.5239245841972613
+norm 1.7206645424014362
+norm 1.2992569219656813
+norm 0.9928148425076166
+norm 0.7701532606246211
+norm 0.6100066888534781
+norm 0.48590898360368595
+norm 0.3873730879075907
+norm 0.30942631220121275
+norm 0.2474315441188552
+norm 0.1978834894951444
+norm 0.15827548315954568
+norm 0.12661246978983481
+norm 0.10128734852833553
+norm 0.08102817718952285
+norm 0.06482193663535274
+norm 0.05185740980635969
+norm 0.04148585072735377
+norm 0.03318864069266614
+norm 0.026550902315967677
+norm 0.02124071855043401
+norm 0.016992572687026482
+norm 0.013594057367598885
+norm 0.010875245714921987
+norm 0.008700196474839484
+norm 0.006960157128678627
+norm 0.00556812568962243
+norm 0.004454500547517959
+norm 0.0035636004352734576
+norm 0.0028508803472037264
+norm 0.0022807042775317018
+norm 0.0018245634219024951
+norm 0.0014596507374560717
+norm 0.0011677205899474766
+norm 0.0009341764719526665
+norm 0.0007473411775586346
+norm 0.0005978729420455877
+norm 0.00047829835363617134
+norm 0.0003826386829087814
+norm 0.0003061109463269403
+norm 0.00024488875706152975
+norm 0.0001959110056492172
+norm 0.00015672880451936928
+norm 0.0001253830436154938
+norm 0.00010030643489239472
+norm 8.024514791391568e-05
+norm 6.419611833113256e-05
+norm 5.135689466490612e-05
+norm 4.1085515731924815e-05
+norm 3.2868412585539726e-05
+norm 2.629473006843193e-05
+norm 2.103578405474554e-05
+norm 1.6828627243796554e-05
+norm 1.3462901795037107e-05
+norm 1.077032143602965e-05
+norm 8.616257148823828e-06
+norm 6.893005719059065e-06
+norm 5.514404575247384e-06
+norm 4.411523660197836e-06
+norm 3.5292189281581975e-06
+norm 2.8233751425265824e-06
+norm 2.2587001140212684e-06
+norm 1.8069600912169817e-06
+norm 1.4455680729736188e-06
+norm 1.1564544583788815e-06
+norm 9.251635667031254e-07
+norm 7.401308533625302e-07
+norm 5.921046826900451e-07
+norm 4.736837461521106e-07
+norm 3.789469969215949e-07
+norm 3.0315759753731677e-07
+norm 2.4252607802976326e-07
+norm 1.9402086242388288e-07
+norm 1.5521668993906315e-07
+norm 1.2417335195125875e-07
+norm 9.933868156101985e-08
+Running time of Alberto Algo with 100 iterations:  524.4670142899995
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  724.5058191040007
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  192.2244913099821
+norm 35.26208595566036
+norm 10.243727278340954
+norm 6.167272377860431
+norm 4.043708070206824
+norm 2.524469540629837
+norm 1.720888670966617
+norm 1.299368220764426
+norm 0.9928567315024155
+norm 0.770166445351134
+norm 0.6100124742740567
+norm 0.48591148170651055
+norm 0.3873738771909284
+norm 0.3094265938953361
+norm 0.24743167644855957
+norm 0.19788353830386887
+norm 0.1582754983352978
+norm 0.1266124763292927
+norm 0.10128735139804425
+norm 0.08102817811679391
+norm 0.06482193696210682
+norm 0.051857409960694975
+norm 0.04148585078592797
+norm 0.03318864071089622
+norm 0.026550902323725693
+norm 0.021240718553917796
+norm 0.016992572688169883
+norm 0.013594057367994978
+norm 0.010875245715110508
+norm 0.008700196474912587
+norm 0.006960157128701271
+norm 0.005568125689631967
+norm 0.004454500547522317
+norm 0.0035636004352749004
+norm 0.002850880347204219
+norm 0.002280704277531936
+norm 0.0018245634219025864
+norm 0.0014596507374560988
+norm 0.0011677205899474875
+norm 0.0009341764719526711
+norm 0.000747341177558636
+norm 0.0005978729420455879
+norm 0.0004782983536361715
+norm 0.0003826386829087813
+norm 0.00030611094632694
+norm 0.00024488875706152964
+norm 0.00019591100564921672
+norm 0.00015672880451936917
+norm 0.00012538304361549377
+norm 0.00010030643489239466
+norm 8.024514791391538e-05
+norm 6.419611833113228e-05
+norm 5.1356894664905895e-05
+norm 4.1085515731924706e-05
+norm 3.2868412585539915e-05
+norm 2.6294730068431673e-05
+norm 2.103578405474542e-05
+norm 1.682862724379637e-05
+norm 1.346290179503705e-05
+norm 1.0770321436029832e-05
+norm 8.616257148823785e-06
+norm 6.893005719058884e-06
+norm 5.514404575247131e-06
+norm 4.411523660197908e-06
+norm 3.52921892815829e-06
+norm 2.823375142526571e-06
+norm 2.25870011402113e-06
+norm 1.8069600912171182e-06
+norm 1.4455680729736582e-06
+norm 1.1564544583787745e-06
+norm 9.251635667031807e-07
+norm 7.401308533623205e-07
+norm 5.921046826900472e-07
+norm 4.7368374615209194e-07
+norm 3.7894699692156533e-07
+norm 3.0315759753733355e-07
+norm 2.4252607802996395e-07
+norm 1.940208624238902e-07
+norm 1.552166899391236e-07
+norm 1.241733519513591e-07
+norm 9.93386815608676e-08
+Running time of Alberto Algo with 100 iterations:  528.2444261109995
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  751.7866998629979
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  194.39496751499973
+norm 35.537288086624784
+norm 10.244360703560396
+norm 6.167536334080332
+norm 4.0438140900685235
+norm 2.5244990255965387
+norm 1.7209006565251208
+norm 1.2993722721262306
+norm 0.9928570457479944
+norm 0.7701665053958141
+norm 0.6100125003417523
+norm 0.48591142069186105
+norm 0.38737384669572594
+norm 0.3094265864303861
+norm 0.24743167044744316
+norm 0.197883535026378
+norm 0.15827549744202132
+norm 0.12661247593202904
+norm 0.10128735115940574
+norm 0.0810281780379651
+norm 0.06482193693741178
+norm 0.05185740994649958
+norm 0.041485850780045956
+norm 0.03318864070923629
+norm 0.02655090232297055
+norm 0.02124071855354089
+norm 0.016992572688051665
+norm 0.01359405736795478
+norm 0.010875245715089415
+norm 0.008700196474904496
+norm 0.006960157128698885
+norm 0.00556812568963089
+norm 0.004454500547521821
+norm 0.0035636004352747473
+norm 0.0028508803472041665
+norm 0.0022807042775319112
+norm 0.0018245634219025788
+norm 0.0014596507374560982
+norm 0.0011677205899474873
+norm 0.0009341764719526725
+norm 0.0007473411775586365
+norm 0.0005978729420455889
+norm 0.0004782983536361719
+norm 0.00038263868290878164
+norm 0.0003061109463269403
+norm 0.00024488875706152964
+norm 0.0001959110056492172
+norm 0.0001567288045193694
+norm 0.0001253830436154938
+norm 0.00010030643489239492
+norm 8.024514791391572e-05
+norm 6.419611833113251e-05
+norm 5.135689466490622e-05
+norm 4.1085515731924984e-05
+norm 3.286841258554005e-05
+norm 2.6294730068431825e-05
+norm 2.1035784054745426e-05
+norm 1.6828627243796537e-05
+norm 1.3462901795037082e-05
+norm 1.0770321436029785e-05
+norm 8.616257148823692e-06
+norm 6.893005719058991e-06
+norm 5.514404575247254e-06
+norm 4.411523660197903e-06
+norm 3.5292189281580937e-06
+norm 2.823375142526632e-06
+norm 2.258700114021281e-06
+norm 1.8069600912169603e-06
+norm 1.445568072973726e-06
+norm 1.156454458378891e-06
+norm 9.251635667030219e-07
+norm 7.401308533625043e-07
+norm 5.921046826899792e-07
+norm 4.736837461519077e-07
+norm 3.789469969215376e-07
+norm 3.0315759753739877e-07
+norm 2.4252607802976527e-07
+norm 1.940208624239817e-07
+norm 1.5521668993913083e-07
+norm 1.241733519512466e-07
+norm 9.933868156110292e-08
+Running time of Alberto Algo with 100 iterations:  530.2866739669989
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  743.465024142999
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  195.32618192603695
+mean projection time of each subspace:  0.10664519405003375
+Max projection time of each subspace:  0.3655382649994863
+Minimum projection time of each subspace:  0.0025003010014188476
+80
+Projection time of total space:  6.719953449002787
+Projection time of alternating projection:  7.664243684804252
+Projection time of inter projection:  0.0011943512433343544
+vertex connectivity: 2
+edge connectivity: 2
+degree: 12
+(600, 1)
+(2694, 1)
+Shape of Hankel (1600, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  1000
+Shape of Hankel (7184, 1093)
+The Hankel matrix does NOT span the restricted behavior: rank(H) = 1000 
+ mL+n = 6584
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (104, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (104, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (104, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (104, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (112, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+norm 34.3999050237731
+norm 10.351039607431426
+norm 6.256838674534656
+norm 4.126641228550306
+norm 2.5782553523969507
+norm 1.74357257197188
+norm 1.3121145486542938
+norm 1.00036806975824
+norm 0.7729840268013695
+norm 0.6110729710369608
+norm 0.48652306588152494
+norm 0.3876442418866555
+norm 0.3095134941347317
+norm 0.247472617060183
+norm 0.19790555262725631
+norm 0.15828364088508545
+norm 0.12661564333148195
+norm 0.10128923356698952
+norm 0.0810291792185913
+norm 0.06482244305387518
+norm 0.05185774758141787
+norm 0.04148609842315855
+norm 0.033188819650901376
+norm 0.026551038461830056
+norm 0.0212408261129618
+norm 0.016992657791979067
+norm 0.013594124884478817
+norm 0.01087529959357699
+norm 0.008700239536960502
+norm 0.006960191543921939
+norm 0.005568153208630205
+norm 0.0044545225601897755
+norm 0.0035636180437992786
+norm 0.002850894433020612
+norm 0.0022807155459354197
+norm 0.0018245724365563687
+norm 0.0014596579491212396
+norm 0.0011677263592563053
+norm 0.0009341810873952271
+norm 0.0007473448699100743
+norm 0.0005978758959250488
+norm 0.0004783007167392977
+norm 0.0003826405733911693
+norm 0.00030611245871275695
+norm 0.00024488996697014304
+norm 0.00019591197357609979
+norm 0.00015672957886087127
+norm 0.00012538366308869277
+norm 0.00010030693047095285
+norm 8.024554437676188e-05
+norm 6.419643550140932e-05
+norm 5.1357148401127415e-05
+norm 4.108571872090191e-05
+norm 3.2868574976721526e-05
+norm 2.6294859981377088e-05
+norm 2.1035887985101836e-05
+norm 1.6828710388081495e-05
+norm 1.3462968310465031e-05
+norm 1.0770374648372169e-05
+norm 8.616299718697667e-06
+norm 6.893039774958178e-06
+norm 5.514431819966464e-06
+norm 4.411545455973047e-06
+norm 3.5292363647785946e-06
+norm 2.8233890918228458e-06
+norm 2.258711273458339e-06
+norm 1.8069690187666166e-06
+norm 1.4455752150133689e-06
+norm 1.1564601720106267e-06
+norm 9.251681376085854e-07
+norm 7.401345100867641e-07
+norm 5.921076080695596e-07
+norm 4.736860864556811e-07
+norm 3.7894886916439836e-07
+norm 3.0315909533151834e-07
+norm 2.425272762652554e-07
+norm 1.9402182101219945e-07
+norm 1.552174568096942e-07
+norm 1.2417396544781988e-07
+norm 9.933917235830267e-08
+Running time of Alberto Algo with 100 iterations:  523.3143112260004
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  933.7885496679992
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  223.4091599860585
+norm 35.012456459681765
+norm 10.354026525822032
+norm 6.258605369945489
+norm 4.127637133194214
+norm 2.5786762856327132
+norm 1.7437469130761512
+norm 1.3122060019116495
+norm 1.0004059839816513
+norm 0.7729962166700067
+norm 0.6110782725589478
+norm 0.4865255704995881
+norm 0.38764508706801504
+norm 0.30951378418501796
+norm 0.2474727588704472
+norm 0.19790561012399516
+norm 0.15828365883138443
+norm 0.12661565080719028
+norm 0.10128923713285784
+norm 0.08102918044981917
+norm 0.0648224434661178
+norm 0.05185774778001934
+norm 0.041486098506167426
+norm 0.03318881967702723
+norm 0.02655103847232422
+norm 0.02124082611803926
+norm 0.016992657793786316
+norm 0.013594124885070663
+norm 0.0108752995938569
+norm 0.008700239537081253
+norm 0.006960191543960385
+norm 0.005568153208645075
+norm 0.004454522560197055
+norm 0.003563618043801955
+norm 0.0028508944330214747
+norm 0.002280715545935819
+norm 0.0018245724365565474
+norm 0.0014596579491212983
+norm 0.0011677263592563283
+norm 0.0009341810873952387
+norm 0.0007473448699100788
+norm 0.0005978758959250506
+norm 0.0004783007167392987
+norm 0.00038264057339116995
+norm 0.00030611245871275743
+norm 0.00024488996697014364
+norm 0.00019591197357610017
+norm 0.00015672957886087152
+norm 0.00012538366308869286
+norm 0.00010030693047095294
+norm 8.024554437676215e-05
+norm 6.419643550140932e-05
+norm 5.135714840112743e-05
+norm 4.108571872090179e-05
+norm 3.286857497672135e-05
+norm 2.6294859981377088e-05
+norm 2.103588798510178e-05
+norm 1.6828710388081312e-05
+norm 1.3462968310465245e-05
+norm 1.077037464837209e-05
+norm 8.61629971869768e-06
+norm 6.893039774958229e-06
+norm 5.514431819966623e-06
+norm 4.411545455973113e-06
+norm 3.5292363647785565e-06
+norm 2.8233890918229296e-06
+norm 2.25871127345823e-06
+norm 1.8069690187665278e-06
+norm 1.4455752150134796e-06
+norm 1.1564601720106826e-06
+norm 9.251681376085801e-07
+norm 7.401345100868146e-07
+norm 5.921076080693907e-07
+norm 4.7368608645551906e-07
+norm 3.7894886916434707e-07
+norm 3.0315909533160993e-07
+norm 2.4252727626518734e-07
+norm 1.9402182101205304e-07
+norm 1.5521745680982408e-07
+norm 1.241739654479147e-07
+norm 9.933917235822399e-08
+Running time of Alberto Algo with 100 iterations:  526.2592750600015
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  954.7175971010001
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  228.8355090839541
+norm 35.31699191364372
+norm 10.35573990909485
+norm 6.259580529822632
+norm 4.1281607523515245
+norm 2.5788884531094936
+norm 1.7438347586275509
+norm 1.312250795569386
+norm 1.000423668390356
+norm 0.773001850775443
+norm 0.6110807355054328
+norm 0.48652668440635116
+norm 0.38764545147988105
+norm 0.3095139116096301
+norm 0.24747282002500562
+norm 0.1979056338700147
+norm 0.1582836662406076
+norm 0.12661565394128368
+norm 0.10128923857147187
+norm 0.08102918093403458
+norm 0.06482244363226082
+norm 0.0518577478590188
+norm 0.0414860985379554
+norm 0.03318881968707157
+norm 0.02655103847643146
+norm 0.021240826119960875
+norm 0.016992657794457338
+norm 0.013594124885295772
+norm 0.010875299593962228
+norm 0.008700239537125329
+norm 0.006960191543974502
+norm 0.0055681532086506134
+norm 0.004454522560199693
+norm 0.003563618043802912
+norm 0.0028508944330217878
+norm 0.002280715545935962
+norm 0.0018245724365566088
+norm 0.0014596579491213185
+norm 0.0011677263592563348
+norm 0.0009341810873952416
+norm 0.0007473448699100797
+norm 0.0005978758959250506
+norm 0.0004783007167392987
+norm 0.0003826405733911696
+norm 0.00030611245871275727
+norm 0.0002448899669701433
+norm 0.00019591197357610006
+norm 0.00015672957886087157
+norm 0.00012538366308869264
+norm 0.0001003069304709529
+norm 8.024554437676204e-05
+norm 6.419643550140926e-05
+norm 5.135714840112727e-05
+norm 4.1085718720901984e-05
+norm 3.28685749767215e-05
+norm 2.6294859981377064e-05
+norm 2.1035887985101693e-05
+norm 1.6828710388081465e-05
+norm 1.3462968310465153e-05
+norm 1.0770374648372039e-05
+norm 8.616299718697723e-06
+norm 6.893039774958152e-06
+norm 5.5144318199664455e-06
+norm 4.411545455973197e-06
+norm 3.5292363647785705e-06
+norm 2.8233890918227873e-06
+norm 2.2587112734583005e-06
+norm 1.8069690187666615e-06
+norm 1.4455752150134256e-06
+norm 1.1564601720106862e-06
+norm 9.251681376084241e-07
+norm 7.40134510086754e-07
+norm 5.921076080695184e-07
+norm 4.7368608645550594e-07
+norm 3.789488691643306e-07
+norm 3.031590953314779e-07
+norm 2.425272762652004e-07
+norm 1.9402182101222629e-07
+norm 1.5521745680976743e-07
+norm 1.241739654478106e-07
+norm 9.933917235829254e-08
+Running time of Alberto Algo with 100 iterations:  508.17051133399946
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  979.9136857520025
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  230.75960203095747
+norm 35.516459523645175
+norm 10.356307852490138
+norm 6.259930135215302
+norm 4.1283243892757815
+norm 2.578948694882933
+norm 1.7438599066603513
+norm 1.3122624336629811
+norm 1.000427854548213
+norm 0.7730032120951251
+norm 0.6110813102661575
+norm 0.48652692691205424
+norm 0.3876455319388066
+norm 0.30951393973653774
+norm 0.24747283291906114
+norm 0.19790563896394883
+norm 0.15828366785049666
+norm 0.1266156545975851
+norm 0.10128923887884048
+norm 0.08102918103993778
+norm 0.06482244366744389
+norm 0.05185774787593468
+norm 0.041486098544979415
+norm 0.03318881968924765
+norm 0.026551038477314028
+norm 0.021240826120388547
+norm 0.016992657794605834
+norm 0.013594124885344434
+norm 0.010875299593985727
+norm 0.008700239537135222
+norm 0.0069601915439775845
+norm 0.005568153208651849
+norm 0.004454522560200292
+norm 0.0035636180438031245
+norm 0.002850894433021856
+norm 0.0022807155459359948
+norm 0.001824572436556623
+norm 0.0014596579491213224
+norm 0.001167726359256337
+norm 0.0009341810873952425
+norm 0.0007473448699100802
+norm 0.0005978758959250506
+norm 0.00047830071673929896
+norm 0.00038264057339117
+norm 0.0003061124587127571
+norm 0.0002448899669701433
+norm 0.00019591197357610017
+norm 0.00015672957886087152
+norm 0.0001253836630886926
+norm 0.00010030693047095293
+norm 8.024554437676196e-05
+norm 6.419643550140937e-05
+norm 5.135714840112729e-05
+norm 4.108571872090164e-05
+norm 3.2868574976721384e-05
+norm 2.6294859981377078e-05
+norm 2.1035887985101853e-05
+norm 1.6828710388081224e-05
+norm 1.3462968310465213e-05
+norm 1.0770374648372023e-05
+norm 8.616299718697613e-06
+norm 6.893039774958071e-06
+norm 5.5144318199665065e-06
+norm 4.4115454559731725e-06
+norm 3.529236364778617e-06
+norm 2.823389091822659e-06
+norm 2.258711273458367e-06
+norm 1.806969018766539e-06
+norm 1.4455752150133689e-06
+norm 1.156460172010489e-06
+norm 9.251681376085142e-07
+norm 7.401345100867798e-07
+norm 5.921076080693867e-07
+norm 4.7368608645572346e-07
+norm 3.789488691644561e-07
+norm 3.031590953315285e-07
+norm 2.425272762652026e-07
+norm 1.9402182101228817e-07
+norm 1.5521745680970115e-07
+norm 1.2417396544786125e-07
+norm 9.933917235823526e-08
+Running time of Alberto Algo with 100 iterations:  506.21073020199765
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  924.4118411050003
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  226.18489295901963
+norm 35.37054232133599
+norm 10.356209463988625
+norm 6.2596938669811335
+norm 4.128138414026306
+norm 2.578853326294065
+norm 1.7438202775191902
+norm 1.3122390864626927
+norm 1.0004168184060063
+norm 0.7729996362628161
+norm 0.6110797433200302
+norm 0.4865261183930369
+norm 0.3876452505296516
+norm 0.3095138453625078
+norm 0.2474727847946217
+norm 0.19790561871939505
+norm 0.15828366159356755
+norm 0.1266156519807111
+norm 0.10128923759249772
+norm 0.08102918059336528
+norm 0.06482244351920087
+norm 0.05185774780343476
+norm 0.04148609851433116
+norm 0.033188819679631824
+norm 0.02655103847344899
+norm 0.02124082611850016
+norm 0.01699265779393123
+norm 0.013594124885124162
+norm 0.010875299593881269
+norm 0.008700239537089887
+norm 0.00696019154396314
+norm 0.0055681532086462844
+norm 0.004454522560197562
+norm 0.003563618043802118
+norm 0.002850894433021538
+norm 0.002280715545935849
+norm 0.0018245724365565591
+norm 0.0014596579491213027
+norm 0.0011677263592563309
+norm 0.0009341810873952404
+norm 0.0007473448699100802
+norm 0.0005978758959250512
+norm 0.00047830071673929956
+norm 0.0003826405733911704
+norm 0.00030611245871275765
+norm 0.0002448899669701436
+norm 0.00019591197357610027
+norm 0.00015672957886087146
+norm 0.00012538366308869267
+norm 0.00010030693047095339
+norm 8.024554437676207e-05
+norm 6.419643550140944e-05
+norm 5.135714840112737e-05
+norm 4.1085718720901835e-05
+norm 3.286857497672157e-05
+norm 2.6294859981377298e-05
+norm 2.1035887985101633e-05
+norm 1.6828710388081248e-05
+norm 1.3462968310465236e-05
+norm 1.077037464837203e-05
+norm 8.616299718697535e-06
+norm 6.893039774958119e-06
+norm 5.514431819966569e-06
+norm 4.411545455973122e-06
+norm 3.5292363647786717e-06
+norm 2.8233890918228598e-06
+norm 2.258711273458395e-06
+norm 1.8069690187667337e-06
+norm 1.4455752150132755e-06
+norm 1.1564601720106675e-06
+norm 9.251681376084313e-07
+norm 7.401345100868053e-07
+norm 5.921076080695069e-07
+norm 4.736860864555386e-07
+norm 3.78948869164384e-07
+norm 3.031590953315733e-07
+norm 2.4252727626517024e-07
+norm 1.9402182101219738e-07
+norm 1.552174568097828e-07
+norm 1.241739654477147e-07
+norm 9.933917235814834e-08
+Running time of Alberto Algo with 100 iterations:  506.7626165290021
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  927.1014761490005
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  228.8052449060924
+mean projection time of each subspace:  0.1499849023301067
+Max projection time of each subspace:  0.4388103419987601
+Minimum projection time of each subspace:  0.0026257110002916306
+80
+Projection time of total space:  6.392847399998573
+Projection time of alternating projection:  9.758546451694603
+Projection time of inter projection:  0.0012736344315865274
+vertex connectivity: 2
+edge connectivity: 2
+degree: 14
+(600, 1)
+(2994, 1)
+Shape of Hankel (1600, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  1000
+Shape of Hankel (7984, 1093)
+The Hankel matrix does NOT span the restricted behavior: rank(H) = 1000 
+ mL+n = 7384
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (48, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  42
+Shape of Hankel (104, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (104, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (104, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (104, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (112, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (112, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (112, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (112, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (128, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (104, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (104, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (112, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (120, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+norm 35.92514223040534
+norm 10.474566350558012
+norm 6.357106234636928
+norm 4.217754441198389
+norm 2.638366750397097
+norm 1.769540253911678
+norm 1.3266169022892544
+norm 1.0092068563982493
+norm 0.776457027730068
+norm 0.6123621747364445
+norm 0.4872705510383455
+norm 0.3879953590314582
+norm 0.309628849994
+norm 0.24752453385384093
+norm 0.19793473010009366
+norm 0.15829501289513848
+norm 0.1266198017096458
+norm 0.1012916263734865
+norm 0.08103047775181943
+norm 0.06482305230962991
+norm 0.05185812067486877
+norm 0.041486367989500644
+norm 0.03318900864614143
+norm 0.026551177593781745
+norm 0.021240935063163442
+norm 0.016992743710009073
+norm 0.01359419268950304
+norm 0.010875353564001967
+norm 0.008700282653075514
+norm 0.006960225984667377
+norm 0.0055681807351037034
+norm 0.004454544575958725
+norm 0.003563635654122402
+norm 0.002850908519447504
+norm 0.002280726814476926
+norm 0.0018245814512687984
+norm 0.001459665160796479
+norm 0.0011677321285438848
+norm 0.0009341857028134933
+norm 0.0007473485622406401
+norm 0.0005978788497861053
+norm 0.00047830307982690097
+norm 0.0003826424638610119
+norm 0.00030611397108846783
+norm 0.0002448911768706113
+norm 0.00019591294149644994
+norm 0.0001567303531971442
+norm 0.00012538428255770475
+norm 0.00010030742604616044
+norm 8.024594083692757e-05
+norm 6.419675266954154e-05
+norm 5.13574021356329e-05
+norm 4.1085921708506614e-05
+norm 3.2868737366805064e-05
+norm 2.629498989344393e-05
+norm 2.1035991914755222e-05
+norm 1.6828793531804213e-05
+norm 1.3463034825443524e-05
+norm 1.0770427860354677e-05
+norm 8.616342288283748e-06
+norm 6.8930738306270266e-06
+norm 5.5144590645016765e-06
+norm 4.41156725160125e-06
+norm 3.5292538012809683e-06
+norm 2.8234030410248865e-06
+norm 2.2587224328197345e-06
+norm 1.806977946255836e-06
+norm 1.4455823570046183e-06
+norm 1.1564658856037944e-06
+norm 9.251727084830162e-07
+norm 7.401381667863775e-07
+norm 5.921105334291085e-07
+norm 4.7368842674328677e-07
+norm 3.7895074139467085e-07
+norm 3.031605931158018e-07
+norm 2.425284744925952e-07
+norm 1.9402277959397445e-07
+norm 1.5521822367521056e-07
+norm 1.2417457894016506e-07
+norm 9.933966315211593e-08
+Running time of Alberto Algo with 100 iterations:  508.403582379
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1120.9792958559992
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  270.83258001518334
+norm 36.03204110708346
+norm 10.476172137247852
+norm 6.358219919705585
+norm 4.218534663325012
+norm 2.6387577194536553
+norm 1.7697041603729258
+norm 1.3267111555336506
+norm 1.0092528238513752
+norm 0.7764725030671021
+norm 0.6123687276529232
+norm 0.4872740455302049
+norm 0.38799666531681126
+norm 0.309629279358074
+norm 0.2475247494221866
+norm 0.19793482894080372
+norm 0.15829504474605718
+norm 0.126619814169609
+norm 0.10129163284542259
+norm 0.08103048022152272
+norm 0.06482305310107372
+norm 0.05185812105061114
+norm 0.041486368165753996
+norm 0.0331890087043816
+norm 0.026551177615256945
+norm 0.02124093507418405
+norm 0.016992743714406417
+norm 0.013594192690897984
+norm 0.010875353564626633
+norm 0.008700282653377502
+norm 0.006960225984770957
+norm 0.00556818073513989
+norm 0.004454544575976965
+norm 0.003563635654130051
+norm 0.002850908519449933
+norm 0.002280726814477945
+norm 0.0018245814512693026
+norm 0.0014596651607966585
+norm 0.0011677321285439436
+norm 0.0009341857028135211
+norm 0.0007473485622406519
+norm 0.0005978788497861083
+norm 0.00047830307982690183
+norm 0.00038264246386101236
+norm 0.00030611397108846734
+norm 0.00024489117687061083
+norm 0.00019591294149644948
+norm 0.000156730353197144
+norm 0.00012538428255770478
+norm 0.00010030742604616016
+norm 8.024594083692741e-05
+norm 6.419675266954132e-05
+norm 5.135740213563295e-05
+norm 4.108592170850627e-05
+norm 3.2868737366804996e-05
+norm 2.629498989344402e-05
+norm 2.1035991914755307e-05
+norm 1.682879353180413e-05
+norm 1.3463034825443258e-05
+norm 1.0770427860354836e-05
+norm 8.61634228828369e-06
+norm 6.893073830626745e-06
+norm 5.514459064501648e-06
+norm 4.4115672516011055e-06
+norm 3.529253801280852e-06
+norm 2.82340304102478e-06
+norm 2.2587224328198903e-06
+norm 1.8069779462560022e-06
+norm 1.4455823570046358e-06
+norm 1.1564658856038346e-06
+norm 9.251727084830179e-07
+norm 7.401381667864618e-07
+norm 5.921105334291612e-07
+norm 4.7368842674332055e-07
+norm 3.789507413946645e-07
+norm 3.0316059311577956e-07
+norm 2.425284744925649e-07
+norm 1.940227795940852e-07
+norm 1.5521822367521668e-07
+norm 1.2417457894012832e-07
+norm 9.933966315237068e-08
+Running time of Alberto Algo with 100 iterations:  507.14033475500037
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1108.5620633709987
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  266.60977924417966
+norm 35.24871401330907
+norm 10.470455540124815
+norm 6.354863181480819
+norm 4.2167086250399075
+norm 2.6379968513506067
+norm 1.7693856998537991
+norm 1.3265462215267005
+norm 1.009184168229295
+norm 0.7764499485731786
+norm 0.6123590574136376
+norm 0.4872694441072254
+norm 0.38799504887795555
+norm 0.3096287278849445
+norm 0.2475244842638494
+norm 0.19793471569144727
+norm 0.15829500810920302
+norm 0.12661979961712083
+norm 0.1012916256852347
+norm 0.08103047755242163
+norm 0.0648230522258228
+norm 0.05185812064272167
+norm 0.04148636798043394
+norm 0.03318900864287864
+norm 0.02655117759236583
+norm 0.021240935062725983
+norm 0.016992743709879406
+norm 0.0135941926894455
+norm 0.01087535356398093
+norm 0.008700282653069925
+norm 0.00696022598466523
+norm 0.0055681807351027545
+norm 0.004454544575958458
+norm 0.003563635654122324
+norm 0.002850908519447466
+norm 0.0022807268144769115
+norm 0.0018245814512687932
+norm 0.0014596651607964768
+norm 0.0011677321285438829
+norm 0.000934185702813492
+norm 0.0007473485622406389
+norm 0.0005978788497861046
+norm 0.00047830307982690053
+norm 0.0003826424638610116
+norm 0.0003061139710884673
+norm 0.0002448911768706111
+norm 0.00019591294149644959
+norm 0.00015673035319714438
+norm 0.0001253842825577051
+norm 0.00010030742604616025
+norm 8.024594083692749e-05
+norm 6.419675266954153e-05
+norm 5.135740213563305e-05
+norm 4.1085921708506296e-05
+norm 3.2868737366805226e-05
+norm 2.6294989893443984e-05
+norm 2.1035991914755114e-05
+norm 1.682879353180427e-05
+norm 1.3463034825443244e-05
+norm 1.0770427860354743e-05
+norm 8.616342288283587e-06
+norm 6.8930738306270765e-06
+norm 5.514459064501527e-06
+norm 4.411567251601349e-06
+norm 3.5292538012809886e-06
+norm 2.823403041024824e-06
+norm 2.2587224328197285e-06
+norm 1.8069779462558337e-06
+norm 1.4455823570047038e-06
+norm 1.1564658856037722e-06
+norm 9.251727084830384e-07
+norm 7.401381667865178e-07
+norm 5.92110533429007e-07
+norm 4.7368842674325284e-07
+norm 3.789507413947252e-07
+norm 3.0316059311576876e-07
+norm 2.425284744925302e-07
+norm 1.9402277959407903e-07
+norm 1.5521822367522406e-07
+norm 1.2417457894027904e-07
+norm 9.933966315219897e-08
+Running time of Alberto Algo with 100 iterations:  508.4548722949985
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1231.5972628360032
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  288.323969638026
+norm 35.16564612270523
+norm 10.467349041031923
+norm 6.3530636863363386
+norm 4.215665563451265
+norm 2.637537498448453
+norm 1.7691931936007903
+norm 1.3264430710358621
+norm 1.0091386985497872
+norm 0.7764348581021655
+norm 0.6123526207061376
+norm 0.4872662396240145
+norm 0.38799389248228455
+norm 0.30962833951788415
+norm 0.24752429416349636
+norm 0.19793463187106505
+norm 0.15829498102612743
+norm 0.12661978893955003
+norm 0.10129162029979091
+norm 0.08103047552152115
+norm 0.06482305156708387
+norm 0.0518581203331727
+norm 0.04148636783756966
+norm 0.033189008595551184
+norm 0.026551177574837853
+norm 0.02124093505384503
+norm 0.016992743706352124
+norm 0.013594192688320189
+norm 0.010875353563479
+norm 0.008700282652829006
+norm 0.006960225984582489
+norm 0.005568180735073777
+norm 0.004454544575943933
+norm 0.0035636356541162446
+norm 0.0028509085194455296
+norm 0.0022807268144760997
+norm 0.0018245814512683938
+norm 0.001459665160796334
+norm 0.001167732128543836
+norm 0.0009341857028134697
+norm 0.0007473485622406297
+norm 0.0005978788497861024
+norm 0.00047830307982689983
+norm 0.00038264246386101165
+norm 0.0003061139710884674
+norm 0.00024489117687061127
+norm 0.00019591294149644988
+norm 0.00015673035319714422
+norm 0.00012538428255770524
+norm 0.00010030742604616044
+norm 8.02459408369275e-05
+norm 6.419675266954157e-05
+norm 5.135740213563296e-05
+norm 4.108592170850626e-05
+norm 3.286873736680503e-05
+norm 2.6294989893444178e-05
+norm 2.103599191475549e-05
+norm 1.682879353180424e-05
+norm 1.3463034825443474e-05
+norm 1.0770427860354812e-05
+norm 8.616342288283644e-06
+norm 6.893073830627027e-06
+norm 5.514459064501602e-06
+norm 4.411567251601212e-06
+norm 3.529253801281194e-06
+norm 2.823403041024866e-06
+norm 2.2587224328198586e-06
+norm 1.8069779462558095e-06
+norm 1.4455823570047781e-06
+norm 1.1564658856036993e-06
+norm 9.251727084828899e-07
+norm 7.401381667864299e-07
+norm 5.921105334290817e-07
+norm 4.7368842674337185e-07
+norm 3.7895074139459875e-07
+norm 3.0316059311571127e-07
+norm 2.425284744926039e-07
+norm 1.9402277959401535e-07
+norm 1.5521822367521202e-07
+norm 1.2417457894019147e-07
+norm 9.933966315218672e-08
+Running time of Alberto Algo with 100 iterations:  508.88865647100465
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1145.8233307710034
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  271.8264969771917
+norm 35.639526951437176
+norm 10.466593069268068
+norm 6.352465270497905
+norm 4.215228744109354
+norm 2.63731281369778
+norm 1.7690989448786691
+norm 1.3263882464169787
+norm 1.0091114620154809
+norm 0.77642565632274
+norm 0.61234873393552
+norm 0.4872641417719616
+norm 0.3879931029122352
+norm 0.3096280810588032
+norm 0.24752416385778786
+norm 0.19793457169543194
+norm 0.15829496164789603
+norm 0.126619781370191
+norm 0.1012916163468105
+norm 0.0810304740105761
+norm 0.06482305108400309
+norm 0.051858120103289024
+norm 0.04148636772948224
+norm 0.03318900855987293
+norm 0.026551177561682713
+norm 0.021240935047079797
+norm 0.01699274370365306
+norm 0.013594192687464618
+norm 0.010875353563095347
+norm 0.008700282652643465
+norm 0.006960225984518882
+norm 0.005568180735051534
+norm 0.00445454457593271
+norm 0.003563635654111538
+norm 0.0028509085194440313
+norm 0.0022807268144754687
+norm 0.001824581451268079
+norm 0.0014596651607962196
+norm 0.0011677321285437966
+norm 0.0009341857028134499
+norm 0.0007473485622406206
+norm 0.0005978788497860988
+norm 0.00047830307982689826
+norm 0.0003826424638610105
+norm 0.0003061139710884672
+norm 0.0002448911768706108
+norm 0.00019591294149644934
+norm 0.00015673035319714408
+norm 0.00012538428255770489
+norm 0.00010030742604616046
+norm 8.024594083692744e-05
+norm 6.419675266954151e-05
+norm 5.1357402135632787e-05
+norm 4.1085921708506336e-05
+norm 3.286873736680511e-05
+norm 2.6294989893443954e-05
+norm 2.1035991914755226e-05
+norm 1.682879353180409e-05
+norm 1.3463034825443357e-05
+norm 1.0770427860354697e-05
+norm 8.61634228828377e-06
+norm 6.893073830626833e-06
+norm 5.514459064501764e-06
+norm 4.411567251601241e-06
+norm 3.5292538012810293e-06
+norm 2.823403041024793e-06
+norm 2.258722432819863e-06
+norm 1.8069779462559736e-06
+norm 1.4455823570044855e-06
+norm 1.156465885603751e-06
+norm 9.251727084828501e-07
+norm 7.40138166786372e-07
+norm 5.921105334291444e-07
+norm 4.736884267432357e-07
+norm 3.7895074139462643e-07
+norm 3.031605931158064e-07
+norm 2.4252847449255666e-07
+norm 1.9402277959416255e-07
+norm 1.5521822367528452e-07
+norm 1.2417457894027348e-07
+norm 9.93396631522741e-08
+Running time of Alberto Algo with 100 iterations:  508.10467437899933
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1194.8980812049995
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  278.9648590000361
+mean projection time of each subspace:  0.16849278037974727
+Max projection time of each subspace:  0.4785710910000489
+Minimum projection time of each subspace:  0.013377675000810996
+80
+Projection time of total space:  6.398988285996893
+Projection time of alternating projection:  12.577384474411021
+Projection time of inter projection:  0.0019630616107698235
+vertex connectivity: 2
+edge connectivity: 2
+degree: 15
+(600, 1)
+(3294, 1)
+Shape of Hankel (1600, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  1000
+Shape of Hankel (8784, 1093)
+The Hankel matrix does NOT span the restricted behavior: rank(H) = 1000 
+ mL+n = 8184
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (120, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (120, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (112, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (112, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (112, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (112, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (104, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (104, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (128, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  122
+Shape of Hankel (32, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  26
+Shape of Hankel (40, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  34
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (104, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (120, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (112, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (104, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (136, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  130
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (104, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (104, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (112, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (120, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (56, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  50
+Shape of Hankel (104, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (112, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (112, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  106
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (120, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  114
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (104, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (64, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  58
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (80, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  74
+Shape of Hankel (96, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  90
+Shape of Hankel (104, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  98
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (88, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  82
+Shape of Hankel (72, 1093)
+The Hankel matrix spans the restricted behaviour:  rank(H) = Lm+n =  66
+norm 35.52108555519964
+norm 10.574544805441512
+norm 6.444037423412268
+norm 4.302344389911642
+norm 2.697519131228246
+norm 1.795735847288962
+norm 1.3412245635938698
+norm 1.0185383568138733
+norm 0.7803101492684746
+norm 0.6137739366384921
+norm 0.4880924030110648
+norm 0.38840548017293225
+norm 0.3097675473411655
+norm 0.24758418247692096
+norm 0.19796950130759375
+norm 0.15830942835277448
+norm 0.12662489511517197
+norm 0.10129444230672668
+norm 0.08103206613702547
+norm 0.06482377710638103
+norm 0.051858528760039
+norm 0.04148665895087167
+norm 0.033189209449538806
+norm 0.02655132043615109
+norm 0.021241045444359695
+norm 0.016992830572861894
+norm 0.013594260892766727
+norm 0.010875407649816548
+norm 0.008700325830968409
+norm 0.006960260460859061
+norm 0.005568208273183089
+norm 0.004454566595607912
+norm 0.003563653266891044
+norm 0.0028509226069434977
+norm 0.0022807380832831833
+norm 0.001824590466082956
+norm 0.0014596723725213917
+norm 0.001167737897829408
+norm 0.000934190318213975
+norm 0.0007473522545549223
+norm 0.0005978818036322078
+norm 0.0004783054429010277
+norm 0.00038264435431972863
+norm 0.00030611548345520857
+norm 0.00024489238676380943
+norm 0.00019591390941094033
+norm 0.00015673112752872335
+norm 0.00012538490202295812
+norm 0.00010030792161835711
+norm 8.024633729468322e-05
+norm 6.419706983574574e-05
+norm 5.135765586859582e-05
+norm 4.108612469487666e-05
+norm 3.2868899755901184e-05
+norm 2.6295119804720836e-05
+norm 2.10360958437768e-05
+norm 1.682887667502111e-05
+norm 1.3463101340017163e-05
+norm 1.0770481072013827e-05
+norm 8.616384857610953e-06
+norm 6.893107886088804e-06
+norm 5.51448630887113e-06
+norm 4.411589047096733e-06
+norm 3.529271237677372e-06
+norm 2.8234169901419114e-06
+norm 2.25873359211354e-06
+norm 1.8069868736906795e-06
+norm 1.4455894989527679e-06
+norm 1.1564715991620724e-06
+norm 9.251772793296708e-07
+norm 7.401418234636933e-07
+norm 5.921134587709878e-07
+norm 4.736907670167982e-07
+norm 3.789526136134712e-07
+norm 3.031620908908688e-07
+norm 2.425296727125281e-07
+norm 1.940237381701685e-07
+norm 1.5521899053597389e-07
+norm 1.241751924288073e-07
+norm 9.934015394305115e-08
+Running time of Alberto Algo with 100 iterations:  526.9455859910013
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1395.048498278993
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  310.387739537211
+norm 35.55248211359117
+norm 10.573267928973882
+norm 6.443354609403543
+norm 4.301997322402634
+norm 2.697384787165437
+norm 1.7956791239858911
+norm 1.3411963353979455
+norm 1.0185278617540479
+norm 0.7803067992223638
+norm 0.6137724534366887
+norm 0.4880917759957093
+norm 0.3884052822530367
+norm 0.30976747532603777
+norm 0.24758414947231272
+norm 0.19796948922846488
+norm 0.15830942444776816
+norm 0.12662489346594175
+norm 0.10129444160176261
+norm 0.08103206589563515
+norm 0.06482377701949998
+norm 0.05185852872170916
+norm 0.041486658935586763
+norm 0.033189209444268494
+norm 0.026551320434090114
+norm 0.021241045443451755
+norm 0.01699283057251258
+norm 0.013594260892643968
+norm 0.010875407649765632
+norm 0.00870032583094599
+norm 0.006960260460850766
+norm 0.0055682082731801155
+norm 0.004454566595606593
+norm 0.0035636532668904793
+norm 0.002850922606943303
+norm 0.0022807380832831105
+norm 0.001824590466082924
+norm 0.0014596723725213805
+norm 0.0011677378978294057
+norm 0.0009341903182139747
+norm 0.0007473522545549228
+norm 0.0005978818036322087
+norm 0.0004783054429010286
+norm 0.0003826443543197294
+norm 0.00030611548345520906
+norm 0.00024489238676381
+norm 0.00019591390941094057
+norm 0.00015673112752872368
+norm 0.0001253849020229585
+norm 0.00010030792161835707
+norm 8.024633729468348e-05
+norm 6.41970698357457e-05
+norm 5.135765586859596e-05
+norm 4.108612469487659e-05
+norm 3.2868899755901117e-05
+norm 2.6295119804720955e-05
+norm 2.10360958437767e-05
+norm 1.6828876675021378e-05
+norm 1.3463101340017212e-05
+norm 1.077048107201368e-05
+norm 8.616384857610834e-06
+norm 6.893107886088804e-06
+norm 5.514486308870971e-06
+norm 4.411589047096819e-06
+norm 3.5292712376774565e-06
+norm 2.8234169901418487e-06
+norm 2.2587335921135756e-06
+norm 1.8069868736909414e-06
+norm 1.445589498952593e-06
+norm 1.1564715991622043e-06
+norm 9.251772793297023e-07
+norm 7.401418234637646e-07
+norm 5.921134587709625e-07
+norm 4.736907670168479e-07
+norm 3.7895261361343523e-07
+norm 3.031620908907424e-07
+norm 2.425296727126042e-07
+norm 1.9402373817018567e-07
+norm 1.5521899053599366e-07
+norm 1.2417519242891744e-07
+norm 9.934015394308811e-08
+Running time of Alberto Algo with 100 iterations:  525.108224348005
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1508.4534533859987
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  322.12751917390415
+norm 35.12766246037205
+norm 10.565110133439617
+norm 6.438514039814199
+norm 4.2991552648100395
+norm 2.69610564248779
+norm 1.7951383660511429
+norm 1.3409032845280104
+norm 1.0183936251174803
+norm 0.7802610597723029
+norm 0.6137532253493153
+norm 0.48808192338897705
+norm 0.38840154451997244
+norm 0.30976622699348527
+norm 0.24758354630066176
+norm 0.1979692079342751
+norm 0.15830932977090845
+norm 0.12662485767249027
+norm 0.10129442315106245
+norm 0.08103205840602222
+norm 0.06482377458921185
+norm 0.0518585276302155
+norm 0.04148665839785814
+norm 0.03318920925386529
+norm 0.02655132036741918
+norm 0.021241045409718096
+norm 0.016992830557782862
+norm 0.013594260887841225
+norm 0.01087540764778821
+norm 0.008700325829936831
+norm 0.006960260460469301
+norm 0.005568208273053428
+norm 0.00445456659554553
+norm 0.0035636532668619674
+norm 0.0028509226069337048
+norm 0.0022807380832794897
+norm 0.0018245904660810573
+norm 0.0014596723725206207
+norm 0.0011677378978291574
+norm 0.0009341903182138634
+norm 0.000747352254554867
+norm 0.0005978818036321881
+norm 0.00047830544290102103
+norm 0.0003826443543197255
+norm 0.000306115483455207
+norm 0.00024489238676380927
+norm 0.0001959139094109401
+norm 0.00015673112752872322
+norm 0.00012538490202295818
+norm 0.00010030792161835714
+norm 8.02463372946835e-05
+norm 6.419706983574554e-05
+norm 5.135765586859584e-05
+norm 4.108612469487635e-05
+norm 3.2868899755901184e-05
+norm 2.629511980472078e-05
+norm 2.1036095843776742e-05
+norm 1.6828876675021378e-05
+norm 1.3463101340016995e-05
+norm 1.0770481072013695e-05
+norm 8.616384857610953e-06
+norm 6.8931078860887616e-06
+norm 5.514486308871001e-06
+norm 4.411589047096813e-06
+norm 3.5292712376773384e-06
+norm 2.8234169901418856e-06
+norm 2.258733592113533e-06
+norm 1.8069868736909355e-06
+norm 1.4455894989527973e-06
+norm 1.1564715991620826e-06
+norm 9.251772793297922e-07
+norm 7.40141823463744e-07
+norm 5.921134587709225e-07
+norm 4.7369076701671464e-07
+norm 3.7895261361347403e-07
+norm 3.0316209089076127e-07
+norm 2.425296727125753e-07
+norm 1.9402373817011057e-07
+norm 1.5521899053614808e-07
+norm 1.2417519242886225e-07
+norm 9.93401539431066e-08
+Running time of Alberto Algo with 100 iterations:  509.48942632899707
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1338.2668894829985
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  300.0595479959811
+norm 34.18737486092903
+norm 10.55821367928196
+norm 6.434258187513061
+norm 4.296533976729322
+norm 2.694879815700211
+norm 1.7946197562324335
+norm 1.340616651904366
+norm 1.0182577368712886
+norm 0.7802143996912795
+norm 0.6137337085911108
+norm 0.48807168400949297
+norm 0.38839759740236784
+norm 0.3097649182075084
+norm 0.24758291014118877
+norm 0.19796890618186241
+norm 0.1583092280135133
+norm 0.1266248194311749
+norm 0.10129440321834829
+norm 0.08103205025215358
+norm 0.06482377195530971
+norm 0.05185852644588544
+norm 0.04148665780935805
+norm 0.03318920904528342
+norm 0.026551320294672377
+norm 0.021241045372723852
+norm 0.016992830541563753
+norm 0.013594260882564605
+norm 0.010875407645616368
+norm 0.008700325828823558
+norm 0.006960260460048201
+norm 0.005568208272913889
+norm 0.004454566595478132
+norm 0.003563653266830431
+norm 0.0028509226069231004
+norm 0.0022807380832754946
+norm 0.0018245904660789951
+norm 0.001459672372519781
+norm 0.001167737897828886
+norm 0.0009341903182137421
+norm 0.0007473522545548075
+norm 0.0005978818036321665
+norm 0.0004783054429010135
+norm 0.00038264435431972175
+norm 0.00030611548345520537
+norm 0.0002448923867638086
+norm 0.0001959139094109398
+norm 0.00015673112752872308
+norm 0.0001253849020229585
+norm 0.00010030792161835703
+norm 8.02463372946831e-05
+norm 6.419706983574576e-05
+norm 5.135765586859589e-05
+norm 4.108612469487646e-05
+norm 3.286889975590109e-05
+norm 2.6295119804720738e-05
+norm 2.1036095843776766e-05
+norm 1.6828876675021174e-05
+norm 1.3463101340017054e-05
+norm 1.077048107201367e-05
+norm 8.616384857610946e-06
+norm 6.893107886088659e-06
+norm 5.514486308870954e-06
+norm 4.411589047096767e-06
+norm 3.5292712376773883e-06
+norm 2.8234169901419754e-06
+norm 2.2587335921137035e-06
+norm 1.80698687369081e-06
+norm 1.4455894989527263e-06
+norm 1.1564715991621533e-06
+norm 9.251772793296651e-07
+norm 7.401418234638232e-07
+norm 5.921134587711516e-07
+norm 4.736907670167678e-07
+norm 3.789526136134535e-07
+norm 3.031620908906965e-07
+norm 2.425296727125818e-07
+norm 1.940237381700742e-07
+norm 1.5521899053592656e-07
+norm 1.2417519242886574e-07
+norm 9.934015394316086e-08
+Running time of Alberto Algo with 100 iterations:  520.9534386040032
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1319.3654042400012
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  297.24241172128677
+norm 34.19688266785676
+norm 10.558743725257978
+norm 6.434499416130132
+norm 4.29657231865226
+norm 2.6948605646733688
+norm 1.7946113158661186
+norm 1.3406073761684896
+norm 1.0182501227412615
+norm 0.780211603182018
+norm 0.6137325747685478
+norm 0.48807093409772995
+norm 0.388397276996301
+norm 0.309764817296948
+norm 0.24758285805091165
+norm 0.19796887905600544
+norm 0.1583092188727566
+norm 0.12662481605862938
+norm 0.1012944013536461
+norm 0.08103204947041909
+norm 0.0648237717075555
+norm 0.051858526332771576
+norm 0.04148665775153113
+norm 0.03318920902482483
+norm 0.026551320287589088
+norm 0.0212410453690537
+norm 0.016992830539942463
+norm 0.0135942608820405
+norm 0.010875407645399744
+norm 0.00870032582871145
+norm 0.006960260460005826
+norm 0.005568208272899884
+norm 0.004454566595471327
+norm 0.003563653266827238
+norm 0.002850922606922031
+norm 0.002280738083275091
+norm 0.0018245904660787859
+norm 0.0014596723725196971
+norm 0.0011677378978288586
+norm 0.0009341903182137295
+norm 0.0007473522545548012
+norm 0.0005978818036321648
+norm 0.00047830544290101295
+norm 0.00038264435431972104
+norm 0.0003061154834552052
+norm 0.00024489238676380856
+norm 0.00019591390941093992
+norm 0.00015673112752872316
+norm 0.00012538490202295842
+norm 0.00010030792161835726
+norm 8.024633729468321e-05
+norm 6.419706983574569e-05
+norm 5.135765586859579e-05
+norm 4.1086124694876636e-05
+norm 3.2868899755901056e-05
+norm 2.629511980472092e-05
+norm 2.1036095843776505e-05
+norm 1.6828876675021188e-05
+norm 1.346310134001702e-05
+norm 1.0770481072013838e-05
+norm 8.616384857611017e-06
+norm 6.8931078860886676e-06
+norm 5.514486308870961e-06
+norm 4.411589047096754e-06
+norm 3.5292712376773727e-06
+norm 2.8234169901419123e-06
+norm 2.258733592113627e-06
+norm 1.8069868736907742e-06
+norm 1.4455894989526349e-06
+norm 1.1564715991621037e-06
+norm 9.251772793297976e-07
+norm 7.401418234638149e-07
+norm 5.92113458771018e-07
+norm 4.7369076701673327e-07
+norm 3.789526136134668e-07
+norm 3.031620908907626e-07
+norm 2.4252967271245425e-07
+norm 1.940237381701167e-07
+norm 1.5521899053607087e-07
+norm 1.2417519242896903e-07
+norm 9.934015394310943e-08
+Running time of Alberto Algo with 100 iterations:  523.895685468
+Running time of distributed Algo with 100 outer iter and 5 alternating projection:  1501.4454009679976
+Running time of Worst case distributed Algo with 100 outer iter and 5 alternating projection:  321.86524308695516
+mean projection time of each subspace:  0.2824061860996153
+Max projection time of each subspace:  0.7332321750000119
+Minimum projection time of each subspace:  0.004773831999045797
+80
+Projection time of total space:  6.590552704998117
+Projection time of alternating projection:  16.319521159021583
+Projection time of inter projection:  0.0015233177455387624
+vertex connectivity: 3
+edge connectivity: 3
+degree: 16
