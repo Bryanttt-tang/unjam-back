@@ -64,15 +64,7 @@ if __name__ == "__main__":
         C_list.append(C_i)
         D_list.append(D_i)
 
-    # Markovsky matrix
-    def markov_parameters(A, B, C, D, L):
-        """Generate the Markov parameters h(0), h(1), ..., h(L-1) of the system."""
-        h = [D]  # Start with h(0) = D
-        Ak = np.eye(A.shape[0])  # A^0 = Identity
-        for k in range(1, L):
-            Ak = Ak @ A
-            h.append(C @ Ak @ B)
-        return h
+
 
     def observability_matrix(A, C, L):
         """Construct the extended observability matrix O_L with L block rows."""
@@ -92,7 +84,17 @@ if __name__ == "__main__":
             row_blocks += [np.zeros_like(h[0])]*(L - len(row_blocks))  # Pad zeros to reach L blocks
             rows.append(np.hstack(row_blocks))
         return np.vstack(rows)
-
+    
+    # Markovsky matrix
+    def markov_parameters(A, B, C, D, L):
+        """Generate the Markov parameters h(0), h(1), ..., h(L-1) of the system."""
+        h = [D]  # Start with h(0) = D
+        Ak = np.eye(A.shape[0])  # A^0 = Identity
+        for k in range(1, L):
+            Ak = Ak @ A
+            h.append(C @ Ak @ B)
+        return h
+    
     def markov_matrix(A, B, C, D, L):
         """Construct the Markov matrix M_L using A, B, C, D, and length L."""
         h = markov_parameters(A, B, C, D, L)
@@ -391,13 +393,13 @@ if __name__ == "__main__":
             }
     H = Hankel(params_H)
 
-    params_H_noise = {"uData": uData,
-                "yData": yData_noise,
-                "Tini": Tini,
-                "N": N,
-                "n":v*n,
-            }
-    H_noise = Hankel(params_H_noise)
+    # params_H_noise = {"uData": uData,
+    #             "yData": yData_noise,
+    #             "Tini": Tini,
+    #             "N": N,
+    #             "n":v*n,
+    #         }
+    # H_noise = Hankel(params_H_noise)
     
     params_H_dis = {"uData": uData_dis,
                 "yData": yData_dis,
@@ -443,6 +445,7 @@ if __name__ == "__main__":
     num_runs=1
     cost_data = np.zeros((num_runs, max_iter+1))
     cost_data1 = np.zeros((num_runs, max_iter+1))
+
    # Get the optimum w*
     g = cp.Variable((T-L+1,1))
     w_f = cp.Variable((N*q_central,1))
@@ -577,8 +580,8 @@ if __name__ == "__main__":
     g = cp.Variable((T-L+1,1))
     
     w_f = cp.Variable((N*q_central,1))
-    objective = cp.quad_form(w_f-wref, psd_wrap(np.kron(np.eye(N),Phi)))
-                # + lambda_g*cp.norm(g, 1) 
+    objective = cp.quad_form(w_f-wref, psd_wrap(np.kron(np.eye(N),Phi)))\
+                + lambda_g*cp.norm(g, 1) 
     #             + lambda_1*cp.quad_form((I-Pi)@g,psd_wrap(I))\
                     
     constraints = [ h_total[:Tini*q_central,:] @ g == wini,
@@ -636,7 +639,7 @@ if __name__ == "__main__":
     # # plt.plot(range(0, max_iter+1), np.squeeze(F.E_dis))
     # plt.ylabel('Error')
     plt.legend(['Total', 'last'])
-    # plt.title('Convergence Error of LQR')
+    plt.title('Convergence Error of LQR')
     plt.grid(True)
     plt.show()
     # plt.show(block=False)
@@ -849,13 +852,13 @@ if __name__ == "__main__":
     # mean_usim4 = usim_results4.mean(axis=0)[0, :]  # Mean across experiments for the first control input
     # std_usim4 = usim_results4.std(axis=0)[0, :] 
 
-    mean_ysim = ysim_results.mean(axis=0)[0, :]  # Mean across experiments for the first control input
-    std_ysim = ysim_results.std(axis=0)[0, :]    # Standard deviation for shading
-    mean_ysim2 = ysim_results2.mean(axis=0)[0, :]  # Mean across experiments for the first control input
-    std_ysim2 = ysim_results2.std(axis=0)[0, :]    # Standard deviation for shading
-    # mean_ysim3 = ysim_results3.mean(axis=0)[0, :]  # Mean across experiments for the first control input
-    # std_ysim3 = ysim_results3.std(axis=0)[0, :]    # Standard deviation for shading
-    # mean_ysim4 = ysim_results4.mean(axis=0)[0, :]  # Mean across experiments for the first control input
+    mean_ysim = ysim_results.mean(axis=0)[0, :] 
+    std_ysim = ysim_results.std(axis=0)[0, :]   
+    mean_ysim2 = ysim_results2.mean(axis=0)[0, :]  
+    std_ysim2 = ysim_results2.std(axis=0)[0, :]    
+    # mean_ysim3 = ysim_results3.mean(axis=0)[0, :]  
+    # std_ysim3 = ysim_results3.std(axis=0)[0, :]  
+    # mean_ysim4 = ysim_results4.mean(axis=0)[0, :]  
     # std_ysim4 = ysim_results4.std(axis=0)[0, :] 
 
     plt.figure(figsize=(10, 6))
@@ -866,6 +869,7 @@ if __name__ == "__main__":
     # plt.plot(np.linspace(0, Tsim,Tsim), mean_usim3, label='Mean Markov', color='black')
     # plt.fill_between(np.linspace(0, Tsim,Tsim), mean_usim3 - std_usim3, mean_usim3 + std_usim3, color='black', alpha=0.3)
     plt.ylabel('u')
+    plt.title('Input')
     plt.grid(True)
     plt.legend()
     plt.show()
@@ -879,6 +883,7 @@ if __name__ == "__main__":
     # plt.plot(np.linspace(0, Tsim,Tsim), mean_ysim3, label='Mean Markov', color='black')
     # plt.fill_between(np.linspace(0, Tsim,Tsim), mean_ysim3 - std_ysim3, mean_ysim3 + std_ysim3, color='black', alpha=0.3)
     plt.ylabel('y')
+    plt.title('Output')
     plt.grid(True)
     plt.legend()
     plt.show()
