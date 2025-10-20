@@ -65,9 +65,9 @@ class functions():
         self.rank_total = self.m_total*self.L+2*self.v
         print('rank',self.rank_total)
         self.U_truncated = U[:, :self.rank_total]  # Shape (48, 27)
-        # self.proj_h=self.U_truncated@np.linalg.inv(self.U_truncated.T@self.U_truncated)@self.U_truncated.T
+        self.proj_h=self.U_truncated@np.linalg.inv(self.U_truncated.T@self.U_truncated)@self.U_truncated.T
         start_lqr_off = time.process_time()
-        self.proj_h=self.h_total@np.linalg.pinv(self.h_total)
+        # self.proj_h=self.h_total@np.linalg.pinv(self.h_total)
         end_lqr_off = time.process_time()
         self.lqr_off_time=end_lqr_off-start_lqr_off
 

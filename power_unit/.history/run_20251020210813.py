@@ -512,7 +512,7 @@ if __name__ == "__main__":
     
 
     max_iter=500
-    dis_iter=1
+    dis_iter=10
     alpha=0.1
     num_runs=1
     cost_data = np.zeros((num_runs, max_iter+1))
@@ -823,7 +823,7 @@ if __name__ == "__main__":
         Ysim.append(ysim)
         print('Total DeepC running time: ', end_deepc-start_deepc)
 
-        deepc2 = DeePC(params_D,'dis_lqr','Hankel',exp)   
+        deepc2 = DeePC(params_D,'lqr','Hankel',exp)   
         x0 =  np.copy(xData[:, -(exp+1)])
         print('x0:',x0)
         start_deepc2=time.process_time()

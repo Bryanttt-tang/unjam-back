@@ -268,10 +268,10 @@ class DeePC():
                             ]
             # box constraint on inputs
         w_f_reshaped = cp.reshape(w_f, (-1, self.N))
-        constraints += [
-            w_f_reshaped[:self.m_total, :] <= 0.5,
-            w_f_reshaped[:self.m_total, :] >= -0.5,
-        ]
+        # constraints += [
+        #     w_f_reshaped[:self.m_total, :] <= 0.5,
+        #     w_f_reshaped[:self.m_total, :] >= -0.5,
+        # ]
         problem = cp.Problem(cp.Minimize(objective), constraints) 
         problem.solve(solver='SCS', warm_start=True)
         e=problem.value

@@ -12,16 +12,6 @@ def principal_angles(A, B):
     Returns:
         numpy.ndarray: An array containing the principal angles in radians.
     """
-    # basis for A
-    # r_C=28
-    # U, S, Vt = svd(A, full_matrices=False)
-    # A = U[:, :r_C] 
-    # print(np.linalg.norm(A.T @ A - np.eye(r_C)))  # should be ~0
-    # 2) dimension check
-    print("A.shape =", A.shape)
-    print('rank of A:', np.linalg.matrix_rank(A))
-    
-
     # Compute the matrix C = A.T @ B
     C = np.dot(A.T, B)
     
@@ -30,28 +20,42 @@ def principal_angles(A, B):
     
     # The singular values (s) are the cosines of the principal angles
     principal_angles = np.arccos(np.clip(s, -1, 1))  # Clip to handle numerical issues
-    # principal_angles = np.arccos(s)  # Clip to handle numerical issues
     
     return principal_angles
 
-def friedrichs_angle(A, B):
+def friedrichs_angle_corrected(A, B, tol=1e-10):
     """
-    Compute the Friedrichs angle between two subspaces.
+    Compute the Friedrichs angle between two subspaces, removing intersection directions.
 
     Args:
-        A (numpy.ndarray): An m x n1 matrix where columns form an orthonormal basis for subspace A.
-        B (numpy.ndarray): An m x n2 matrix where columns form an orthonormal basis for subspace B.
+        A (numpy.ndarray): m x n1 matrix (basis for subspace C)
+        B (numpy.ndarray): m x n2 matrix (basis for subspace D)
+        tol (float): tolerance for detecting intersection
 
     Returns:
-        float: The Friedrichs angle in radians.
+        float: Friedrichs angle in radians
     """
-    # Get the principal angles
-    angles = principal_angles(A, B)
-    
-    # The Friedrichs angle is the largest principal angle
-    friedrichs_angle = np.max(np.arccos(angles))
-    
-    return friedrichs_angle
+    # Orthonormal bases
+    QA, _ = np.linalg.qr(A)
+    QB, _ = np.linalg.qr(B)
+
+    # Compute intersection basis
+    U, s, Vh = svd(QA.T @ QB)
+    intersection = np.where(np.abs(s) > 1 - tol)[0]
+
+    # Remove intersection directions
+    QA_proj = QA
+    QB_proj = QB
+    if intersection.size > 0:
+        QA_proj = QA[:, intersection.size:]
+        QB_proj = QB[:, intersection.size:]
+
+    # Compute singular values of the cross-Gram matrix
+    M = QA_proj.T @ QB_proj
+    svals = svd(M, compute_uv=False)
+    # Friedrichs angle is the largest singular value
+    angle = np.arccos(np.clip(np.max(np.abs(svals)), -1, 1))
+    return angle
 
 # Example usage
 if __name__ == "__main__":
@@ -69,6 +73,6 @@ if __name__ == "__main__":
     B, _ = np.linalg.qr(B_rand)
 
     # Compute the Friedrichs angle
-    theta = friedrichs_angle(A, B)
+    theta = friedrichs_angle_corrected(A, B)
     
     print(f"The Friedrichs angle between the two subspaces is: {np.degrees(theta):.2f} degrees")

@@ -13,10 +13,10 @@ def principal_angles(A, B):
         numpy.ndarray: An array containing the principal angles in radians.
     """
     # basis for A
-    # r_C=28
-    # U, S, Vt = svd(A, full_matrices=False)
-    # A = U[:, :r_C] 
-    # print(np.linalg.norm(A.T @ A - np.eye(r_C)))  # should be ~0
+    r_C=28
+    U, S, Vt = svd(A, full_matrices=False)
+    A = U[:, :r_C] 
+    print(np.linalg.norm(A.T @ A - np.eye(r_C)))  # should be ~0
     # 2) dimension check
     print("A.shape =", A.shape)
     print('rank of A:', np.linalg.matrix_rank(A))
@@ -49,7 +49,7 @@ def friedrichs_angle(A, B):
     angles = principal_angles(A, B)
     
     # The Friedrichs angle is the largest principal angle
-    friedrichs_angle = np.max(np.arccos(angles))
+    friedrichs_angle = np.max(angles)
     
     return friedrichs_angle
 

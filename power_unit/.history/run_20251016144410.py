@@ -311,7 +311,7 @@ if __name__ == "__main__":
     # print("Is the graph connected?", nx.is_connected(graph))
     m_dis=v*m+e
     m_central=v*m
-    p_dis=v*p         
+    p_dis=v*p
     p_central=v*p
     q_dis=(m_dis+p_dis)
     q_central=(m_central+p_central)
@@ -511,7 +511,7 @@ if __name__ == "__main__":
         h.append(H_j[i].Hankel)
     
 
-    max_iter=500
+    max_iter=200
     dis_iter=1
     alpha=0.1
     num_runs=1
@@ -644,22 +644,29 @@ if __name__ == "__main__":
     plt.plot(range(1, 26), errors, marker='o')
     plt.xlabel('Iteration')
     plt.ylabel('Error')
-    plt.title(f'Difference between direct Projection vs. Alternating Projection (System with {v} units)')
+    plt.title('Difference between direct Projection vs. Alternating Projection (System with 2 units)')
     plt.grid(True)
-    plt.pause(1)   
+    plt.show()   
 
     ## 2025-10-16: comparison between direct projection and alternating projection for box constraint
-    random_vector=np.random.uniform(0, 1, size=(q_central, L))
-    w_ran=random_vector.reshape(-1,1, order='F')
+    random_vector_dis=np.random.uniform(0, 1, size=(q_dis, L))
+    w_ran_dis=random_vector_dis.reshape(-1,1, order='F')
     errors = []
-    projected_point_alternating1 = F.alternating_projections2(F.proj_h_sub, w_ran, num_iterations=2)
-    projected_point_alternating10 = F.alternating_projections2(F.proj_h_sub, w_ran, num_iterations=10)
-    print('projected_point_alternating1',projected_point_alternating1)
-    print('projected_point_alternating10',projected_point_alternating10)
-    print('norm of w_ran:',np.linalg.norm(w_ran))
-    print('norm of projected_point_alternating1:',np.linalg.norm(projected_point_alternating1))
-    print('difference between 1 and 10 iterations:',np.linalg.norm(projected_point_alternating1 - projected_point_alternating10)/np.linalg.norm(projected_point_alternating1))
-   
+    direct_projection=F.proj(h_dis,w_ran_dis)
+    # direct_projection=h_total@np.linalg.pinv(h_total)@w_ran
+    with ThreadPool(processes=8) as pool:
+        for ite in tqdm(range(1,26)):
+            projected_point_alternating = F.alternating_projections(F.proj_h_sub, w_ran_dis, pool, num_iterations=ite)
+            error = np.linalg.norm(direct_projection-projected_point_alternating)
+            errors.append(error)
+    # plt.cla()
+    plt.figure(figsize=(10, 6))
+    plt.plot(range(1, 26), errors, marker='o')
+    plt.xlabel('Iteration')
+    plt.ylabel('Error')
+    plt.title('Difference between direct Projection vs. Alternating Projection (System with 2 units)')
+    plt.grid(True)
+    plt.show()   
 
     # U, S, VT = np.linalg.svd(h_total)
     # rank_total = np.linalg.matrix_rank(h_total)
@@ -730,7 +737,7 @@ if __name__ == "__main__":
     plt.legend(['Total', 'last'])
     plt.title('Convergence Error of LQR')
     plt.grid(True)
-    plt.pause(1)
+    plt.show()
     # plt.show(block=False)
     # plt.pause(0.001)
     # g_off=np.linalg.inv(U_truncated[:Tini*q_central,:])@wini
@@ -823,8 +830,8 @@ if __name__ == "__main__":
         Ysim.append(ysim)
         print('Total DeepC running time: ', end_deepc-start_deepc)
 
-        deepc2 = DeePC(params_D,'dis_lqr','Hankel',exp)   
-        x0 =  np.copy(xData[:, -(exp+1)])
+        deepc2 = DeePC(params_D,'lqr','Hankel',exp)   
+        # x0 =  np.copy(xData[:, -1])
         print('x0:',x0)
         start_deepc2=time.process_time()
         xsim2, usim2, ysim2 = deepc2.loop(Tsim,A_list,B_list,C_list,D_list,x0)

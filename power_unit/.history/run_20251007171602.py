@@ -311,15 +311,15 @@ if __name__ == "__main__":
     # print("Is the graph connected?", nx.is_connected(graph))
     m_dis=v*m+e
     m_central=v*m
-    p_dis=v*p         
+    p_dis=v*p
     p_central=v*p
     q_dis=(m_dis+p_dis)
     q_central=(m_central+p_central)
     T = v*L+v*n+150   # number of data points
     R=0.1*np.eye(m_central)
-    R_dis=0.1*np.eye(m_dis)
-    R_dis[1,1]=0
-    R_dis[3,3]=0
+    R_dis=1*np.eye(m_dis)
+    # R_dis[1,1]=0
+    # R_dis[3,3]=0
     Q=10*np.eye(p_dis)
     Phi=np.block([[R, np.zeros((R.shape[0],Q.shape[1]))], [np.zeros((Q.shape[0],R.shape[1])), Q]])
     Phi_dis=np.block([[R_dis, np.zeros((R_dis.shape[0],Q.shape[1]))], [np.zeros((Q.shape[0],R_dis.shape[1])), Q]])
@@ -511,8 +511,8 @@ if __name__ == "__main__":
         h.append(H_j[i].Hankel)
     
 
-    max_iter=500
-    dis_iter=1
+    max_iter=200
+    dis_iter=5
     alpha=0.1
     num_runs=1
     cost_data = np.zeros((num_runs, max_iter+1))
@@ -567,7 +567,6 @@ if __name__ == "__main__":
 
         start_alberto = time.process_time()
         w_split = F.lqr(wini, wref, Phi)
-        w_split_dis = F.distributed_lqr(wini_dis, wref_dis, Phi_dis)
         end_alberto = time.process_time()
 
         w_split_dis = F.distributed_lqr(wini_dis, wref_dis, Phi_dis)
@@ -576,7 +575,6 @@ if __name__ == "__main__":
         print('CVX \n',w_f.value)
         print('The differnce between CVX and Alberto methods: ',np.linalg.norm(w_f.value - w_split[q_central*Tini:])/np.linalg.norm(w_f.value) )
         print('The differnce between CVX and Markovski methods: ',np.linalg.norm(w_f.value - w_markov)/np.linalg.norm(w_f.value) )
-        # print('The differnce between distrbuted lqr and lqr methods: ',np.linalg.norm(w_split_dis - w_split[q_central*Tini:])/np.linalg.norm(w_markov) )
         # print('w_split-dis \n',w_split_dis)
         print(f"Running time of Markovski Algo: ",end_markovski-start_markovski)
         print(f"Running time of Alberto Algo with {max_iter} iterations: ",end_alberto-start_alberto)
@@ -621,45 +619,30 @@ if __name__ == "__main__":
     #     # Save DataFrame to CSV
     # df.to_csv('convergence-2.csv', index=False)
     # w_split_noise = F_noise.lqr(wini, wref, Phi)
-    start_dist = time.process_time()
-    w_split_dis = F.distributed_lqr(wini_dis, wref_dis,Phi_dis)
-    end_dist = time.process_time()
-    print(f"Running time of distributed Algo with {max_iter} outer iter and {dis_iter} alternating projection: ",end_dist-start_dist)
-    # print(f"Running time of worst case distributed Algo with {max_iter} outer iter and {dis_iter} alternating projection: ",end_dist-start_dist)
+    # start_dist = time.process_time()
+    # w_split_dis = F.distributed_lqr(wini_dis, wref_dis,Phi_dis)
+    # end_dist = time.process_time()
+    # print(f"Running time of distributed Algo with {max_iter} outer iter and {dis_iter} alternating projection: ",end_dist-start_dist)
+    # # print(f"Running time of worst case distributed Algo with {max_iter} outer iter and {dis_iter} alternating projection: ",end_dist-start_dist)
 
-
-    ## 2025-10-16: comparison between direct projection and alternating projection
-    random_vector_dis=np.random.uniform(0, 1, size=(q_dis, L))
-    w_ran_dis=random_vector_dis.reshape(-1,1, order='F')
-    errors = []
-    direct_projection=F.proj(h_dis,w_ran_dis)
-    # direct_projection=h_total@np.linalg.pinv(h_total)@w_ran
-    with ThreadPool(processes=8) as pool:
-        for ite in tqdm(range(1,26)):
-            projected_point_alternating = F.alternating_projections(F.proj_h_sub, w_ran_dis, pool, num_iterations=ite)
-            error = np.linalg.norm(direct_projection-projected_point_alternating)
-            errors.append(error)
-    # plt.cla()
-    plt.figure(figsize=(10, 6))
-    plt.plot(range(1, 26), errors, marker='o')
-    plt.xlabel('Iteration')
-    plt.ylabel('Error')
-    plt.title(f'Difference between direct Projection vs. Alternating Projection (System with {v} units)')
-    plt.grid(True)
-    plt.pause(1)   
-
-    ## 2025-10-16: comparison between direct projection and alternating projection for box constraint
-    random_vector=np.random.uniform(0, 1, size=(q_central, L))
-    w_ran=random_vector.reshape(-1,1, order='F')
-    errors = []
-    projected_point_alternating1 = F.alternating_projections2(F.proj_h_sub, w_ran, num_iterations=2)
-    projected_point_alternating10 = F.alternating_projections2(F.proj_h_sub, w_ran, num_iterations=10)
-    print('projected_point_alternating1',projected_point_alternating1)
-    print('projected_point_alternating10',projected_point_alternating10)
-    print('norm of w_ran:',np.linalg.norm(w_ran))
-    print('norm of projected_point_alternating1:',np.linalg.norm(projected_point_alternating1))
-    print('difference between 1 and 10 iterations:',np.linalg.norm(projected_point_alternating1 - projected_point_alternating10)/np.linalg.norm(projected_point_alternating1))
-   
+    # random_vector_dis=np.random.uniform(0, 10, size=(q_dis, L))
+    # w_ran_dis=random_vector_dis.reshape(-1,1, order='F')
+    # errors = []
+    # direct_projection=F.proj(h_total,w_ran_dis)
+    # # direct_projection=h_total@np.linalg.pinv(h_total)@w_ran
+    # with ThreadPool(processes=8) as pool:
+    #     for ite in tqdm(range(1,26)):
+    #         projected_point_alternating = F.alternating_projections(F.proj_h_sub, M,M_inv, w_ran_dis, pool, num_iterations=ite)
+    #         error = np.linalg.norm(direct_projection-projected_point_alternating)
+    #         errors.append(error)
+    # # plt.cla()
+    # plt.figure(figsize=(10, 6))
+    # plt.plot(range(1, 26), errors, marker='o')
+    # plt.xlabel('Iteration')
+    # plt.ylabel('Error')
+    # plt.title('Difference between direct Projection vs. Alternating Projection (System with 2 units)')
+    # plt.grid(True)
+    # plt.show()   
 
     # U, S, VT = np.linalg.svd(h_total)
     # rank_total = np.linalg.matrix_rank(h_total)
@@ -730,7 +713,7 @@ if __name__ == "__main__":
     plt.legend(['Total', 'last'])
     plt.title('Convergence Error of LQR')
     plt.grid(True)
-    plt.pause(1)
+    plt.show()
     # plt.show(block=False)
     # plt.pause(0.001)
     # g_off=np.linalg.inv(U_truncated[:Tini*q_central,:])@wini
@@ -824,7 +807,7 @@ if __name__ == "__main__":
         print('Total DeepC running time: ', end_deepc-start_deepc)
 
         deepc2 = DeePC(params_D,'dis_lqr','Hankel',exp)   
-        x0 =  np.copy(xData[:, -(exp+1)])
+        # x0 =  np.copy(xData[:, -1])
         print('x0:',x0)
         start_deepc2=time.process_time()
         xsim2, usim2, ysim2 = deepc2.loop(Tsim,A_list,B_list,C_list,D_list,x0)

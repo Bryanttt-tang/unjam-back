@@ -512,7 +512,7 @@ if __name__ == "__main__":
     
 
     max_iter=500
-    dis_iter=1
+    dis_iter=10
     alpha=0.1
     num_runs=1
     cost_data = np.zeros((num_runs, max_iter+1))
@@ -767,8 +767,7 @@ if __name__ == "__main__":
         # plt.grid(True)
         # plt.legend()
         # plt.show()
-
-    Tsim=101  
+Tsim=101  
     solver='CVXPY'
     params_D = {'H': H, # an object of Hankel
                 'H_dis':H_dis,
@@ -823,8 +822,8 @@ if __name__ == "__main__":
         Ysim.append(ysim)
         print('Total DeepC running time: ', end_deepc-start_deepc)
 
-        deepc2 = DeePC(params_D,'dis_lqr','Hankel',exp)   
-        x0 =  np.copy(xData[:, -(exp+1)])
+        deepc2 = DeePC(params_D,'lqr','Hankel',exp)   
+        # x0 =  np.copy(xData[:, -1])
         print('x0:',x0)
         start_deepc2=time.process_time()
         xsim2, usim2, ysim2 = deepc2.loop(Tsim,A_list,B_list,C_list,D_list,x0)
@@ -978,43 +977,41 @@ if __name__ == "__main__":
     plt.show()
 
 
-    # plt.figure(figsize=(10, 6))
-    # plt.plot(np.linspace(0, Tsim,Tsim), usim[0,:], label='CVXPY', color='blue')
-    # plt.plot(np.linspace(0, Tsim,Tsim), usim2[0,:], label='lqr', color='red')
-    # # plt.plot(np.linspace(0, Tsim,Tsim), usim3[0,:], label='Markoc', color='black')
-    # plt.ylabel('u')
-    # plt.grid(True)
-    # plt.legend()
-    # plt.show()
+    plt.figure(figsize=(10, 6))
+    plt.plot(np.linspace(0, Tsim,Tsim), usim[0,:], label='CVXPY', color='blue')
+    plt.plot(np.linspace(0, Tsim,Tsim), usim2[0,:], label='lqr', color='red')
+    # plt.plot(np.linspace(0, Tsim,Tsim), usim3[0,:], label='Markoc', color='black')
+    plt.ylabel('u')
+    plt.grid(True)
+    plt.legend()
+    plt.show()
 
-    # plt.figure(figsize=(10, 6))
-    # plt.plot(np.linspace(0, Tsim,Tsim), ysim[0,:], label='CVXPY', color='blue')
-    # plt.plot(np.linspace(0, Tsim,Tsim), ysim2[0,:], label='lqr', color='red')
-    # # plt.plot(np.linspace(0, Tsim,Tsim), ysim3[0,:], label='Markov', color='black')
-    # plt.ylabel('y')
-    # plt.grid(True)
-    # plt.legend()
-    # plt.show()
+    plt.figure(figsize=(10, 6))
+    plt.plot(np.linspace(0, Tsim,Tsim), ysim[0,:], label='CVXPY', color='blue')
+    plt.plot(np.linspace(0, Tsim,Tsim), ysim2[0,:], label='lqr', color='red')
+    # plt.plot(np.linspace(0, Tsim,Tsim), ysim3[0,:], label='Markov', color='black')
+    plt.ylabel('y')
+    plt.grid(True)
+    plt.legend()
+    plt.show()
 
-    # plt.figure(figsize=(10, 6))
-    # plt.plot(np.linspace(0, Tsim,Tsim+1), xsim[0,0,:], label='CVXPY', color='blue')
-    # plt.plot(np.linspace(0, Tsim,Tsim+1), xsim2[0,0,:], label='lqr', color='red')
-    # # plt.plot(np.linspace(0, Tsim,Tsim+1), xsim3[0,0,:], label='Markov', color='black')
-    # plt.ylabel('phase')
-    # plt.grid(True)
-    # plt.legend()
-    # plt.show()
+    plt.figure(figsize=(10, 6))
+    plt.plot(np.linspace(0, Tsim,Tsim+1), xsim[0,0,:], label='CVXPY', color='blue')
+    plt.plot(np.linspace(0, Tsim,Tsim+1), xsim2[0,0,:], label='lqr', color='red')
+    # plt.plot(np.linspace(0, Tsim,Tsim+1), xsim3[0,0,:], label='Markov', color='black')
+    plt.ylabel('phase')
+    plt.grid(True)
+    plt.legend()
+    plt.show()
 
-    # plt.figure(figsize=(10, 6))
-    # plt.plot(np.linspace(0, Tsim,Tsim+1), xsim[1,0,:], label='CVXPY', color='blue')
-    # plt.plot(np.linspace(0, Tsim,Tsim+1), xsim2[1,0,:], label='lqr', color='red')
-    # # plt.plot(np.linspace(0, Tsim,Tsim+1), xsim3[1,0,:], label='Markov', color='black')
-    # plt.ylabel('frequency')
-    # plt.grid(True)
-    # plt.legend()
-    # plt.show()
-
-
+    plt.figure(figsize=(10, 6))
+    plt.plot(np.linspace(0, Tsim,Tsim+1), xsim[1,0,:], label='CVXPY', color='blue')
+    plt.plot(np.linspace(0, Tsim,Tsim+1), xsim2[1,0,:], label='lqr', color='red')
+    # plt.plot(np.linspace(0, Tsim,Tsim+1), xsim3[1,0,:], label='Markov', color='black')
+    plt.ylabel('frequency')
+    plt.grid(True)
+    plt.legend()
+    plt.show()
 
     # Create a time array
     time = np.arange(xsim.shape[2])

@@ -511,8 +511,8 @@ if __name__ == "__main__":
         h.append(H_j[i].Hankel)
     
 
-    max_iter=500
-    dis_iter=1
+    max_iter=200
+    dis_iter=10
     alpha=0.1
     num_runs=1
     cost_data = np.zeros((num_runs, max_iter+1))
@@ -646,7 +646,7 @@ if __name__ == "__main__":
     plt.ylabel('Error')
     plt.title(f'Difference between direct Projection vs. Alternating Projection (System with {v} units)')
     plt.grid(True)
-    plt.pause(1)   
+    plt.show()   
 
     ## 2025-10-16: comparison between direct projection and alternating projection for box constraint
     random_vector=np.random.uniform(0, 1, size=(q_central, L))
@@ -730,7 +730,7 @@ if __name__ == "__main__":
     plt.legend(['Total', 'last'])
     plt.title('Convergence Error of LQR')
     plt.grid(True)
-    plt.pause(1)
+    plt.show()
     # plt.show(block=False)
     # plt.pause(0.001)
     # g_off=np.linalg.inv(U_truncated[:Tini*q_central,:])@wini
@@ -824,7 +824,7 @@ if __name__ == "__main__":
         print('Total DeepC running time: ', end_deepc-start_deepc)
 
         deepc2 = DeePC(params_D,'dis_lqr','Hankel',exp)   
-        x0 =  np.copy(xData[:, -(exp+1)])
+        x0 =  np.copy(xData[:, -1])
         print('x0:',x0)
         start_deepc2=time.process_time()
         xsim2, usim2, ysim2 = deepc2.loop(Tsim,A_list,B_list,C_list,D_list,x0)

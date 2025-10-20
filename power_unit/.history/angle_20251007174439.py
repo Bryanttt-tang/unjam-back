@@ -49,7 +49,7 @@ def friedrichs_angle(A, B):
     angles = principal_angles(A, B)
     
     # The Friedrichs angle is the largest principal angle
-    friedrichs_angle = np.max(np.arccos(angles))
+    friedrichs_angle = np.max(angles)
     
     return friedrichs_angle
 

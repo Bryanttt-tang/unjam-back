@@ -14,7 +14,7 @@ class functions():
         
     def __init__(self, T, Tini, N, v, e, m, m_inter, p, M, h_total, h, connected_components, graph, alpha, max_iter, dis_iter,w_star):
         
-        self.mode='tracking' # 'lqr' or 'dis_lqr'
+        
         self.T = T
         self.Tini = Tini  # shift window
         self.N = N # time horizon
@@ -65,9 +65,9 @@ class functions():
         self.rank_total = self.m_total*self.L+2*self.v
         print('rank',self.rank_total)
         self.U_truncated = U[:, :self.rank_total]  # Shape (48, 27)
-        # self.proj_h=self.U_truncated@np.linalg.inv(self.U_truncated.T@self.U_truncated)@self.U_truncated.T
+        self.proj_h=self.U_truncated@np.linalg.inv(self.U_truncated.T@self.U_truncated)@self.U_truncated.T
         start_lqr_off = time.process_time()
-        self.proj_h=self.h_total@np.linalg.pinv(self.h_total)
+        # self.proj_h=self.h_total@np.linalg.pinv(self.h_total)
         end_lqr_off = time.process_time()
         self.lqr_off_time=end_lqr_off-start_lqr_off
 
@@ -224,24 +224,22 @@ class functions():
         return w_re.reshape(-1,1,order='F')
     
     def alternating_projections(self,h,x, pool, num_iterations=10, tol=1e-10):
-        x_copy=x.copy()
         for _ in range(num_iterations):
             # start_proj2=time.process_time()
             # x = self.proj_full(h,x) # 2*O(n)+ m*O(n_small^2)/8, where m is the number of units
-            x_copy = self.proj_two(h,x_copy,pool) # 2*O(n)+ m*O(n_small^2)/8, where m is the number of units
+            x = self.proj_two(h,x,pool) # 2*O(n)+ m*O(n_small^2)/8, where m is the number of units
             # end_proj2=time.process_time()
             # self.time_proj2.append(end_proj2-start_proj2)
             
             start_inter = time.process_time()
-            x_copy = self.proj_inter_2(x_copy) # O(n)
+            x = self.proj_inter_2(x) # O(n)
             end_inter = time.process_time()
             self.time_inter.append(end_inter-start_inter)
             # x = self.proj_inter(M,M_inv,x)
             # Check convergence
     #         if np.linalg.norm(x - proj_square(x)) < tol:
     #             break
-            x_copy=self.project_onto_box_constraints(x_copy)  # comment out if no box constraints
-        return x_copy
+        return x
 
     def alternating_projections2(self,h,x, num_iterations=10, tol=1e-10):
         x_copy=x.copy()

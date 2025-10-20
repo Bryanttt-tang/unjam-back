@@ -268,10 +268,10 @@ class DeePC():
                             ]
             # box constraint on inputs
         w_f_reshaped = cp.reshape(w_f, (-1, self.N))
-        constraints += [
-            w_f_reshaped[:self.m_total, :] <= 0.5,
-            w_f_reshaped[:self.m_total, :] >= -0.5,
-        ]
+        # constraints += [
+        #     w_f_reshaped[:self.m_total, :] <= 0.5,
+        #     w_f_reshaped[:self.m_total, :] >= -0.5,
+        # ]
         problem = cp.Problem(cp.Minimize(objective), constraints) 
         problem.solve(solver='SCS', warm_start=True)
         e=problem.value
@@ -381,18 +381,17 @@ class DeePC():
     #             print(y.shape)
                 base_index=0
                 for i in range(self.v):
-                    neighbors = sorted(self.graph.neighbors(i)) # to distinguish external and inter inputs
+                    neighbors = sorted(self.graph.neighbors(i)) # to distinguish externel and inter inputs
                     # print('u',u[base_index].reshape(-1, 1))
                     # print('base',base_index)
-                    y[:,i:i+1]=C[i]@x[:,i:i+1]
                     x[:,i:i+1] = A[i]@x[:,i:i+1]+B[i]@(u[base_index].reshape(-1, 1))
                     usim[i, [t]] = u[base_index]
                     base_index += len(neighbors)+1
                     
-                    sum_term = np.zeros_like(B[i] @ y[:, i:i+1])
+                    sum_term = np.zeros_like(B @ y[:, i:i+1])
                     # print('sun_term',sum_term.shape)
                     for j in neighbors:
-                        sum_term += B[i] @ (y[:, j:j+1])
+                        sum_term += B @ (y[:, j:j+1])
                     x[:,i:i+1]+= sum_term
                 
                 # usim[:, [t]] = u
@@ -432,7 +431,6 @@ class DeePC():
                     for j in neighbors:
                         sum_term += B[i] @ (y[:, j:j+1])
                     x[:,i:i+1]+= sum_term
-                    # input disturbance
                     if t==0:
                         x[1,i:i+1]+=2
                         u[i]+=2

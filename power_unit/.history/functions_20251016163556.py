@@ -65,9 +65,9 @@ class functions():
         self.rank_total = self.m_total*self.L+2*self.v
         print('rank',self.rank_total)
         self.U_truncated = U[:, :self.rank_total]  # Shape (48, 27)
-        # self.proj_h=self.U_truncated@np.linalg.inv(self.U_truncated.T@self.U_truncated)@self.U_truncated.T
+        self.proj_h=self.U_truncated@np.linalg.inv(self.U_truncated.T@self.U_truncated)@self.U_truncated.T
         start_lqr_off = time.process_time()
-        self.proj_h=self.h_total@np.linalg.pinv(self.h_total)
+        # self.proj_h=self.h_total@np.linalg.pinv(self.h_total)
         end_lqr_off = time.process_time()
         self.lqr_off_time=end_lqr_off-start_lqr_off
 
@@ -240,7 +240,7 @@ class functions():
             # Check convergence
     #         if np.linalg.norm(x - proj_square(x)) < tol:
     #             break
-            x_copy=self.project_onto_box_constraints(x_copy)  # comment out if no box constraints
+        x_copy=self.project_onto_box_constraints(x_copy)  # comment out if no box constraints
         return x_copy
 
     def alternating_projections2(self,h,x, num_iterations=10, tol=1e-10):

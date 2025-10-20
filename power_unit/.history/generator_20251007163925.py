@@ -268,10 +268,10 @@ class DeePC():
                             ]
             # box constraint on inputs
         w_f_reshaped = cp.reshape(w_f, (-1, self.N))
-        constraints += [
-            w_f_reshaped[:self.m_total, :] <= 0.5,
-            w_f_reshaped[:self.m_total, :] >= -0.5,
-        ]
+        # constraints += [
+        #     w_f_reshaped[:self.m_total, :] <= 0.5,
+        #     w_f_reshaped[:self.m_total, :] >= -0.5,
+        # ]
         problem = cp.Problem(cp.Minimize(objective), constraints) 
         problem.solve(solver='SCS', warm_start=True)
         e=problem.value
@@ -389,7 +389,7 @@ class DeePC():
                     usim[i, [t]] = u[base_index]
                     base_index += len(neighbors)+1
                     
-                    sum_term = np.zeros_like(B[i] @ y[:, i:i+1])
+                    sum_term = np.zeros_like(B @ y[:, i:i+1])
                     # print('sun_term',sum_term.shape)
                     for j in neighbors:
                         sum_term += B[i] @ (y[:, j:j+1])

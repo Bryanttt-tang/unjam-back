@@ -823,8 +823,8 @@ if __name__ == "__main__":
         Ysim.append(ysim)
         print('Total DeepC running time: ', end_deepc-start_deepc)
 
-        deepc2 = DeePC(params_D,'dis_lqr','Hankel',exp)   
-        x0 =  np.copy(xData[:, -(exp+1)])
+        deepc2 = DeePC(params_D,'lqr','Hankel',exp)   
+        x0 =  np.copy(xData[:, -1])
         print('x0:',x0)
         start_deepc2=time.process_time()
         xsim2, usim2, ysim2 = deepc2.loop(Tsim,A_list,B_list,C_list,D_list,x0)

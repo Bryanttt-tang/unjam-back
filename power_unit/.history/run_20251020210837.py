@@ -512,7 +512,7 @@ if __name__ == "__main__":
     
 
     max_iter=500
-    dis_iter=1
+    dis_iter=10
     alpha=0.1
     num_runs=1
     cost_data = np.zeros((num_runs, max_iter+1))
