@@ -122,6 +122,7 @@ class functions():
         
             num_rows = self.m + self.num_neighbor[i]*self.m_inter
             end_row = start_row + num_rows
+            # Get the rows for the current subspace (extract the u and y of the current subsystem)
             rows=np.r_[start_row:end_row, (self.q_dis - (self.p_total - i)) : (self.q_dis - (self.p_total - i)+self.p)]
             w_reorder.append(w_re[rows,:].reshape(-1,1,order='F'))
             start_row = end_row
@@ -240,7 +241,9 @@ class functions():
             # Check convergence
     #         if np.linalg.norm(x - proj_square(x)) < tol:
     #             break
-            x_copy=self.project_onto_box_constraints(x_copy)  # comment out if no box constraints
+            # x_copy=self.project_onto_box_constraints(x_copy)  # comment out if no box constraints
+        
+        # x_copy = self.proj_inter_2(x_copy)
         return x_copy
 
     def alternating_projections2(self,h,x, num_iterations=10, tol=1e-10):
@@ -308,7 +311,7 @@ class functions():
             z_squared = np.vstack(( np.zeros((self.q*self.Tini,1)) ,kron * (w[-self.q*self.N:]-w_ref) )) #O(2n)
 
             # Compute vk+1
-            v_proj=  2*z-w-2*self.alpha*z_squared # O(n)
+            v_proj=  2*z - w - 2*self.alpha*z_squared # O(n)
             # print('v_proj:',v_proj.shape)
             start=time.process_time()
             # v_plus = self.proj_h @ v_proj # O(n^2)
@@ -381,4 +384,54 @@ class functions():
                 if np.linalg.norm(w - w_prev) < tol:
                     break
             self.k_dis_lqr.append(k)
+        return w
+    
+    def FB_split(self, w_ref, Phi, tol=1e-8): # Alberto's algorithm
+        # Initialize w, z, v
+        # w=np.vstack((w_ini, w_ref ))
+        w = np.zeros((self.q*self.L,1))
+        # w = 10*np.random.rand(self.q*self.L,1)-5
+        kron=np.diag( np.kron(np.eye(self.N),Phi) ).reshape(-1, 1) # a vector containing all diagonal elements
+        # e=np.dot((w[self.q*self.Tini:]-w_ref).T, (kron * (w[self.q*self.Tini:]-w_ref)))[0,0]
+        # e=np.dot( (w-np.vstack((w_ini,w_ref))).T, (w-np.vstack((w_ini,w_ref))))[0,0]
+        # e1=np.linalg.norm(self.w_star - w[self.q*self.Tini:])/np.linalg.norm(self.w_star)
+        # self.E.append(e)
+        # self.E1.append(e1)
+        k=0
+        for ite in range(self.max_iter):
+            # w_prev = w
+            # Compute zk+1
+            # start_lqr=time.process_time()
+            # z = np.vstack((w_ini,w[-self.q*self.N:] )) # O(n), n=q*(Tini+Tf)
+    #         z_squared = np.transpose(Pi_f)@  kron* (w[-q*N:]-w_ref)
+            z = 2 * np.vstack(( np.zeros((self.q*self.Tini,1)) ,kron * (w[-self.q*self.N:]-w_ref) )) #O(2n)
+
+            # Compute vk+1
+            w_proj=  w - self.alpha*z # O(n)
+            # print('v_proj:',v_proj.shape)
+            # start=time.process_time()
+            w = self.proj_h @ w_proj # O(n^2)
+            # v_plus = self.alternating_projections2(self.proj_h_sub, v_proj, num_iterations=self.dis_iter) 
+            # v_plus = self.matrix_vector_multiply(self.proj_h, v_proj) # O(n^2)
+            # print('v_plus',v_plus.shape)
+            # end=time.process_time()
+            # self.time_proj.append(end-start)
+            # v_plus = self.proj(h, v_proj)
+            
+            # Compute wk+1
+            # w = w + v_plus - z # O(n)
+            
+            # end_lqr=time.process_time()
+            # self.time_lqr.append(end_lqr-start_lqr)
+            # e=np.dot((w[self.q*self.Tini:]-w_ref).T, (kron * (w[self.q*self.Tini:]-w_ref)))[0,0]
+            # e1=np.linalg.norm(self.w_star - w[self.q*self.Tini:])/np.linalg.norm(self.w_star)
+            # e=np.dot( (w-np.vstack((w_ini,w_ref))).T, (w-np.vstack((w_ini,w_ref))))[0,0]
+            # self.E.append(e)
+            # self.E1.append(e1)
+            # Check for convergence
+            k+=1
+            # # # print( 'norm',np.linalg.norm(w - w_prev))
+            # if np.linalg.norm(w - w_prev) < tol:
+            #     break
+        # self.k_lqr.append(k)
         return w

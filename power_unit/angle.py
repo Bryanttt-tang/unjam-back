@@ -12,25 +12,45 @@ def principal_angles(A, B):
     Returns:
         numpy.ndarray: An array containing the principal angles in radians.
     """
-    # basis for A
-    # r_C=28
-    # U, S, Vt = svd(A, full_matrices=False)
-    # A = U[:, :r_C] 
+    # 1) basis for A
+    # r_A = np.linalg.matrix_rank(A)
+    # print('rank of A:', r_A)
+    # print('A.shape before SVD:', A.shape)
+    # U, S, Vt = svd(A, full_matrices=True)
+    # print('singular values of A:', S)
+    # A = U[:, :r_A]
+    # print('A.shape after SVD:', A.shape) 
+    # print('check orthogonality:',np.linalg.norm(A.T @ A - np.eye(r_A)))  # should be ~0
+
+    # 2) basis for B
+    r_B = np.linalg.matrix_rank(B)
+    print('rank of B:', r_B)
+    print('B.shape before SVD:', B.shape)
+    U, S, Vt = svd(B, full_matrices=True)
+    # print('singular values of B:', S)
+    # print('Vt:', Vt)
+    B = Vt.T[:,  r_B:]
+    print('B.shape after SVD:', B.shape)
+
+
     # print(np.linalg.norm(A.T @ A - np.eye(r_C)))  # should be ~0
     # 2) dimension check
-    print("A.shape =", A.shape)
-    print('rank of A:', np.linalg.matrix_rank(A))
+    # print("A.shape =", A.shape)
+    # print('rank of A:', np.linalg.matrix_rank(A))
     
 
     # Compute the matrix C = A.T @ B
-    C = np.dot(A.T, B)
+    C = A.T @ B
     
     # Perform SVD on C
     U, s, Vh = svd(C)
+    print('singular values:', s)
     
     # The singular values (s) are the cosines of the principal angles
     principal_angles = np.arccos(np.clip(s, -1, 1))  # Clip to handle numerical issues
     # principal_angles = np.arccos(s)  # Clip to handle numerical issues
+    # res = np.linalg.norm((np.eye(72) - B @ B.T) @ A, ord='fro')
+    # print("Frobenius norm of residual (should be ~0 if A ⊆ B):", res)
     
     return principal_angles
 
@@ -49,7 +69,7 @@ def friedrichs_angle(A, B):
     angles = principal_angles(A, B)
     
     # The Friedrichs angle is the largest principal angle
-    friedrichs_angle = np.max(np.arccos(angles))
+    friedrichs_angle = np.min(angles)
     
     return friedrichs_angle
 

@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 from generator import generate_data, DeePC, Hankel,UnionFind
-from numpy.linalg import svd, matrix_rank, eigvalsh
+from numpy.linalg import matrix_rank, eigvalsh
 import matplotlib.pyplot as plt
 import time
 from tqdm import tqdm
@@ -11,11 +11,11 @@ from cvxpy.atoms.affine.wraps import psd_wrap
 from functions import functions
 from multiprocessing.pool import ThreadPool
 import networkx as nx
-from scipy.linalg import svd
+from scipy.linalg import svd,block_diag
 from angle import friedrichs_angle
 if __name__ == "__main__":
     np.random.seed(1)
-    v = 2 # number of units in the interconnected graph
+    v = 5 # number of units in the interconnected graph
     n_subsystems = v
     G = nx.path_graph(n_subsystems)
     # Time step
@@ -298,7 +298,7 @@ if __name__ == "__main__":
 
 
     graph = create_connected_graph(v)   
-    # increase_edge_connectivity(graph, 2)
+    increase_edge_connectivity(graph, 3)
 
     # while graph.number_of_edges() <= (v * (v - 1)) // 2:
     e=2*len(graph.edges()) # directed graph  
@@ -441,6 +441,7 @@ if __name__ == "__main__":
     H_dis = Hankel(params_H_dis)
 
     H_j=[]
+    hankel_dis=[]
     start_row = 0
     for j in range(v):
         len_nei=len(sorted(graph.neighbors(j)))
@@ -453,6 +454,7 @@ if __name__ == "__main__":
         "n":n,
         }
         H_j.append(Hankel(params_H1))
+        hankel_dis.append(Hankel(params_H1).Hankel)
         start_row = end_row
         
     h_total=H.Hankel
@@ -498,9 +500,32 @@ if __name__ == "__main__":
     print("||B.T @ B - I|| =", np.linalg.norm(P_k.T @ P_k - np.eye(P_k.shape[1]))) 
     print('rank of P_k:', np.linalg.matrix_rank(P_k))
 
+    print('shape of h_dis:',h_dis.shape)
+    print('rank of h_dis:', np.linalg.matrix_rank(h_dis))
+    print('shape of P_ker:',P_ker.shape)
+    print('rank of P_ker:', np.linalg.matrix_rank(P_ker))
 
+    print(M)
+    ker=np.kron(np.eye(L),M)
+    print('shape of ker:',ker.shape)
+    print('rank of ker:', np.linalg.matrix_rank(ker))
 
-    cosine_angle = friedrichs_angle(h_dis, P_ker)
+    # we use the list of hankel_dis to build the block diagonal hankel matrix
+    H_list = []
+    shapes = []
+    ranks = []
+    for hankel in hankel_dis:
+        U, S, Vt = svd(hankel, full_matrices=True)
+        r_v = matrix_rank(hankel)
+        A = U[:, :r_v]
+        H_list.append(A)
+        shapes.append(hankel.shape[0])
+        ranks.append(r_v)
+    # Block diagonal
+    H_prod = block_diag(*H_list)
+    print('shape of block diagonal hankel:',H_prod.shape)
+
+    cosine_angle = friedrichs_angle(H_prod , ker)
     print(f"The Friedrichs angle between the two subspaces is: {np.degrees(cosine_angle):.2f} degrees")
     print('q*L',L*q*v)
     print('shape of H',h_total.shape)
@@ -512,7 +537,7 @@ if __name__ == "__main__":
     
 
     max_iter=500
-    dis_iter=1
+    dis_iter=10
     alpha=0.1
     num_runs=1
     cost_data = np.zeros((num_runs, max_iter+1))
@@ -561,7 +586,7 @@ if __name__ == "__main__":
         g_free=np.linalg.pinv(np.vstack((Up,Yp,Uf)))@np.vstack((wini, np.zeros((m_central*N,1)) ))
         y_free=Yf@g_free
         w_free=np.vstack((np.zeros((m_central,N)),y_free.reshape(-1,N))).reshape(-1, 1, order='F')
-        print('w_free \n',w_free)
+        # print('w_free \n',w_free)
         w_markov=W0@np.linalg.pinv(W0.T@W0)@W0.T@(wref-w_free)+w_free
         end_markovski = time.process_time()
 
@@ -646,7 +671,8 @@ if __name__ == "__main__":
     plt.ylabel('Error')
     plt.title(f'Difference between direct Projection vs. Alternating Projection (System with {v} units)')
     plt.grid(True)
-    plt.pause(1)   
+    # plt.pause(1) 
+    plt.show()  
 
     ## 2025-10-16: comparison between direct projection and alternating projection for box constraint
     random_vector=np.random.uniform(0, 1, size=(q_central, L))
@@ -654,9 +680,9 @@ if __name__ == "__main__":
     errors = []
     projected_point_alternating1 = F.alternating_projections2(F.proj_h_sub, w_ran, num_iterations=2)
     projected_point_alternating10 = F.alternating_projections2(F.proj_h_sub, w_ran, num_iterations=10)
-    print('projected_point_alternating1',projected_point_alternating1)
-    print('projected_point_alternating10',projected_point_alternating10)
-    print('norm of w_ran:',np.linalg.norm(w_ran))
+    # print('projected_point_alternating1',projected_point_alternating1)
+    # print('projected_point_alternating10',projected_point_alternating10)
+    # print('norm of w_ran:',np.linalg.norm(w_ran))
     print('norm of projected_point_alternating1:',np.linalg.norm(projected_point_alternating1))
     print('difference between 1 and 10 iterations:',np.linalg.norm(projected_point_alternating1 - projected_point_alternating10)/np.linalg.norm(projected_point_alternating1))
    
